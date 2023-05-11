@@ -1,15 +1,15 @@
 import { useState } from "react";
 import "./App.css";
-import ContractView from "./Components/Table/ContractView";
 import TableWrapper from "./Components/Table/TableWrapper";
+import ContractWrapper from "./Components/Contract/ContractWrapper";
 import { motion } from "framer-motion";
 function App() {
   const [showContract, setShowContract] = useState(false);
   const [initialX, setIntialX] = useState(0);
   const [finalX, setFinalX] = useState(0);
   const pressedRow = () => {
-    setIntialX(75);
-    setFinalX(-150);
+    setIntialX(0);
+    setFinalX(0); //finalX: -250, InitialX: 0 //we need to animate the whole component (Table + Contract so that they move together in the same transition )
     setShowContract(true);
   };
   const resetValues = () => {
@@ -18,15 +18,15 @@ function App() {
     setShowContract(false);
   };
   return (
-    <div className="  bg-gray-300 h-screen ">
-      <div className="flex">
+    <div className="  bg-gray-300 h-screen  ">
+      <div className="justify-evenly">
         <TableWrapper
           initialX={initialX}
           finalX={finalX}
           pressedRow={pressedRow}
         />
         {showContract ? (
-          <ContractView resetValues={resetValues} />
+          <ContractWrapper resetValues={resetValues} />
         ) : (
           <div></div>
         )}

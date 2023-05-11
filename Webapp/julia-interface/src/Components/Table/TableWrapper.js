@@ -8,7 +8,6 @@ import {
 import TableHeader from "./TableHeader";
 import TableRow from "./TableRow";
 import TableFooter from "./TableFooter";
-import ContractView from "./ContractView";
 import { motion } from "framer-motion";
 function TableWrapper(props) {
   const [chevHover, setChevHover] = useState(false);
@@ -17,16 +16,7 @@ function TableWrapper(props) {
   //const [showContract, setShowContract] = useState(false);
 
   return (
-    <motion.div
-      initial={{ opacity: 0.25, x: props.initialX, scale: 1.2 }}
-      animate={{
-        opacity: 1,
-        x: props.finalX,
-        scale: 1,
-      }}
-      transition={{ duration: 1.5 }}
-      className="rounded-lg h-screen border-2 mx-auto p-4 w-8/12  shadow-lg border-gray-400  bg-slate-600 "
-    >
+    <motion.div className="rounded-lg h-screen border-2 mx-auto p-4 w-8/12  shadow-lg border-gray-400  bg-slate-600 ">
       <div className="flex items-center    p-2  ">
         <div className="tracking-wider text-lg text-white  font-semibold flex items-center">
           <FunnelIcon className=" mx-2" height={20} width={20} color="white" />
