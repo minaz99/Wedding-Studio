@@ -9,15 +9,17 @@ import TableHeader from "./TableHeader";
 import TableRow from "./TableRow";
 import TableFooter from "./TableFooter";
 import { motion } from "framer-motion";
+import AddContractWrapper from "../Contract/AddContractWrapper";
 function TableWrapper(props) {
   const [chevHover, setChevHover] = useState(false);
   const cheveronDownColor = chevHover ? "black" : "#9ca3af";
 
-  //const [showContract, setShowContract] = useState(false);
+  const [showContract, setShowContract] = useState(false);
 
   return (
-    <motion.div className="rounded-lg h-screen border-2 mx-auto p-4 w-8/12  shadow-lg border-gray-400  bg-slate-600 ">
-      <div className="flex items-center    p-2  ">
+    <motion.div className="rounded-lg h-screen border-2  mx-auto p-4 w-8/12  shadow-lg border-gray-400  bg-slate-600 ">
+      {showContract ? <AddContractWrapper /> : <div></div>}
+      <div className="flex items-center  p-2  ">
         <div className="tracking-wider text-lg text-white  font-semibold flex items-center">
           <FunnelIcon className=" mx-2" height={20} width={20} color="white" />
           Filter
@@ -48,7 +50,10 @@ function TableWrapper(props) {
             />
           </div>
 
-          <button className="bg-white  rounded-md p-1 flex items-center hover:bg-gray-300  text-slate-700">
+          <button
+            onClick={() => setShowContract(true)}
+            className="bg-white  rounded-md p-1 flex items-center hover:bg-gray-300  text-slate-700"
+          >
             Contract{" "}
             <PlusCircleIcon
               className="mx-1"
