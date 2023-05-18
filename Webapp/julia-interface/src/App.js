@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./App.css";
 import TableWrapper from "./Components/Table/TableWrapper";
 import ContractWrapper from "./Components/Contract/ContractWrapper";
+
+import "bootstrap/dist/css/bootstrap.min.css";
 import { motion } from "framer-motion";
 function App() {
   const [showContract, setShowContract] = useState(false);
@@ -19,7 +21,7 @@ function App() {
   };
   return (
     <div className="  bg-gray-300 h-screen  ">
-      <div className="justify-evenly">
+      <div className="justify-evenly ">
         <TableWrapper
           initialX={initialX}
           finalX={finalX}
