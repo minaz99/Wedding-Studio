@@ -24,7 +24,7 @@ function ContractDetails(props) {
           <div className="rounded-full">{props.brideName}</div>
         </div>
         <div className="flex space-x-2">
-          <UserCircleIcon height={22} width={22} color="#3b82f6" />
+          <UserIcon height={22} width={22} color="#3b82f6" />
           <div className="text-gray-500">Groom name</div>
           <div>{props.groomName}</div>
         </div>
