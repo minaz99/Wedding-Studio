@@ -10,6 +10,7 @@ import TableRow from "./TableRow";
 import TableFooter from "./TableFooter";
 import { motion } from "framer-motion";
 import AddContractWrapper from "../Contract/AddContractWrapper";
+import CreatContractWrapper from "../Contract/New Contract Components/CreatContractWrapper";
 function TableWrapper(props) {
   const [chevHover, setChevHover] = useState(false);
   const cheveronDownColor = chevHover ? "black" : "#9ca3af";
@@ -18,7 +19,11 @@ function TableWrapper(props) {
 
   return (
     <motion.div className="rounded-lg h-screen border-2  mx-auto p-4 w-8/12  shadow-lg border-gray-400  bg-slate-600 ">
-      {showContract ? <AddContractWrapper /> : <div></div>}
+      {showContract ? (
+        <CreatContractWrapper setShowContract={setShowContract} />
+      ) : (
+        <div></div>
+      )}
       <div className="flex items-center  p-2  ">
         <div className="tracking-wider text-lg text-white  font-semibold flex items-center">
           <FunnelIcon className=" mx-2" height={20} width={20} color="white" />
