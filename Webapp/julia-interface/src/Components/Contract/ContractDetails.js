@@ -15,7 +15,7 @@ import {
 
 function ContractDetails(props) {
   return (
-    <div className="space-y-3 rounded-lg shadow-md p-4 w-6/12 bg-white h-fit  ">
+    <div className="space-y-3 rounded-lg shadow-md p-4  w-9/12 bg-white h-fit  ">
       <div className="font-medium text-xl">{props.secondPartyName}</div>
       <div className="space-y-3 ">
         <div className="flex flex-1 space-x-2">
