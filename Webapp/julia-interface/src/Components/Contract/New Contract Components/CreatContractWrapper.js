@@ -27,7 +27,17 @@ function CreatContractWrapper(props) {
   };
 
   return (
-    <div className="rounded-lg  space-y-6 absolute inset-0 p-3 items-center h-screen mx-auto w-6/12 shadow-md justify-center  bg-black/80">
+    <motion.div
+      initial={{ opacity: 0.25, x: -200, y: 0, scale: 1.2 }} //x:200 ,x:0
+      animate={{
+        opacity: 1,
+        y: 0,
+        x: 0,
+        scale: 1,
+      }}
+      transition={{ duration: 0.75 }}
+      className="rounded-lg  space-y-6 absolute inset-0 p-3 items-center h-screen mx-auto w-6/12 shadow-md justify-center  bg-black/80"
+    >
       <div className="flex">
         <div className="flex-1"></div>
         <XCircleIcon
@@ -72,7 +82,7 @@ function CreatContractWrapper(props) {
           Next
         </button>
       </motion.div>
-    </div>
+    </motion.div>
   );
 }
 
