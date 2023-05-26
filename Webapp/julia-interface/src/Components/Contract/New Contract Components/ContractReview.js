@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import ContractDetails from "../ContractDetails";
+import ContractDetailsReview from "./ContractDetailsReview";
 function ContractReview() {
   return (
     <motion.div
@@ -16,7 +16,7 @@ function ContractReview() {
     >
       <div className="font-extrabold text-xl ">Contract Review</div>
       <div className="flex space-x-6  ">
-        <ContractDetails
+        <ContractDetailsReview
           brideName="Amina Khalil"
           groomName="Ali Alosh"
           eventType="Wedding"
