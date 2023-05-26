@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import TableWrapper from "./Components/Table/TableWrapper";
-import ContractWrapper from "./Components/Contract/ContractWrapper";
+import ContractWrapper from "./Components/Contract/Contract Details/ContractWrapper";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { motion } from "framer-motion";
