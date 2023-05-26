@@ -20,11 +20,11 @@ function StatusWrapper(props) {
 
   return (
     <div
-      className="rounded-2xl flex p-1 w-fit  items-center text-sm "
+      className="rounded-2xl flex p-1 px-2  w-fit  items-center text-sm "
       style={{ backgroundColor: statusColor, color: statusFontColor }}
     >
       <div
-        className="rounded-full  h-2 w-2 mx-2 "
+        className="rounded-full    h-2 w-2 mx-2 "
         style={{ backgroundColor: statusFontColor }}
       ></div>
       {props.status}
