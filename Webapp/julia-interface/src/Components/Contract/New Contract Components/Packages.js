@@ -88,8 +88,10 @@ function Packages() {
           />
         </div>
       </div>
-      {showComponents ? <SeperateComponents /> : <div></div>}
-      <TotalPrice total={total} />
+      <div className="space-y-2">
+        {showComponents ? <SeperateComponents /> : <div></div>}
+        <TotalPrice total={total} />
+      </div>
     </motion.div>
   );
 }
