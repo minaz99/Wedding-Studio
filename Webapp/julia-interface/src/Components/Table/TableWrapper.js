@@ -9,7 +9,7 @@ import TableHeader from "./TableHeader";
 import TableRow from "./TableRow";
 import TableFooter from "./TableFooter";
 import { motion } from "framer-motion";
-import AddContractWrapper from "../Contract/AddContractWrapper";
+import AddContractWrapper from "../Contract/Contract Details/AddContractWrapper";
 import CreatContractWrapper from "../Contract/New Contract Components/CreatContractWrapper";
 function TableWrapper(props) {
   const [chevHover, setChevHover] = useState(false);
