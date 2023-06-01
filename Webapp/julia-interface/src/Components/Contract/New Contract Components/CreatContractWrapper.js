@@ -17,12 +17,12 @@ function CreatContractWrapper(props) {
       setActiveView("packages");
       setContractDetailsColor("#86efac");
       setXi(0);
-      setXf(260);
+      setXf(220);
     } else if (activeView === "packages") {
       setActiveView("contract review");
       setPackagesColor("#86efac");
-      setXi(260);
-      setXf(519);
+      setXi(220);
+      setXf(937);
     }
   };
 
@@ -36,19 +36,9 @@ function CreatContractWrapper(props) {
         scale: 1,
       }}
       transition={{ duration: 0.75 }}
-      className="rounded-lg  space-y-6 absolute inset-0 p-3 items-center h-screen mx-auto w-6/12 shadow-md justify-center  bg-black/80"
+      className="rounded-r-lg  space-y-6  p-3 items-center h-full w-11/12 shadow-md   bg-slate-600"
     >
-      <div className="flex">
-        <div className="flex-1"></div>
-        <XCircleIcon
-          height={26}
-          width={26}
-          color="white"
-          className="cursor-pointer"
-          onClick={() => props.setShowContract(false)}
-        />
-      </div>
-      <div className="space-y-12">
+      <div className="space-y-6">
         <NewContractSteps
           xi={xi}
           xf={xf}
