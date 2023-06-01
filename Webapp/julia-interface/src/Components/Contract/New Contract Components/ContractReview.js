@@ -23,7 +23,7 @@ function ContractReview() {
           eventPlace="Crown Plaza"
         />
         <div className="space-y-4">
-          <div className="bg-white p-6 shadow-md space-y-3 rounded-md">
+          <div className="bg-white p-6 shadow-md  space-y-3 rounded-md">
             <div>
               <div className="font-medium text-black">- Package 1 - 600 KD</div>
               <div className="p-2 text-gray-400">
@@ -40,16 +40,16 @@ function ContractReview() {
               </div>
             </div>
           </div>
-          <div className="bg-rounded-md shadow-md p-2 bg-gray-100 space-y-2 rounded-md">
-            <div className="font-medium text-xl">Comments</div>
-
-            <textarea
-              className="w-full /6 p-1  rounded-md "
-              placeholder="Add a comment"
-              style={{ outline: "none", border: "none" }}
-            />
-          </div>
         </div>
+      </div>
+      <div className=" shadow-md p-2 bg-gray-100 space-y-2 rounded-md">
+        <div className="font-medium text-xl">Comments</div>
+
+        <textarea
+          className="w-full /6 p-1  rounded-md "
+          placeholder="Add a comment"
+          style={{ outline: "none", border: "none" }}
+        />
       </div>
     </motion.div>
   );
