@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 function NewContractSteps(props) {
   return (
     <div>
-      <div className="flex justify-between">
+      <div className="flex justify-between space-x-3">
         <div
           className="rounded-md h-2 w-52 "
           style={{ background: props.contractDetailsColor }}
