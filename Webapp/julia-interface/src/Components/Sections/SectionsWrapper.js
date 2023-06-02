@@ -96,12 +96,15 @@ function SectionsWrapper(props) {
               {!calenderCollapsed ? (
                 <div className=" mx-4 my-2 space-y-2">
                   <div
-                    onClick={() => props.setActiveView("Calendar")}
+                    onClick={() => props.setActiveView("photographers")}
                     className="cursor-pointer text-slate-500 hover:text-blue-500"
                   >
                     Photographers
                   </div>
-                  <div className="cursor-pointer text-slate-500 hover:text-blue-500">
+                  <div
+                    onClick={() => props.setActiveView("events")}
+                    className="cursor-pointer text-slate-500 hover:text-blue-500"
+                  >
                     Events
                   </div>
                 </div>
