@@ -1,4 +1,8 @@
-import { CameraIcon, UserIcon } from "@heroicons/react/24/outline";
+import {
+  BuildingStorefrontIcon,
+  CameraIcon,
+  UserIcon,
+} from "@heroicons/react/24/outline";
 import React from "react";
 
 function CalenderRows(props) {
@@ -8,16 +12,28 @@ function CalenderRows(props) {
         <div className="">{props.day}</div>
         <div className="">
           <div className="flex items-center space-x-2 ">
-            <CameraIcon height={16} width={16} color="#db2777" />
-            <div className="text-sm  text-pink-600">Amina Khalil</div>
+            {props.view === "photographers" ? (
+              <CameraIcon height={16} width={16} color="#db2777" />
+            ) : (
+              <BuildingStorefrontIcon height={16} width={16} color="#db2777" />
+            )}
+            <div className="text-sm  text-pink-600">{props.data[0]}</div>
           </div>
           <div className="flex items-center space-x-2">
-            <CameraIcon height={16} width={16} color="#db2777" />
-            <div className="text-sm   text-pink-600">Amira Sabry</div>
+            {props.view === "photographers" ? (
+              <CameraIcon height={16} width={16} color="#db2777" />
+            ) : (
+              <BuildingStorefrontIcon height={16} width={16} color="#db2777" />
+            )}
+            <div className="text-sm   text-pink-600">{props.data[1]}</div>
           </div>
           <div className="flex items-center space-x-2">
-            <CameraIcon height={16} width={16} color="#db2777" />
-            <div className="text-sm   text-pink-600">Dalia Ahmed </div>
+            {props.view === "photographers" ? (
+              <CameraIcon height={16} width={16} color="#db2777" />
+            ) : (
+              <BuildingStorefrontIcon height={16} width={16} color="#db2777" />
+            )}
+            <div className="text-sm   text-pink-600">{props.data[2]}</div>
           </div>
         </div>
       </div>
@@ -25,12 +41,20 @@ function CalenderRows(props) {
         <div className="">{props.day1}</div>
         <div className="">
           <div className="flex items-center space-x-2 ">
-            <CameraIcon height={16} width={16} color="#db2777" />
-            <div className="text-sm  text-pink-600">Amina Khalil</div>
+            {props.view === "photographers" ? (
+              <CameraIcon height={16} width={16} color="#db2777" />
+            ) : (
+              <BuildingStorefrontIcon height={16} width={16} color="#db2777" />
+            )}
+            <div className="text-sm  text-pink-600">{props.data[0]}</div>
           </div>
           <div className="flex items-center space-x-2">
-            <CameraIcon height={16} width={16} color="#db2777" />
-            <div className="text-sm   text-pink-600">Amira Sabry</div>
+            {props.view === "photographers" ? (
+              <CameraIcon height={16} width={16} color="#db2777" />
+            ) : (
+              <BuildingStorefrontIcon height={16} width={16} color="#db2777" />
+            )}
+            <div className="text-sm   text-pink-600">{props.data[1]}</div>
           </div>
         </div>
       </div>
@@ -42,16 +66,28 @@ function CalenderRows(props) {
         <div className="">{props.day3}</div>
         <div className="">
           <div className="flex items-center space-x-2 ">
-            <CameraIcon height={16} width={16} color="#db2777" />
-            <div className="text-sm  text-pink-600">Amina Khalil</div>
+            {props.view === "photographers" ? (
+              <CameraIcon height={16} width={16} color="#db2777" />
+            ) : (
+              <BuildingStorefrontIcon height={16} width={16} color="#db2777" />
+            )}
+            <div className="text-sm  text-pink-600">{props.data[0]}</div>
           </div>
           <div className="flex items-center space-x-2">
-            <CameraIcon height={16} width={16} color="#db2777" />
-            <div className="text-sm   text-pink-600">Amira Sabry</div>
+            {props.view === "photographers" ? (
+              <CameraIcon height={16} width={16} color="#db2777" />
+            ) : (
+              <BuildingStorefrontIcon height={16} width={16} color="#db2777" />
+            )}
+            <div className="text-sm   text-pink-600">{props.data[1]}</div>
           </div>
           <div className="flex items-center space-x-2">
-            <CameraIcon height={16} width={16} color="#db2777" />
-            <div className="text-sm   text-pink-600">Dalia </div>
+            {props.view === "photographers" ? (
+              <CameraIcon height={16} width={16} color="#db2777" />
+            ) : (
+              <BuildingStorefrontIcon height={16} width={16} color="#db2777" />
+            )}
+            <div className="text-sm   text-pink-600">{props.data[2]}</div>
           </div>
         </div>
       </div>
@@ -59,8 +95,12 @@ function CalenderRows(props) {
         <div className="">{props.day4}</div>
         <div className="">
           <div className="flex items-center space-x-2 ">
-            <CameraIcon height={16} width={16} color="#db2777" />
-            <div className="text-sm  text-pink-600">Amina Khalil</div>
+            {props.view === "photographers" ? (
+              <CameraIcon height={16} width={16} color="#db2777" />
+            ) : (
+              <BuildingStorefrontIcon height={16} width={16} color="#db2777" />
+            )}
+            <div className="text-sm  text-pink-600">{props.data[0]}</div>
           </div>
         </div>
       </div>
