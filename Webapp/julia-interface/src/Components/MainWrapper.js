@@ -4,6 +4,7 @@ import TableWrapper from "./Table/TableWrapper";
 import CreatContractWrapper from "./Contract/New Contract Components/CreatContractWrapper";
 import PhotographersCalender from "./Calendar/PhotographersCalender";
 import CalendarWrapper from "./Calendar/CalendarWrapper";
+import { act } from "react-dom/test-utils";
 
 function MainWrapper(props) {
   const [activeView, setActiveView] = useState("Table");
@@ -19,8 +20,8 @@ function MainWrapper(props) {
           />
         ) : activeView === "Contract" ? (
           <CreatContractWrapper setActiveView={setActiveView} />
-        ) : activeView === "Calendar" ? (
-          <CalendarWrapper setActiveView={setActiveView} />
+        ) : activeView === "photographers" || activeView === "events" ? (
+          <CalendarWrapper setActiveView={setActiveView} view={activeView} />
         ) : (
           <div></div>
         )}
