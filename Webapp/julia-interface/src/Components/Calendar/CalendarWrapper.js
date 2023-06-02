@@ -1,11 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CalenderRows from "./CalenderRows";
 import CalenderDaysHeader from "./CalenderDaysHeader";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
-function CalendarWrapper() {
+function CalendarWrapper(props) {
   const [leftArrowColor, setLeftArrowColor] = useState("#cbd5e1");
   const [rightArrowColor, setRightArrowColor] = useState("#cbd5e1");
+  const [data, setData] = useState([]);
+  const names1 = ["Amina Khalil", "Amira Sabry", "Dalia Ahmed"];
+  const names2 = ["Crown Plaza", "Movenpick", "Marriot"];
+
+  useEffect(() => {
+    if (props.view === "photographers") setData(names1);
+    else setData(names2);
+  }, [props.view]);
+
   return (
     <motion.div
       initial={{ opacity: 0.25, x: -200, y: 0, scale: 1.2 }} //x:200 ,x:0
@@ -54,6 +63,8 @@ function CalendarWrapper() {
       <div>
         <CalenderDaysHeader />
         <CalenderRows
+          view={props.view}
+          data={data}
           day={1}
           day1={2}
           day2={3}
@@ -63,6 +74,8 @@ function CalendarWrapper() {
           day6={7}
         />
         <CalenderRows
+          view={props.view}
+          data={data}
           day={8}
           day1={9}
           day2={10}
@@ -72,6 +85,8 @@ function CalendarWrapper() {
           day6={14}
         />
         <CalenderRows
+          view={props.view}
+          data={data}
           day={15}
           day1={16}
           day2={17}
@@ -81,6 +96,8 @@ function CalendarWrapper() {
           day6={21}
         />
         <CalenderRows
+          view={props.view}
+          data={data}
           day={22}
           day1={23}
           day2={24}
@@ -90,6 +107,8 @@ function CalendarWrapper() {
           day6={28}
         />
         <CalenderRows
+          view={props.view}
+          data={data}
           day={29}
           day1={30}
           day2={31}
