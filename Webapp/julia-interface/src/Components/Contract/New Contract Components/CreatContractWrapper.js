@@ -36,7 +36,7 @@ function CreatContractWrapper(props) {
         scale: 1,
       }}
       transition={{ duration: 0.75 }}
-      className="rounded-r-lg  space-y-6  p-3 items-center h-full w-11/12 shadow-md   bg-slate-600"
+      className="rounded-r-lg  space-y-6  p-3 items-center h-full  shadow-md   bg-slate-600"
     >
       <div className="space-y-6">
         <NewContractSteps
@@ -63,7 +63,7 @@ function CreatContractWrapper(props) {
           scale: 1,
         }}
         transition={{ duration: 1 }}
-        className="flex justify-center"
+        className="flex justify-center my-2"
       >
         <button
           onClick={() => onFinishSection()}
