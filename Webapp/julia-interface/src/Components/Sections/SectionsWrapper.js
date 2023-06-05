@@ -6,6 +6,7 @@ import {
   CameraIcon,
   ChevronDownIcon,
   Cog6ToothIcon,
+  EllipsisHorizontalCircleIcon,
   PlusCircleIcon,
   TableCellsIcon,
   UserCircleIcon,
@@ -114,7 +115,10 @@ function SectionsWrapper(props) {
             </div>
             <div className="flex space-x-2 items-center">
               <CameraIcon height={18} width={18} color="#475569" />
-              <div className="font-medium text-slate-600  cursor-pointer hover:text-blue-500">
+              <div
+                onClick={() => props.setActiveView("Packages")}
+                className="font-medium text-slate-600  cursor-pointer hover:text-blue-500"
+              >
                 Packages
               </div>
             </div>
@@ -122,7 +126,10 @@ function SectionsWrapper(props) {
           <div className=" space-y-6 absolute bottom-0 mx-auto pb-4 ">
             <div className="flex space-x-2 items-center">
               <Cog6ToothIcon height={18} width={18} color="#475569" />
-              <div className="font-medium text-slate-600  cursor-pointer hover:text-blue-500">
+              <div
+                onClick={() => props.setActiveView("Settings")}
+                className="font-medium text-slate-600  cursor-pointer hover:text-blue-500"
+              >
                 Settings
               </div>
             </div>
@@ -158,7 +165,7 @@ function SectionsWrapper(props) {
           className="
        bg-white   w-fit p-4 relative  rounded-l-lg flex  h-full "
         >
-          <ArrowLeftCircleIcon
+          <EllipsisHorizontalCircleIcon
             height={30}
             width={30}
             color="#475569"
