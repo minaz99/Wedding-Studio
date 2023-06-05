@@ -5,12 +5,14 @@ import CreatContractWrapper from "./Contract/New Contract Components/CreatContra
 import PhotographersCalender from "./Calendar/PhotographersCalender";
 import CalendarWrapper from "./Calendar/CalendarWrapper";
 import { act } from "react-dom/test-utils";
+import PackagesWrapper from "./Packages/Package/PackagesWrapper";
+import SettingsWrapper from "./Settings/SettingsWrapper";
 
 function MainWrapper(props) {
   const [activeView, setActiveView] = useState("Table");
   return (
-    <div className="rounded-lg bg-slate-400  h-screen w-fit p-4 shadow-lg mx-auto ">
-      <div className="flex h-full relative">
+    <div className="rounded-lg bg-slate-400  h-screen  p-4 shadow-lg  ">
+      <div className="flex  h-full relative justify-center">
         <SectionsWrapper setActiveView={setActiveView} />
         {activeView === "Table" ? (
           <TableWrapper
@@ -22,6 +24,10 @@ function MainWrapper(props) {
           <CreatContractWrapper setActiveView={setActiveView} />
         ) : activeView === "photographers" || activeView === "events" ? (
           <CalendarWrapper setActiveView={setActiveView} view={activeView} />
+        ) : activeView === "Packages" ? (
+          <PackagesWrapper />
+        ) : activeView === "Settings" ? (
+          <SettingsWrapper />
         ) : (
           <div></div>
         )}
