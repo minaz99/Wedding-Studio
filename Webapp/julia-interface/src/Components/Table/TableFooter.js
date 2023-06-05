@@ -13,18 +13,18 @@ function TableFooter() {
         <ChevronLeftIcon
           onMouseEnter={() => setArrowLeftColor("black")}
           onMouseLeave={() => setArrowLeftColor("white")}
-          height={16}
-          width={16}
-          className="cursor-pointer"
+          height={24}
+          width={24}
+          className=" hover:rounded-full p-1 hover:bg-slate-300 cursor-pointer"
           color={arrowLeftColor}
         />
         <ChevronRightIcon
           onMouseEnter={() => setArrowRightColor("black")}
           onMouseLeave={() => setArrowRightColor("white")}
-          height={16}
-          width={16}
+          height={24}
+          width={24}
           color={arrowRightColor}
-          className="cursor-pointer"
+          className=" hover:rounded-full p-1 hover:bg-slate-300 cursor-pointer"
         />
       </div>
     </div>
