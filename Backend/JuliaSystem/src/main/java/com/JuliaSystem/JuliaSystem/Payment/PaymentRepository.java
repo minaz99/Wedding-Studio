@@ -1,12 +1,8 @@
-package com.JuliaSystem.JuliaSystem.contract.Payment;
+package com.JuliaSystem.JuliaSystem.payment;
 
 
-import lombok.AllArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-import java.util.Optional;
-
 
 
 @Repository

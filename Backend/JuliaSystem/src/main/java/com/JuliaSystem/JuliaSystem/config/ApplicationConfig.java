@@ -1,6 +1,6 @@
-package com.khadamat.khadamat.config;
+package com.JuliaSystem.JuliaSystem.config;
 
-import com.khadamat.khadamat.user.UserRepository;
+import com.JuliaSystem.JuliaSystem.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

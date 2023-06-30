@@ -1,4 +1,4 @@
-package com.khadamat.khadamat.user;
+package com.JuliaSystem.JuliaSystem.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

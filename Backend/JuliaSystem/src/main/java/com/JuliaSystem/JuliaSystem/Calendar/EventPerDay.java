@@ -1,4 +1,4 @@
-package com.JuliaSystem.JuliaSystem.contract.Calendar;
+package com.JuliaSystem.JuliaSystem.calendar;
 
 public class EventPerDay {
     private Integer day;

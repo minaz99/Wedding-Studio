@@ -1,4 +1,4 @@
-package com.khadamat.khadamat.auth;
+package com.JuliaSystem.JuliaSystem.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

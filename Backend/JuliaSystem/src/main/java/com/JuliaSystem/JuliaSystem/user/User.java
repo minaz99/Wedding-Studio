@@ -1,4 +1,4 @@
-package com.khadamat.khadamat.user;
+package com.JuliaSystem.JuliaSystem.user;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -26,8 +26,6 @@ public class User implements UserDetails {
     private String lname;
     private String email;
     private String password;
-    private String phoneNumber;
-    private String address;
     @Enumerated(EnumType.STRING)
     private Role role;
 

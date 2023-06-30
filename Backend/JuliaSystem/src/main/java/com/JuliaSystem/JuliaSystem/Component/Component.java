@@ -1,4 +1,4 @@
-package com.JuliaSystem.JuliaSystem.contract.Component;
+package com.JuliaSystem.JuliaSystem.component;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -14,10 +14,13 @@ import lombok.NoArgsConstructor;
 @Table(name = "Components")
 public class Component {
     @Id
-    @GeneratedValue
+    @GeneratedValue (strategy=GenerationType.AUTO)
     private Integer id;
     @Enumerated(EnumType.STRING)
     private ComponentType componentType;
     private String name;
     private Integer price;
+
+    public Component(ComponentType componentType, String name, Integer price) {
+    }
 }

@@ -1,17 +1,15 @@
-package com.khadamat.khadamat.auth;
+package com.JuliaSystem.JuliaSystem.auth;
 
-import com.khadamat.khadamat.config.JwtService;
-import com.khadamat.khadamat.user.Role;
-import com.khadamat.khadamat.user.User;
-import com.khadamat.khadamat.user.UserRepository;
-import com.khadamat.khadamat.user.UserService;
+import com.JuliaSystem.JuliaSystem.config.JwtService;
+import com.JuliaSystem.JuliaSystem.user.Role;
+import com.JuliaSystem.JuliaSystem.user.User;
+import com.JuliaSystem.JuliaSystem.user.UserRepository;
+import com.JuliaSystem.JuliaSystem.user.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -31,9 +29,7 @@ public class AuthenticationService {
                     .lname(request.getLname())
                     .email(request.getEmail())
                     .password(passwordEncoder.encode(request.getPassword()))
-                    .phoneNumber(request.getPhoneNumber())
-                    .address(request.getAddress())
-                    .role(Role.USER)
+                    .role(request.getRole())
                     .build();
             userRepository.save(user);
             var jwtToken = jwtService.generateToken(user);

@@ -1,4 +1,4 @@
-package com.JuliaSystem.JuliaSystem.contract.Component;
+package com.JuliaSystem.JuliaSystem.component;
 
 public enum ComponentType {
     Magazine,

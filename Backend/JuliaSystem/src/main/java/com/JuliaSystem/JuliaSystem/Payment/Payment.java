@@ -1,10 +1,7 @@
-package com.JuliaSystem.JuliaSystem.contract.Payment;
+package com.JuliaSystem.JuliaSystem.payment;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Table (name = "Payments")
 public class Payment {
     @Id
-    @GeneratedValue
+    @GeneratedValue (strategy= GenerationType.AUTO)
     private Integer id;
     private Integer contractID;
     private String paymentTitle;

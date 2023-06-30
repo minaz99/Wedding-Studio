@@ -1,7 +1,6 @@
-package com.khadamat.khadamat.user;
+package com.JuliaSystem.JuliaSystem.user;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -36,16 +35,15 @@ public class UserService {
     }
 
     @Transactional
-    public void updateUser(Integer userID, String email, String password, String address, String phoneNumber) {
+    public void updateUser(Integer userID, String email, String password,Role role) {
         User user = userRepository.findById(userID).orElseThrow(() -> new IllegalStateException(("User with id " + userID + " doesn't exist")));
         if(email != null && email.length() > 0 && !Objects.equals(user.getEmail(),email) )
             user.setEmail(email);
-        if(password != null && password.length() > 0 && !Objects.equals(user.getPassword(),password))
+        if(password != null && password.length() > 0 && !Objects.equals(user.getPassword(),password)) {
             user.setPassword(passwordEncoder.encode(password)); // .password(passwordEncoder.encode(request.getPassword()))
-        if(address != null && address.length() > 0 && !Objects.equals(user.getAddress(),address))
-            user.setAddress(address);
-        if(phoneNumber != null && phoneNumber.length() > 0 && !Objects.equals(user.getPhoneNumber(),phoneNumber) )
-            user.setPhoneNumber(phoneNumber);
+        }
+        if(role != null && !Objects.equals(user.getRole(),role))
+            user.setRole(role);
     }
 
     public void userExists(String newEmail){

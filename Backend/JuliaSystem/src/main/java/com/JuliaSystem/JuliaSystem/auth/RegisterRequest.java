@@ -1,5 +1,6 @@
-package com.khadamat.khadamat.auth;
+package com.JuliaSystem.JuliaSystem.auth;
 
+import com.JuliaSystem.JuliaSystem.user.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,6 +16,5 @@ public class RegisterRequest {
     private String lname;
     private String email;
     private String password;
-    private String address;
-    private String phoneNumber;
+    private Role role;
 }

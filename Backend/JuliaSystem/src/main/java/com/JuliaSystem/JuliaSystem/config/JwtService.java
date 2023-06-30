@@ -1,4 +1,4 @@
-package com.khadamat.khadamat.config;
+package com.JuliaSystem.JuliaSystem.config;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

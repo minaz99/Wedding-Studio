@@ -1,2 +1,9 @@
-package com.JuliaSystem.JuliaSystem.pkg;public interface PackageRepository {
+package com.JuliaSystem.JuliaSystem.pkg;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface PackageRepository extends JpaRepository<Package, Integer> {
+
 }

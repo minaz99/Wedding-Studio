@@ -1,6 +1,7 @@
-package com.khadamat.khadamat.user;
+package com.JuliaSystem.JuliaSystem.user;
 
 public enum Role {
     USER,
-    ADMIN
+    ADMIN,
+    EDITOR,
 }
