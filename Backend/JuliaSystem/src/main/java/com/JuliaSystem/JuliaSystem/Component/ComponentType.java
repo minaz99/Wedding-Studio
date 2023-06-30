@@ -5,5 +5,8 @@ public enum ComponentType {
     Ipad,
     Frame,
     Video,
-    Single
+    Single,
+    Studio,
+    OpenPhoVid,
+    Picture,
 }
