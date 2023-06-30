@@ -24,3 +24,5 @@ public class Component {
     public Component(ComponentType componentType, String name, Integer price) {
     }
 }
+
+
