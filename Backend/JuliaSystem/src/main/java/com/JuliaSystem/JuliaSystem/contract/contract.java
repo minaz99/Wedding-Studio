@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Builder
@@ -35,7 +36,7 @@ public class Contract  {
     private String photographer;
     private String video;
     private int packageID;
-    private int[] componentsIDs;
+    private /*List<Integer>*/ String componentsIDs;
     @Enumerated(EnumType.STRING)
     private ContractStage contractStage;
     private String comments;

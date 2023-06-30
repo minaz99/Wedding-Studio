@@ -24,7 +24,7 @@ public class ContractService {
     public void newContract(String secondPartyName, String brideName, String groomName,
                             String eventType, String eventLocation, Date eventDate,
                             String civilID, Integer phone1, Integer phone2, Integer contractPrice,
-                            String photographer, String video, Integer packageID, String comments) {
+                            String photographer, String video,String componentIDs, Integer packageID, String comments) {
         Contract contract = new Contract();
         contract.setSecondPartyName(secondPartyName);
         contract.setBrideName(brideName);
@@ -37,6 +37,7 @@ public class ContractService {
         contract.setPhone2(phone2);
         contract.setContractStatus(ContractStatus.InProgress);
         contract.setContractPrice(contractPrice);
+        contract.setComponentsIDs(componentIDs);
         contract.setPackageID(packageID);
         contract.setContractStage(ContractStage.Signed);
         contract.setComments(comments);
