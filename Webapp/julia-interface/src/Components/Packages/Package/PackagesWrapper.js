@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Magazines from "../Magazine/Magazines";
 import Packages from "./Packages";
+import Frames from "../Frame/Frames";
 function PackagesWrapper() {
   return (
     <motion.div
@@ -17,7 +18,7 @@ function PackagesWrapper() {
     >
       <Magazines />
       <Packages />
-      <Magazines />
+      <Frames />
     </motion.div>
   );
 }
