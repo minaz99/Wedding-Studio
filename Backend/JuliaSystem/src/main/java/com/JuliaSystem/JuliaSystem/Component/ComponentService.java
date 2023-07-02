@@ -21,7 +21,10 @@ public class ComponentService {
     }
 
     public void newComponent (ComponentType componentType, String name, Integer price){
-        Component component = new Component(componentType,name, price);
+        Component component = new Component();
+        component.setComponentType(componentType);
+        component.setName(name);
+        component.setPrice(price);
         componentRepository.save(component);
     }
 
@@ -29,15 +32,16 @@ public class ComponentService {
         if(componentType != null || name != null || price != null){
             Component component = getComponentByID(componentID);
 
-            if(!component.getComponentType().equals(componentType)){
+            if(!component.getComponentType().equals(componentType) && componentType != null) {
                 component.setComponentType(componentType);
             }
-            if(!component.getName().equals(name)){
+            if(!component.getName().equals(name) && name != null){
                 component.setName(name);
             }
-            if(!component.getPrice().equals(price)){
+            if(!component.getPrice().equals(price) && price != null){
                 component.setPrice(price);
             }
+            componentRepository.save(component);
         }
     }
 }
