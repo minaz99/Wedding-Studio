@@ -83,10 +83,10 @@ public class ContractController {
             groomName, @RequestParam String eventType,
                             @RequestParam String eventLocation, @RequestParam Date eventDate,
                             @RequestParam String civilID,@RequestParam Integer phone1, @RequestParam Integer phone2,
-                            @RequestParam Integer contractPrice,@RequestParam String photographer, @RequestParam String video,
+                            @RequestParam Integer contractPrice, @RequestParam String componentIDs,
                             @RequestParam Integer packageID, @RequestParam String comments){
         contractService.newContract(secondPartyName, brideName, groomName, eventType, eventLocation, eventDate,
-                civilID, phone1, phone2, contractPrice, photographer, video, packageID, comments);
+                civilID, phone1, phone2, contractPrice, componentIDs ,packageID, comments);
     }
 
     @GetMapping("/month")
