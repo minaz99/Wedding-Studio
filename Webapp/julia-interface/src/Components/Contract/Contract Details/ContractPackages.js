@@ -3,13 +3,13 @@ import React from "react";
 
 function ContractPackages(props) {
   return (
-    <div className="space-y-3 rounded-lg p-4 w-fit bg-white h-fit  ">
+    <div className="space-y-3 rounded-lg p-4 w-full bg-white h-fit  ">
       <div className="font-medium text-xl flex items-center ">Packages </div>
       <div className="flex space-x-2 items-center">
         <div className="text-gray-800">Package</div>
-        <div className="bg-teal-200 rounded-md  p-1 shadow-md">
+        <div className="bg-blue-200 rounded-md  p-1 shadow-md">
           <div className="font-medium">Package 1</div>
-          <div className="text-gray-600 p-1">
+          <div className="text-gray-600 p-1 flex space-x-8">
             <li>130 Pictures</li>
             <li>Magazine 20x30</li>
             <li>Album Crystal</li>
