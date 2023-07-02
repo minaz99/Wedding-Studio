@@ -14,7 +14,7 @@ function ContractPayments(props) {
         />
       </div>
 
-      <div className="space-x-4 flex">
+      <div className="space-x-4 flex justify-center">
         <PaymentWrapper paymentNumber={"1st payment"} amount="200 KD" />
         <PaymentWrapper paymentNumber={"2nd payment"} amount="200 KD" />
         <PaymentWrapper paymentNumber={"3rd payment"} amount="200 KD" />
