@@ -6,6 +6,7 @@ import ContractPackages from "./ContractPackages";
 import ContractPayments from "./ContractPayments";
 import ContractComments from "./ContractComments";
 import CurrentContractStage from "./CurrentContractStage";
+import ContractDetailsNewUI from "./ContractDetailsNewUI";
 function ContractWrapper(props) {
   return (
     <motion.div
@@ -17,20 +18,20 @@ function ContractWrapper(props) {
         scale: 1,
       }}
       transition={{ duration: 0.75 }}
-      className="rounded-lg overflow-y-scroll absolute inset-0 p-3 items-center h-screen mx-auto w-fit shadow-md justify-center  bg-black/50 "
+      className="rounded-lg overflow-y-scroll absolute inset-0 p-3 items-center  mx-auto w-fit shadow-md justify-center  bg-slate-600/50 "
     >
-      <div className="flex ">
+      <div className="flex p-2 ">
         <div className="flex-1 "></div>
         <XCircleIcon
           onClick={() => props.resetValues()}
-          height={25}
+          height={30}
           className=" cursor-pointer"
-          width={25}
+          width={30}
           color="white"
         />
       </div>
-      <div className="space-y-1">
-        <div className="p-2 flex space-x-6">
+      <div className=" space-y-4">
+        {
           <ContractDetails
             status="In progress"
             secondPartyName="Tamara"
@@ -39,18 +40,22 @@ function ContractWrapper(props) {
             eventType="Wedding"
             eventPlace="Movenpick"
           />
-          <div className="space-y-8">
-            <ContractPackages />
-          </div>
+        }
+        {/*}
+          <ContractDetailsNewUI
+            secondPartyName="Tamara"
+            brideName="Hinata Hyouga"
+            eventType="Wedding"
+            eventLocation="Movenpick"
+            eventDate="24/06/1998"
+    />*/}
+        <ContractPackages />
+        <div className="space-x-2">
+          <ContractPayments />
         </div>
-        <div className=" space-y-4">
-          <div className="space-x-2">
-            <ContractPayments />
-          </div>
 
-          <ContractComments comments=" Sasuke will not be able to attend Uzumaki's wedding" />
-          <CurrentContractStage />
-        </div>
+        <ContractComments comments=" Sasuke will not be able to attend Uzumaki's wedding" />
+        <CurrentContractStage />
       </div>
     </motion.div>
   );
