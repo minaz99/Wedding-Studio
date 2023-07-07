@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import CompsTableHeader from "./CompsTableHeader";
 import { PlusCircleIcon } from "@heroicons/react/24/outline";
-import CompsRow from "./CompsRow";
+import CompsRowWrapper from "./CompsRowWrapper";
 function Comps() {
   return (
     <div className="bg-white rounded-lg p-4   space-y-6">
@@ -13,18 +13,18 @@ function Comps() {
       </div>
       <div className="space-y-2">
         <CompsTableHeader />
-        <CompsRow name={"Album Crystal"} type={"Album"} price="50" />
-        <CompsRow name={"Usb Photo"} type={"E-Photos"} price="50" />
-        <CompsRow
+        <CompsRowWrapper name={"Album Crystal"} type={"Album"} price="50" />
+        <CompsRowWrapper name={"Usb Photo"} type={"E-Photos"} price="50" />
+        <CompsRowWrapper
           name={"Video Extra (Double Crane)"}
           type={"Video"}
           price="400"
         />
-        <CompsRow name={"Camera Crane"} type={"Video"} price="300" />
-        <CompsRow name={"Hanging Camera"} type={"Video"} price="400" />
-        <CompsRow name={"Camera Ronin"} type={"Video"} price="150" />
-        <CompsRow name={"Zoome Lite"} type={"Video"} price="50" />
-        <CompsRow name={"Seperate Promo"} type={"Video"} price="80" />
+        <CompsRowWrapper name={"Camera Crane"} type={"Video"} price="300" />
+        <CompsRowWrapper name={"Hanging Camera"} type={"Video"} price="400" />
+        <CompsRowWrapper name={"Camera Ronin"} type={"Video"} price="150" />
+        <CompsRowWrapper name={"Zoome Lite"} type={"Video"} price="50" />
+        <CompsRowWrapper name={"Seperate Promo"} type={"Video"} price="80" />
       </div>
       <PlusCircleIcon
         height={26}
