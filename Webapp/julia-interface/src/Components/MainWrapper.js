@@ -7,6 +7,7 @@ import CalendarWrapper from "./Calendar/CalendarWrapper";
 import { act } from "react-dom/test-utils";
 import PackagesWrapper from "./Packages/Package/PackagesWrapper";
 import SettingsWrapper from "./Settings/SettingsWrapper";
+import FilterWrapper from "./Table/Filters/FilterWrapper";
 
 function MainWrapper(props) {
   const [activeView, setActiveView] = useState("Table");
