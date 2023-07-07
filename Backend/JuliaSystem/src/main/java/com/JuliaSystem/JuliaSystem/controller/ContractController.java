@@ -93,5 +93,9 @@ public class ContractController {
     public List<Contract> getContractsInMonth(@RequestParam Integer month) {
          return contractService.getContractsInSameMonth(month);
     }
+    @GetMapping("/search")
+    public List<Contract> getContractsBySearch(@RequestParam String search) {
+        return contractService.getContractsFromSearch(search);
+    }
 
 }

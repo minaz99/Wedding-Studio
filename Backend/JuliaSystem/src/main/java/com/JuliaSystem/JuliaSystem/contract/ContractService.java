@@ -202,4 +202,13 @@ public class ContractService {
         List<Contract> contracts = getAllContracts();
         return contracts.stream().filter(contract -> sameMonth(contract.getEventDate(),month)).toList();
     }
+
+    public List<Contract> getContractsFromSearch(String search) {
+        List<Contract> contracts  = getAllContracts();
+        if(!search.isEmpty())
+        return  contracts.stream().filter(c -> c.getBrideName().contains(search) || c.getGroomName().contains(search) ||
+        c.getCivilID().contains(search) || c.getPhone1().toString().contains(search) ||
+                c.getPhone2().toString().contains(search) || c.getSecondPartyName().contains(search)).toList();
+        else return new ArrayList<Contract>();
+    }
 }
