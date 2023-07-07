@@ -6,7 +6,6 @@ import ContractPackages from "./ContractPackages";
 import ContractPayments from "./ContractPayments";
 import ContractComments from "./ContractComments";
 import CurrentContractStage from "./CurrentContractStage";
-import ContractDetailsNewUI from "./ContractDetailsNewUI";
 function ContractWrapper(props) {
   return (
     <motion.div
@@ -18,7 +17,7 @@ function ContractWrapper(props) {
         scale: 1,
       }}
       transition={{ duration: 0.75 }}
-      className="rounded-lg overflow-y-scroll absolute inset-0 p-3 items-center  mx-auto w-fit shadow-md justify-center  bg-slate-600/50 "
+      className="rounded-lg z-10 overflow-y-scroll absolute inset-0 p-3 items-center  mx-auto w-fit shadow-md justify-center  bg-slate-600/50 "
     >
       <div className="flex p-2 ">
         <div className="flex-1 "></div>
