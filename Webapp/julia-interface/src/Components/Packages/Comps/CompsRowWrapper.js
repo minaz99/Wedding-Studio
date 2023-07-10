@@ -8,6 +8,7 @@ function CompsRowWrapper(props) {
     <div className="rounded-md bg-slate-300 shadow-md  p-2 ">
       {editRow ? (
         <CompsEditableRow
+          new={false}
           setEditRow={setEditRow}
           name={props.name}
           type={props.type}
