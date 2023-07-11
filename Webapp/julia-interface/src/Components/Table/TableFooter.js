@@ -5,8 +5,8 @@ function TableFooter() {
   const [arrowRightColor, setArrowRightColor] = useState("white");
   const [arrowLeftColor, setArrowLeftColor] = useState("white");
   return (
-    <div className=" flex items-center  p-2 justify-end">
-      <div className="text-base flex items-center text-white">
+    <div className=" flex items-center  p-1 justify-end">
+      <div className="text-base flex items-center  text-white">
         1<div className=" mx-2 text-white">of 32</div>
       </div>
       <div className="flex space-x-12 ">
