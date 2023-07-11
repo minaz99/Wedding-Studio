@@ -6,11 +6,13 @@ import ContractWrapper from "./Components/Contract/Contract Details/ContractWrap
 import "bootstrap/dist/css/bootstrap.min.css";
 import { motion } from "framer-motion";
 import MainWrapper from "./Components/MainWrapper";
+import Login from "./Components/Login";
 function App() {
   return (
     <div className="  bg-gray-300 h-screen  ">
       <div className="justify-evenly ">
-        <MainWrapper />
+        {/*<Login />*/}
+        {<MainWrapper />}
       </div>
     </div>
   );
