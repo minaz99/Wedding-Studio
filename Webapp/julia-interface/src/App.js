@@ -11,8 +11,8 @@ function App() {
   return (
     <div className="  bg-gray-300 h-screen  ">
       <div className="justify-evenly ">
-        {/*<Login />*/}
-        {<MainWrapper />}
+        {<Login />}
+        {/*<MainWrapper />*/}
       </div>
     </div>
   );
