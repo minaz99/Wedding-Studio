@@ -8,6 +8,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+//import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
@@ -16,10 +17,10 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table (name = "Contracts")
+@Table(name = "Contracts")
 public class Contract  {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
     private String secondPartyName;
     private String brideName;

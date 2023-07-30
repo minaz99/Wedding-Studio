@@ -7,15 +7,17 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
+
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table (name = "Payments")
+@Table(name = "Payments")
 public class Payment {
     @Id
-    @GeneratedValue (strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
     private Integer contractID;
     private String paymentTitle;

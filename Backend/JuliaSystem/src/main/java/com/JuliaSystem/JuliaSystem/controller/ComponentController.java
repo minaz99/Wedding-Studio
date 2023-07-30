@@ -1,10 +1,13 @@
 package com.JuliaSystem.JuliaSystem.controller;
 
 
-import com.JuliaSystem.JuliaSystem.component.ComponentService;
-import com.JuliaSystem.JuliaSystem.component.ComponentType;
+import com.JuliaSystem.JuliaSystem.Component.Component;
+import com.JuliaSystem.JuliaSystem.Component.ComponentService;
+import com.JuliaSystem.JuliaSystem.Component.ComponentType;
+//import com.JuliaSystem.JuliaSystem.Component.ComponentService;
+//import com.JuliaSystem.JuliaSystem.Component.ComponentType;
 import lombok.AllArgsConstructor;
-import com.JuliaSystem.JuliaSystem.component.Component;
+//import com.JuliaSystem.JuliaSystem.Component.Component;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

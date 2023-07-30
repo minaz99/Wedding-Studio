@@ -1,6 +1,8 @@
-package com.JuliaSystem.JuliaSystem.component;
+package com.JuliaSystem.JuliaSystem.Component;
 
 
+import com.JuliaSystem.JuliaSystem.Component.Component;
+import com.JuliaSystem.JuliaSystem.Component.ComponentRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.JuliaSystem.JuliaSystem.component;
+package com.JuliaSystem.JuliaSystem.Component;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
