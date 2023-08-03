@@ -44,7 +44,7 @@ function ContractDetails(props) {
           <div className="flex space-x-2">
             <UserGroupIcon height={22} width={22} color="#78716c" />
             <div className="text-gray-500">Second Party name</div>
-            <div>{props.groomName}</div>
+            <div>{props.secondPartyName}</div>
           </div>
         </div>
 
@@ -62,7 +62,7 @@ function ContractDetails(props) {
           <div className="flex space-x-2 flex-1">
             <CalendarDaysIcon height={22} width={22} color="#818cf8" />
             <div className="text-gray-500">Event date</div>
-            <div>25/05/2023</div>
+            <div>{props.eventDate.toString().split("T")[0]}</div>
           </div>
         </div>
 
@@ -70,19 +70,19 @@ function ContractDetails(props) {
           <div className="flex space-x-2 flex-1">
             <IdentificationIcon height={22} width={22} color="#475569" />
             <div className="text-gray-500">Civil ID</div>
-            <div>2468205820582</div>
+            <div>{props.civilID}</div>
           </div>
           <div className="flex space-x-2 flex-1">
             <PhoneIcon height={22} width={22} color="#4ade80" />
 
             <div className="text-gray-500">Contact</div>
-            <div>696658340</div>
+            <div>{props.phone1}</div>
           </div>
           <div className="flex space-x-2">
             <ClockIcon height={22} width={22} color="#475569" />
             <div className="text-gray-500">Contract Status </div>
             <div>
-              <StatusWrapper status={props.status} />
+              <StatusWrapper status={props.contractStatus} />
             </div>
           </div>
         </div>
@@ -90,17 +90,17 @@ function ContractDetails(props) {
           <div className="flex space-x-2 flex-1">
             <BanknotesIcon height={22} width={22} color="#7dd3fc" />
             <div className="text-gray-500">Contract price</div>
-            <div>600 KD</div>
+            <div>{props.price}</div>
           </div>
           <div className="flex space-x-2 flex-1">
             <CameraIcon height={22} width={22} color="#db2777" />
             <div className="text-gray-500">Photographer</div>
-            <div>Maria Wahed</div>
+            <div>{props.photographer}</div>
           </div>
           <div className="flex space-x-2 flex-1">
             <CameraIcon height={22} width={22} color="#db2777" />
             <div className="text-gray-500">Video</div>
-            <div>Not assigned</div>
+            <div>{props.video}</div>
           </div>
         </div>
       </div>

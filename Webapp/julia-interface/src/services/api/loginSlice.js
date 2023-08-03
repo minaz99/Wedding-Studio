@@ -2,13 +2,18 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const loginSlice = createApi({
   reducerPath: "loginSlice",
-  baseQuery: fetchBaseQuery({ baseUrl: "https://dummyjson.com/products" }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: "https://juliabackend.vercel.app/user",
+  }),
   endpoints: (builder) => ({
     loginUser: builder.mutation({
-      query: (title) => ({
-        url: `/add`,
+      query: (data) => ({
+        headers: {
+          "Content-type": "application/json",
+        },
+        url: `/login`,
         method: "POST",
-        body: title,
+        body: data,
       }),
     }),
   }),

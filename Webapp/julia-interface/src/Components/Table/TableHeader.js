@@ -14,11 +14,19 @@ import THEventTypeFilter from "./Filters/THEventTypeFilter";
 import THEventLocationFilter from "./Filters/THEventLocationFilter";
 import THContractStatus from "./Filters/THContractStatus";
 import THBrideNameFilter from "./Filters/THBrideNameFilter";
+import {
+  useGetAllContractsQuery,
+  useGetContractsTableHeaderFiltersQuery,
+} from "../../services/api/contractSlice";
 
-function TableHeader() {
+function TableHeader(props) {
   const [chevronColor, setChevronColor] = useState("gray");
   const [searchColor, setSearchColor] = useState("#9ca3af");
   const [searchBride, setSearchBride] = useState(false);
+  const { data, isLoading, isError, isSuccess, refetch } =
+    useGetContractsTableHeaderFiltersQuery(props.token, {
+      refetchOnMountOrArgChange: true,
+    });
   return (
     <div className="flex   bg-gray-100 justify-between rounded-md text-gray-600 border-gray-400 p-2">
       <div className="items-center  flex text-lg font-semibold">
@@ -35,7 +43,10 @@ function TableHeader() {
             onClick={() => setSearchBride(true)}
           />
         ) : (
-          <THBrideNameFilter setSearchBride={setSearchBride} />
+          <THBrideNameFilter
+            setMultipleFilters={props.setMultipleFilters}
+            setSearchBride={setSearchBride}
+          />
         )}
       </div>
       <div className="text-lg flex  font-semibold items-center ">
@@ -47,7 +58,14 @@ function TableHeader() {
         />
         Event type
         <div className="flex-1 w-2"></div>
-        <THEventTypeFilter />
+        <THEventTypeFilter
+          data={data}
+          isLoading={isLoading}
+          isSuccess={isSuccess}
+          isError={isError}
+          token={props.token}
+          setMultipleFilters={props.setMultipleFilters}
+        />
       </div>
 
       <div className="text-lg items-center flex  font-semibold">
@@ -59,13 +77,27 @@ function TableHeader() {
         />
         Event place
         <div className="flex-1 w-2"></div>
-        <THEventLocationFilter />
+        <THEventLocationFilter
+          data={data}
+          isLoading={isLoading}
+          isSuccess={isSuccess}
+          isError={isError}
+          token={props.token}
+          setMultipleFilters={props.setMultipleFilters}
+        />
       </div>
       <div className="items-center flex  text-lg font-semibold">
         <ClockIcon height={20} width={20} className="mx-2" color="#475569" />
         Contract status
         <div className="flex-1 w-2"></div>
-        <THContractStatus />
+        <THContractStatus
+          data={data}
+          isLoading={isLoading}
+          isSuccess={isSuccess}
+          isError={isError}
+          token={props.token}
+          setMultipleFilters={props.setMultipleFilters}
+        />
       </div>
       <div></div>
     </div>

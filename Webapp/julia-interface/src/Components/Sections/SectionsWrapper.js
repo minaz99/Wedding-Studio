@@ -147,7 +147,7 @@ function SectionsWrapper(props) {
             <div className="flex items-center space-x-2">
               <UserCircleIcon height={20} width={20} color="#ec4899" />
               <div className="font-medium text-sm  text-gray-400">
-                Neveen Wageh
+                {props.name}
               </div>
             </div>
           </div>

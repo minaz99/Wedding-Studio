@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { DropdownButton } from "react-bootstrap";
+import FilterOptionComponent from "./FilterOptionComponent";
 
-function THEventTypeFilter() {
+function THEventTypeFilter(props) {
+  const [filterOptionChecked, setFilterOptionChecked] = useState(false);
+  const [optionSelected, setOptionSelected] = useState("");
   return (
     <DropdownButton
       variant="none"
@@ -10,61 +13,26 @@ function THEventTypeFilter() {
       title=""
     >
       <ul class="list-group">
-        <li class="list-group-item">
-          <input
-            class="form-check-input me-1"
-            type="checkbox"
-            value=""
-            id="firstCheckbox"
-          />
-          <label class="form-check-label" for="firstCheckbox">
-            Done
-          </label>
-        </li>
-        <li class="list-group-item">
-          <input
-            class="form-check-input me-1"
-            type="checkbox"
-            value=""
-            id="secondCheckbox"
-          />
-          <label class="form-check-label" for="secondCheckbox">
-            In Progress
-          </label>
-        </li>
-        <li class="list-group-item">
-          <input
-            class="form-check-input me-1"
-            type="checkbox"
-            value=""
-            id="thirdCheckbox"
-          />
-          <label class="form-check-label" for="thirdCheckbox">
-            On Hold
-          </label>
-        </li>
-        <li class="list-group-item">
-          <input
-            class="form-check-input me-1"
-            type="checkbox"
-            value=""
-            id="thirdCheckbox"
-          />
-          <label class="form-check-label" for="thirdCheckbox">
-            Cancelled
-          </label>
-        </li>
-        <li class="list-group-item">
-          <input
-            class="form-check-input me-1"
-            type="checkbox"
-            value=""
-            id="thirdCheckbox"
-          />
-          <label class="form-check-label" for="thirdCheckbox">
-            Finished
-          </label>
-        </li>
+        {props.isLoading ? (
+          <div className="text-center">Loading...</div>
+        ) : props.isError ? (
+          <div className="text-center">Error geting event types...</div>
+        ) : props.isSuccess ? (
+          props.data.types.map((type) => {
+            return (
+              <FilterOptionComponent
+                filterOptionChecked={filterOptionChecked}
+                setFilterOptionChecked={setFilterOptionChecked}
+                setMultipleFilters={props.setMultipleFilters}
+                value={type}
+                optionSelected={optionSelected}
+                setOptionSelected={setOptionSelected}
+              />
+            );
+          })
+        ) : (
+          <div></div>
+        )}
       </ul>
     </DropdownButton>
   );

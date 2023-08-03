@@ -14,23 +14,41 @@ import CreatContractWrapper from "../Contract/New Contract Components/CreatContr
 import ContractWrapper from "../Contract/Contract Details/ContractWrapper";
 import { Dropdown, DropdownButton } from "react-bootstrap";
 import FilterWrapper from "./Filters/FilterWrapper";
+import {
+  useGetAllContractsQuery,
+  useGetContractsByMultipleCriteriasQuery,
+  useGetContractsTableHeaderFiltersQuery,
+} from "../../services/api/contractSlice";
+import Filters from "./Filters/Filters";
+import GetAllContractsComponent from "./Contracts Fetching Components/GetAllContractsComponent";
+import GetContractsBySingleFilter from "./Contracts Fetching Components/GetContractsBySingleFilter";
 function TableWrapper(props) {
   const [chevHover, setChevHover] = useState(false);
   const cheveronDownColor = chevHover ? "black" : "#9ca3af";
   const [showContractDetails, setShowContractDetails] = useState(false);
   const [showContract, setShowContract] = useState(false);
   const [filterType, setFilterType] = useState("Select filter");
+  const [filterTypeOption, setFilterTypeOption] = useState("");
   const [initialX, setIntialX] = useState(0);
   const [finalX, setFinalX] = useState(0);
   const [showFilter, setShowFilter] = useState(false);
-  const pressedRow = () => {
+  const [contractID, setContractID] = useState(-1);
+
+  const [multipleFilters, setMultipleFilters] = useState(false);
+
+  /* const [getContractsByMultipleCriterias, result] =
+    useGetContractsByMultipleCriteriasQuery();
+*/
+  const pressedRow = (id) => {
     setIntialX(0);
     setFinalX(0); //finalX: -250, InitialX: 0 //we need to animate the whole component (Table + Contract so that they move together in the same transition )
+    setContractID(id);
     setShowContractDetails(true);
   };
   const resetValues = () => {
     setIntialX(0);
     setFinalX(0);
+    setContractID(-1);
     setShowContractDetails(false);
   };
 
@@ -52,52 +70,28 @@ function TableWrapper(props) {
       className="rounded-r-lg z-0 relative p-4 w-11/12  shadow-md h-full  bg-slate-600 "
     >
       {showContractDetails ? (
-        <ContractWrapper resetValues={resetValues} />
+        <ContractWrapper
+          token={props.token}
+          contractID={contractID}
+          resetValues={resetValues}
+        />
       ) : (
         <div></div>
       )}
 
       <div className="flex items-center  p-2  ">
-        <div className="tracking-wider space-x-2 text-lg text-white  font-semibold flex items-center">
-          <FunnelIcon className=" mx-2" height={20} width={20} color="white" />
-          Filter
-          <div className="space-y-1">
-            <DropdownButton
-              variant="warning"
-              id="dropdown-basic-button"
-              title={filterType}
-            >
-              <Dropdown.Item onClick={() => setFilterType("None")}>
-                None
-              </Dropdown.Item>
-              <Dropdown.Item onClick={() => filterTypeSelected("Event Date")}>
-                Event Date
-              </Dropdown.Item>
-              <Dropdown.Item
-                onClick={() => filterTypeSelected("Event Location")}
-              >
-                Event Location
-              </Dropdown.Item>
-              <Dropdown.Item
-                onClick={() => filterTypeSelected("Contract Stage")}
-              >
-                Contract Stage
-              </Dropdown.Item>
-              <Dropdown.Item
-                onClick={() => filterTypeSelected("Contract Status")}
-              >
-                Contract Status
-              </Dropdown.Item>
-            </DropdownButton>
-          </div>
-        </div>
+        <Filters
+          filterType={filterType}
+          setFilterType={setFilterType}
+          filterTypeSelected={filterTypeSelected}
+        />
         <div className="flex-1"></div>
 
         <div className="flex p-2 space-x-2 items-center">
           <div className="  rounded-md p-1 flex items-center hover:bg-gray-300 bg-white">
             <input
-              placeholder="Search"
-              className="outline-none border-none hover:bg-gray-300 bg-white"
+              placeholder="Search photographer, video, groom, second party"
+              className="outline-none border-none hover:bg-gray-300 bg-white "
             />
             <MagnifyingGlassIcon
               className=""
@@ -110,25 +104,37 @@ function TableWrapper(props) {
       </div>
 
       <div className="">
-        <TableHeader />
-        <TableRow status="In progress" color="green" pressedRow={pressedRow} />
-        <TableRow status="Done" color="blue" />
-        <TableRow status="On hold" color="green" />
-        <TableRow status="Cancelled" color="red" />
-        <TableRow status="Done" color="blue" />
-        <TableRow status="In progress" color="green" />
-        <TableRow status="Done" color="blue" />
-        <TableRow status="On hold" color="green" />
-        <TableRow status="Cancelled" color="red" />
-        <TableRow status="Done" color="blue" />
-        <TableRow status="In progress" color="green" />
+        <TableHeader
+          setMultipleFilters={setMultipleFilters}
+          token={props.token}
+        />
+        {filterTypeOption === "" ? (
+          <GetAllContractsComponent
+            token={props.token}
+            pressedRow={pressedRow}
+          />
+        ) : (
+          <GetContractsBySingleFilter
+            token={props.token}
+            pressedRow={pressedRow}
+            filterType={filterType}
+            filterTypeOption={filterTypeOption}
+          />
+        )}
       </div>
       {showFilter ? (
-        <FilterWrapper setShowFilter={setShowFilter} filterType={filterType} />
+        <FilterWrapper
+          token={props.token}
+          setFilterType={setFilterType}
+          setShowFilter={setShowFilter}
+          filterType={filterType}
+          filterTypeOption={filterTypeOption}
+          setFilterTypeOption={setFilterTypeOption}
+        />
       ) : (
         <div></div>
       )}
-      <TableFooter />
+      <TableFooter pageCount={10} />
     </motion.div>
   );
 }
