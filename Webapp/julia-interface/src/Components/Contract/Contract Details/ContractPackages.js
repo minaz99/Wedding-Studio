@@ -1,47 +1,43 @@
-import { CameraIcon } from "@heroicons/react/24/outline";
 import React from "react";
+import { useGetPackageByIDQuery } from "../../../services/api/packageSlice";
 
 function ContractPackages(props) {
+  const { data, isLoading, isError, isSuccess } = useGetPackageByIDQuery(
+    { token: props.token, id: props.id },
+    {
+      refetchOnMountOrArgChange: true,
+    }
+  );
   return (
-    <div className="space-y-3 rounded-lg p-4 w-full bg-white h-fit  ">
-      <div className="font-medium text-xl flex items-center ">Packages </div>
-      <div className="flex space-x-2 items-center">
-        <div className="text-gray-800">Package</div>
-        <div className="bg-blue-200 rounded-md  p-1 shadow-md">
-          <div className="font-medium">Package 1</div>
-          <div className="text-gray-600 p-1 flex space-x-8">
-            <li>130 Pictures</li>
-            <li>Magazine 20x30</li>
-            <li>Album Crystal</li>
-            <li>Mini Magazine</li>
-            <li>Video</li>
-            <li>Open Photo and Video</li>
-            <li>Studio</li>
+    <div className="flex space-x-2 items-center">
+      <div className="text-gray-800">Package</div>
+      <div className="bg-blue-200 rounded-md  p-1 shadow-md">
+        {isLoading ? (
+          <div className="text-center text-blue-400 text-xl p-4">
+            Loading...
           </div>
-        </div>
-      </div>
-
-      <div className="flex space-x-6 items-center">
-        <div className="text-gray-800">Extras</div>
-        <div className="bg-orange-200 rounded-md  p-1 shadow-md">
-          <div className="font-medium">Seperate Promo</div>
-        </div>
-      </div>
-      <div className="space-y-3">
-        <div className="text-black flex space-x-6">
-          <div>Prices</div>
+        ) : isError ? (
+          <div className="text-center text-red-400 text-xl p-4">
+            Error loading packages
+          </div>
+        ) : isSuccess ? (
           <div>
-            <div className="text-gray-500">650 KD for Package,</div>
-            <div className="text-gray-500">150 KD for Seperate Promo</div>
+            <div className="font-medium">{data.package.name}</div>
+            <div className="text-gray-600 p-1 flex space-x-8">
+              <li>{data.package.pictures} Pictures</li>
+              <li>Magazine {data.package.magazinename}</li>
+              <li>{data.package.albumcrystal ? "Album Crystal" : ""}</li>
+              <li>{data.package.magazinemini ? "Mini Magazine" : ""}</li>
+              <li>{data.package.video ? "Video" : ""}</li>
+              <li>
+                {data.package.openphotoandvideo ? "Open Photo and Video" : ""}
+              </li>
+              <li>{data.package.studio ? "Studio" : ""}</li>
+            </div>
           </div>
-        </div>
-        <div className="flex">
-          <div className="flex-1"></div>
-          <div className="space-x-2 flex items-center">
-            <div className="font-bold">Total price</div>
-            <div className="rounded-md bg-blue-100 h-fit p-1">800 KD</div>
-          </div>
-        </div>
+        ) : (
+          <div></div>
+        )}
       </div>
     </div>
   );

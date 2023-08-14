@@ -4,13 +4,19 @@ import TableRow from "../TableRow";
 
 function GetAllContractsComponent(props) {
   const { data, isLoading, isError, isSuccess } = useGetAllContractsQuery(
-    props.token,
+    { token: props.token, page: props.page },
     { refetchOnMountOrArgChange: true }
   );
 
+  function contractsDetails() {
+    props.setPageCount(data.pages);
+    props.setTotalContracts(data.total);
+  }
+
   return isLoading ? (
-    <div>Loading...</div>
+    <div className="text-center text-blue-400 text-xl p-4">Loading...</div>
   ) : isSuccess ? (
+    (contractsDetails(),
     data.contracts.map((contract) => {
       return (
         <TableRow
@@ -24,9 +30,11 @@ function GetAllContractsComponent(props) {
           pressedRow={props.pressedRow}
         />
       );
-    })
+    }))
   ) : isError ? (
-    <div>Error getting contracts...</div>
+    <div className="text-center text-red-400 text-xl p-4">
+      Error getting contracts...
+    </div>
   ) : (
     <div></div>
   );

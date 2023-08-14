@@ -7,12 +7,12 @@ export const contractSlice = createApi({
   }),
   endpoints: (builder) => ({
     getAllContracts: builder.query({
-      query: (token) => ({
+      query: (data) => ({
         headers: {
           "Content-type": "application/json",
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${data.token}`,
         },
-        url: `/`,
+        url: `/page/${data.page}`,
         method: "GET",
       }),
     }),
@@ -42,7 +42,7 @@ export const contractSlice = createApi({
           "Content-type": "application/json",
           Authorization: `Bearer ${data.token}`,
         },
-        url: `/filter/filterType/?${data.filterType}=${data.filterTypeValue}`,
+        url: `/filter/filterType/?page=${data.page}&${data.searchType}=${data.searchValue}`,
         method: "GET",
       }),
     }),
@@ -52,9 +52,39 @@ export const contractSlice = createApi({
           "Content-type": "application/json",
           Authorization: `Bearer ${data.token}`,
         },
-        url: `/filter/tableHeaders`,
+        url: `/filter/multipleFilters?${data.queryString}`,
         method: "GET",
-        body: data,
+      }),
+    }),
+    getContractsInMonth: builder.query({
+      query: (data) => ({
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `Bearer ${data.token}`,
+        },
+        url: `/filter/calender?month=${data.month}&year=${data.year}`,
+        method: "GET",
+      }),
+    }),
+    createContract: builder.mutation({
+      query: (data) => ({
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `Bearer ${data.token}`,
+        },
+        url: `/`,
+        method: "POST",
+        body: data.body,
+      }),
+    }),
+    getContractPayments: builder.query({
+      query: (data) => ({
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `Bearer ${data.token}`,
+        },
+        url: `/${data.id}/payments`,
+        method: "GET",
       }),
     }),
   }),
@@ -66,4 +96,7 @@ export const {
   useGetContractsTableHeaderFiltersQuery,
   useGetContractsByCriteriaQuery,
   useGetContractsByMultipleCriteriasQuery,
+  useGetContractsInMonthQuery,
+  useCreateContractMutation,
+  useGetContractPaymentsQuery,
 } = contractSlice;

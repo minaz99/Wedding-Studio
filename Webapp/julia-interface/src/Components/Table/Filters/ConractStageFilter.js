@@ -5,7 +5,7 @@ import OptionForSingleFilter from "./OptionForSingleFilter";
 
 function ConractStageFilter(props) {
   const [filterOptionChecked, setFilterOptionChecked] = useState(false);
-
+  //alert(filterOptionChecked);
   const { data, isLoading, isError, isSuccess } =
     useGetContractsTableHeaderFiltersQuery(props.token, {
       refetchOnMountOrArgChange: true,
@@ -25,6 +25,8 @@ function ConractStageFilter(props) {
               value={type}
               optionSelected={props.filterTypeOption}
               setOptionSelected={props.setFilterTypeOption}
+              setDataFrom={props.setDataFrom}
+              //setShowFilter={props.setShowFilter}
             />
           );
         })

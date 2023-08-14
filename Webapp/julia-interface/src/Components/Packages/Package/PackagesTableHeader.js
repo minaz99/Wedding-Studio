@@ -11,6 +11,9 @@ function PackagesTableHeader() {
         Magzine Size
       </div>
       <div className="flex-1 font-medium text-slate-600 text-center">
+        Album Crystal
+      </div>
+      <div className="flex-1 font-medium text-slate-600 text-center">
         Magzine Mini
       </div>
       <div className="flex-1 font-medium text-slate-600 text-center">Video</div>

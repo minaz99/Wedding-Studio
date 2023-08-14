@@ -2,11 +2,12 @@ import React from "react";
 import { motion } from "framer-motion";
 import { XCircleIcon } from "@heroicons/react/24/outline";
 import ContractDetails from "./ContractDetails";
-import ContractPackages from "./ContractPackages";
+import ContractPackages from "./ContractPackagesWrapper";
 import ContractPayments from "./ContractPayments";
 import ContractComments from "./ContractComments";
 import CurrentContractStage from "./CurrentContractStage";
 import { useGetContractByIDQuery } from "../../../services/api/contractSlice";
+import ContractPackagesWrapper from "./ContractPackagesWrapper";
 
 function ContractWrapper(props) {
   const { data, isLoading, isError, isSuccess } = useGetContractByIDQuery({
@@ -36,12 +37,13 @@ function ContractWrapper(props) {
           color="white"
         />
       </div>
-      <div className=" space-y-4">
-        {isLoading ? (
-          <div>Loading details...</div>
-        ) : isError ? (
-          <div>Error getting contract details</div>
-        ) : isSuccess ? (
+
+      {isLoading ? (
+        <div>Loading details...</div>
+      ) : isError ? (
+        <div>Error getting contract details</div>
+      ) : isSuccess ? (
+        <div className=" space-y-4">
           <ContractDetails
             status={data.contract.contractstatus}
             secondPartyName={data.contract.secondpartyname}
@@ -58,18 +60,23 @@ function ContractWrapper(props) {
             phone2={data.contract.phone2}
             contractStatus={data.contract.contractstatus}
           />
-        ) : (
-          <div></div>
-        )}
 
-        <ContractPackages />
-        <div className="space-x-2">
-          <ContractPayments />
+          <ContractPackagesWrapper
+            token={props.token}
+            packageID={data.contract.packageid}
+            price={data.contract.price}
+            compsIDs={data.contract.componentids}
+          />
+          <div className="space-x-2">
+            <ContractPayments token={props.token} id={props.contractID} />
+          </div>
+
+          <ContractComments comments={data.contract.comments} />
+          <CurrentContractStage />
         </div>
-
-        <ContractComments comments=" Sasuke will not be able to attend Uzumaki's wedding" />
-        <CurrentContractStage />
-      </div>
+      ) : (
+        <div></div>
+      )}
     </motion.div>
   );
 }

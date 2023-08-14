@@ -5,7 +5,7 @@ import CreatContractWrapper from "./Contract/New Contract Components/CreatContra
 import PhotographersCalender from "./Calendar/PhotographersCalender";
 import CalendarWrapper from "./Calendar/CalendarWrapper";
 import { act } from "react-dom/test-utils";
-import PackagesWrapper from "./Packages/Package/PackagesWrapper";
+import PackagesWrapper from "./Packages/PackagesWrapper";
 import SettingsWrapper from "./Settings/SettingsWrapper";
 import FilterWrapper from "./Table/Filters/FilterWrapper";
 
@@ -25,11 +25,11 @@ function Home(props) {
             token={token}
           />
         ) : activeView === "Contract" ? (
-          <CreatContractWrapper setActiveView={setActiveView} />
-        ) : activeView === "photographers" || activeView === "events" ? (
-          <CalendarWrapper setActiveView={setActiveView} view={activeView} />
+          <CreatContractWrapper token={token} setActiveView={setActiveView} />
+        ) : activeView === "photographers" ? (
+          <CalendarWrapper token={token} />
         ) : activeView === "Packages" ? (
-          <PackagesWrapper />
+          <PackagesWrapper token={token} />
         ) : activeView === "Settings" ? (
           <SettingsWrapper name={name} />
         ) : (

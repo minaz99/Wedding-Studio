@@ -3,17 +3,43 @@ import CalenderRows from "./CalenderRows";
 import CalenderDaysHeader from "./CalenderDaysHeader";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
+import YearsAndMonthComp from "./YearsAndMonthComp";
+import DayOfWeekColumn from "./DayOfWeekColumn";
+import { useGetContractsInMonthQuery } from "../../services/api/contractSlice";
 function CalendarWrapper(props) {
   const [leftArrowColor, setLeftArrowColor] = useState("#cbd5e1");
   const [rightArrowColor, setRightArrowColor] = useState("#cbd5e1");
-  const [data, setData] = useState([]);
-  const names1 = ["Amina Khalil", "Amira Sabry", "Dalia Ahmed"];
-  const names2 = ["Crown Plaza", "Movenpick", "Marriot"];
+  //const [data, setData] = useState([]);
+  const [showMonthAndYear, setShowMonthAndYear] = useState(false);
 
-  useEffect(() => {
-    if (props.view === "photographers") setData(names1);
-    else setData(names2);
-  }, [props.view]);
+  const [year, setYear] = useState(new Date().getFullYear());
+  const [month, setMonth] = useState(new Date().getMonth() + 1);
+  const getMonthString = (month) => {
+    const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    return months[month - 1];
+  };
+  const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const { data, isLoading, isError, isSuccess } = useGetContractsInMonthQuery(
+    {
+      token: props.token,
+      month: month,
+      year: year,
+    },
+    { refetchOnMountOrArgChange: true }
+  );
 
   return (
     <motion.div
@@ -25,7 +51,7 @@ function CalendarWrapper(props) {
         scale: 1,
       }}
       transition={{ duration: 0.75 }}
-      className="rounded-r-lg  space-y-6  p-3 items-center h-full w-11/12 shadow-md   bg-slate-600"
+      className="rounded-r-lg  space-y-6  p-3 items-center h-full w-11/12 shadow-md  overflow-y-scroll bg-slate-600"
     >
       <div>
         <div className="flex">
@@ -37,14 +63,15 @@ function CalendarWrapper(props) {
               width={24}
               className=" hover:rounded-full p-1 hover:bg-slate-800 cursor-pointer"
               color={leftArrowColor}
+              onClick={() => setMonth(month - 1)}
             />
             <div style={{ color: leftArrowColor }} className="font-medium">
-              April
+              {getMonthString(month - 1)}
             </div>
           </div>
           <div className="flex items-center space-x-2">
             <div className="font-medium " style={{ color: rightArrowColor }}>
-              June
+              {getMonthString(month + 1)}
             </div>
             <ChevronRightIcon
               onMouseEnter={() => setRightArrowColor("white")}
@@ -53,70 +80,53 @@ function CalendarWrapper(props) {
               width={24}
               className="cursor-pointer hover:rounded-full p-1 hover:bg-slate-800 "
               color={rightArrowColor}
+              onClick={() => setMonth(month + 1)}
             />
           </div>
         </div>
         <div className="flex ">
-          <div className="font-medium mx-auto  text-lg text-white ">May</div>
+          <div
+            onClick={() => setShowMonthAndYear(true)}
+            className="font-medium mx-auto  text-lg text-white cursor-pointer "
+          >
+            {getMonthString(month)} {year}
+          </div>
         </div>
       </div>
       <div>
         <CalenderDaysHeader />
-        <CalenderRows
-          view={props.view}
-          data={data}
-          day={1}
-          day1={2}
-          day2={3}
-          day3={4}
-          day4={5}
-          day5={6}
-          day6={7}
-        />
-        <CalenderRows
-          view={props.view}
-          data={data}
-          day={8}
-          day1={9}
-          day2={10}
-          day3={11}
-          day4={12}
-          day5={13}
-          day6={14}
-        />
-        <CalenderRows
-          view={props.view}
-          data={data}
-          day={15}
-          day1={16}
-          day2={17}
-          day3={18}
-          day4={19}
-          day5={20}
-          day6={21}
-        />
-        <CalenderRows
-          view={props.view}
-          data={data}
-          day={22}
-          day1={23}
-          day2={24}
-          day3={25}
-          day4={26}
-          day5={27}
-          day6={28}
-        />
-        <CalenderRows
-          view={props.view}
-          data={data}
-          day={29}
-          day1={30}
-          day2={31}
-          day3={1}
-          day4={2}
-          day5={3}
-          day6={4}
-        />
+        {isLoading ? (
+          <div className="text-center text-blue-400 text-xl p-4">
+            Loading...
+          </div>
+        ) : isSuccess ? (
+          <div className="space-y-2">
+            <DayOfWeekColumn rowCount={0} data={data} />
+            <DayOfWeekColumn rowCount={7} data={data} />
+            <DayOfWeekColumn rowCount={14} data={data} />
+            <DayOfWeekColumn rowCount={21} data={data} />
+            <DayOfWeekColumn rowCount={28} data={data} />
+            <DayOfWeekColumn rowCount={35} data={data} />
+          </div>
+        ) : isError ? (
+          <div className="text-center text-red-400 text-xl p-4">
+            Error getting contracts...
+          </div>
+        ) : (
+          <div></div>
+        )}
+
+        {showMonthAndYear ? (
+          <YearsAndMonthComp
+            month={month}
+            year={year}
+            setMonth={setMonth}
+            setYear={setYear}
+            setShowMonthAndYear={setShowMonthAndYear}
+          />
+        ) : (
+          <div></div>
+        )}
       </div>
     </motion.div>
   );

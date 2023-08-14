@@ -5,22 +5,34 @@ function OptionForSingleFilter(props) {
     if (e.target.checked) {
       props.setFilterOptionChecked(true);
       props.setOptionSelected(props.value);
+      props.setDataFrom("filter");
+
+      //props.setShowFilter(false);
     }
     if (!e.target.checked) {
       props.setFilterOptionChecked(false);
       props.setOptionSelected("");
+      props.setDataFrom("");
     }
   };
   return (
     <li class="list-group-item">
-      {props.filterOptionChecked && props.optionSelected !== props.value ? (
+      {props.optionSelected === "" ? (
         <input
           class="form-check-input me-1"
           type="checkbox"
           value=""
           id="firstCheckbox"
           onChange={handleChange}
-          disabled
+        />
+      ) : props.optionSelected === props.value ? (
+        <input
+          class="form-check-input me-1"
+          type="checkbox"
+          value=""
+          id="firstCheckbox"
+          onChange={handleChange}
+          checked
         />
       ) : (
         <input
@@ -29,6 +41,7 @@ function OptionForSingleFilter(props) {
           value=""
           id="firstCheckbox"
           onChange={handleChange}
+          disabled
         />
       )}
 

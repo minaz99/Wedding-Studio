@@ -22,6 +22,9 @@ import {
 import Filters from "./Filters/Filters";
 import GetAllContractsComponent from "./Contracts Fetching Components/GetAllContractsComponent";
 import GetContractsBySingleFilter from "./Contracts Fetching Components/GetContractsBySingleFilter";
+import SearchWrapper from "./Search/SearchWrapper";
+import GetContractsBySearchCriteria from "./Contracts Fetching Components/GetContractsBySearchCriteria";
+import ContractsTableDataHandler from "./Contracts Fetching Components/ContractsTableDataHandler";
 function TableWrapper(props) {
   const [chevHover, setChevHover] = useState(false);
   const cheveronDownColor = chevHover ? "black" : "#9ca3af";
@@ -35,7 +38,20 @@ function TableWrapper(props) {
   const [contractID, setContractID] = useState(-1);
 
   const [multipleFilters, setMultipleFilters] = useState(false);
-
+  const [searchType, setSearchType] = useState("Search");
+  const [searchValue, setSearchValue] = useState("");
+  const [dataFrom, setDataFrom] = useState("");
+  const [brideNameSearch, setBrideNameSearch] = useState("");
+  const [eventTypeFilter, setEventTypeFilter] = useState("");
+  const [eventPlaceFilter, setEventPlaceFilter] = useState("");
+  const [contractStatusFilter, setContractStatusFilter] = useState("");
+  const [isBrideNameSearch, setIsBrideNameSearch] = useState(false);
+  const [isEventTypeFilter, setIsEventTypeFilter] = useState(false);
+  const [isEventPlaceFilter, setIsEventPlaceFilter] = useState(false);
+  const [isContractStatusFilter, setIsContractStatusFilter] = useState(false);
+  const [page, setPage] = useState(1);
+  const [pageCount, setPageCount] = useState(0);
+  const [totalContracts, setTotalContracts] = useState(0);
   /* const [getContractsByMultipleCriterias, result] =
     useGetContractsByMultipleCriteriasQuery();
 */
@@ -67,7 +83,7 @@ function TableWrapper(props) {
         scale: 1,
       }}
       transition={{ duration: 0.75 }}
-      className="rounded-r-lg z-0 relative p-4 w-11/12  shadow-md h-full  bg-slate-600 "
+      className="rounded-r-lg z-0 relative  p-4 w-11/12  shadow-md   bg-slate-600 "
     >
       {showContractDetails ? (
         <ContractWrapper
@@ -87,40 +103,47 @@ function TableWrapper(props) {
         />
         <div className="flex-1"></div>
 
-        <div className="flex p-2 space-x-2 items-center">
-          <div className="  rounded-md p-1 flex items-center hover:bg-gray-300 bg-white">
-            <input
-              placeholder="Search photographer, video, groom, second party"
-              className="outline-none border-none hover:bg-gray-300 bg-white "
-            />
-            <MagnifyingGlassIcon
-              className=""
-              height={20}
-              width={20}
-              color="#334155"
-            />
-          </div>
-        </div>
+        <SearchWrapper
+          searchType={searchType}
+          setSearchType={setSearchType}
+          setSearchValue={setSearchValue}
+          searchValue={searchValue}
+          setDataFrom={setDataFrom}
+        />
       </div>
 
       <div className="">
         <TableHeader
           setMultipleFilters={setMultipleFilters}
           token={props.token}
+          setBrideNameSearch={setBrideNameSearch}
+          setEventTypeFilter={setEventTypeFilter}
+          setEventPlaceFilter={setEventPlaceFilter}
+          setContractStatusFilter={setContractStatusFilter}
+          setDataFrom={setDataFrom}
+          setIsBrideNameSearch={setIsBrideNameSearch}
+          setIsEventPlaceFilter={setIsEventPlaceFilter}
+          setIsEventTypeFilter={setIsEventTypeFilter}
+          setIsContractStatusFilter={setIsContractStatusFilter}
+          dataFrom={dataFrom}
         />
-        {filterTypeOption === "" ? (
-          <GetAllContractsComponent
-            token={props.token}
-            pressedRow={pressedRow}
-          />
-        ) : (
-          <GetContractsBySingleFilter
-            token={props.token}
-            pressedRow={pressedRow}
-            filterType={filterType}
-            filterTypeOption={filterTypeOption}
-          />
-        )}
+        <ContractsTableDataHandler
+          token={props.token}
+          pressedRow={pressedRow}
+          searchType={searchType}
+          searchValue={searchValue}
+          filterType={filterType}
+          filterTypeOption={filterTypeOption}
+          dataFrom={dataFrom}
+          brideNameSearch={brideNameSearch}
+          eventTypeFilter={eventTypeFilter}
+          eventPlaceFilter={eventPlaceFilter}
+          contractStatusFilter={contractStatusFilter}
+          page={page}
+          setPage={setPage}
+          setPageCount={setPageCount}
+          setTotalContracts={setTotalContracts}
+        />
       </div>
       {showFilter ? (
         <FilterWrapper
@@ -130,11 +153,18 @@ function TableWrapper(props) {
           filterType={filterType}
           filterTypeOption={filterTypeOption}
           setFilterTypeOption={setFilterTypeOption}
+          setDataFrom={setDataFrom}
         />
       ) : (
         <div></div>
       )}
-      <TableFooter pageCount={10} />
+      <TableFooter
+        totalContracts={totalContracts}
+        setTotalContracts={setTotalContracts}
+        pageCount={pageCount}
+        page={page}
+        setPage={setPage}
+      />
     </motion.div>
   );
 }

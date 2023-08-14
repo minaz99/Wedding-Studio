@@ -1,4 +1,8 @@
-import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/24/outline";
+import {
+  CheckCircleIcon,
+  TrashIcon,
+  XCircleIcon,
+} from "@heroicons/react/24/outline";
 import React, { useState } from "react";
 import { Dropdown, DropdownButton } from "react-bootstrap";
 
@@ -6,6 +10,7 @@ function PackageEditableRow(props) {
   const [name, setName] = useState(props.name);
   const [pics, setPics] = useState(props.pictures);
   const [size, setSize] = useState(props.size);
+  const [albumCrystal, setAlbumCrystal] = useState(props.albumCrystal);
   const [magazineMini, setMagazineMini] = useState(props.magazineMini);
   const [video, setVideo] = useState(props.video);
   const [openPV, setOpenPV] = useState(props.openPV);
@@ -17,27 +22,81 @@ function PackageEditableRow(props) {
     if (props.new === false) props.setEditRow(false);
     else props.setNewRow(false);
   };
+  const editRow = () => {
+    if (props.new === false) {
+      props.editPackage({
+        token: props.token,
+        id: props.id,
+        body: {
+          name: name,
+          pictures: pics,
+          magazineName: size,
+          albumCrystal: albumCrystal.toString(),
+          magazineMini: magazineMini.toString(),
+          video: video.toString(),
+          openPhotoAndVideo: openPV.toString(),
+          studio: studio.toString(),
+          price: parseInt(price),
+        },
+      });
+
+      props.setEditRow(false);
+    } else {
+      props.createPackage({
+        token: props.token,
+        body: {
+          name: name,
+          pictures: pics,
+          magazineName: size,
+          albumCrystal: albumCrystal.toString(),
+          magazineMini: magazineMini.toString(),
+          video: video.toString(),
+          openPhotoAndVideo: openPV.toString(),
+          studio: studio.toString(),
+          price: parseInt(price),
+        },
+      });
+      props.setNewRow(false);
+    }
+  };
+
+  const deleteRow = () => {
+    props.deletePackage({ token: props.token, id: props.id });
+    props.setEditRow(false);
+  };
+
   return (
     <div className="flex    items-center ">
-      <input
-        value={name}
-        className="outline-none   rounded-md p-1 w-28  text-center   border-none hover:bg-gray-300 bg-white"
-        onChange={(e) => setName(e.value)}
-      />
+      <div className="">
+        <input
+          value={name}
+          className="outline-none   rounded-md p-1 w-28  text-center   border-none hover:bg-gray-300 bg-white"
+          onChange={(e) => setName(e.target.value)}
+        />
 
-      <input
-        value={pics}
-        className="outline-none mx-4 rounded-md  p-1 w-28  text-center border-none hover:bg-gray-300 bg-white"
-        onChange={(e) => setPics(e.value)}
-      />
+        <input
+          value={pics}
+          className="outline-none mx-4 rounded-md  p-1 w-28  text-center border-none hover:bg-gray-300 bg-white"
+          onChange={(e) => setPics(e.target.value)}
+        />
 
-      <input
-        value={size}
-        className="outline-none   rounded-md p-1  w-28  text-center border-none hover:bg-gray-300 bg-white"
-        onChange={(e) => setSize(e.value)}
-      />
-
-      <div className="space-y-1 mx-8 flex-1">
+        <input
+          value={size}
+          className="outline-none   rounded-md p-1  w-28  text-center border-none hover:bg-gray-300 bg-white"
+          onChange={(e) => setSize(e.target.value)}
+        />
+      </div>
+      <div className="space-y-1 mx-2 flex-1">
+        <DropdownButton variant="primary" title={albumCrystal ? "Yes" : "No"}>
+          <Dropdown.Item onClick={() => setAlbumCrystal(true)}>
+            Yes
+          </Dropdown.Item>
+          <Dropdown.Item onClick={() => setAlbumCrystal(false)}>
+            No
+          </Dropdown.Item>
+        </DropdownButton>
+      </div>
+      <div className="space-y-1 mx-2 flex-1">
         <DropdownButton variant="primary" title={magazineMini ? "Yes" : "No"}>
           <Dropdown.Item onClick={() => setMagazineMini(true)}>
             Yes
@@ -47,19 +106,19 @@ function PackageEditableRow(props) {
           </Dropdown.Item>
         </DropdownButton>
       </div>
-      <div className="space-y-1 flex-1 ">
+      <div className="space-y-1 flex-1 mx-2 ">
         <DropdownButton variant="primary" title={video ? "Yes" : "No"}>
           <Dropdown.Item onClick={() => setVideo(true)}>Yes</Dropdown.Item>
           <Dropdown.Item onClick={() => setVideo(false)}>No</Dropdown.Item>
         </DropdownButton>
       </div>
-      <div className="space-y-1 flex-1">
+      <div className="space-y-1 flex-1 ">
         <DropdownButton variant="primary" title={openPV ? "Yes" : "No"}>
           <Dropdown.Item onClick={() => setOpenPV(true)}>Yes</Dropdown.Item>
           <Dropdown.Item onClick={() => setOpenPV(false)}>No</Dropdown.Item>
         </DropdownButton>
       </div>
-      <div className="space-y-1  ">
+      <div className="space-y-1 mx-10">
         <DropdownButton variant="primary" title={studio ? "Yes" : "No"}>
           <Dropdown.Item onClick={() => setStudio(true)}>Yes</Dropdown.Item>
           <Dropdown.Item onClick={() => setStudio(false)}>No</Dropdown.Item>
@@ -68,10 +127,10 @@ function PackageEditableRow(props) {
 
       <input
         value={price}
-        className="outline-none  mx-12 rounded-md p-1  w-28  text-center border-none hover:bg-gray-300 bg-white"
-        onChange={(e) => setPrice(e.value)}
+        className="outline-none  mx-2  rounded-md p-1  w-28  text-center border-none hover:bg-gray-300 bg-white"
+        onChange={(e) => setPrice(e.target.value)}
       />
-      <div className="flex  items-center  space-x-6 ">
+      <div className="flex  items-center space-x-3">
         <div className="">
           <CheckCircleIcon
             height={30}
@@ -80,6 +139,7 @@ function PackageEditableRow(props) {
             color={checkHover}
             onMouseEnter={() => setCheckHover("#047857")}
             onMouseLeave={() => setCheckHover("#10b981")}
+            onClick={() => editRow()}
           />
         </div>
         <div className="">
@@ -93,6 +153,19 @@ function PackageEditableRow(props) {
             onClick={() => cancelRow()}
           />
         </div>
+        {props.new ? (
+          <div></div>
+        ) : (
+          <div>
+            <TrashIcon
+              height={20}
+              width={20}
+              color="gray"
+              className="cursor-pointer mx-auto  "
+              onClick={() => deleteRow()}
+            />
+          </div>
+        )}
       </div>
     </div>
   );

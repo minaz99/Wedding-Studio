@@ -5,7 +5,7 @@ import PackageRowInfo from "./PackageRowInfo";
 function PackageRowWrapper(props) {
   const [editRow, setEditRow] = useState(false);
   return (
-    <div className="rounded-md bg-slate-300 shadow-md  p-2 ">
+    <div key={props.id} className="rounded-md bg-slate-300 shadow-md  p-2 ">
       {editRow ? (
         <PackageEditableRow
           new={false}
@@ -13,11 +13,16 @@ function PackageRowWrapper(props) {
           name={props.name}
           pictures={props.pictures}
           size={props.size}
+          albumCrystal={props.albumCrystal}
           magazineMini={props.magazineMini}
           video={props.video}
           openPV={props.openPV}
           studio={props.studio}
           price={props.price}
+          id={props.id}
+          token={props.token}
+          editPackage={props.editPackage}
+          deletePackage={props.deletePackage}
         />
       ) : (
         <PackageRowInfo
@@ -25,6 +30,7 @@ function PackageRowWrapper(props) {
           name={props.name}
           pictures={props.pictures}
           size={props.size}
+          albumCrystal={props.albumCrystal}
           magazineMini={props.magazineMini}
           video={props.video}
           openPV={props.openPV}

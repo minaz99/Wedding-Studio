@@ -6,6 +6,7 @@ import {
   MagnifyingGlassIcon,
   MegaphoneIcon,
   UserIcon,
+  XCircleIcon,
 } from "@heroicons/react/24/outline";
 import { CheckCircleIcon } from "@heroicons/react/24/solid";
 import React, { useState } from "react";
@@ -23,6 +24,20 @@ function TableHeader(props) {
   const [chevronColor, setChevronColor] = useState("gray");
   const [searchColor, setSearchColor] = useState("#9ca3af");
   const [searchBride, setSearchBride] = useState(false);
+  const removeMultipleFilters = () => {
+    props.setDataFrom("");
+    props.setBrideNameSearch("");
+    props.setContractStatusFilter("");
+    props.setIsContractStatusFilter(false);
+    props.setEventPlaceFilter("");
+    props.setIsEventPlaceFilter(false);
+    props.setEventTypeFilter("");
+    props.setIsEventTypeFilter(false);
+    setSearchBride(false);
+    props.setIsBrideNameSearch(false);
+    props.setBrideNameSearch("");
+    props.setMultipleFilters(false);
+  };
   const { data, isLoading, isError, isSuccess, refetch } =
     useGetContractsTableHeaderFiltersQuery(props.token, {
       refetchOnMountOrArgChange: true,
@@ -46,6 +61,9 @@ function TableHeader(props) {
           <THBrideNameFilter
             setMultipleFilters={props.setMultipleFilters}
             setSearchBride={setSearchBride}
+            setBrideNameSearch={props.setBrideNameSearch}
+            setDataFrom={props.setDataFrom}
+            setIsBrideNameSearch={props.setIsBrideNameSearch}
           />
         )}
       </div>
@@ -65,6 +83,9 @@ function TableHeader(props) {
           isError={isError}
           token={props.token}
           setMultipleFilters={props.setMultipleFilters}
+          setEventTypeFilter={props.setEventTypeFilter}
+          setDataFrom={props.setDataFrom}
+          setIsEventTypeFilter={props.setIsEventTypeFilter}
         />
       </div>
 
@@ -84,6 +105,9 @@ function TableHeader(props) {
           isError={isError}
           token={props.token}
           setMultipleFilters={props.setMultipleFilters}
+          setEventPlaceFilter={props.setEventPlaceFilter}
+          setDataFrom={props.setDataFrom}
+          setIsEventPlaceFilter={props.setIsEventPlaceFilter}
         />
       </div>
       <div className="items-center flex  text-lg font-semibold">
@@ -97,9 +121,24 @@ function TableHeader(props) {
           isError={isError}
           token={props.token}
           setMultipleFilters={props.setMultipleFilters}
+          setContractStatusFilter={props.setContractStatusFilter}
+          setDataFrom={props.setDataFrom}
+          setIsContractStatusFilter={props.setIsContractStatusFilter}
         />
       </div>
-      <div></div>
+      {props.dataFrom === "multiple" ? (
+        <div className="items-center flex">
+          <XCircleIcon
+            className="cursor-pointer "
+            height={24}
+            width={24}
+            color="black"
+            onClick={removeMultipleFilters}
+          />
+        </div>
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 }

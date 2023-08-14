@@ -14,9 +14,13 @@ function THEventLocationFilter(props) {
     >
       <ul class="list-group">
         {props.isLoading ? (
-          <div className="text-center">Loading...</div>
+          <div className="text-center text-blue-400 text-xl p-4">
+            Loading...
+          </div>
         ) : props.isError ? (
-          <div className="text-center">Error geting event types...</div>
+          <div className="text-center text-red-400 text-xl p-4">
+            Error geting event types...
+          </div>
         ) : props.isSuccess ? (
           props.data.locations.map((type) => {
             return (
@@ -27,6 +31,10 @@ function THEventLocationFilter(props) {
                 value={type}
                 optionSelected={optionSelected}
                 setOptionSelected={setOptionSelected}
+                setEventPlaceFilter={props.setEventPlaceFilter}
+                setIsEventPlaceFilter={props.setIsEventPlaceFilter}
+                criteriaType="place"
+                setDataFrom={props.setDataFrom}
               />
             );
           })

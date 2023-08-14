@@ -13,7 +13,12 @@ function TotalPrice(props) {
             color="#a5b4fc"
             className="mx-1"
           />
-          <input className="rounded-md p-1 font-medium" placeholder="" />
+          <input
+            className="rounded-md p-1 font-medium"
+            placeholder=""
+            onChange={(e) => props.setDiscount(e.target.value)}
+            value={props.discount}
+          />
         </div>
       </div>
       <div className="font-bold text-gray-600 text-lg">Price:</div>

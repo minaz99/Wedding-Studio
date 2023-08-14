@@ -1,41 +1,49 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { CameraIcon, PlusCircleIcon } from "@heroicons/react/24/outline";
+import {
+  CameraIcon,
+  MinusCircleIcon,
+  PlusCircleIcon,
+} from "@heroicons/react/24/outline";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import { useState } from "react";
 import PackageSummary from "./PackageSummary";
 import SeperateComponents from "./SeperateComponents";
 import TotalPrice from "./TotalPrice";
-function Packages() {
+import { useGetPackagesQuery } from "../../../services/api/packageSlice";
+import AddComponentsWrapper from "./AddComponentsWrapper";
+function Packages(props) {
   const [showSummary, setShowSummary] = useState(false);
-  const [pkgSelected, setPkgSelected] = useState(0);
-  const pkgClicked = (pkgID) => {
-    setPkgSelected(pkgID);
-    setShowSummary(true);
-    if (pkgID === 1) {
-      setTitle("Package 1 - 600 KD");
-      setTotal(total + 600);
-    } else if (pkgID === 2) {
-      setTitle("Package 2 - 700 KD");
-      setTotal(total + 700);
-    } else if (pkgID === 3) {
-      setTitle("Package 2 - 800 KD");
-      setTotal(total + 800);
-    } else if (pkgID === 4) {
-      setTitle("Al Mokhamal - 800 KD");
-      setTotal(total + 800);
-    } else if (pkgID === 5) {
-      setTitle("Geld - 800 KD");
-      setTotal(total + 600);
-    } else {
-      setTitle("None");
-      setTotal(0);
+
+  const { data, isLoading, isError, isSuccess } = useGetPackagesQuery(
+    { token: props.token },
+    {
+      refetchOnMountOrArgChange: true,
     }
-  };
+  );
+
   const [title, setTitle] = useState("None");
   const [showComponents, setShowComponents] = useState(false);
   const [total, setTotal] = useState(0);
+  const [selectedMagazineComponents, setSelectedMagazineComponents] = useState(
+    []
+  );
+  const [selectedPicturesComponents, setSelectedPicturesComponents] = useState(
+    []
+  );
+  const [selectedVideoComponents, setSelectedVideoComponents] = useState([]);
+  const [selectedFrameComponents, setSelectedFrameComponents] = useState([]);
+  const [selectedAlbumComponents, setSelectedAlbumComponents] = useState([]);
+  const selectPkg = (pkg) => {
+    if (props.pkg !== 0) {
+      props.setTotal(props.total - total + pkg.price);
+    } else props.setTotal(props.total + pkg.price);
+    setTotal(pkg.price);
+    setTitle(pkg.name);
+    props.setPkg(pkg.id);
+    props.setPackageDetails(pkg);
+  };
   return (
     <motion.div
       initial={{ opacity: 0.25, x: -75, y: 0, scale: 1 }} //x:200 ,x:0
@@ -57,28 +65,36 @@ function Packages() {
       </div>
       <div className="flex space-x-4 items-center ">
         <DropdownButton id="dropdown-basic-button" title={title}>
-          <Dropdown.Item onClick={() => pkgClicked(0)}>None</Dropdown.Item>
-          <Dropdown.Item onClick={() => pkgClicked(1)}>
-            Package 1 - 600 KD
-          </Dropdown.Item>
-          <Dropdown.Item onClick={() => pkgClicked(2)}>
-            Package 2 - 700 KD
-          </Dropdown.Item>
-          <Dropdown.Item onClick={() => pkgClicked(3)}>
-            Package 3 - 800 KD
-          </Dropdown.Item>
-          <Dropdown.Item onClick={() => pkgClicked(4)}>
-            Al Mokhamal el silver - 800 KD
-          </Dropdown.Item>
-          <Dropdown.Item onClick={() => pkgClicked(5)}>
-            Geld - 800 KD
-          </Dropdown.Item>
+          {isLoading ? (
+            <div className="text-center text-blue-400 text-xl p-4">
+              Loading...
+            </div>
+          ) : isError ? (
+            <div className="text-center text-red-400 text-xl p-4">
+              Error geting Components...
+            </div>
+          ) : isSuccess ? (
+            data.packages.map((pkg) => {
+              return (
+                <Dropdown.Item onClick={() => selectPkg(pkg)}>
+                  {pkg.name}
+                </Dropdown.Item>
+              );
+            })
+          ) : (
+            <div></div>
+          )}
         </DropdownButton>
-        {showSummary ? <PackageSummary pkgNo={pkgSelected} /> : <div />}
+
+        <PackageSummary
+          packageDetails={props.packageDetails}
+          pkgNo={props.pkg}
+        />
       </div>
       <div className="flex items-center my-3  space-x-2">
         <div className="text-black font-medium">Add components</div>
-        <div>
+
+        {!showComponents ? (
           <PlusCircleIcon
             onClick={() => setShowComponents(!showComponents)}
             className="cursor-pointer"
@@ -86,11 +102,45 @@ function Packages() {
             width={22}
             color="#475569"
           />
-        </div>
+        ) : (
+          <MinusCircleIcon
+            onClick={() => setShowComponents(!showComponents)}
+            className="cursor-pointer"
+            height={22}
+            width={22}
+            color="#475569"
+          ></MinusCircleIcon>
+        )}
       </div>
       <div className="space-y-2">
-        {showComponents ? <SeperateComponents /> : <div></div>}
-        <TotalPrice total={total} />
+        {showComponents ? (
+          <AddComponentsWrapper
+            componentsSelected={props.componentsSelected}
+            setComponentsSelected={props.setComponentsSelected}
+            components={props.components}
+            setComponents={props.setComponents}
+            token={props.token}
+            setTotal={props.setTotal}
+            total={props.total}
+            selectedMagazineComponents={selectedMagazineComponents}
+            setSelectedMagazineComponents={setSelectedMagazineComponents}
+            selectedPicturesComponents={selectedPicturesComponents}
+            setSelectedPicturesComponents={setSelectedPicturesComponents}
+            selectedVideoComponents={selectedVideoComponents}
+            setSelectedVideoComponents={setSelectedVideoComponents}
+            selectedFrameComponents={selectedFrameComponents}
+            setSelectedFrameComponents={setSelectedFrameComponents}
+            selectedAlbumComponents={selectedAlbumComponents}
+            setSelectedAlbumComponents={setSelectedAlbumComponents}
+          />
+        ) : (
+          <div></div>
+        )}
+        <TotalPrice
+          discount={props.discount}
+          setDiscount={props.setDiscount}
+          total={props.total}
+        />
       </div>
     </motion.div>
   );

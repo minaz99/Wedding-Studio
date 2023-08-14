@@ -8,7 +8,11 @@ function FilterWrapper(props) {
   const [optionSelected, setOptionSelected] = useState("");
   const closeFilter = () => {
     props.setShowFilter(false);
+  };
+  const cancelFilter = () => {
+    props.setShowFilter(false);
     props.setFilterType("Select Filter");
+    props.setFilterTypeOption("");
   };
   return (
     <div className="absolute inset-0   z-10 w-3/12  mx-auto h-fit  m-auto rounded-lg bg-slate-600/80 p-4">
@@ -28,6 +32,8 @@ function FilterWrapper(props) {
             setFilterTypeOption={props.setFilterTypeOption}
             filterTypeOption={props.filterTypeOption}
             token={props.token}
+            setDataFrom={props.setDataFrom}
+            //setShowFilter={props.setShowFilter}
           />
         ) : props.filterType === "Event Date" ? (
           <EventDateFilter
@@ -37,8 +43,11 @@ function FilterWrapper(props) {
         ) : (
           <div />
         )}
-        <div className="text-center rounded-md p-2 bg-blue-400 text-white cursor-pointer shadow-md">
-          Apply
+        <div
+          onClick={() => cancelFilter()}
+          className="text-center rounded-md p-2 bg-blue-400 text-white cursor-pointer shadow-md"
+        >
+          Cancel
         </div>
       </div>
     </div>

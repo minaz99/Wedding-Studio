@@ -9,6 +9,23 @@ function PackageRowInfo(props) {
       <div className="text-slate-600 flex-1 text-center">{props.pictures}</div>
       <div className="text-slate-600 flex-1 text-center">{props.size}</div>
       <div className="flex-1 ">
+        {props.albumCrystal ? (
+          <CheckCircleIcon
+            className="mx-auto "
+            height={20}
+            width={20}
+            color="#059669"
+          />
+        ) : (
+          <XCircleIcon
+            className="mx-auto "
+            height={20}
+            width={20}
+            color="#dc2626"
+          />
+        )}
+      </div>
+      <div className="flex-1 ">
         {props.magazineMini ? (
           <CheckCircleIcon
             className="mx-auto "

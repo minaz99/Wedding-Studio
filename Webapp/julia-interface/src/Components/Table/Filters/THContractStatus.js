@@ -9,19 +9,27 @@ function THContractStatus(props) {
     <DropdownButton variant="Default" id="dropdown-button">
       <ul class="list-group">
         {props.isLoading ? (
-          <div className="text-center">Loading...</div>
+          <div className="text-center text-blue-400 text-xl p-4">
+            Loading...
+          </div>
         ) : props.isError ? (
-          <div className="text-center">Error geting event types...</div>
+          <div className="text-center text-red-400 text-xl p-4">
+            Error geting event types...
+          </div>
         ) : props.isSuccess ? (
           props.data.status.map((type) => {
             return (
               <FilterOptionComponent
-              filterOptionChecked={filterOptionChecked}
-              setFilterOptionChecked={setFilterOptionChecked}
-              setMultipleFilters={props.setMultipleFilters}
-              value={type}
-              optionSelected={optionSelected}
-              setOptionSelected={setOptionSelected}
+                filterOptionChecked={filterOptionChecked}
+                setFilterOptionChecked={setFilterOptionChecked}
+                setMultipleFilters={props.setMultipleFilters}
+                value={type}
+                optionSelected={optionSelected}
+                setOptionSelected={setOptionSelected}
+                setContractStatusFilter={props.setContractStatusFilter}
+                setIsContractStatusFilter={props.setIsContractStatusFilter}
+                criteriaType="status"
+                setDataFrom={props.setDataFrom}
               />
             );
           })
