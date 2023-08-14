@@ -5,15 +5,21 @@ import ContractDetails from "./ContractDetails";
 import ContractPackages from "./ContractPackagesWrapper";
 import ContractPayments from "./ContractPayments";
 import ContractComments from "./ContractComments";
-import CurrentContractStage from "./CurrentContractStage";
 import { useGetContractByIDQuery } from "../../../services/api/contractSlice";
 import ContractPackagesWrapper from "./ContractPackagesWrapper";
+import ContractStageWrapper from "./ContractStageWrapper";
+import ContractDetailsWrapper from "./ContractDetailsWrapper";
 
 function ContractWrapper(props) {
-  const { data, isLoading, isError, isSuccess } = useGetContractByIDQuery({
-    token: props.token,
-    id: props.contractID,
-  });
+  const { data, isLoading, isError, isSuccess } = useGetContractByIDQuery(
+    {
+      token: props.token,
+      id: props.contractID,
+    },
+    {
+      refetchOnMountOrArgChange: true,
+    }
+  );
 
   return (
     <motion.div
@@ -44,7 +50,7 @@ function ContractWrapper(props) {
         <div>Error getting contract details</div>
       ) : isSuccess ? (
         <div className=" space-y-4">
-          <ContractDetails
+          <ContractDetailsWrapper
             status={data.contract.contractstatus}
             secondPartyName={data.contract.secondpartyname}
             brideName={data.contract.bridename}
@@ -59,6 +65,8 @@ function ContractWrapper(props) {
             phone1={data.contract.phone1}
             phone2={data.contract.phone2}
             contractStatus={data.contract.contractstatus}
+            token={props.token}
+            id={props.contractID}
           />
 
           <ContractPackagesWrapper
@@ -72,7 +80,7 @@ function ContractWrapper(props) {
           </div>
 
           <ContractComments comments={data.contract.comments} />
-          <CurrentContractStage />
+          <ContractStageWrapper stage={data.contract.contractstage} />
         </div>
       ) : (
         <div></div>
