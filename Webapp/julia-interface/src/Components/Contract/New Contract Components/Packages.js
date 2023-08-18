@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
+  ArrowLeftCircleIcon,
   CameraIcon,
   MinusCircleIcon,
   PlusCircleIcon,
@@ -56,7 +57,16 @@ function Packages(props) {
       transition={{ duration: 1 }}
       className="rounded-md bg-white mx-auto p-4"
     >
-      <div className="font-extrabold text-xl my-2">Packages</div>
+      <div className="flex items-center space-x-4">
+        <ArrowLeftCircleIcon
+          height={22}
+          width={22}
+          color="gray"
+          className="cursor-pointer"
+          onClick={() => props.setActiveView("contract details")}
+        />
+        <div className="font-extrabold text-xl my-2">Packages</div>
+      </div>
       <div className="flex items-center space-x-2 my-1">
         <div className="text-black font-medium">Select package</div>
         <div>

@@ -5,7 +5,9 @@ import { Dropdown, DropdownButton } from "react-bootstrap";
 function SearchWrapper(props) {
   const handleSearch = (e) => {
     props.setDataFrom("search");
-    props.setSearchValue(e.target.value);
+    props.setSearchValue(
+      e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1)
+    );
   };
   const handleDeleteSearch = () => {
     props.setDataFrom("");

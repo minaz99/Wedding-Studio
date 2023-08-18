@@ -13,6 +13,7 @@ function Home(props) {
   const [activeView, setActiveView] = useState("Table");
   const [name, setName] = useState(props.userData.name);
   const [token, setToken] = useState(props.userData.accessToken);
+  const [role, setRole] = useState(props.userData.role);
   return (
     <div className="rounded-lg bg-slate-400  h-screen  p-4 shadow-lg  ">
       <div className="flex  h-full relative justify-center">
@@ -29,7 +30,7 @@ function Home(props) {
         ) : activeView === "photographers" ? (
           <CalendarWrapper token={token} />
         ) : activeView === "Packages" ? (
-          <PackagesWrapper token={token} />
+          <PackagesWrapper role={role} token={token} />
         ) : activeView === "Settings" ? (
           <SettingsWrapper name={name} />
         ) : (

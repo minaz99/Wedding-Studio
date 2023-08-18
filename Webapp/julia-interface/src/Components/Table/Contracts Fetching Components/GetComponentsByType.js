@@ -20,12 +20,13 @@ function GetComponentsByType(props) {
       return (
         <CompRowWrapper
           deleteComponent={props.deleteComponent}
-          editComponent={props.editComponent}         
+          editComponent={props.editComponent}
           token={props.token}
           id={comp.id}
           name={comp.name}
           type={comp.componenttype}
           price={comp.price}
+          role={props.role}
         />
       );
     })

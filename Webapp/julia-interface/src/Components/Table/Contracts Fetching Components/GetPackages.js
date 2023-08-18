@@ -32,6 +32,7 @@ function GetPackages(props) {
           openPV={pkg.openphotoandvideo}
           studio={pkg.studio}
           price={pkg.price}
+          role={props.role}
         />
       );
     })

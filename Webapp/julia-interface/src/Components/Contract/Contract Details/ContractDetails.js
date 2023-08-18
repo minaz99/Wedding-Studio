@@ -10,6 +10,7 @@ import {
   MegaphoneIcon,
   PencilSquareIcon,
   PhoneIcon,
+  UserCircleIcon,
   UserGroupIcon,
   UserIcon,
   VideoCameraIcon,
@@ -34,6 +35,11 @@ function ContractDetails(props) {
           <UserGroupIcon height={22} width={22} color="#78716c" />
           <div className="text-gray-500">Second Party</div>
           <div>{props.secondPartyName}</div>
+        </div>
+        <div className="flex space-x-2 flex-1">
+          <CalendarDaysIcon height={22} width={22} color="#818cf8" />
+          <div className="text-gray-500">Date Created</div>
+          <div>{props.dateCreated.toString().split("T")[0]}</div>
         </div>
       </div>
 
@@ -77,11 +83,6 @@ function ContractDetails(props) {
       </div>
       <div className="space-y-3">
         <div className="flex space-x-2 flex-1">
-          <BanknotesIcon height={22} width={22} color="#7dd3fc" />
-          <div className="text-gray-500">Price</div>
-          <div>{props.price}</div>
-        </div>
-        <div className="flex space-x-2 flex-1">
           <CameraIcon height={22} width={22} color="#db2777" />
           <div className="text-gray-500">Photographer</div>
           <div>{props.photographer}</div>
@@ -90,6 +91,11 @@ function ContractDetails(props) {
           <VideoCameraIcon height={22} width={22} color="#db2777" />
           <div className="text-gray-500">Video</div>
           <div>{props.video}</div>
+        </div>
+        <div className="flex space-x-2 flex-1">
+          <UserCircleIcon height={22} width={22} color="#fbbf24" />
+          <div className="text-gray-500">Created by</div>
+          <div>{props.createdBy}</div>
         </div>
       </div>
     </div>

@@ -52,6 +52,7 @@ function TableWrapper(props) {
   const [page, setPage] = useState(1);
   const [pageCount, setPageCount] = useState(0);
   const [totalContracts, setTotalContracts] = useState(0);
+  const [date, setDate] = useState(new Date());
   /* const [getContractsByMultipleCriterias, result] =
     useGetContractsByMultipleCriteriasQuery();
 */
@@ -100,6 +101,9 @@ function TableWrapper(props) {
           filterType={filterType}
           setFilterType={setFilterType}
           filterTypeSelected={filterTypeSelected}
+          setFilterTypeOption={setFilterTypeOption}
+          dataFrom={dataFrom}
+          setDataFrom={setDataFrom}
         />
         <div className="flex-1"></div>
 
@@ -126,6 +130,7 @@ function TableWrapper(props) {
           setIsEventTypeFilter={setIsEventTypeFilter}
           setIsContractStatusFilter={setIsContractStatusFilter}
           dataFrom={dataFrom}
+          brideNameSearch={brideNameSearch}
         />
         <ContractsTableDataHandler
           token={props.token}
@@ -143,6 +148,7 @@ function TableWrapper(props) {
           setPage={setPage}
           setPageCount={setPageCount}
           setTotalContracts={setTotalContracts}
+          date={date}
         />
       </div>
       {showFilter ? (
@@ -154,6 +160,8 @@ function TableWrapper(props) {
           filterTypeOption={filterTypeOption}
           setFilterTypeOption={setFilterTypeOption}
           setDataFrom={setDataFrom}
+          setDate={setDate}
+          date={date}
         />
       ) : (
         <div></div>

@@ -39,6 +39,9 @@ function FilterWrapper(props) {
           <EventDateFilter
             setFilterTypeOption={props.setFilterTypeOption}
             token={props.token}
+            setDate={props.setDate}
+            date={props.date}
+            setDataFrom={props.setDataFrom}
           />
         ) : (
           <div />

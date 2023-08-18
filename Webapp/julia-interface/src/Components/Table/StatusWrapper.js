@@ -4,7 +4,7 @@ function StatusWrapper(props) {
   const statusColor =
     props.status === "Done"
       ? "#bbf7d0"
-      : props.status === "In progress"
+      : props.status === "In progress" || props.status === "In Progress"
       ? "#a5f3fc"
       : props.status === "On hold"
       ? "#e2e8f0"
@@ -12,7 +12,7 @@ function StatusWrapper(props) {
   const statusFontColor =
     props.status === "Done"
       ? "#22c55e"
-      : props.status === "In progress"
+      : props.status === "In progress" || props.status === "In Progress"
       ? "#06b6d4"
       : props.status === "On hold"
       ? "#94a3b8"

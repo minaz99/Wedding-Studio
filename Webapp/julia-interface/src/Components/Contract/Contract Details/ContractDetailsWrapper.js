@@ -75,6 +75,8 @@ function ContractDetailsWrapper(props) {
           setPhone1={setPhone1}
           setPhotographer={setPhotographer}
           setVideo={setVideo}
+          createdBy={props.createdBy}
+          dateCreated={props.dateCreated}
         />
       ) : (
         <ContractDetails
@@ -90,6 +92,8 @@ function ContractDetailsWrapper(props) {
           price={props.price}
           photographer={photographer}
           video={video}
+          createdBy={props.createdBy}
+          dateCreated={props.dateCreated}
         />
       )}
       {editContract ? (

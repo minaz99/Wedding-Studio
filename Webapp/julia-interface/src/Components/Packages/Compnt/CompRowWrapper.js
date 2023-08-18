@@ -25,6 +25,7 @@ function CompRowWrapper(props) {
           type={props.type}
           price={props.price}
           id={props.id}
+          role={props.role}
         />
       )}
     </div>

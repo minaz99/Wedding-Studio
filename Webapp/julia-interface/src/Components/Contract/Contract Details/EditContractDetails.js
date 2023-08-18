@@ -6,6 +6,7 @@ import {
   IdentificationIcon,
   MegaphoneIcon,
   PhoneIcon,
+  UserCircleIcon,
   UserGroupIcon,
   UserIcon,
   VideoCameraIcon,
@@ -70,7 +71,25 @@ function EditContractDetails(props) {
           />
         </div>
       </div>
-
+      <div className="flex space-x-2 flex-1">
+          <CalendarDaysIcon height={22} width={22} color="#818cf8" />
+          <div className="text-gray-500">Date</div>
+          <input
+            type="date"
+            value={props.dateCreated}
+            style={{
+              background: "#e2e8f0",
+              borderRadius: "6px",
+              color: "#475569",
+              padding: "4px 4px 4px 4px",
+              border: "none",
+              outline: "none",
+            }}
+            className="font-medium"
+            disabled
+          />
+          <div></div>
+        </div> 
       <div className="space-y-3">
         <div className="flex space-x-2 flex-1">
           <MegaphoneIcon height={22} width={22} color="#a78bfa" />
@@ -184,23 +203,6 @@ function EditContractDetails(props) {
         </div>
         <div className="space-y-3">
           <div className="flex space-x-2 flex-1">
-            <BanknotesIcon height={22} width={22} color="#7dd3fc" />
-            <div className="text-gray-500">Price</div>
-            <input
-              value={props.price}
-              style={{
-                background: "#94a3b8",
-                borderRadius: "6px",
-                border: "none",
-                color: "#475569",
-                padding: "3px 3px 3px 3px",
-                outline: "none",
-              }}
-              className="font-medium "
-              disabled
-            />
-          </div>
-          <div className="flex space-x-2 flex-1">
             <CameraIcon height={22} width={22} color="#db2777" />
             <div className="text-gray-500">Photographer</div>
             <input
@@ -232,6 +234,23 @@ function EditContractDetails(props) {
               }}
               className="font-medium "
               onChange={(e) => props.setVideo(e.target.value)}
+            />
+          </div>
+          <div className="flex space-x-2 flex-1">
+            <UserCircleIcon height={22} width={22} color="#fed7aa" />
+            <div className="text-gray-500">Created by</div>
+            <input
+              value={props.createBy}
+              style={{
+                background: "#e2e8f0",
+                borderRadius: "6px",
+                border: "none",
+                color: "#475569",
+                padding: "3px 3px 3px 3px",
+                outline: "none",
+              }}
+              className="font-medium "
+              disabled
             />
           </div>
         </div>

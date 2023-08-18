@@ -26,6 +26,7 @@ function PackageRowWrapper(props) {
         />
       ) : (
         <PackageRowInfo
+          role={props.role}
           setEditRow={setEditRow}
           name={props.name}
           pictures={props.pictures}

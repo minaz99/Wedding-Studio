@@ -9,6 +9,7 @@ import { useGetContractByIDQuery } from "../../../services/api/contractSlice";
 import ContractPackagesWrapper from "./ContractPackagesWrapper";
 import ContractStageWrapper from "./ContractStageWrapper";
 import ContractDetailsWrapper from "./ContractDetailsWrapper";
+import ContractCommentsWrapper from "./ContractCommentsWrapper";
 
 function ContractWrapper(props) {
   const { data, isLoading, isError, isSuccess } = useGetContractByIDQuery(
@@ -65,8 +66,10 @@ function ContractWrapper(props) {
             phone1={data.contract.phone1}
             phone2={data.contract.phone2}
             contractStatus={data.contract.contractstatus}
+            createdBy={data.contract.createdby}
             token={props.token}
             id={props.contractID}
+            dateCreated={data.contract.datecreated}
           />
 
           <ContractPackagesWrapper
@@ -79,8 +82,16 @@ function ContractWrapper(props) {
             <ContractPayments token={props.token} id={props.contractID} />
           </div>
 
-          <ContractComments comments={data.contract.comments} />
-          <ContractStageWrapper stage={data.contract.contractstage} />
+          <ContractCommentsWrapper
+            token={props.token}
+            id={props.contractID}
+            comments={data.contract.comments}
+          />
+          <ContractStageWrapper
+            token={props.token}
+            id={props.contractID}
+            stage={data.contract.contractstage}
+          />
         </div>
       ) : (
         <div></div>

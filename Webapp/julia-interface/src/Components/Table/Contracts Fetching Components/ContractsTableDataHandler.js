@@ -3,6 +3,7 @@ import GetAllContractsComponent from "./GetAllContractsComponent";
 import GetContractsBySearchCriteria from "./GetContractsBySearchCriteria";
 import GetContractsBySingleFilter from "./GetContractsBySingleFilter";
 import GetContractsByMultipleCriterias from "./GetContractsByMultipleCriterias";
+import GetContractsByDay from "./GetContractsByDay";
 
 function ContractsTableDataHandler(props) {
   return props.dataFrom === "search" ? (
@@ -39,6 +40,16 @@ function ContractsTableDataHandler(props) {
       setPage={props.setPage}
       setTotalContracts={props.setTotalContracts}
       setPageCount={props.setPageCount}
+    />
+  ) : props.dataFrom === "date" ? (
+    <GetContractsByDay
+      token={props.token}
+      pressedRow={props.pressedRow}
+      setTotalContracts={props.setTotalContracts}
+      date={props.date}
+      /*day={props.date.getDate()}
+      month={props.date.getMonth() + 1}
+      year={props.date.getFullYear()}*/
     />
   ) : (
     <GetAllContractsComponent

@@ -17,12 +17,12 @@ function PackagesWrapper(props) {
       transition={{ duration: 0.75 }}
       className="rounded-r-lg  space-y-6  p-3 items-center h-full w-11/12 shadow-md overflow-y-scroll  bg-slate-600"
     >
-      <Compnts token={props.token} type="Magazine" />
-      <Compnts token={props.token} type="Album" />
-      <Compnts token={props.token} type="Video" />
-      <Compnts token={props.token} type="Pictures" />
-      <Compnts token={props.token} type="Frame" />
-      <Packages token={props.token} />
+      <Compnts role={props.role} token={props.token} type="Magazine" />
+      <Compnts role={props.role} token={props.token} type="Album" />
+      <Compnts role={props.role} token={props.token} type="Video" />
+      <Compnts role={props.role} token={props.token} type="Pictures" />
+      <Compnts role={props.role} token={props.token} type="Frame" />
+      <Packages role={props.role} token={props.token} />
     </motion.div>
   );
 }

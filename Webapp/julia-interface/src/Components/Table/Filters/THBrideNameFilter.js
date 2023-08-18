@@ -3,7 +3,9 @@ import React from "react";
 
 function THBrideNameFilter(props) {
   const searchHandler = (e) => {
-    props.setBrideNameSearch(e.target.value);
+    props.setBrideNameSearch(
+      e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1)
+    );
     props.setDataFrom("multiple");
     props.setIsBrideNameSearch(true);
   };
@@ -20,6 +22,7 @@ function THBrideNameFilter(props) {
             placeholder="Enter bride name"
             className="outline-none border-none hover:bg-gray-300 bg-white"
             onChange={searchHandler}
+            value={props.brideNameSearch}
           />
         </div>
       </div>

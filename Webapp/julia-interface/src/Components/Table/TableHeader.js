@@ -64,6 +64,7 @@ function TableHeader(props) {
             setBrideNameSearch={props.setBrideNameSearch}
             setDataFrom={props.setDataFrom}
             setIsBrideNameSearch={props.setIsBrideNameSearch}
+            brideNameSearch={props.brideNameSearch}
           />
         )}
       </div>

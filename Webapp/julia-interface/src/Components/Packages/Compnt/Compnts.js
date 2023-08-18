@@ -26,7 +26,7 @@ function Compnts(props) {
         {props.type}
       </div>
       <div className="space-y-2">
-        <CompHeader />
+        <CompHeader role={props.role} />
         {result.isLoading || result2.isLoading || result3.isLoading ? (
           <div className="text-center text-blue-400 text-xl p-4">
             Loading...
@@ -37,6 +37,7 @@ function Compnts(props) {
             token={props.token}
             type={props.type}
             editComponent={editComponent}
+            role={props.role}
           />
         )}
         <div className="rounded-md bg-slate-300 shadow-md  p-2 ">

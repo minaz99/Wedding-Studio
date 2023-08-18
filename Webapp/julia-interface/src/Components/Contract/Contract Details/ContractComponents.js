@@ -7,7 +7,7 @@ function ContractComponents(props) {
   return (
     <div className=" flex space-x-2">
       {componentIDsArray
-        .filter((c) => c !== ",")
+        .filter((c) => c !== "," && c !== "")
         .map((id) => {
           return <Addon token={props.token} id={id} />;
         })}

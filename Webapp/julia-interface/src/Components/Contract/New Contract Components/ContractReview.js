@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import ContractDetailsReview from "./ContractDetailsReview";
+import { ArrowLeftCircleIcon } from "@heroicons/react/24/outline";
 function ContractReview(props) {
   let total = props.total - props.discount;
 
@@ -30,20 +31,42 @@ ${props.packageDetails.pictures} pictures${albumCrystal}${magazineMini}${video}$
         scale: 1,
       }}
       transition={{ duration: 1 }}
-      className="rounded-md bg-white mx-auto space-y-2 p-4"
+      className="rounded-md bg-white mx-auto  p-4"
     >
-      <div className="font-extrabold text-xl ">Contract Review</div>
-      <div className="flex space-x-6  ">
-        <ContractDetailsReview
-          brideName={props.brideName}
-          groomName={props.groomName}
-          secondPartyName={props.secondPartyName}
-          eventType={props.eventType}
-          eventLocation={props.eventLocation}
-          eventDate={props.eventDate}
-          civilID={props.civilID}
-          phone1={props.phone1}
+      <div className="flex items-center space-x-4">
+        <ArrowLeftCircleIcon
+          height={22}
+          width={22}
+          color="gray"
+          className="cursor-pointer"
+          onClick={() => props.setActiveView("packages")}
         />
+
+        <div className="font-extrabold text-xl ">Contract Review</div>
+      </div>
+      <div className="flex space-x-6  ">
+        <div className="space-y-2">
+          <ContractDetailsReview
+            brideName={props.brideName}
+            groomName={props.groomName}
+            secondPartyName={props.secondPartyName}
+            eventType={props.eventType}
+            eventLocation={props.eventLocation}
+            eventDate={props.eventDate}
+            civilID={props.civilID}
+            phone1={props.phone1}
+          />
+          <div className="items-center flex space-x-2 shadow-md p-2 bg-gray-100  rounded-md">
+            <div className="font-medium space-x-2 p-1 ">Created By</div>
+
+            <textarea
+              value={props.createdBy}
+              className=" rounded-md items-center  "
+              placeholder="Created by"
+              onChange={(e) => props.setCreatedBy(e.target.value)}
+            />
+          </div>
+        </div>
         <div className="space-y-4">
           <div className="bg-white overflow-y-scroll h-72 p-6 shadow-md  space-y-3 rounded-md">
             <div>

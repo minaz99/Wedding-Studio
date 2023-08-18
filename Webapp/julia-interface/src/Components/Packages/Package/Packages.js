@@ -22,13 +22,14 @@ function Packages(props) {
         Packages
       </div>
       <div className="space-y-2">
-        <PackagesTableHeader />
+        <PackagesTableHeader role={props.role} />
         {result.isLoading || result2.isLoading || result3.isLoading ? (
           <div className="text-center text-blue-400 text-xl p-4">
             Loading...
           </div>
         ) : (
           <GetPackages
+            role={props.role}
             deletePackage={deletePackage}
             editPackage={editPackage}
             token={props.token}
@@ -44,11 +45,11 @@ function Packages(props) {
               name=""
               pictures=""
               size=""
-              albumCrystal=""
-              magazineMini=""
-              video=""
-              openPV=""
-              studio=""
+              albumCrystal={true}
+              magazineMini={true}
+              video={true}
+              openPV={true}
+              studio={true}
               price=""
             />
           ) : (

@@ -44,7 +44,12 @@ function ContractDetails(props) {
                   outline: "none",
                 }}
                 className="font-medium "
-                onChange={(e) => props.setSecondPartyName(e.target.value)}
+                onChange={(e) =>
+                  props.setSecondPartyName(
+                    e.target.value.charAt(0).toUpperCase() +
+                      e.target.value.slice(1)
+                  )
+                }
               />
             </div>
           </div>
@@ -63,7 +68,7 @@ function ContractDetails(props) {
                   outline: "none",
                 }}
                 className="font-medium w-full"
-                onChange={(e) => props.setCivilID(e.target.value)}
+                onChange={(e) => props.setCivilID(e.target.value.toUpperCase())}
               />
             </div>
           </div>
@@ -84,7 +89,12 @@ function ContractDetails(props) {
                   outline: "none",
                 }}
                 className="font-medium "
-                onChange={(e) => props.setBrideName(e.target.value)}
+                onChange={(e) =>
+                  props.setBrideName(
+                    e.target.value.charAt(0).toUpperCase() +
+                      e.target.value.slice(1)
+                  )
+                }
               />
             </div>
           </div>
@@ -103,7 +113,12 @@ function ContractDetails(props) {
                   outline: "none",
                 }}
                 className="font-medium "
-                onChange={(e) => props.setGroomName(e.target.value)}
+                onChange={(e) =>
+                  props.setGroomName(
+                    e.target.value.charAt(0).toUpperCase() +
+                      e.target.value.slice(1)
+                  )
+                }
               />
             </div>
           </div>
@@ -125,7 +140,12 @@ function ContractDetails(props) {
                   outline: "none",
                 }}
                 className="font-medium "
-                onChange={(e) => props.setEventType(e.target.value)}
+                onChange={(e) =>
+                  props.setEventType(
+                    e.target.value.charAt(0).toUpperCase() +
+                      e.target.value.slice(1)
+                  )
+                }
               />
             </div>
           </div>
@@ -144,7 +164,12 @@ function ContractDetails(props) {
                   outline: "none",
                 }}
                 className="font-medium "
-                onChange={(e) => props.setEventLocation(e.target.value)}
+                onChange={(e) =>
+                  props.setEventLocation(
+                    e.target.value.charAt(0).toUpperCase() +
+                      e.target.value.slice(1)
+                  )
+                }
               />
             </div>
           </div>

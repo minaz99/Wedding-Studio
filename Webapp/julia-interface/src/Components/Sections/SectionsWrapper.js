@@ -79,39 +79,12 @@ function SectionsWrapper(props) {
               <div className="flex space-x-2 items-center">
                 <CalendarDaysIcon height={18} width={18} color="#475569" />
                 <div
-                  onClick={() => setCollanderCollapsed(!calenderCollapsed)}
+                  onClick={() => props.setActiveView("photographers")}
                   className="font-medium text-slate-600 cursor-pointer hover:text-blue-500"
                 >
                   Calender
                 </div>
-                <div>
-                  <ChevronDownIcon
-                    height={18}
-                    width={18}
-                    color="#475569"
-                    className="cursor-pointer"
-                    onClick={() => setCollanderCollapsed(!calenderCollapsed)}
-                  />
-                </div>
               </div>
-              {!calenderCollapsed ? (
-                <div className=" mx-4 my-2 space-y-2">
-                  <div
-                    onClick={() => props.setActiveView("photographers")}
-                    className="cursor-pointer text-slate-500 hover:text-blue-500"
-                  >
-                    Photographers
-                  </div>
-                  <div
-                    onClick={() => props.setActiveView("events")}
-                    className="cursor-pointer text-slate-500 hover:text-blue-500"
-                  >
-                    Events
-                  </div>
-                </div>
-              ) : (
-                <div></div>
-              )}
             </div>
             <div className="flex space-x-2 items-center">
               <CameraIcon height={18} width={18} color="#475569" />
