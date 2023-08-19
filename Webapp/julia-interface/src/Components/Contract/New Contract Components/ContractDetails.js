@@ -25,11 +25,11 @@ function ContractDetails(props) {
         scale: 1,
       }}
       transition={{ duration: 1 }}
-      className="rounded-md bg-white mx-auto p-4 overflow-y-scroll"
+      className="rounded-md bg-white mx-auto p-4"
     >
       <div className="space-y-3 ">
         <div className="font-extrabold text-xl">Contract Details</div>
-        <div className="flex justify-evenly">
+        <div className="flex justify-evenly w-3/4 overflow-y-scroll">
           <div>
             <div className="text-black font-medium ">Second Party</div>
             <div className="bg-slate-200 rounded-md w-fit space-x-2 flex items-center p-1">
