@@ -25,9 +25,9 @@ function ContractDetails(props) {
         scale: 1,
       }}
       transition={{ duration: 1 }}
-      className="rounded-md bg-white mx-auto p-4"
+      className="rounded-md bg-white mx-auto p-4 overflow-y-scroll"
     >
-      <div className="space-y-3 overflow-y-scroll">
+      <div className="space-y-3 ">
         <div className="font-extrabold text-xl">Contract Details</div>
         <div className="flex justify-evenly">
           <div>
