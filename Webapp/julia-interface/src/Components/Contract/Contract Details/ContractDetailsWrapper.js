@@ -9,6 +9,7 @@ function ContractDetailsWrapper(props) {
   const [location, setLocation] = useState(props.eventPlace);
   const [date, setDate] = useState(props.eventDate);
   const [phone1, setPhone1] = useState(props.phone1);
+  const [phone2, setPhone2] = useState(props.phone2);
   const [photographer, setPhotographer] = useState(props.photographer);
   const [video, setVideo] = useState(props.video);
   const [updateContract, result] = useUpdateContractMutation();
@@ -20,6 +21,7 @@ function ContractDetailsWrapper(props) {
         eventLocation: location,
         eventDate: date,
         phone1: phone1,
+        phone2: phone2,
         photographer: photographer,
         video: video,
       },
@@ -66,6 +68,7 @@ function ContractDetailsWrapper(props) {
           date={date}
           civilID={props.civilID}
           phone1={phone1}
+          phone2={phone2}
           contractStatus={props.contractStatus}
           price={props.price}
           photographer={photographer}
@@ -73,6 +76,7 @@ function ContractDetailsWrapper(props) {
           setLocation={setLocation}
           setDate={setDate}
           setPhone1={setPhone1}
+          setPhone2={setPhone2}
           setPhotographer={setPhotographer}
           setVideo={setVideo}
           createdBy={props.createdBy}
@@ -88,6 +92,7 @@ function ContractDetailsWrapper(props) {
           eventDate={date}
           civilID={props.civilID}
           phone1={phone1}
+          phone2={phone2}
           contractStatus={props.contractStatus}
           price={props.price}
           photographer={photographer}

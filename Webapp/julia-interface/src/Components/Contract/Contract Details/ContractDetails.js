@@ -37,9 +37,9 @@ function ContractDetails(props) {
           <div>{props.secondPartyName}</div>
         </div>
         <div className="flex space-x-2 flex-1">
-          <CalendarDaysIcon height={22} width={22} color="#818cf8" />
-          <div className="text-gray-500">Date Created</div>
-          <div>{props.dateCreated.toString().split("T")[0]}</div>
+          <UserCircleIcon height={22} width={22} color="#fbbf24" />
+          <div className="text-gray-500">Created by</div>
+          <div>{props.createdBy}</div>
         </div>
       </div>
 
@@ -59,6 +59,11 @@ function ContractDetails(props) {
           <div className="text-gray-500">Date</div>
           <div>{props.eventDate.toString().split("T")[0]}</div>
         </div>
+        <div className="flex space-x-2 flex-1">
+          <CalendarDaysIcon height={22} width={22} color="#818cf8" />
+          <div className="text-gray-500">Date Created</div>
+          <div>{props.dateCreated.toString().split("T")[0]}</div>
+        </div>
       </div>
 
       <div className="space-y-3">
@@ -70,9 +75,17 @@ function ContractDetails(props) {
         <div className="flex space-x-2 flex-1">
           <PhoneIcon height={22} width={22} color="#4ade80" />
 
-          <div className="text-gray-500">Contact</div>
+          <div className="text-gray-500">Phone1</div>
           <div>{props.phone1}</div>
         </div>
+        <div className="flex space-x-2 flex-1">
+          <PhoneIcon height={22} width={22} color="#4ade80" />
+
+          <div className="text-gray-500">Phone2</div>
+          <div>{props.phone2}</div>
+        </div>
+      </div>
+      <div className="space-y-3">
         <div className="flex space-x-2">
           <ClockIcon height={22} width={22} color="#475569" />
           <div className="text-gray-500">Contract Status </div>
@@ -80,8 +93,6 @@ function ContractDetails(props) {
             <StatusWrapper status={props.contractStatus} />
           </div>
         </div>
-      </div>
-      <div className="space-y-3">
         <div className="flex space-x-2 flex-1">
           <CameraIcon height={22} width={22} color="#db2777" />
           <div className="text-gray-500">Photographer</div>
@@ -91,11 +102,6 @@ function ContractDetails(props) {
           <VideoCameraIcon height={22} width={22} color="#db2777" />
           <div className="text-gray-500">Video</div>
           <div>{props.video}</div>
-        </div>
-        <div className="flex space-x-2 flex-1">
-          <UserCircleIcon height={22} width={22} color="#fbbf24" />
-          <div className="text-gray-500">Created by</div>
-          <div>{props.createdBy}</div>
         </div>
       </div>
     </div>

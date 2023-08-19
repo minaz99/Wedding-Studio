@@ -72,24 +72,24 @@ function EditContractDetails(props) {
         </div>
       </div>
       <div className="flex space-x-2 flex-1">
-          <CalendarDaysIcon height={22} width={22} color="#818cf8" />
-          <div className="text-gray-500">Date</div>
-          <input
-            type="date"
-            value={props.dateCreated}
-            style={{
-              background: "#e2e8f0",
-              borderRadius: "6px",
-              color: "#475569",
-              padding: "4px 4px 4px 4px",
-              border: "none",
-              outline: "none",
-            }}
-            className="font-medium"
-            disabled
-          />
-          <div></div>
-        </div> 
+        <CalendarDaysIcon height={22} width={22} color="#818cf8" />
+        <div className="text-gray-500">Date</div>
+        <input
+          type="date"
+          value={props.dateCreated}
+          style={{
+            background: "#e2e8f0",
+            borderRadius: "6px",
+            color: "#475569",
+            padding: "4px 4px 4px 4px",
+            border: "none",
+            outline: "none",
+          }}
+          className="font-medium"
+          disabled
+        />
+        <div></div>
+      </div>
       <div className="space-y-3">
         <div className="flex space-x-2 flex-1">
           <MegaphoneIcon height={22} width={22} color="#a78bfa" />
@@ -166,7 +166,7 @@ function EditContractDetails(props) {
           <div className="flex space-x-2 flex-1">
             <PhoneIcon height={22} width={22} color="#4ade80" />
 
-            <div className="text-gray-500">Contact</div>
+            <div className="text-gray-500">Phone 1</div>
             <input
               value={props.phone1}
               style={{
@@ -179,6 +179,24 @@ function EditContractDetails(props) {
               }}
               className="font-medium "
               onChange={(e) => props.setPhone1(e.target.value)}
+            />
+          </div>
+          <div className="flex space-x-2 flex-1">
+            <PhoneIcon height={22} width={22} color="#4ade80" />
+
+            <div className="text-gray-500">Phone 2</div>
+            <input
+              value={props.phone2}
+              style={{
+                background: "#e2e8f0",
+                borderRadius: "6px",
+                border: "none",
+                color: "#475569",
+                padding: "3px 3px 3px 3px",
+                outline: "none",
+              }}
+              className="font-medium "
+              onChange={(e) => props.setPhone2(e.target.value)}
             />
           </div>
           <div className="flex space-x-2">
