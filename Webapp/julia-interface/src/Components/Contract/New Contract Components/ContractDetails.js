@@ -1,6 +1,7 @@
 import React from "react";
 import PhoneNumbersComp from "./PhoneNumbersComp";
 import {
+  BanknotesIcon,
   BuildingStorefrontIcon,
   CalendarDaysIcon,
   IdentificationIcon,
@@ -174,7 +175,15 @@ function ContractDetails(props) {
             </div>
           </div>
         </div>
-        <div className="flex justify-around">
+        <div className="">
+          <PhoneNumbersComp
+            phone1={props.phone1}
+            setPhone1={props.setPhone1}
+            phone2={props.phone2}
+            setPhone2={props.setPhone2}
+          />
+        </div>
+        <div className="justify-around flex">
           <div>
             <div className="text-black font-medium ">Date</div>
             <div className="rounded-md bg-slate-200 w-fit space-x-2 flex items-center p-1">
@@ -195,7 +204,26 @@ function ContractDetails(props) {
               />
             </div>
           </div>
-          <PhoneNumbersComp phone1={props.phone1} setPhone1={props.setPhone1} />
+          <div className="-mx-2">
+            <div className="text-black font-medium  ">Paid Amount</div>
+            <div className="rounded-md bg-slate-200 w-fit space-x-2 flex items-center p-1">
+              <BanknotesIcon height={22} width={22} color="#0284c7" />
+              <input
+                type="number"
+                value={props.paidAmount}
+                style={{
+                  background: "#e2e8f0",
+                  borderRadius: "6px",
+                  color: "#475569",
+                  padding: "4px 4px 4px 4px",
+                  border: "none",
+                  outline: "none",
+                }}
+                className="font-medium"
+                onChange={(e) => props.setPaidAmount(e.target.value)}
+              />
+            </div>
+          </div>
         </div>
         <div className="my-2"></div>
       </div>

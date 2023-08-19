@@ -11,7 +11,7 @@ function MainWrapper() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return isLoggedIn === true ? (
-    <Home userData={userData} />
+    <Home setIsLoggedIn={setIsLoggedIn} userData={userData} />
   ) : (
     <Login setIsLoggedIn={setIsLoggedIn} setUserData={setUserData} />
     /*

@@ -106,7 +106,10 @@ function SectionsWrapper(props) {
                 Settings
               </div>
             </div>
-            <div className="flex space-x-2 items-center">
+            <div
+              onClick={() => props.setIsLoggedIn(false)}
+              className="flex space-x-2 items-center"
+            >
               <ArrowLeftOnRectangleIcon
                 height={18}
                 width={18}

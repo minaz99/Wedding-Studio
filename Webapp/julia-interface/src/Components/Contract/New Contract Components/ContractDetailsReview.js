@@ -14,7 +14,7 @@ import {
 
 function ContractDetailsReview(props) {
   return (
-    <div className="space-y-3 rounded-lg h-fit shadow-md p-4   bg-white   ">
+    <div className="space-y-3 rounded-lg h-80 shadow-md p-4  overflow-y-scroll bg-white   ">
       <div className="font-medium text-xl">{props.secondPartyName}</div>
       <div className="space-y-3 ">
         <div className="flex space-x-2">
@@ -59,8 +59,20 @@ function ContractDetailsReview(props) {
       <div className="flex space-x-2 ">
         <PhoneIcon height={22} width={22} color="#4ade80" />
 
-        <div className="text-gray-500">Contact</div>
+        <div className="text-gray-500">Phone1</div>
         <div>{props.phone1}</div>
+      </div>
+      <div className="flex space-x-2 ">
+        <PhoneIcon height={22} width={22} color="#4ade80" />
+
+        <div className="text-gray-500">Phone2</div>
+        <div>{props.phone2}</div>
+      </div>
+      <div className="flex space-x-2 ">
+        <BanknotesIcon height={22} width={22} color="#0284c7" />
+
+        <div className="text-gray-500">Paid Amount</div>
+        <div>{props.paidAmount}</div>
       </div>
     </div>
   );

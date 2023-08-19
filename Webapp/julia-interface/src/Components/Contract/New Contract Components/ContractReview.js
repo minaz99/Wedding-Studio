@@ -45,7 +45,7 @@ ${props.packageDetails.pictures} pictures${albumCrystal}${magazineMini}${video}$
         <div className="font-extrabold text-xl ">Contract Review</div>
       </div>
       <div className="flex space-x-6  ">
-        <div className="space-y-2">
+        <div className="space-y-4">
           <ContractDetailsReview
             brideName={props.brideName}
             groomName={props.groomName}
@@ -55,6 +55,8 @@ ${props.packageDetails.pictures} pictures${albumCrystal}${magazineMini}${video}$
             eventDate={props.eventDate}
             civilID={props.civilID}
             phone1={props.phone1}
+            phone2={props.phone2}
+            paidAmount={props.paidAmount}
           />
           <div className="items-center flex space-x-2 shadow-md p-2 bg-gray-100  rounded-md">
             <div className="font-medium space-x-2 p-1 ">Created By</div>

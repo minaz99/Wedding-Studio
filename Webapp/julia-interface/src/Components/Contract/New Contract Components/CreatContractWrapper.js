@@ -6,7 +6,10 @@ import { motion } from "framer-motion";
 import Packages from "./Packages";
 import ContractReview from "./ContractReview";
 import Calendar from "react-calendar";
-import { useCreateContractMutation } from "../../../services/api/contractSlice";
+import {
+  useCreateContractMutation,
+  useMakePaymentMutation,
+} from "../../../services/api/contractSlice";
 import ContractPDF from "./ContractPDF";
 function CreatContractWrapper(props) {
   const [contractDetailsColor, setContractDetailsColor] = useState("white");
@@ -34,6 +37,8 @@ function CreatContractWrapper(props) {
   const [createdBy, setCreatedBy] = useState("");
   const [showPDFContract, setShowPDFContract] = useState(false);
   const [createContract, result] = useCreateContractMutation();
+  const [makePayment, result2] = useMakePaymentMutation();
+  const [paidAmount, setPaidAmount] = useState(0);
   const dateCreated = new Date();
   const onFinishSection = () => {
     if (activeView === "contract details") {
@@ -63,6 +68,7 @@ function CreatContractWrapper(props) {
         eventDate: eventDate,
         civilID: civilID,
         phone1: phone1,
+        phone2: phone2,
         contractStatus: "In Progress",
         price: total - discount,
         photographer: "",
@@ -73,11 +79,13 @@ function CreatContractWrapper(props) {
         comments: comments,
         createdBy: createdBy,
         dateCreated: new Date().toLocaleDateString(),
+        paidAmount: paidAmount,
       },
     });
+
+    setShowPDFContract(true);
     //setActiveView("contract details");
     //props.setActiveView("Table");
-    setShowPDFContract(true);
   };
 
   return (
@@ -129,6 +137,8 @@ function CreatContractWrapper(props) {
                   setEventLocation={setEventLocation}
                   eventDate={eventDate}
                   setEventDate={setEventDate}
+                  setPaidAmount={setPaidAmount}
+                  paidAmount={paidAmount}
                 />
               ) : activeView === "packages" ? (
                 <Packages
@@ -157,10 +167,12 @@ function CreatContractWrapper(props) {
                   eventDate={eventDate}
                   civilID={civilID}
                   phone1={phone1}
+                  phone2={phone2}
                   packageName={packageDetails.name}
                   packagePrice={packageDetails.price}
                   discount={discount}
                   total={total}
+                  paidAmount={paidAmount}
                   packageDetails={packageDetails}
                   componentsSelected={componentsSelected}
                   comments={comments}
@@ -210,6 +222,8 @@ function CreatContractWrapper(props) {
           eventDate={eventDate}
           civilID={civilID}
           phone1={phone1}
+          phone2={phone2}
+          amountPaid={paidAmount}
           packageName={packageDetails.name}
           total={total}
           packageDetails={packageDetails}
