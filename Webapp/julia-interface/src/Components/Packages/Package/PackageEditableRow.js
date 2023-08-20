@@ -69,21 +69,21 @@ function PackageEditableRow(props) {
     <div className="flex flex-row justify-evenly ">
       <input
         value={name}
-        className="outline-none w-auto  rounded-md p-1      border-none hover:bg-gray-300 bg-white"
+        className="outline-none w-1/6  rounded-md p-1      border-none hover:bg-gray-300 bg-white"
         onChange={(e) => setName(e.target.value)}
         placeholder="Name"
       />
 
       <input
         value={pics}
-        className="outline-none w-px  mx-4 rounded-md  p-1    border-none hover:bg-gray-300 bg-white"
+        className="outline-none w-1/6  mx-4 rounded-md  p-1    border-none hover:bg-gray-300 bg-white"
         onChange={(e) => setPics(e.target.value)}
         placeholder="Pics #"
       />
 
       <input
         value={size}
-        className="outline-none w-3.5   rounded-md p-1   border-none hover:bg-gray-300 bg-white"
+        className="outline-none w-1/6  rounded-md p-1   border-none hover:bg-gray-300 bg-white"
         onChange={(e) => setSize(e.target.value)}
         placeholder="Magazine"
       />
@@ -129,7 +129,7 @@ function PackageEditableRow(props) {
 
       <input
         value={price}
-        className="outline-none  mx-2  w-3.5 rounded-md p-1     border-none hover:bg-gray-300 bg-white"
+        className="outline-none  mx-2  w-1/6 rounded-md p-1     border-none hover:bg-gray-300 bg-white"
         onChange={(e) => setPrice(e.target.value)}
         placeholder="Price"
       />
