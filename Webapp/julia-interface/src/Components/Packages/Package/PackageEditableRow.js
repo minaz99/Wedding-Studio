@@ -87,7 +87,7 @@ function PackageEditableRow(props) {
         />
       </div>
       <div className="flex justify-center">
-        <div className="space-y-1 mx-6 flex-1">
+        <div className="space-y-1 ">
           <DropdownButton variant="primary" title={albumCrystal ? "Yes" : "No"}>
             <Dropdown.Item onClick={() => setAlbumCrystal(true)}>
               Yes
@@ -97,7 +97,7 @@ function PackageEditableRow(props) {
             </Dropdown.Item>
           </DropdownButton>
         </div>
-        <div className="space-y-1 mx-6 flex-1">
+        <div className="space-y-1 ">
           <DropdownButton variant="primary" title={magazineMini ? "Yes" : "No"}>
             <Dropdown.Item onClick={() => setMagazineMini(true)}>
               Yes
@@ -107,19 +107,19 @@ function PackageEditableRow(props) {
             </Dropdown.Item>
           </DropdownButton>
         </div>
-        <div className="space-y-1 flex-1 mx-6 ">
+        <div className="space-y-1  ">
           <DropdownButton variant="primary" title={video ? "Yes" : "No"}>
             <Dropdown.Item onClick={() => setVideo(true)}>Yes</Dropdown.Item>
             <Dropdown.Item onClick={() => setVideo(false)}>No</Dropdown.Item>
           </DropdownButton>
         </div>
-        <div className="space-y-1 flex-1 mx-6 ">
+        <div className="space-y-1  ">
           <DropdownButton variant="primary" title={openPV ? "Yes" : "No"}>
             <Dropdown.Item onClick={() => setOpenPV(true)}>Yes</Dropdown.Item>
             <Dropdown.Item onClick={() => setOpenPV(false)}>No</Dropdown.Item>
           </DropdownButton>
         </div>
-        <div className="space-y-1 mx-10">
+        <div className="space-y-1 ">
           <DropdownButton variant="primary" title={studio ? "Yes" : "No"}>
             <Dropdown.Item onClick={() => setStudio(true)}>Yes</Dropdown.Item>
             <Dropdown.Item onClick={() => setStudio(false)}>No</Dropdown.Item>
