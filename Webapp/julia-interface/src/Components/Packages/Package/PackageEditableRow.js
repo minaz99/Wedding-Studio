@@ -132,9 +132,10 @@ function PackageEditableRow(props) {
 
       <input
         value={price}
-        className="outline-none  mx-2  w-1/6 rounded-md p-1     border-none hover:bg-gray-300 bg-white"
+        className="outline-none  mx-2   rounded-md p-1     border-none hover:bg-gray-300 bg-white"
         onChange={(e) => setPrice(e.target.value)}
         placeholder="Price"
+        style={{ width: "8%" }}
       />
       <div className="flex  items-center space-x-3">
         <div className="">
