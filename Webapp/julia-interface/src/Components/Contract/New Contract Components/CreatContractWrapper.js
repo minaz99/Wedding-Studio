@@ -98,7 +98,7 @@ function CreatContractWrapper(props) {
         scale: 1,
       }}
       transition={{ duration: 0.75 }}
-      className="rounded-r-lg  space-y-6  p-3 items-center h-full  shadow-md   bg-slate-600"
+      className="rounded-r-lg  space-y-6  p-3 items-center h-full overflow-y-scroll  shadow-md   bg-slate-600"
     >
       {!showPDFContract ? (
         <div>
