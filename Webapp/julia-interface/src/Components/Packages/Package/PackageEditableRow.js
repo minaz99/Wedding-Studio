@@ -66,31 +66,32 @@ function PackageEditableRow(props) {
   };
 
   return (
-    <div className="flex flex-row justify-items-start mx-10 ">
-      <input
-        value={name}
-        className="outline-none   rounded-md p-1      border-none hover:bg-gray-300 bg-white"
-        onChange={(e) => setName(e.target.value)}
-        placeholder="Name"
-        style={{ width: "8%" }}
-      />
+    <div className="flex ">
+      <div className="flex flex-row justify-items-start  ">
+        <input
+          value={name}
+          className="outline-none   rounded-md p-1      border-none hover:bg-gray-300 bg-white"
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Name"
+          style={{ width: "8%" }}
+        />
 
-      <input
-        value={pics}
-        className="outline-none    rounded-md  p-1    border-none hover:bg-gray-300 bg-white"
-        onChange={(e) => setPics(e.target.value)}
-        placeholder="Pics #"
-        style={{ width: "8%" }}
-      />
+        <input
+          value={pics}
+          className="outline-none    rounded-md  p-1    border-none hover:bg-gray-300 bg-white"
+          onChange={(e) => setPics(e.target.value)}
+          placeholder="Pics #"
+          style={{ width: "8%" }}
+        />
 
-      <input
-        value={size}
-        className="outline-none   rounded-md p-1   border-none hover:bg-gray-300 bg-white"
-        onChange={(e) => setSize(e.target.value)}
-        placeholder="Magazine"
-        style={{ width: "8%" }}
-      />
-
+        <input
+          value={size}
+          className="outline-none   rounded-md p-1   border-none hover:bg-gray-300 bg-white"
+          onChange={(e) => setSize(e.target.value)}
+          placeholder="Magazine"
+          style={{ width: "8%" }}
+        />
+      </div>
       <div className="space-y-1 ">
         <DropdownButton variant="primary" title={albumCrystal ? "Yes" : "No"}>
           <Dropdown.Item onClick={() => setAlbumCrystal(true)}>
