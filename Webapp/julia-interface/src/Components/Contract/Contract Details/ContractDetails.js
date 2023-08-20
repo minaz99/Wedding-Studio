@@ -56,12 +56,12 @@ function ContractDetails(props) {
         </div>
         <div className="flex space-x-2 flex-1">
           <CalendarDaysIcon height={22} width={22} color="#818cf8" />
-          <div className="text-gray-500">Date</div>
+          <div className="text-gray-500">Event Date</div>
           <div>{props.eventDate.toString().split("T")[0]}</div>
         </div>
         <div className="flex space-x-2 flex-1">
           <CalendarDaysIcon height={22} width={22} color="#818cf8" />
-          <div className="text-gray-500">Date Created</div>
+          <div className="text-gray-500">Date Written</div>
           <div>{props.dateCreated.toString().split("T")[0]}</div>
         </div>
       </div>
@@ -88,7 +88,7 @@ function ContractDetails(props) {
       <div className="space-y-3">
         <div className="flex space-x-2">
           <ClockIcon height={22} width={22} color="#475569" />
-          <div className="text-gray-500">Contract Status </div>
+          <div className="text-gray-500">Status</div>
           <div>
             <StatusWrapper status={props.contractStatus} />
           </div>
