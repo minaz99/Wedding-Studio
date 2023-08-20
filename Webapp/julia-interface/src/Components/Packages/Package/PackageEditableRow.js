@@ -90,7 +90,7 @@ function PackageEditableRow(props) {
         placeholder="Magazine"
         style={{ width: "8%" }}
       />
-      <div className="flex justify-evenly">
+      <div className="flex flex-row justify-evenly">
         <div className="space-y-1 ">
           <DropdownButton variant="primary" title={albumCrystal ? "Yes" : "No"}>
             <Dropdown.Item onClick={() => setAlbumCrystal(true)}>
