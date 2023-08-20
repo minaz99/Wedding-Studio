@@ -49,7 +49,7 @@ function TableWrapper(props) {
   const [isEventTypeFilter, setIsEventTypeFilter] = useState(false);
   const [isEventPlaceFilter, setIsEventPlaceFilter] = useState(false);
   const [isContractStatusFilter, setIsContractStatusFilter] = useState(false);
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(1);
   const [pageCount, setPageCount] = useState(0);
   const [totalContracts, setTotalContracts] = useState(0);
   const [date, setDate] = useState(new Date());
