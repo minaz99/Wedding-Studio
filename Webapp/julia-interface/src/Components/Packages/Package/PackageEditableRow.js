@@ -85,13 +85,13 @@ function PackageEditableRow(props) {
 
       <input
         value={size}
-        className="outline-none   rounded-md p-1   border-none hover:bg-gray-300 bg-white"
+        className="outline-none mx-12  rounded-md p-1   border-none hover:bg-gray-300 bg-white"
         onChange={(e) => setSize(e.target.value)}
         placeholder="Magazine"
         style={{ width: "8%" }}
       />
 
-      <div className="space-y-1 ">
+      <div className="space-y-1 mx-12 ">
         <DropdownButton variant="primary" title={albumCrystal ? "Yes" : "No"}>
           <Dropdown.Item onClick={() => setAlbumCrystal(true)}>
             Yes
@@ -101,7 +101,7 @@ function PackageEditableRow(props) {
           </Dropdown.Item>
         </DropdownButton>
       </div>
-      <div className="space-y-1 ">
+      <div className="space-y-1 mx-12 ">
         <DropdownButton variant="primary" title={magazineMini ? "Yes" : "No"}>
           <Dropdown.Item onClick={() => setMagazineMini(true)}>
             Yes
@@ -111,19 +111,19 @@ function PackageEditableRow(props) {
           </Dropdown.Item>
         </DropdownButton>
       </div>
-      <div className="space-y-1  ">
+      <div className="space-y-1  mx-12">
         <DropdownButton variant="primary" title={video ? "Yes" : "No"}>
           <Dropdown.Item onClick={() => setVideo(true)}>Yes</Dropdown.Item>
           <Dropdown.Item onClick={() => setVideo(false)}>No</Dropdown.Item>
         </DropdownButton>
       </div>
-      <div className="space-y-1  ">
+      <div className="space-y-1  mx-12">
         <DropdownButton variant="primary" title={openPV ? "Yes" : "No"}>
           <Dropdown.Item onClick={() => setOpenPV(true)}>Yes</Dropdown.Item>
           <Dropdown.Item onClick={() => setOpenPV(false)}>No</Dropdown.Item>
         </DropdownButton>
       </div>
-      <div className="space-y-1 ">
+      <div className="space-y-1 mx-12">
         <DropdownButton variant="primary" title={studio ? "Yes" : "No"}>
           <Dropdown.Item onClick={() => setStudio(true)}>Yes</Dropdown.Item>
           <Dropdown.Item onClick={() => setStudio(false)}>No</Dropdown.Item>
