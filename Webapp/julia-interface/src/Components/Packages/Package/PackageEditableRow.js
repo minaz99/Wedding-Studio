@@ -112,7 +112,7 @@ function PackageEditableRow(props) {
           <Dropdown.Item onClick={() => setVideo(false)}>No</Dropdown.Item>
         </DropdownButton>
       </div>
-      <div className="space-y-1 flex-1 ">
+      <div className="space-y-1 flex-1 mx-6 ">
         <DropdownButton variant="primary" title={openPV ? "Yes" : "No"}>
           <Dropdown.Item onClick={() => setOpenPV(true)}>Yes</Dropdown.Item>
           <Dropdown.Item onClick={() => setOpenPV(false)}>No</Dropdown.Item>
@@ -127,7 +127,7 @@ function PackageEditableRow(props) {
 
       <input
         value={price}
-        className="outline-none  mx-2  rounded-md p-1  w-1/4  text-center border-none hover:bg-gray-300 bg-white"
+        className="outline-none  mx-2  rounded-md p-1  w-10  text-center border-none hover:bg-gray-300 bg-white"
         onChange={(e) => setPrice(e.target.value)}
       />
       <div className="flex  items-center space-x-3">
