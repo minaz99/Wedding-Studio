@@ -92,7 +92,7 @@ function PackageEditableRow(props) {
           style={{ width: "8%" }}
         />
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-evenly">
         <div className="space-y-1 ">
           <DropdownButton variant="primary" title={albumCrystal ? "Yes" : "No"}>
             <Dropdown.Item onClick={() => setAlbumCrystal(true)}>
