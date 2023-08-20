@@ -70,19 +70,19 @@ function PackageEditableRow(props) {
       <div className="">
         <input
           value={name}
-          className="outline-none   rounded-md p-1 w-28  text-center   border-none hover:bg-gray-300 bg-white"
+          className="outline-none   rounded-md p-1 w-18  text-center   border-none hover:bg-gray-300 bg-white"
           onChange={(e) => setName(e.target.value)}
         />
 
         <input
           value={pics}
-          className="outline-none mx-4 rounded-md  p-1 w-28  text-center border-none hover:bg-gray-300 bg-white"
+          className="outline-none mx-4 rounded-md  p-1 w-18  text-center border-none hover:bg-gray-300 bg-white"
           onChange={(e) => setPics(e.target.value)}
         />
 
         <input
           value={size}
-          className="outline-none   rounded-md p-1  w-28  text-center border-none hover:bg-gray-300 bg-white"
+          className="outline-none   rounded-md p-1  w-18  text-center border-none hover:bg-gray-300 bg-white"
           onChange={(e) => setSize(e.target.value)}
         />
       </div>
@@ -127,7 +127,7 @@ function PackageEditableRow(props) {
 
       <input
         value={price}
-        className="outline-none  mx-2  rounded-md p-1  w-28  text-center border-none hover:bg-gray-300 bg-white"
+        className="outline-none  mx-2  rounded-md p-1  w-18  text-center border-none hover:bg-gray-300 bg-white"
         onChange={(e) => setPrice(e.target.value)}
       />
       <div className="flex  items-center space-x-3">
