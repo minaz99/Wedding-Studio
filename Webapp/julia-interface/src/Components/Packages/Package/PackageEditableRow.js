@@ -69,14 +69,14 @@ function PackageEditableRow(props) {
     <div className="flex flex-row justify-evenly ">
       <input
         value={name}
-        className="outline-none max-w-md  rounded-md p-1      border-none hover:bg-gray-300 bg-white"
+        className="outline-none w-1.5  rounded-md p-1      border-none hover:bg-gray-300 bg-white"
         onChange={(e) => setName(e.target.value)}
         placeholder="Name"
       />
 
       <input
         value={pics}
-        className="outline-none w-fit max-w-sm mx-4 rounded-md  p-1    border-none hover:bg-gray-300 bg-white"
+        className="outline-none w-1.5 max-w-sm mx-4 rounded-md  p-1    border-none hover:bg-gray-300 bg-white"
         onChange={(e) => setPics(e.target.value)}
         placeholder="Pics #"
       />
