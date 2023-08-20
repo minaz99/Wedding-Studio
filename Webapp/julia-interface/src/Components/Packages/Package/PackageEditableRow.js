@@ -70,20 +70,23 @@ function PackageEditableRow(props) {
       <div className="flex">
         <input
           value={name}
-          className="outline-none w-1/2  rounded-md p-1   text-center   border-none hover:bg-gray-300 bg-white"
+          className="outline-none w-fit  rounded-md p-1   text-center   border-none hover:bg-gray-300 bg-white"
           onChange={(e) => setName(e.target.value)}
+          placeholder="Name"
         />
 
         <input
           value={pics}
-          className="outline-none w-1/3 mx-4 rounded-md  p-1   text-center border-none hover:bg-gray-300 bg-white"
+          className="outline-none w-fit mx-4 rounded-md  p-1   text-center border-none hover:bg-gray-300 bg-white"
           onChange={(e) => setPics(e.target.value)}
+          placeholder="Pics #"
         />
 
         <input
           value={size}
-          className="outline-none w-1/3   rounded-md p-1  text-center border-none hover:bg-gray-300 bg-white"
+          className="outline-none w-fit   rounded-md p-1  text-center border-none hover:bg-gray-300 bg-white"
           onChange={(e) => setSize(e.target.value)}
+          placeholder="Magazine"
         />
       </div>
       <div className="flex justify-center">
@@ -128,8 +131,9 @@ function PackageEditableRow(props) {
       </div>
       <input
         value={price}
-        className="outline-none  mx-2  rounded-md p-1  w-10  text-center border-none hover:bg-gray-300 bg-white"
+        className="outline-none  mx-2  rounded-md p-1  w-fit  text-center border-none hover:bg-gray-300 bg-white"
         onChange={(e) => setPrice(e.target.value)}
+        placeholder="Price"
       />
       <div className="flex  items-center space-x-3">
         <div className="">
