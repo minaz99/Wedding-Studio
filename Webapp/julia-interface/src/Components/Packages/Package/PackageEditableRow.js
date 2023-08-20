@@ -66,7 +66,7 @@ function PackageEditableRow(props) {
   };
 
   return (
-    <div className="flex flex-row justify-around ">
+    <div className="flex flex-row justify-items-start ">
       <input
         value={name}
         className="outline-none   rounded-md p-1      border-none hover:bg-gray-300 bg-white"
