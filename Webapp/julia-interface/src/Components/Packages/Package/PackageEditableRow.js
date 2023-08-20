@@ -66,8 +66,8 @@ function PackageEditableRow(props) {
   };
 
   return (
-    <div className="flex    items-center ">
-      <div className="">
+    <div className="flex items-center ">
+      <div className="flex">
         <input
           value={name}
           className="outline-none   rounded-md p-1 w-18  text-center   border-none hover:bg-gray-300 bg-white"
