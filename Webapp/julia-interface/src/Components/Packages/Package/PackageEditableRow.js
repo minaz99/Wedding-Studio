@@ -72,21 +72,23 @@ function PackageEditableRow(props) {
         className="outline-none   rounded-md p-1      border-none hover:bg-gray-300 bg-white"
         onChange={(e) => setName(e.target.value)}
         placeholder="Name"
-        style={{ width: "15%" }}
+        style={{ width: "8%" }}
       />
 
       <input
         value={pics}
-        className="outline-none w-1/6  mx-4 rounded-md  p-1    border-none hover:bg-gray-300 bg-white"
+        className="outline-none   mx-4 rounded-md  p-1    border-none hover:bg-gray-300 bg-white"
         onChange={(e) => setPics(e.target.value)}
         placeholder="Pics #"
+        style={{ width: "8%" }}
       />
 
       <input
         value={size}
-        className="outline-none w-1/6  rounded-md p-1   border-none hover:bg-gray-300 bg-white"
+        className="outline-none   rounded-md p-1   border-none hover:bg-gray-300 bg-white"
         onChange={(e) => setSize(e.target.value)}
         placeholder="Magazine"
+        style={{ width: "8%" }}
       />
 
       <div className="space-y-1 ">
