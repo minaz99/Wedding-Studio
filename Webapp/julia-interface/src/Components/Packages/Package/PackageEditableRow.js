@@ -86,7 +86,7 @@ function PackageEditableRow(props) {
           onChange={(e) => setSize(e.target.value)}
         />
       </div>
-      <div className="justify-center">
+      <div className="flex justify-center">
         <div className="space-y-1 mx-6 flex-1">
           <DropdownButton variant="primary" title={albumCrystal ? "Yes" : "No"}>
             <Dropdown.Item onClick={() => setAlbumCrystal(true)}>
