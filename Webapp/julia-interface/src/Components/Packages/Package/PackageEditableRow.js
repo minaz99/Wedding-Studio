@@ -66,32 +66,30 @@ function PackageEditableRow(props) {
   };
 
   return (
-    <div className="">
-      <div className="flex flex-row justify-start ">
-        <input
-          value={name}
-          className="outline-none   rounded-md p-1      border-none hover:bg-gray-300 bg-white"
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Name"
-          style={{ width: "8%" }}
-        />
+    <div className="flex flex-row justify-start ">
+      <input
+        value={name}
+        className="outline-none   rounded-md p-1      border-none hover:bg-gray-300 bg-white"
+        onChange={(e) => setName(e.target.value)}
+        placeholder="Name"
+        style={{ width: "8%" }}
+      />
 
-        <input
-          value={pics}
-          className="outline-none   mx-4 rounded-md  p-1    border-none hover:bg-gray-300 bg-white"
-          onChange={(e) => setPics(e.target.value)}
-          placeholder="Pics #"
-          style={{ width: "8%" }}
-        />
+      <input
+        value={pics}
+        className="outline-none   mx-4 rounded-md  p-1    border-none hover:bg-gray-300 bg-white"
+        onChange={(e) => setPics(e.target.value)}
+        placeholder="Pics #"
+        style={{ width: "8%" }}
+      />
 
-        <input
-          value={size}
-          className="outline-none   rounded-md p-1   border-none hover:bg-gray-300 bg-white"
-          onChange={(e) => setSize(e.target.value)}
-          placeholder="Magazine"
-          style={{ width: "8%" }}
-        />
-      </div>
+      <input
+        value={size}
+        className="outline-none   rounded-md p-1   border-none hover:bg-gray-300 bg-white"
+        onChange={(e) => setSize(e.target.value)}
+        placeholder="Magazine"
+        style={{ width: "8%" }}
+      />
       <div className="flex justify-evenly">
         <div className="space-y-1 ">
           <DropdownButton variant="primary" title={albumCrystal ? "Yes" : "No"}>
@@ -131,15 +129,14 @@ function PackageEditableRow(props) {
             <Dropdown.Item onClick={() => setStudio(false)}>No</Dropdown.Item>
           </DropdownButton>
         </div>
-
-        <input
-          value={price}
-          className="outline-none  mx-2   rounded-md p-1     border-none hover:bg-gray-300 bg-white"
-          onChange={(e) => setPrice(e.target.value)}
-          placeholder="Price"
-          style={{ width: "8%" }}
-        />
       </div>
+      <input
+        value={price}
+        className="outline-none  mx-2   rounded-md p-1     border-none hover:bg-gray-300 bg-white"
+        onChange={(e) => setPrice(e.target.value)}
+        placeholder="Price"
+        style={{ width: "8%" }}
+      />
       <div className="flex  items-center space-x-3">
         <div className="">
           <CheckCircleIcon
