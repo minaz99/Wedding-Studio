@@ -72,6 +72,7 @@ function PackageEditableRow(props) {
         className="outline-none  rounded-md p-1      border-none hover:bg-gray-300 bg-white"
         onChange={(e) => setName(e.target.value)}
         placeholder="Name"
+        style={{ width: "fit-content" }}
       />
 
       <input
