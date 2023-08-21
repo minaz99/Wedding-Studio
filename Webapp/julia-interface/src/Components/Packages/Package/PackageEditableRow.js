@@ -137,7 +137,7 @@ function PackageEditableRow(props) {
         placeholder="Price"
         style={{ width: "8%" }}
       />
-      <div className="flex  items-center space-x-3">
+      <div className="flex  items-center space-x-3 justify-end">
         <div className="">
           <CheckCircleIcon
             height={30}
