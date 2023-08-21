@@ -24,7 +24,7 @@ function Packages(props) {
     }
   );
 
-  const [title, setTitle] = useState("None");
+  const [title, setTitle] = useState(props.packageName);
   const [showComponents, setShowComponents] = useState(false);
   const [total, setTotal] = useState(props.total);
   const [selectedMagazineComponents, setSelectedMagazineComponents] = useState(
@@ -44,6 +44,7 @@ function Packages(props) {
     setTitle(pkg.name);
     props.setPkg(pkg.id);
     props.setPackageDetails(pkg);
+    props.setPackageName(pkg.name);
   };
   return (
     <motion.div

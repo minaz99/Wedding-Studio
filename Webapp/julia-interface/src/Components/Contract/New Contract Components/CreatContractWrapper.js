@@ -39,6 +39,7 @@ function CreatContractWrapper(props) {
   const [createContract, result] = useCreateContractMutation();
   const [makePayment, result2] = useMakePaymentMutation();
   const [paidAmount, setPaidAmount] = useState(0);
+  const [packageName, setPackageName] = useState("None");
   const dateCreated = new Date();
   const onFinishSection = () => {
     if (activeView === "contract details") {
@@ -156,6 +157,8 @@ function CreatContractWrapper(props) {
                   setComponentsSelected={setComponentsSelected}
                   componentsSelected={componentsSelected}
                   setActiveView={setActiveView}
+                  packageName={packageName}
+                  setPackageName={setPackageName}
                 />
               ) : (
                 <ContractReview
