@@ -67,7 +67,7 @@ function PackageEditableRow(props) {
 
   return (
     <div className=" overflow-y-scroll space-y-2  ">
-      <div className="flex space-x-2">
+      <div className="flex space-x-2 items-center">
         <div>Name: </div>
         <input
           value={name}
@@ -76,67 +76,87 @@ function PackageEditableRow(props) {
           placeholder="Name"
         />
       </div>
-
-      <input
-        value={pics}
-        className="outline-none w-fit   rounded-md  p-1    border-none hover:bg-gray-300 bg-white"
-        onChange={(e) => setPics(e.target.value)}
-        placeholder="Pics #"
-      />
-
-      <input
-        value={size}
-        className="outline-none  w-fit rounded-md p-1   border-none hover:bg-gray-300 bg-white"
-        onChange={(e) => setSize(e.target.value)}
-        placeholder="Magazine"
-      />
-
-      <div className="space-y-1 ">
-        <DropdownButton variant="primary" title={albumCrystal ? "Yes" : "No"}>
-          <Dropdown.Item onClick={() => setAlbumCrystal(true)}>
-            Yes
-          </Dropdown.Item>
-          <Dropdown.Item onClick={() => setAlbumCrystal(false)}>
-            No
-          </Dropdown.Item>
-        </DropdownButton>
+      <div className="flex space-x-2 items-center">
+        <div>Pictures: </div>
+        <input
+          value={pics}
+          className="outline-none w-fit   rounded-md  p-1    border-none hover:bg-gray-300 bg-white"
+          onChange={(e) => setPics(e.target.value)}
+          placeholder="Pics #"
+        />
       </div>
-      <div className="space-y-1 mx-6 ">
-        <DropdownButton variant="primary" title={magazineMini ? "Yes" : "No"}>
-          <Dropdown.Item onClick={() => setMagazineMini(true)}>
-            Yes
-          </Dropdown.Item>
-          <Dropdown.Item onClick={() => setMagazineMini(false)}>
-            No
-          </Dropdown.Item>
-        </DropdownButton>
+      <div className="flex space-x-2 items-center">
+        <div>Magazine: </div>
+        <input
+          value={size}
+          className="outline-none  w-fit rounded-md p-1   border-none hover:bg-gray-300 bg-white"
+          onChange={(e) => setSize(e.target.value)}
+          placeholder="Magazine"
+        />
       </div>
-      <div className="space-y-1  ">
-        <DropdownButton variant="primary" title={video ? "Yes" : "No"}>
-          <Dropdown.Item onClick={() => setVideo(true)}>Yes</Dropdown.Item>
-          <Dropdown.Item onClick={() => setVideo(false)}>No</Dropdown.Item>
-        </DropdownButton>
+      <div className="flex space-x-2 items-center">
+        <div>Album Crystal: </div>
+        <div className="space-y-1 ">
+          <DropdownButton variant="primary" title={albumCrystal ? "Yes" : "No"}>
+            <Dropdown.Item onClick={() => setAlbumCrystal(true)}>
+              Yes
+            </Dropdown.Item>
+            <Dropdown.Item onClick={() => setAlbumCrystal(false)}>
+              No
+            </Dropdown.Item>
+          </DropdownButton>
+        </div>
       </div>
-      <div className="space-y-1  ">
-        <DropdownButton variant="primary" title={openPV ? "Yes" : "No"}>
-          <Dropdown.Item onClick={() => setOpenPV(true)}>Yes</Dropdown.Item>
-          <Dropdown.Item onClick={() => setOpenPV(false)}>No</Dropdown.Item>
-        </DropdownButton>
+      <div className="flex space-x-2 items-center">
+        <div>Magazine Mini: </div>
+        <div className="space-y-1  ">
+          <DropdownButton variant="primary" title={magazineMini ? "Yes" : "No"}>
+            <Dropdown.Item onClick={() => setMagazineMini(true)}>
+              Yes
+            </Dropdown.Item>
+            <Dropdown.Item onClick={() => setMagazineMini(false)}>
+              No
+            </Dropdown.Item>
+          </DropdownButton>
+        </div>
       </div>
-      <div className="space-y-1  ">
-        <DropdownButton variant="primary" title={studio ? "Yes" : "No"}>
-          <Dropdown.Item onClick={() => setStudio(true)}>Yes</Dropdown.Item>
-          <Dropdown.Item onClick={() => setStudio(false)}>No</Dropdown.Item>
-        </DropdownButton>
+      <div className="flex space-x-2 items-center">
+        <div>Video: </div>
+        <div className="space-y-1  ">
+          <DropdownButton variant="primary" title={video ? "Yes" : "No"}>
+            <Dropdown.Item onClick={() => setVideo(true)}>Yes</Dropdown.Item>
+            <Dropdown.Item onClick={() => setVideo(false)}>No</Dropdown.Item>
+          </DropdownButton>
+        </div>
       </div>
-
-      <input
-        value={price}
-        className="outline-none w-fit    rounded-md p-1     border-none hover:bg-gray-300 bg-white"
-        onChange={(e) => setPrice(e.target.value)}
-        placeholder="Price"
-      />
-      <div className="flex  items-center space-x-3 ">
+      <div className="flex space-x-2 items-center">
+        <div>Open Photo and Video: </div>
+        <div className="space-y-1  ">
+          <DropdownButton variant="primary" title={openPV ? "Yes" : "No"}>
+            <Dropdown.Item onClick={() => setOpenPV(true)}>Yes</Dropdown.Item>
+            <Dropdown.Item onClick={() => setOpenPV(false)}>No</Dropdown.Item>
+          </DropdownButton>
+        </div>
+      </div>
+      <div className="flex space-x-2 items-center">
+        <div>Studio: </div>
+        <div className="space-y-1  ">
+          <DropdownButton variant="primary" title={studio ? "Yes" : "No"}>
+            <Dropdown.Item onClick={() => setStudio(true)}>Yes</Dropdown.Item>
+            <Dropdown.Item onClick={() => setStudio(false)}>No</Dropdown.Item>
+          </DropdownButton>
+        </div>
+      </div>
+      <div className="flex space-x-2 items-center">
+        <div>Price: </div>
+        <input
+          value={price}
+          className="outline-none w-fit    rounded-md p-1     border-none hover:bg-gray-300 bg-white"
+          onChange={(e) => setPrice(e.target.value)}
+          placeholder="Price"
+        />
+      </div>
+      <div className="flex mx-auto items-center space-x-3 ">
         <div className="">
           <CheckCircleIcon
             height={30}
