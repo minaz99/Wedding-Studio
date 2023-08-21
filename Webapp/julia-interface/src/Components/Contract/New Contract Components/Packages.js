@@ -27,15 +27,7 @@ function Packages(props) {
   const [title, setTitle] = useState(props.packageName);
   const [showComponents, setShowComponents] = useState(false);
   const [total, setTotal] = useState(props.total);
-  const [selectedMagazineComponents, setSelectedMagazineComponents] = useState(
-    []
-  );
-  const [selectedPicturesComponents, setSelectedPicturesComponents] = useState(
-    []
-  );
-  const [selectedVideoComponents, setSelectedVideoComponents] = useState([]);
-  const [selectedFrameComponents, setSelectedFrameComponents] = useState([]);
-  const [selectedAlbumComponents, setSelectedAlbumComponents] = useState([]);
+
   const selectPkg = (pkg) => {
     if (props.pkg !== 0) {
       props.setTotal(props.total - total + pkg.price);
@@ -133,16 +125,16 @@ function Packages(props) {
             token={props.token}
             setTotal={props.setTotal}
             total={props.total}
-            selectedMagazineComponents={selectedMagazineComponents}
-            setSelectedMagazineComponents={setSelectedMagazineComponents}
-            selectedPicturesComponents={selectedPicturesComponents}
-            setSelectedPicturesComponents={setSelectedPicturesComponents}
-            selectedVideoComponents={selectedVideoComponents}
-            setSelectedVideoComponents={setSelectedVideoComponents}
-            selectedFrameComponents={selectedFrameComponents}
-            setSelectedFrameComponents={setSelectedFrameComponents}
-            selectedAlbumComponents={selectedAlbumComponents}
-            setSelectedAlbumComponents={setSelectedAlbumComponents}
+            selectedMagazineComponents={props.selectedMagazineComponents}
+            setSelectedMagazineComponents={props.setSelectedMagazineComponents}
+            selectedPicturesComponents={props.selectedPicturesComponents}
+            setSelectedPicturesComponents={props.setSelectedPicturesComponents}
+            selectedVideoComponents={props.selectedVideoComponents}
+            setSelectedVideoComponents={props.setSelectedVideoComponents}
+            selectedFrameComponents={props.selectedFrameComponents}
+            setSelectedFrameComponents={props.setSelectedFrameComponents}
+            selectedAlbumComponents={props.selectedAlbumComponents}
+            setSelectedAlbumComponents={props.setSelectedAlbumComponents}
           />
         ) : (
           <div></div>

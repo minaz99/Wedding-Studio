@@ -40,6 +40,15 @@ function CreatContractWrapper(props) {
   const [makePayment, result2] = useMakePaymentMutation();
   const [paidAmount, setPaidAmount] = useState(0);
   const [packageName, setPackageName] = useState("None");
+  const [selectedMagazineComponents, setSelectedMagazineComponents] = useState(
+    []
+  );
+  const [selectedPicturesComponents, setSelectedPicturesComponents] = useState(
+    []
+  );
+  const [selectedVideoComponents, setSelectedVideoComponents] = useState([]);
+  const [selectedFrameComponents, setSelectedFrameComponents] = useState([]);
+  const [selectedAlbumComponents, setSelectedAlbumComponents] = useState([]);
   const dateCreated = new Date();
   const onFinishSection = () => {
     if (activeView === "contract details") {
@@ -159,6 +168,16 @@ function CreatContractWrapper(props) {
                   setActiveView={setActiveView}
                   packageName={packageName}
                   setPackageName={setPackageName}
+                  selectedMagazineComponents={selectedMagazineComponents}
+                  setSelectedMagazineComponents={setSelectedMagazineComponents}
+                  selectedPicturesComponents={selectedPicturesComponents}
+                  setSelectedPicturesComponents={setSelectedPicturesComponents}
+                  selectedVideoComponents={selectedVideoComponents}
+                  setSelectedVideoComponents={setSelectedVideoComponents}
+                  selectedFrameComponents={selectedFrameComponents}
+                  setSelectedFrameComponents={setSelectedFrameComponents}
+                  selectedAlbumComponents={selectedAlbumComponents}
+                  setSelectedAlbumComponents={setSelectedAlbumComponents}
                 />
               ) : (
                 <ContractReview
