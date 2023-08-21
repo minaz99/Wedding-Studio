@@ -66,13 +66,16 @@ function PackageEditableRow(props) {
   };
 
   return (
-    <div className=" overflow-x-scroll inline-flex  ">
-      <input
-        value={name}
-        className="outline-none  rounded-md p-1      border-none hover:bg-gray-300 bg-white"
-        onChange={(e) => setName(e.target.value)}
-        placeholder="Name"
-      />
+    <div className=" overflow-y-scroll space-y-2  ">
+      <div className="flex space-x-2">
+        <div>Name: </div>
+        <input
+          value={name}
+          className="outline-none  rounded-md p-1      border-none hover:bg-gray-300 bg-white"
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Name"
+        />
+      </div>
 
       <input
         value={pics}
