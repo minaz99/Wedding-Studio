@@ -66,10 +66,10 @@ function PackageEditableRow(props) {
   };
 
   return (
-    <div className="flex flex-row justify-self-auto  ">
+    <div className="flex flex-row justify-start  ">
       <input
         value={name}
-        className="outline-none   rounded-md p-1      border-none hover:bg-gray-300 bg-white"
+        className="outline-none mx-4  rounded-md p-1      border-none hover:bg-gray-300 bg-white"
         onChange={(e) => setName(e.target.value)}
         placeholder="Name"
         style={{ width: "8%" }}
@@ -77,7 +77,7 @@ function PackageEditableRow(props) {
 
       <input
         value={pics}
-        className="outline-none    rounded-md  p-1    border-none hover:bg-gray-300 bg-white"
+        className="outline-none  mx-4  rounded-md  p-1    border-none hover:bg-gray-300 bg-white"
         onChange={(e) => setPics(e.target.value)}
         placeholder="Pics #"
         style={{ width: "8%" }}
@@ -85,7 +85,7 @@ function PackageEditableRow(props) {
 
       <input
         value={size}
-        className="outline-none   rounded-md p-1   border-none hover:bg-gray-300 bg-white"
+        className="outline-none  mx-8 rounded-md p-1   border-none hover:bg-gray-300 bg-white"
         onChange={(e) => setSize(e.target.value)}
         placeholder="Magazine"
         style={{ width: "8%" }}
