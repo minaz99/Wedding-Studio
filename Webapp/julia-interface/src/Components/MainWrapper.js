@@ -13,9 +13,8 @@ function MainWrapper() {
   return isLoggedIn === true ? (
     <Home setIsLoggedIn={setIsLoggedIn} userData={userData} />
   ) : (
-    <div className="flex h-screen m-auto">
-      <Login setIsLoggedIn={setIsLoggedIn} setUserData={setUserData} />
-    </div>
+    <Login setIsLoggedIn={setIsLoggedIn} setUserData={setUserData} />
+
     /*
     <ContractPDF
       brideName={"Hana El Zahed"}
