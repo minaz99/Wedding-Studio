@@ -42,15 +42,15 @@ function Packages(props) {
               token={props.token}
               new={true}
               setNewRow={setNewRow}
-              name="Package"
-              pictures="80"
-              size="30x30"
+              name=""
+              pictures=""
+              size=""
               albumCrystal={true}
               magazineMini={true}
               video={true}
               openPV={true}
               studio={true}
-              price="600"
+              price=""
             />
           ) : (
             <div></div>
