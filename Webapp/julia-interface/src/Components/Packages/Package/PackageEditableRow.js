@@ -77,7 +77,7 @@ function PackageEditableRow(props) {
 
       <input
         value={pics}
-        className="outline-none    rounded-md  p-1    border-none hover:bg-gray-300 bg-white"
+        className="outline-none mx-4   rounded-md  p-1    border-none hover:bg-gray-300 bg-white"
         onChange={(e) => setPics(e.target.value)}
         placeholder="Pics #"
         style={{ width: "8%" }}
@@ -132,7 +132,7 @@ function PackageEditableRow(props) {
 
       <input
         value={price}
-        className="outline-none  mx-2   rounded-md p-1     border-none hover:bg-gray-300 bg-white"
+        className="outline-none  mx-6   rounded-md p-1     border-none hover:bg-gray-300 bg-white"
         onChange={(e) => setPrice(e.target.value)}
         placeholder="Price"
         style={{ width: "8%" }}
