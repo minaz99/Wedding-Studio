@@ -93,7 +93,7 @@ function CalendarWrapper(props) {
           </div>
         </div>
       </div>
-      <div>
+      <div className="mx-auto">
         <CalenderDaysHeader />
         {isLoading ? (
           <div className="text-center text-blue-400 text-xl p-4">

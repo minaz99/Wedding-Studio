@@ -26,7 +26,7 @@ function Packages(props) {
 
   const [title, setTitle] = useState("None");
   const [showComponents, setShowComponents] = useState(false);
-  const [total, setTotal] = useState(0);
+  const [total, setTotal] = useState(props.total);
   const [selectedMagazineComponents, setSelectedMagazineComponents] = useState(
     []
   );
