@@ -69,22 +69,21 @@ function PackageEditableRow(props) {
     <div className="flex flex-row justify-start overflow-x-scroll  ">
       <input
         value={name}
-        className="outline-none  rounded-md p-1      border-none hover:bg-gray-300 bg-white"
+        className="outline-none w-fit rounded-md p-1      border-none hover:bg-gray-300 bg-white"
         onChange={(e) => setName(e.target.value)}
         placeholder="Name"
-        style={{ width: "fit-content" }}
       />
 
       <input
         value={pics}
-        className="outline-none    rounded-md  p-1    border-none hover:bg-gray-300 bg-white"
+        className="outline-none w-fit   rounded-md  p-1    border-none hover:bg-gray-300 bg-white"
         onChange={(e) => setPics(e.target.value)}
         placeholder="Pics #"
       />
 
       <input
         value={size}
-        className="outline-none   rounded-md p-1   border-none hover:bg-gray-300 bg-white"
+        className="outline-none  w-fit rounded-md p-1   border-none hover:bg-gray-300 bg-white"
         onChange={(e) => setSize(e.target.value)}
         placeholder="Magazine"
       />
@@ -130,7 +129,7 @@ function PackageEditableRow(props) {
 
       <input
         value={price}
-        className="outline-none     rounded-md p-1     border-none hover:bg-gray-300 bg-white"
+        className="outline-none w-fit    rounded-md p-1     border-none hover:bg-gray-300 bg-white"
         onChange={(e) => setPrice(e.target.value)}
         placeholder="Price"
       />

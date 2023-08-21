@@ -42,7 +42,7 @@ function Packages(props) {
               token={props.token}
               new={true}
               setNewRow={setNewRow}
-              name="name"
+              name="Package"
               pictures="80"
               size="30x30"
               albumCrystal={true}
