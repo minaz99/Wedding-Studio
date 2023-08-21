@@ -31,8 +31,8 @@ function Login(props) {
             <div className="text-amber-50 tracking-widest underline underline-offset-8 decoration-pink-200 font-extralight text-5xl text-center hover:animate-bounce">
               Julia Studio
             </div>
-            <div className="flex space-x-12 mt-12">
-              <div className="justify-center grid mt-20 space-y-8 ">
+            <div className="flex space-x-12 ">
+              <div className="justify-center grid  space-y-8 ">
                 <input
                   value={email}
                   className="outline-none w-fit text-xl  rounded-md p-1  text-center border-none hover:bg-gray-300 bg-white"
