@@ -23,7 +23,7 @@ function Login(props) {
 
   return (
     <div className="w-screen bg-amber-50 h-screen p-6  ">
-      <div className="bg-blue-200 rounded-xl m-auto h-fit w-fit mx-auto p-10 ">
+      <div className="bg-blue-200 rounded-xl m-auto h-fit w-fit  p-10 ">
         {result.isLoading ? (
           <Spinner animation="border" role="status"></Spinner>
         ) : (
