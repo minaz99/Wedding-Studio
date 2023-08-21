@@ -17,7 +17,11 @@ function Home(props) {
   return (
     <div className="rounded-lg bg-slate-400  h-screen  p-4 shadow-lg  ">
       <div className="flex  h-full relative justify-center">
-        <SectionsWrapper setIsLoggedIn={props.setIsLoggedIn} name={name} setActiveView={setActiveView} />
+        <SectionsWrapper
+          setIsLoggedIn={props.setIsLoggedIn}
+          name={name}
+          setActiveView={setActiveView}
+        />
         {activeView === "Table" ? (
           <TableWrapper
             initialX={props.initialX}
@@ -26,7 +30,11 @@ function Home(props) {
             token={token}
           />
         ) : activeView === "Contract" ? (
-          <CreatContractWrapper token={token} setActiveView={setActiveView} />
+          <CreatContractWrapper
+            name={name}
+            token={token}
+            setActiveView={setActiveView}
+          />
         ) : activeView === "photographers" ? (
           <CalendarWrapper token={token} />
         ) : activeView === "Packages" ? (

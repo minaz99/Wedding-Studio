@@ -34,7 +34,7 @@ function CreatContractWrapper(props) {
   const [discount, setDiscount] = useState(0);
   const [packageDetails, setPackageDetails] = useState({});
   const [comments, setComments] = useState("");
-  const [createdBy, setCreatedBy] = useState("");
+  const [createdBy, setCreatedBy] = useState(props.name);
   const [showPDFContract, setShowPDFContract] = useState(false);
   const [createContract, result] = useCreateContractMutation();
   const [makePayment, result2] = useMakePaymentMutation();
