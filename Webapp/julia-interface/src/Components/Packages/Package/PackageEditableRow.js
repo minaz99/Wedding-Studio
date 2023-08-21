@@ -111,7 +111,7 @@ function PackageEditableRow(props) {
           </Dropdown.Item>
         </DropdownButton>
       </div>
-      <div className="space-y-1 mx-8 ">
+      <div className="space-y-1 -mx-8 ">
         <DropdownButton variant="primary" title={video ? "Yes" : "No"}>
           <Dropdown.Item onClick={() => setVideo(true)}>Yes</Dropdown.Item>
           <Dropdown.Item onClick={() => setVideo(false)}>No</Dropdown.Item>
