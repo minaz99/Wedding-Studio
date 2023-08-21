@@ -66,10 +66,10 @@ function PackageEditableRow(props) {
   };
 
   return (
-    <div className="flex flex-row justify-start overflow-x-scroll  ">
+    <div className=" overflow-x-scroll inline-flex  ">
       <input
         value={name}
-        className="outline-none w-fit rounded-md p-1      border-none hover:bg-gray-300 bg-white"
+        className="outline-none  rounded-md p-1      border-none hover:bg-gray-300 bg-white"
         onChange={(e) => setName(e.target.value)}
         placeholder="Name"
       />
