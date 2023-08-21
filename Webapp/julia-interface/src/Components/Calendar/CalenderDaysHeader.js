@@ -2,7 +2,7 @@ import React from "react";
 
 function CalenderDaysHeader() {
   return (
-    <div className="p-2 flex justify-evenly    text-white">
+    <div className="p-2 flex justify-around    text-white">
       <div className="">SUN</div>
       <div className="">MON</div>
       <div className="">TUE</div>
