@@ -30,7 +30,7 @@ function ContractDetailsReview(props) {
         <div className="flex space-x-2">
           <UserGroupIcon height={22} width={22} color="#78716c" />
           <div className="text-gray-500">Second Party</div>
-          <div>{props.groomName}</div>
+          <div>{props.secondPartyName}</div>
         </div>
       </div>
       <div className=" space-y-3  ">
