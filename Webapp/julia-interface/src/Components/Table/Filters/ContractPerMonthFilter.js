@@ -21,14 +21,14 @@ function ContractPerMonthFilter(props) {
           {props.year}
         </div>
 
-        <Years setYearSelected={onMonthSelection} />
+        <Years setYearSelected={onYearSelection} />
       </div>
       <div className="items-center flex space-x-2">
         <div className="text-lg text-white">Month</div>
         <div className="text-lg text-black text-center bg-blue-100 rounded-full w-8 h-8 p-1 ">
           {props.month}
         </div>
-        <Months setMonthSelected={onYearSelection} />
+        <Months setMonthSelected={onMonthSelection} />
       </div>
     </div>
   );
