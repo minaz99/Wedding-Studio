@@ -5,7 +5,11 @@ import React from "react";
 import Years from "../../Calendar/Years";
 import Months from "../../Calendar/Months";
 function ContractPerMonthFilter(props) {
-  const onSelection = (value) => {
+  const onMonthSelection = (value) => {
+    props.setDataFrom("month");
+    props.setMonthSelected(value);
+  };
+  const onYearSelection = (value) => {
     props.setDataFrom("month");
     props.setYearSelected(value);
   };
@@ -17,14 +21,14 @@ function ContractPerMonthFilter(props) {
           {props.year}
         </div>
 
-        <Years setYearSelected={onSelection} />
+        <Years setYearSelected={onMonthSelection} />
       </div>
       <div className="items-center flex space-x-2">
         <div className="text-lg text-white">Month</div>
         <div className="text-lg text-black text-center bg-blue-100 rounded-full w-8 h-8 p-1 ">
           {props.month}
         </div>
-        <Months setMonthSelected={onSelection} />
+        <Months setMonthSelected={onYearSelection} />
       </div>
     </div>
   );
