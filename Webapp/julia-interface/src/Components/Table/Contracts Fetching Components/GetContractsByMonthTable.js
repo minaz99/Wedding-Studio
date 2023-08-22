@@ -34,8 +34,8 @@ function GetContractsByMonthTable(props) {
           pressedRow={props.pressedRow}
         />
       );
-    }))
-  ) : isError ? (
+    })
+  ) : /*)*/ isError ? (
     <div className="text-center text-red-400 text-xl p-4">
       Error getting contracts...
     </div>
