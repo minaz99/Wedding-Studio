@@ -6,7 +6,7 @@ import Years from "../../Calendar/Years";
 import Months from "../../Calendar/Months";
 function ContractPerMonthFilter(props) {
   const dateSelectHandler = (e) => {
-    props.setDataFrom("date");
+    //props.setDataFrom("date");
     props.setDate(new Date(e.target.value));
   };
   return (
