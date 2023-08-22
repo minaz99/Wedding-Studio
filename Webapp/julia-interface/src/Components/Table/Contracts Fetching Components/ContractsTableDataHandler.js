@@ -60,6 +60,7 @@ function ContractsTableDataHandler(props) {
       month={props.monthSelected}
       year={props.yearSelected}
       page={props.page}
+      setPageCount={props.setPageCount}
       /*day={props.date.getDate()}
   month={props.date.getMonth() + 1}
   year={props.date.getFullYear()}*/
