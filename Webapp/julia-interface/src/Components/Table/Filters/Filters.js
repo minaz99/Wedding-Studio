@@ -7,6 +7,10 @@ function Filters(props) {
     props.setFilterTypeOption("");
     props.setDataFrom("");
   };
+  const selectMonthFilter = () => {
+    props.filterTypeSelected("month");
+    props.setDataFrom("month");
+  };
   return (
     <div className="tracking-wider space-x-2 text-lg text-white  font-semibold flex items-center">
       <FunnelIcon className=" mx-2" height={20} width={20} color="white" />
@@ -23,6 +27,9 @@ function Filters(props) {
           <Dropdown.Item onClick={() => props.filterTypeSelected("stage")}>
             Contract Stage
           </Dropdown.Item>
+          <Dropdown.Item onClick={() => selectMonthFilter()}>
+            Month
+          </Dropdown.Item>
           {/*<Dropdown.Item onClick={() => filterTypeSelected("Photographer")}>
                 Photographer
               </Dropdown.Item>
@@ -31,7 +38,9 @@ function Filters(props) {
       </Dropdown.Item>*/}
         </DropdownButton>
       </div>
-      {props.dataFrom === "date" || props.dataFrom === "filter" ? (
+      {props.dataFrom === "date" ||
+      props.dataFrom === "filter" ||
+      props.dataFrom === "month" ? (
         <XCircleIcon
           height={22}
           width={22}

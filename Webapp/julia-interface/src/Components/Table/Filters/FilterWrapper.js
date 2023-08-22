@@ -3,6 +3,7 @@ import ConractStageFilter from "./ConractStageFilter";
 import { XCircleIcon } from "@heroicons/react/24/outline";
 import ContractStatusFilter from "./ContractStatusFilter";
 import EventDateFilter from "./EventDateFilter";
+import ContractPerMonthFilter from "./ContractPerMonthFilter";
 function FilterWrapper(props) {
   const [filterOptionChecked, setFilterOptionChecked] = useState(false);
   const [optionSelected, setOptionSelected] = useState("");
@@ -43,8 +44,14 @@ function FilterWrapper(props) {
             date={props.date}
             setDataFrom={props.setDataFrom}
           />
+        ) : props.filterType === "month" ? (
+          <ContractPerMonthFilter
+            setMonthSelected={props.setMonthSelected}
+            setYearSelected={props.setYearSelected}
+            setDataFrom={props.setDataFrom}
+          />
         ) : (
-          <div />
+          <div></div>
         )}
         <div
           onClick={() => cancelFilter()}

@@ -119,6 +119,16 @@ export const contractSlice = createApi({
         method: "GET",
       }),
     }),
+    getContractsPerMonthTable: builder.query({
+      query: (data) => ({
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `Bearer ${data.token}`,
+        },
+        url: `/filter/month?page=${data.page}&month=${data.month}&year=${data.year}`,
+        method: "GET",
+      }),
+    }),
   }),
 });
 
@@ -134,4 +144,5 @@ export const {
   useUpdateContractMutation,
   useMakePaymentMutation,
   useGetContractsByDayQuery,
+  useGetContractsPerMonthTableQuery,
 } = contractSlice;
