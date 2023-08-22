@@ -1,4 +1,4 @@
-import { TableRow } from "@mui/material";
+import TableRow from "../TableRow";
 import React from "react";
 import { useGetContractsPerMonthTableQuery } from "../../../services/api/contractSlice";
 
