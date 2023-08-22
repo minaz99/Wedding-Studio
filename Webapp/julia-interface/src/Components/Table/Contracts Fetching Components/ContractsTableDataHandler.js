@@ -59,6 +59,7 @@ function ContractsTableDataHandler(props) {
       setTotalContracts={props.setTotalContracts}
       month={props.monthSelected}
       year={props.yearSelected}
+      page={props.page}
       /*day={props.date.getDate()}
   month={props.date.getMonth() + 1}
   year={props.date.getFullYear()}*/
