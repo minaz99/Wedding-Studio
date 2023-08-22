@@ -53,8 +53,8 @@ function TableWrapper(props) {
   const [pageCount, setPageCount] = useState(0);
   const [totalContracts, setTotalContracts] = useState(0);
   const [date, setDate] = useState(new Date());
-  const [monthSelected, setMonthSelected] = useState(1);
-  const [yearSelected, setYearSelected] = useState(2023);
+  const [monthSelected, setMonthSelected] = useState(new Date().getMonth() + 1);
+  const [yearSelected, setYearSelected] = useState(new Date().getFullYear());
   /* const [getContractsByMultipleCriterias, result] =
     useGetContractsByMultipleCriteriasQuery();
 */

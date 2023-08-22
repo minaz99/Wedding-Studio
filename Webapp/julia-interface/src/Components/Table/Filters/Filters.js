@@ -9,7 +9,7 @@ function Filters(props) {
   };
   const selectMonthFilter = () => {
     props.filterTypeSelected("month");
-    props.setDataFrom("month");
+    //props.setDataFrom("month");
   };
   return (
     <div className="tracking-wider space-x-2 text-lg text-white  font-semibold flex items-center">
