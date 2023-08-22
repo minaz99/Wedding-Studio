@@ -14,7 +14,7 @@ function ContractPerMonthFilter(props) {
       <div className="items-center flex space-x-2">
         <div className="text-lg  text-white">Year </div>
         <div className="text-lg text-black rounded-full w-12 h-8 bg-blue-100  p-1">
-          {props.yearSelected}
+          {props.year}
         </div>
 
         <Years setYearSelected={props.setYearSelected} />
@@ -22,7 +22,7 @@ function ContractPerMonthFilter(props) {
       <div className="items-center flex space-x-2">
         <div className="text-lg text-white">Month</div>
         <div className="text-lg text-black text-center bg-blue-100 rounded-full w-8 h-8 p-1 ">
-          {props.monthSelected}
+          {props.month}
         </div>
         <Months setMonthSelected={props.setMonthSelected} />
       </div>

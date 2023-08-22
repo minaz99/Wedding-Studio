@@ -49,6 +49,8 @@ function FilterWrapper(props) {
             setMonthSelected={props.setMonthSelected}
             setYearSelected={props.setYearSelected}
             setDataFrom={props.setDataFrom}
+            year={props.yearSelected}
+            month={props.monthSelected}
           />
         ) : (
           <div></div>
