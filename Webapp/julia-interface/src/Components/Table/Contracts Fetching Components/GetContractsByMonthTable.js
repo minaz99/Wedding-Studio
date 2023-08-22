@@ -20,7 +20,7 @@ function GetContractsByMonthTable(props) {
   return isLoading ? (
     <div className="text-center text-blue-400 text-xl p-4">Loading...</div>
   ) : isSuccess ? (
-    //(contractsDetails(),
+    (contractsDetails(),
     data.contracts.map((contract) => {
       return (
         <TableRow
@@ -34,8 +34,8 @@ function GetContractsByMonthTable(props) {
           pressedRow={props.pressedRow}
         />
       );
-    })
-  ) : /*)*/ isError ? (
+    }))
+  ) : isError ? (
     <div className="text-center text-red-400 text-xl p-4">
       Error getting contracts...
     </div>
