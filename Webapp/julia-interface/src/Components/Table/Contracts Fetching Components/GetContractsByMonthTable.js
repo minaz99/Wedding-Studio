@@ -4,15 +4,12 @@ import { useGetContractsPerMonthTableQuery } from "../../../services/api/contrac
 
 function GetContractsByMonthTable(props) {
   const { data, isLoading, isError, isSuccess } =
-    useGetContractsPerMonthTableQuery(
-      {
-        token: props.token,
-        page: props.page,
-        month: props.month,
-        year: props.year,
-      },
-      { refetchOnMountOrArgChange: true }
-    );
+    useGetContractsPerMonthTableQuery({
+      token: props.token,
+      page: props.page,
+      month: props.month,
+      year: props.year,
+    });
   function contractsDetails() {
     props.setPageCount(data.pages);
     props.setTotalContracts(data.total);
