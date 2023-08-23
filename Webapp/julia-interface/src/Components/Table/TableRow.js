@@ -25,14 +25,14 @@ function TableRow(props) {
       className="border-t-2 border-r-2 flex items-center   bg-rose-50 shadow-md rounded-md my-1 border-l-2 border-gray-400  text-black p-2 font-semibold "
       style={{ backgroundColor: rowColor }}
     >
-      <div className="flex mx-20 flex-1 items-center">
+      <div className="flex mx-15 flex-1 items-center">
         <UserIconWrapper letter={props.letter} color={userColor} />{" "}
         {props.brideName}
       </div>
       <div className="flex-1 ">{props.eventType}</div>
       <div className="flex-1">{props.eventPlace}</div>
 
-      <div className="flex-1 ">
+      <div className="flex-1 mx-10 ">
         {/*<StatusWrapper status={props.status} />*/}
         {props.eventDate.toString().split("T")[0]}
       </div>
