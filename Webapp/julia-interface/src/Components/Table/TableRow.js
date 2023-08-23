@@ -22,22 +22,22 @@ function TableRow(props) {
   return (
     <div
       key={props.id}
-      className="border-t-2 border-r-2 flex items-center   bg-rose-50 shadow-md rounded-md my-1 border-l-2 border-gray-400 space-x-12 text-black p-2 font-semibold "
+      className="border-t-2 border-r-2 flex items-center   bg-rose-50 shadow-md rounded-md my-1 border-l-2 border-gray-400  text-black p-2 font-semibold "
       style={{ backgroundColor: rowColor }}
     >
-      <div className="flex mx-40  items-center">
+      <div className="flex  flex-1 items-center">
         <UserIconWrapper letter={props.letter} color={userColor} />{" "}
         {props.brideName}
       </div>
-      <div className="mx-40">{props.eventType}</div>
-      <div className="mx-40">{props.eventPlace}</div>
+      <div className="flex-1 ">{props.eventType}</div>
+      <div className="flex-1">{props.eventPlace}</div>
 
-      <div className="mx-40">
+      <div className="flex-1 ">
         {/*<StatusWrapper status={props.status} />*/}
         {props.eventDate.toString().split("T")[0]}
       </div>
 
-      {/*<EllipsisHorizontalCircleIcon
+      <EllipsisHorizontalCircleIcon
         onClick={() => props.pressedRow(props.id)}
         className="cursor-pointer"
         height={30}
@@ -45,7 +45,7 @@ function TableRow(props) {
         onMouseEnter={() => setChevronColor("black")}
         onMouseLeave={() => setChevronColor("gray")}
         color={chevronColor}
-      />*/}
+      />
     </div>
   );
 }
