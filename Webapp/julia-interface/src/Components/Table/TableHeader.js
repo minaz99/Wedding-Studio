@@ -120,7 +120,7 @@ function TableHeader(props) {
           className="mx-2"
           color="#818cf8"
         />
-        Date
+        Event Date
         <div className="flex-1 w-2"></div>
         {/*<THContractStatus
           data={data}
