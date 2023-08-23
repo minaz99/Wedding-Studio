@@ -32,7 +32,7 @@ function TableRow(props) {
       <div className="flex-1 ">{props.eventType}</div>
       <div className="flex-1">{props.eventPlace}</div>
 
-      <div className="flex-1 -mx-30 ">
+      <div className="">
         {/*<StatusWrapper status={props.status} />*/}
         {props.eventDate.toString().split("T")[0]}
       </div>
