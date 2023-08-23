@@ -29,10 +29,10 @@ function TableRow(props) {
         <UserIconWrapper letter={props.letter} color={userColor} />{" "}
         {props.brideName}
       </div>
-      <div className=" ">{props.eventType}</div>
-      <div className="">{props.eventPlace}</div>
+      <div className="mx-40">{props.eventType}</div>
+      <div className="mx-40">{props.eventPlace}</div>
 
-      <div className="">
+      <div className="mx-40">
         {/*<StatusWrapper status={props.status} />*/}
         {props.eventDate.toString().split("T")[0]}
       </div>
