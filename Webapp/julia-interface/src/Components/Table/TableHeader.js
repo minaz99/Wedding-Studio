@@ -45,7 +45,7 @@ function TableHeader(props) {
       refetchOnMountOrArgChange: true,
     });
   return (
-    <div className="flex   bg-gray-100 justify-evenly rounded-md text-gray-600 border-gray-400 p-2">
+    <div className="flex   bg-gray-100 justify-between rounded-md text-gray-600 border-gray-400 p-2">
       <div className="items-center  flex text-lg font-semibold">
         <UserIcon height={20} width={20} className="mx-2" color="#ec4899" />
         {!searchBride ? <div>Bride's name</div> : <div></div>}
