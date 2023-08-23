@@ -1,5 +1,6 @@
 import {
   BuildingStorefrontIcon,
+  CalendarDaysIcon,
   ChevronDownIcon,
   ClockIcon,
   MagnifyingGlassCircleIcon,
@@ -113,7 +114,7 @@ function TableHeader(props) {
         />
       </div>
       <div className="items-center flex  text-lg font-semibold">
-        <CalenderDaysHeader
+        <CalendarDaysIcon
           height={20}
           width={20}
           className="mx-2"
