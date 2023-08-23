@@ -25,7 +25,6 @@ function TableRow(props) {
       className="border-t-2 border-r-2 flex items-center   bg-rose-50 shadow-md rounded-md my-1 border-l-2 border-gray-400  text-black p-2 font-semibold "
       style={{ backgroundColor: rowColor }}
     >
-      <div className="flex-1 mx-14"></div>
       <div className="flex  flex-1 items-center">
         <UserIconWrapper letter={props.letter} color={userColor} />{" "}
         {props.brideName}
