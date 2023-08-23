@@ -27,6 +27,7 @@ function GetAllContractsComponent(props) {
           eventPlace={contract.eventlocation}
           status={contract.contractstatus}
           color="green"
+          eventDate={contract.eventdate}
           pressedRow={props.pressedRow}
         />
       );

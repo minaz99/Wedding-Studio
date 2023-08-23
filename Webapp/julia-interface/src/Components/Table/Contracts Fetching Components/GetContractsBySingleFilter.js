@@ -30,6 +30,7 @@ function GetContractsBySingleFilter(props) {
           eventType={contract.eventtype}
           eventPlace={contract.eventlocation}
           status={contract.contractstatus}
+          eventDate={contract.eventdate}
           color="green"
           pressedRow={props.pressedRow}
         />

@@ -33,7 +33,8 @@ function TableRow(props) {
       <div className="flex-1">{props.eventPlace}</div>
 
       <div className="flex-1">
-        <StatusWrapper status={props.status} />
+        {/*<StatusWrapper status={props.status} />*/}
+        {props.eventDate}
       </div>
 
       <EllipsisHorizontalCircleIcon

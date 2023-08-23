@@ -19,6 +19,7 @@ import {
   useGetAllContractsQuery,
   useGetContractsTableHeaderFiltersQuery,
 } from "../../services/api/contractSlice";
+import CalenderDaysHeader from "../Calendar/CalenderDaysHeader";
 
 function TableHeader(props) {
   const [chevronColor, setChevronColor] = useState("gray");
@@ -112,10 +113,15 @@ function TableHeader(props) {
         />
       </div>
       <div className="items-center flex  text-lg font-semibold">
-        <ClockIcon height={20} width={20} className="mx-2" color="#475569" />
-        Contract status
+        <CalenderDaysHeader
+          height={20}
+          width={20}
+          className="mx-2"
+          color="#818cf8"
+        />
+        Date
         <div className="flex-1 w-2"></div>
-        <THContractStatus
+        {/*<THContractStatus
           data={data}
           isLoading={isLoading}
           isSuccess={isSuccess}
@@ -125,7 +131,7 @@ function TableHeader(props) {
           setContractStatusFilter={props.setContractStatusFilter}
           setDataFrom={props.setDataFrom}
           setIsContractStatusFilter={props.setIsContractStatusFilter}
-        />
+        />*/}
       </div>
       {props.dataFrom === "multiple" ? (
         <div className="items-center flex">
