@@ -25,7 +25,8 @@ function TableRow(props) {
       className="border-t-2 border-r-2 flex items-center   bg-rose-50 shadow-md rounded-md my-1 border-l-2 border-gray-400  text-black p-2 font-semibold "
       style={{ backgroundColor: rowColor }}
     >
-      <div className="flex mx-14 flex-1 items-center">
+      <div className="flex-1 mx-14"></div>
+      <div className="flex  flex-1 items-center">
         <UserIconWrapper letter={props.letter} color={userColor} />{" "}
         {props.brideName}
       </div>
@@ -36,7 +37,7 @@ function TableRow(props) {
         {/*<StatusWrapper status={props.status} />*/}
         {props.eventDate.toString().split("T")[0]}
       </div>
-      <div> className="flex-1</div>
+
       {/*<EllipsisHorizontalCircleIcon
         onClick={() => props.pressedRow(props.id)}
         className="cursor-pointer"
