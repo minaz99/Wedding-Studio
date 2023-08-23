@@ -37,7 +37,7 @@ function TableRow(props) {
         {props.eventDate.toString().split("T")[0]}
       </div>
 
-      <EllipsisHorizontalCircleIcon
+      {/*<EllipsisHorizontalCircleIcon
         onClick={() => props.pressedRow(props.id)}
         className="cursor-pointer"
         height={30}
@@ -45,7 +45,7 @@ function TableRow(props) {
         onMouseEnter={() => setChevronColor("black")}
         onMouseLeave={() => setChevronColor("gray")}
         color={chevronColor}
-      />
+      />*/}
     </div>
   );
 }
