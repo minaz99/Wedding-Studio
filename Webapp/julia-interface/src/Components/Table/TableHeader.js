@@ -77,7 +77,7 @@ function TableHeader(props) {
           className="mx-2"
           color="#a78bfa"
         />
-        Event type
+        Event
         <div className="flex-1 w-2"></div>
         <THEventTypeFilter
           data={data}
@@ -99,7 +99,7 @@ function TableHeader(props) {
           className="mx-2"
           color="#2dd4bf"
         />
-        Event place
+        Location
         <div className="flex-1 w-2"></div>
         <THEventLocationFilter
           data={data}
@@ -120,7 +120,7 @@ function TableHeader(props) {
           className="mx-2"
           color="#818cf8"
         />
-        Event Date
+        Date
         <div className="flex-1 w-2"></div>
         {/*<THContractStatus
           data={data}
