@@ -37,18 +37,19 @@ function TableRow(props) {
         {/*<StatusWrapper status={props.status} />*/}
         {props.eventDate.toString().split("T")[0]}
       </div>
-
-      {
-        <EllipsisHorizontalCircleIcon
-          onClick={() => props.pressedRow(props.id)}
-          className="cursor-pointer"
-          height={30}
-          width={25}
-          onMouseEnter={() => setChevronColor("black")}
-          onMouseLeave={() => setChevronColor("gray")}
-          color={chevronColor}
-        />
-      }
+      <div className="mx-20">
+        {
+          <EllipsisHorizontalCircleIcon
+            onClick={() => props.pressedRow(props.id)}
+            className="cursor-pointer"
+            height={30}
+            width={25}
+            onMouseEnter={() => setChevronColor("black")}
+            onMouseLeave={() => setChevronColor("gray")}
+            color={chevronColor}
+          />
+        }
+      </div>
     </div>
   );
 }
