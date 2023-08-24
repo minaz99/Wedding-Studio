@@ -121,7 +121,7 @@ function TableHeader(props) {
           color="#818cf8"
         />
         Date
-        <div className="flex-1 w-2"></div>
+        <div className="flex-1 w-2 mx-10"></div>
         {/*<THContractStatus
           data={data}
           isLoading={isLoading}
