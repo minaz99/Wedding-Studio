@@ -25,6 +25,7 @@ function GetContractsByDay(props) {
       return (
         <TableRow
           id={contract.id}
+          eventDate={contract.eventDate}
           brideName={contract.bridename}
           letter={contract.bridename[0]}
           eventType={contract.eventtype}
