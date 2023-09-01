@@ -1,11 +1,10 @@
-import { PencilSquareIcon, XCircleIcon } from "@heroicons/react/24/outline";
 import React from "react";
 import ContractPackages from "./ContractPackages";
 import ContractComponents from "./ContractComponents";
 
-function EditContractPackages(props) {
+function PackagesAndComponents(props) {
   return (
-    <div className="">
+    <div className="space-y-3">
       <div className="space-y-3">
         <ContractPackages token={props.token} id={props.packageID} />
 
@@ -29,4 +28,4 @@ function EditContractPackages(props) {
   );
 }
 
-export default EditContractPackages;
+export default PackagesAndComponents;
