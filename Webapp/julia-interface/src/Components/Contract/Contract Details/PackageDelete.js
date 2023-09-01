@@ -16,20 +16,7 @@ function PackageDelete(props) {
       {result.isSuccess ? (
         <div></div>
       ) : (
-        <div className="space-x-3 flex">
-          <MinusCircleIcon
-            height={26}
-            width={26}
-            color="#475569"
-            className="cursor-pointer"
-            onClick={() =>
-              updateContract({
-                token: props.token,
-                id: props.contractID,
-                body: { packageID: "0" },
-              })
-            }
-          />
+        <div className="space-x-3 flex items-center">
           <div className="bg-blue-200 rounded-md  p-1 shadow-md">
             {isLoading ? (
               <div className="text-center text-blue-400 text-xl p-4">
@@ -60,6 +47,19 @@ function PackageDelete(props) {
               <div></div>
             )}
           </div>
+          <MinusCircleIcon
+            height={26}
+            width={26}
+            color="#475569"
+            className="cursor-pointer"
+            onClick={() =>
+              updateContract({
+                token: props.token,
+                id: props.contractID,
+                body: { packageID: "0" },
+              })
+            }
+          />
         </div>
       )}
     </div>
