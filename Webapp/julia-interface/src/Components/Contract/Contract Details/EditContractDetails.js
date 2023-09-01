@@ -73,10 +73,10 @@ function EditContractDetails(props) {
       </div>
       <div className="flex space-x-2 flex-1">
         <CalendarDaysIcon height={22} width={22} color="#818cf8" />
-        <div className="text-gray-500">Date</div>
+        <div className="text-gray-500">Date Created</div>
         <input
           type="date"
-          value={props.dateCreated}
+          value={props.dateCreated.toString().split("T")[0]}
           style={{
             background: "#e2e8f0",
             borderRadius: "6px",
@@ -127,7 +127,7 @@ function EditContractDetails(props) {
         </div>
         <div className="flex space-x-2 flex-1">
           <CalendarDaysIcon height={22} width={22} color="#818cf8" />
-          <div className="text-gray-500">Date</div>
+          <div className="text-gray-500">Event Date</div>
           <input
             type="date"
             value={props.date.toString().split("T")[0]}
@@ -260,7 +260,7 @@ function EditContractDetails(props) {
             <input
               value={props.createdBy}
               style={{
-                background: "#e2e8f0",
+                background: "#94a3b8",
                 borderRadius: "6px",
                 border: "none",
                 color: "#475569",

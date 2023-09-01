@@ -66,6 +66,7 @@ function ContractDetailsWrapper(props) {
           eventType={props.eventType}
           location={location}
           date={date}
+          dateCreated={props.dateCreated}
           civilID={props.civilID}
           phone1={phone1}
           phone2={phone2}
@@ -80,7 +81,6 @@ function ContractDetailsWrapper(props) {
           setPhotographer={setPhotographer}
           setVideo={setVideo}
           createdBy={props.createdBy}
-          dateCreated={props.dateCreated}
         />
       ) : (
         <ContractDetails
