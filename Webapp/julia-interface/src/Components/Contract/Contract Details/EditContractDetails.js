@@ -78,7 +78,7 @@ function EditContractDetails(props) {
           type="date"
           value={props.dateCreated.toString().split("T")[0]}
           style={{
-            background: "#e2e8f0",
+            background: "#94a3b8",
             borderRadius: "6px",
             color: "#475569",
             padding: "4px 4px 4px 4px",
