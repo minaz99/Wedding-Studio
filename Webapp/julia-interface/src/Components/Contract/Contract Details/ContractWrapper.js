@@ -77,6 +77,7 @@ function ContractWrapper(props) {
             packageID={data.contract.packageid}
             price={data.contract.price}
             compsIDs={data.contract.componentids}
+            contractID={data.contract.id}
           />
           <div className="space-x-2">
             <ContractPayments token={props.token} id={props.contractID} />

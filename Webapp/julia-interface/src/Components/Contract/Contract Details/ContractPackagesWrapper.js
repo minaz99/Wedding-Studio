@@ -37,6 +37,7 @@ function ContractPackagesWrapper(props) {
             compsIDs={props.compsIDs}
             packageID={props.packageID}
             price={props.price}
+            contractID={props.contractID}
           />
         ) : (
           <PackagesAndComponents
