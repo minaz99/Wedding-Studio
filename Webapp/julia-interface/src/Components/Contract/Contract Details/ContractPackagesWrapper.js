@@ -32,7 +32,12 @@ function ContractPackagesWrapper(props) {
           )}
         </div>
         {editPackage ? (
-          <EditContractPackages />
+          <EditContractPackages
+            token={props.token}
+            compsIDs={props.compsIDs}
+            packageID={props.packageID}
+            price={props.price}
+          />
         ) : (
           <PackagesAndComponents
             token={props.token}
