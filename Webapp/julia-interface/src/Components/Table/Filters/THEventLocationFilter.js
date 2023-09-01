@@ -12,7 +12,7 @@ function THEventLocationFilter(props) {
       id="dropdown-basic-button"
       title=""
     >
-      <ul class="list-group" className="overflow-y-scroll">
+      <ul class="list-group" className="overflow-y-scroll h-1/2">
         {props.isLoading ? (
           <div className="text-center text-blue-400 text-xl p-4">
             Loading...
