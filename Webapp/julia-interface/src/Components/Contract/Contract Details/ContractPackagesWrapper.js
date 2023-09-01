@@ -2,7 +2,7 @@ import { CameraIcon } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
 import ContractPackages from "./ContractPackages";
 import ContractComponents from "./ContractComponents";
-import { PencilSquareIcon, XCircleIcon } from "@heroicons/react/24/solid";
+import { PencilSquareIcon, XCircleIcon } from "@heroicons/react/24/outline";
 
 function ContractPackagesWrapper(props) {
   const [editPackage, setEditPackage] = useState(false);
