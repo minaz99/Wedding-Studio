@@ -5,7 +5,7 @@ import { useGetPackageByIDQuery } from "../../../services/api/packageSlice";
 
 function PackagesAndComponents(props) {
   const { data, isLoading, isError, isSuccess } = useGetPackageByIDQuery(
-    { token: props.token, id: props.id },
+    { token: props.token, id: props.packageID },
     {
       refetchOnMountOrArgChange: true,
     }
