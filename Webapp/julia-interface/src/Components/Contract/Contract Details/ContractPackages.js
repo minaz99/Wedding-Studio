@@ -22,7 +22,7 @@ function ContractPackages(props) {
           </div>
         ) : isSuccess ? (
           <div>
-            {!data ? (
+            {data === null ? (
               <div></div>
             ) : (
               <div>
