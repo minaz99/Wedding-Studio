@@ -16,10 +16,10 @@ function PackageDelete(props) {
       {result.isSuccess ? (
         <div></div>
       ) : (
-        <div className="space-x-3">
+        <div className="space-x-3 flex">
           <MinusCircleIcon
-            height={22}
-            width={22}
+            height={26}
+            width={26}
             color="#475569"
             className="cursor-pointer"
             onClick={() =>
