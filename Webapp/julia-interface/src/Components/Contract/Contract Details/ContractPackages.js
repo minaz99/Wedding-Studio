@@ -22,18 +22,26 @@ function ContractPackages(props) {
           </div>
         ) : isSuccess ? (
           <div>
-            <div className="font-medium">{data.package.name}</div>
-            <div className="text-gray-600 p-1 flex space-x-8">
-              <li>{data.package.pictures} Pictures</li>
-              <li>Magazine {data.package.magazinename}</li>
-              <li>{data.package.albumcrystal ? "Album Crystal" : ""}</li>
-              <li>{data.package.magazinemini ? "Mini Magazine" : ""}</li>
-              <li>{data.package.video ? "Video" : ""}</li>
-              <li>
-                {data.package.openphotoandvideo ? "Open Photo and Video" : ""}
-              </li>
-              <li>{data.package.studio ? "Studio" : ""}</li>
-            </div>
+            {!data ? (
+              <div></div>
+            ) : (
+              <div>
+                <div className="font-medium">{data.package.name}</div>
+                <div className="text-gray-600 p-1 flex space-x-8">
+                  <li>{data.package.pictures} Pictures</li>
+                  <li>Magazine {data.package.magazinename}</li>
+                  <li>{data.package.albumcrystal ? "Album Crystal" : ""}</li>
+                  <li>{data.package.magazinemini ? "Mini Magazine" : ""}</li>
+                  <li>{data.package.video ? "Video" : ""}</li>
+                  <li>
+                    {data.package.openphotoandvideo
+                      ? "Open Photo and Video"
+                      : ""}
+                  </li>
+                  <li>{data.package.studio ? "Studio" : ""}</li>
+                </div>
+              </div>
+            )}
           </div>
         ) : (
           <div></div>
