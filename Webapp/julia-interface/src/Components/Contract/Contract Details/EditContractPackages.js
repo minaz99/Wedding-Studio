@@ -11,6 +11,7 @@ function EditContractPackages(props) {
         token={props.token}
         id={props.packageID}
         contractID={props.contractID}
+        setPkgID={props.setPkgID}
       />
     </div>
   );

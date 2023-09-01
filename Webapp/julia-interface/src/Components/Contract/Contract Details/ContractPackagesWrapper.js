@@ -8,6 +8,7 @@ import PackagesAndComponents from "./PackagesAndComponents";
 
 function ContractPackagesWrapper(props) {
   const [editPackage, setEditPackage] = useState(false);
+  const [pkgID, setPkgID] = useState(props.packageID);
   return (
     <div className="rounded-lg p-4 w-full bg-white h-fit  ">
       <div className="space-y-2">
@@ -35,15 +36,16 @@ function ContractPackagesWrapper(props) {
           <EditContractPackages
             token={props.token}
             compsIDs={props.compsIDs}
-            packageID={props.packageID}
+            packageID={pkgID}
             price={props.price}
             contractID={props.contractID}
+            setPkgID={setPkgID}
           />
         ) : (
           <PackagesAndComponents
             token={props.token}
             compsIDs={props.compsIDs}
-            packageID={props.packageID}
+            packageID={pkgID}
             price={props.price}
           />
         )}

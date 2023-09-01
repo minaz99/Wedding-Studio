@@ -10,6 +10,15 @@ function PackageDelete(props) {
       refetchOnMountOrArgChange: true,
     }
   );
+
+  const onClickUpdate = async () => {
+    await updateContract({
+      token: props.token,
+      id: props.contractID,
+      body: { packageID: "0" },
+    });
+    props.setPkgID("0");
+  };
   const [updateContract, result] = useUpdateContractMutation();
   return (
     <div className="flex space-x-2 items-center">
@@ -52,13 +61,7 @@ function PackageDelete(props) {
             width={26}
             color="#475569"
             className="cursor-pointer"
-            onClick={() =>
-              updateContract({
-                token: props.token,
-                id: props.contractID,
-                body: { packageID: "0" },
-              })
-            }
+            onClick={() => onClickUpdate()}
           />
         </div>
       )}
