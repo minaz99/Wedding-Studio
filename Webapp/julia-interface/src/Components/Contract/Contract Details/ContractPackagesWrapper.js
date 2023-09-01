@@ -33,11 +33,16 @@ function ContractPackagesWrapper(props) {
               />
             )}
           </div>
-          <ContractPackages token={props.token} id={props.packageID} />
+          <div className="space-y-3">
+            <ContractPackages token={props.token} id={props.packageID} />
 
-          <div className="flex space-x-6 items-center">
-            <div className="text-gray-800">Add ons</div>
-            <ContractComponents token={props.token} compsIDs={props.compsIDs} />
+            <div className="flex space-x-6 items-center">
+              <div className="text-gray-800">Add ons</div>
+              <ContractComponents
+                token={props.token}
+                compsIDs={props.compsIDs}
+              />
+            </div>
           </div>
           <div className="space-y-3">
             <div className="flex">
