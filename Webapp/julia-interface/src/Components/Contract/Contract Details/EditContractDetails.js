@@ -258,7 +258,7 @@ function EditContractDetails(props) {
             <UserCircleIcon height={22} width={22} color="#fed7aa" />
             <div className="text-gray-500">Created by</div>
             <input
-              value={props.createBy}
+              value={props.createdBy}
               style={{
                 background: "#e2e8f0",
                 borderRadius: "6px",
