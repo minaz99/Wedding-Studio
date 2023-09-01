@@ -37,7 +37,7 @@ function ContractPackagesWrapper(props) {
           <PackagesAndComponents
             token={props.token}
             compsIDs={props.compsIDs}
-            id={props.packageID}
+            packageID={props.packageID}
             price={props.price}
           />
         )}
