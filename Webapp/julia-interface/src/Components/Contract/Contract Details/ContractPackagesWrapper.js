@@ -10,9 +10,9 @@ function ContractPackagesWrapper(props) {
   return (
     <div className="space-y-3 rounded-lg p-4 w-full bg-white h-fit  ">
       {editPackage ? (
-        <EditContractPackages />
+        <EditContractPackages setEditPackage={setEditPackage} />
       ) : (
-        <div>
+        <div className="space-y-2">
           <div className="flex items-center">
             <div className="font-medium text-xl flex-1">Packages</div>
             {editPackage ? (
