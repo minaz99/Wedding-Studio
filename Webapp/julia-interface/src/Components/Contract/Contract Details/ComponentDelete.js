@@ -5,7 +5,7 @@ import { MinusCircleIcon, PlusCircleIcon } from "@heroicons/react/24/outline";
 function ComponentDelete(props) {
   let componentIDsArray = props.compsIDs.split(",");
   return (
-    <div className="space-y-3">
+    <div className="space-y-3 items-center">
       {componentIDsArray
         .filter((c) => c !== "," && c !== "")
         .map((id) => {
@@ -21,7 +21,7 @@ function ComponentDelete(props) {
             </div>
           );
         })}
-      <div className="mx-auto">
+      <div className="flex mx-auto">
         <PlusCircleIcon
           height={24}
           width={24}
