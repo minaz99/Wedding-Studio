@@ -9,7 +9,9 @@ function ComponentDelete(props) {
   const removeComponent = (compID) => {
     let componentsIDsString = "";
     componentIDsArray = componentIDsArray.filter((id) => id !== compID);
-    componentIDsArray.forEach((id) => (componentsIDsString += `${id},`));
+    componentIDsArray.forEach(
+      (id) => (componentsIDsString += `${id},` && id !== ",")
+    );
     props.setCompsIDs(componentsIDsString);
     updateContract({
       token: props.token,
