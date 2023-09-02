@@ -6,14 +6,15 @@ import { useUpdateContractMutation } from "../../../services/api/contractSlice";
 function ComponentDelete(props) {
   let componentIDsArray = props.compsIDs.split(",");
   const [updateContract, result] = useUpdateContractMutation();
-  const removeComponent = (compID) => {
+  const removeComponent = async (compID) => {
+    let newCompsArray = componentIDsArray.filter((c) => c !== "," && c !== "");
     let componentsIDsString = "";
-    componentIDsArray = componentIDsArray.filter((id) => id !== compID);
-    componentIDsArray.forEach(
+    //componentIDsArray = componentIDsArray.filter((id) => id !== compID);
+    newCompsArray.forEach(
       (id) => (componentsIDsString += `${id},` && id !== ",")
     );
     props.setCompsIDs(componentsIDsString);
-    updateContract({
+    await updateContract({
       token: props.token,
       id: props.contractID,
       body: { componentIDs: componentsIDsString },
@@ -21,32 +22,42 @@ function ComponentDelete(props) {
   };
 
   return (
-    <div className="space-y-3 ">
-      {componentIDsArray
-        .filter((c) => c !== "," && c !== "")
-        .map((id) => {
-          return (
-            <div className="flex space-x-2 items-center">
-              <Addon token={props.token} id={id} />
-              <MinusCircleIcon
-                height={24}
-                width={24}
-                color="#475569"
-                className="cursor-pointer"
-                onClick={() => removeComponent(id)}
-              />
-            </div>
-          );
-        })}
-      <div className="flex justify-center mx-auto">
-        <PlusCircleIcon
-          height={24}
-          width={24}
-          color="#475569"
-          className="cursor-pointer"
-        />
-      </div>
-    </div>
+    <React.Fragment>
+      {result.isLoading ? (
+        <div className="text-center text-blue-400 text-xl p-4">Removing</div>
+      ) : result.isError ? (
+        <div className="text-center text-red-400 text-xl p-4">
+          Error removing comment
+        </div>
+      ) : (
+        <div className="space-y-3 ">
+          {componentIDsArray
+            .filter((c) => c !== "," && c !== "")
+            .map((id) => {
+              return (
+                <div className="flex space-x-2 items-center">
+                  <Addon token={props.token} id={id} />
+                  <MinusCircleIcon
+                    height={24}
+                    width={24}
+                    color="#475569"
+                    className="cursor-pointer"
+                    onClick={() => removeComponent(id)}
+                  />
+                </div>
+              );
+            })}
+          <div className="flex justify-center mx-auto">
+            <PlusCircleIcon
+              height={24}
+              width={24}
+              color="#475569"
+              className="cursor-pointer"
+            />
+          </div>
+        </div>
+      )}
+    </React.Fragment>
   );
 }
 
