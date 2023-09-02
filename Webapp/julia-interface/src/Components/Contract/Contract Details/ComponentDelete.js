@@ -7,7 +7,9 @@ function ComponentDelete(props) {
   let componentIDsArray = props.compsIDs.split(",");
   const [updateContract, result] = useUpdateContractMutation();
   const removeComponent = async (compID) => {
-    let newCompsArray = componentIDsArray.filter((c) => c !== "," && c !== "");
+    let newCompsArray = componentIDsArray.filter(
+      (c) => c !== "," && c !== "" && c !== compID
+    );
     let componentsIDsString = "";
     //componentIDsArray = componentIDsArray.filter((id) => id !== compID);
     newCompsArray.forEach((id) => (componentsIDsString += `${id},`));
