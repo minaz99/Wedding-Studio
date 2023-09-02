@@ -14,7 +14,11 @@ function EditContractPackages(props) {
         contractID={props.contractID}
         setPkgID={props.setPkgID}
       />
-      <ComponentDelete token={props.token} compsIDs={props.compsIDs} />
+      <ComponentDelete
+        setCompsIDs={props.setCompsIDs}
+        token={props.token}
+        compsIDs={props.compsIDs}
+      />
     </div>
   );
 }
