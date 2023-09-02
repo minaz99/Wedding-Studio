@@ -31,6 +31,7 @@ function ComponentDelete(props) {
                 width={24}
                 color="#475569"
                 className="cursor-pointer"
+                onClick={() => removeComponent(id)}
               />
             </div>
           );
