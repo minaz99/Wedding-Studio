@@ -47,14 +47,6 @@ function ComponentDelete(props) {
                 </div>
               );
             })}
-          <div className="flex justify-center mx-auto">
-            <PlusCircleIcon
-              height={24}
-              width={24}
-              color="#475569"
-              className="cursor-pointer"
-            />
-          </div>
         </div>
       )}
     </React.Fragment>
