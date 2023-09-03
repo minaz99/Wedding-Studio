@@ -5,7 +5,9 @@ import { useUpdateContractMutation } from "../../../services/api/contractSlice";
 function AddComponentsWrapper(props) {
   const [updateContract, result] = useUpdateContractMutation();
   const [componentsSelected, setComponentsSelected] = useState([]);
-  const [components, setComponents] = useState([]);
+  const [components, setComponents] = useState(
+    props.compsIDs.split(",").filter((id) => id !== "," && id !== "")
+  );
   const [selectedMagazineComponents, setSelectedMagazineComponents] = useState(
     []
   );
@@ -19,6 +21,7 @@ function AddComponentsWrapper(props) {
   const onClickSave = async () => {
     let componentsIDsString = "";
     //componentIDsArray = componentIDsArray.filter((id) => id !== compID);
+
     components.forEach((id) => (componentsIDsString += `${id},`));
     props.setCompsIDs(componentsIDsString);
     await updateContract({
@@ -113,7 +116,7 @@ function AddComponentsWrapper(props) {
       )}
       <div
         onClick={() => onClickSave()}
-        className="flex rounded-md mx-auto justify-center text-white text-lg font-medium text-center p-2 bg-slate-400 w-24"
+        className="flex cursor-pointer rounded-md mx-auto justify-center text-white text-lg font-medium text-center p-2 bg-slate-400 w-24"
       >
         Save
       </div>
