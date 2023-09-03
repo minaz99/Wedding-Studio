@@ -10,10 +10,45 @@ import ContractComponents from "./ContractComponents";
 import PackageDelete from "./PackageDelete";
 import ComponentDelete from "./ComponentDelete";
 import AddComponentsWrapper from "./AddComponentsWrapper";
+import { useUpdateContractMutation } from "../../../services/api/contractSlice";
 
 function EditContractPackages(props) {
   const [addComps, setAddComps] = useState(false);
-  return (
+
+  const [updateContract, result] = useUpdateContractMutation();
+  const [componentsSelected, setComponentsSelected] = useState([]);
+  const [components, setComponents] = useState(
+    props.compsIDs.split(",").filter((id) => id !== "," && id !== "")
+  );
+  const [selectedMagazineComponents, setSelectedMagazineComponents] = useState(
+    []
+  );
+  const [selectedPicturesComponents, setSelectedPicturesComponents] = useState(
+    []
+  );
+  const [selectedVideoComponents, setSelectedVideoComponents] = useState([]);
+  const [selectedFrameComponents, setSelectedFrameComponents] = useState([]);
+  const [selectedAlbumComponents, setSelectedAlbumComponents] = useState([]);
+  const onClickSave = async () => {
+    let componentsIDsString = "";
+    //componentIDsArray = componentIDsArray.filter((id) => id !== compID);
+
+    components.forEach((id) => (componentsIDsString += `${id},`));
+    props.setCompsIDs(componentsIDsString);
+    await updateContract({
+      token: props.token,
+      id: props.contractID,
+      body: { componentIDs: componentsIDsString, price: props.price },
+    });
+    props.setEditPackage(false);
+  };
+  return result.isLoading ? (
+    <div className="text-center text-blue-400 text-xl p-4">Saving</div>
+  ) : result.isError ? (
+    <div className="text-center text-red-400 text-xl p-4">
+      Error saving data
+    </div>
+  ) : (
     <div className="space-y-3">
       <PackageDelete
         token={props.token}
@@ -25,6 +60,8 @@ function EditContractPackages(props) {
         setCompsIDs={props.setCompsIDs}
         token={props.token}
         compsIDs={props.compsIDs}
+        components={components}
+        setComponents={setComponents}
         contractID={props.contractID}
       />
       {addComps ? (
@@ -34,6 +71,20 @@ function EditContractPackages(props) {
           contractID={props.contractID}
           compsIDs={props.compsIDs}
           price={props.price}
+          componentsSelected={componentsSelected}
+          setComponentsSelected={setComponentsSelected}
+          components={components}
+          setComponents={setComponents}
+          selectedMagazineComponents={selectedMagazineComponents}
+          selectedAlbumComponents={selectedAlbumComponents}
+          selectedFrameComponents={selectedFrameComponents}
+          selectedPicturesComponents={selectedPicturesComponents}
+          selectedVideoComponents={selectedVideoComponents}
+          setSelectedMagazineComponents={setSelectedMagazineComponents}
+          setSelectedAlbumComponents={setSelectedAlbumComponents}
+          setSelectedFrameComponents={setSelectedFrameComponents}
+          setSelectedPicturesComponents={setSelectedPicturesComponents}
+          setSelectedVideoComponents={setSelectedVideoComponents}
         />
       ) : (
         <div></div>
@@ -55,7 +106,7 @@ function EditContractPackages(props) {
         />
       </div>
       <React.Fragment>
-        {addComps ? (
+        {!addComps ? (
           <div className="flex justify-center mx-auto">
             <PlusCircleIcon
               height={24}
@@ -77,6 +128,12 @@ function EditContractPackages(props) {
           </div>
         )}
       </React.Fragment>
+      <div
+        onClick={() => onClickSave()}
+        className="flex cursor-pointer rounded-md mx-auto justify-center text-white text-lg font-medium text-center p-2 bg-slate-400 w-24"
+      >
+        Save
+      </div>
     </div>
   );
 }
