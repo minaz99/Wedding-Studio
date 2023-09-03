@@ -10,8 +10,10 @@ import {
   Image,
   View,
   StyleSheet,
+  Font,
 } from "@react-pdf/renderer";
 function ContractPDF(props) {
+  Font.register({ family: "Times-Roman" });
   let total = props.total - props.discount;
   let compsArray = [
     `Magazine ${props.packageDetails.magazinename}`,
@@ -43,6 +45,7 @@ function ContractPDF(props) {
     page: {
       fontSize: 20,
       backgroundColor: "#fce7f3",
+      fontFamily: "Times-Roman",
     },
     layout: {
       flexDirection: "row",
