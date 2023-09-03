@@ -31,6 +31,7 @@ function EditContractPackages(props) {
           setCompsIDs={props.setCompsIDs}
           token={props.token}
           contractID={props.contractID}
+          compsIDs={props.compsIDs}
         />
       ) : (
         <div className="flex justify-center mx-auto">
