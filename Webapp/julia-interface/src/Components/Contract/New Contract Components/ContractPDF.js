@@ -2,7 +2,7 @@ import React from "react";
 import juliaLogo2 from "../../../juliaLogo2.png";
 import contractFooter from "../../../contractFooter.png";
 import PackageSummary from "./PackageSummary";
-import NotoSansArabic from "../../../styles/NotoSansArabic-VariableFont_wdth,wght.ttf";
+//import NotoSansArabic from "../../../styles/NotoSansArabic-VariableFont_wdth,wght.ttf";
 import {
   Document,
   Text,
@@ -16,7 +16,11 @@ import {
 function ContractPDF(props) {
   Font.register({
     family: "Noto",
-    fonts: [{ src: NotoSansArabic }],
+    fonts: [
+      {
+        src: "https://fonts.gstatic.com/s/notosansdisplay/v20/RLplK4fy6r6tOBEJg0IAKzqdFZVZxokvfn_BDLxR.ttf",
+      },
+    ],
   });
   let total = props.total - props.discount;
   let compsArray = [
