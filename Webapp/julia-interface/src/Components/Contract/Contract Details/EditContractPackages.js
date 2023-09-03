@@ -90,7 +90,7 @@ function EditContractPackages(props) {
         <div></div>
       )}
       <div className="flex space-x-2">
-        <div className="flex space-x-2 flex-1">
+        <div className="flex space-x-2">
           <div className="text-gray-500">Price</div>
           <input
             value={props.price}
@@ -101,7 +101,6 @@ function EditContractPackages(props) {
               color: "#475569",
               padding: "3px 3px 3px 3px",
               outline: "none",
-              width: "fit-content",
             }}
             className="font-medium "
             onChange={(e) => props.setPrice(e.target.value)}
