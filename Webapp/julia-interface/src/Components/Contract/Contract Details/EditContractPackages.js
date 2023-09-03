@@ -26,16 +26,23 @@ function EditContractPackages(props) {
         compsIDs={props.compsIDs}
         contractID={props.contractID}
       />
-      {addComps ? <AddComponentsWrapper token={props.token} /> : <div></div>}
-      <div className="flex justify-center mx-auto">
-        <PlusCircleIcon
-          height={24}
-          width={24}
-          color="#475569"
-          className="cursor-pointer"
-          onClick={() => setAddComps(true)}
+      {addComps ? (
+        <AddComponentsWrapper
+          setCompsIDs={props.setCompsIDs}
+          token={props.token}
+          contractID={props.contractID}
         />
-      </div>
+      ) : (
+        <div className="flex justify-center mx-auto">
+          <PlusCircleIcon
+            height={24}
+            width={24}
+            color="#475569"
+            className="cursor-pointer"
+            onClick={() => setAddComps(true)}
+          />
+        </div>
+      )}
     </div>
   );
 }
