@@ -70,6 +70,11 @@ function ContractWrapper(props) {
             token={props.token}
             id={props.contractID}
             dateCreated={data.contract.datecreated}
+            zoomLight={data.contract.zoomLight}
+            cameraCrane={data.contract.cameraCrane}
+            hangingCamera={data.contract.hangingCamera}
+            cameraRonin={data.contract.cameraRonin}
+            compsIDs={data.contract.componentids}
           />
 
           <ContractPackagesWrapper

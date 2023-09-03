@@ -13,6 +13,12 @@ function ContractDetailsWrapper(props) {
   const [photographer, setPhotographer] = useState(props.photographer);
   const [video, setVideo] = useState(props.video);
   const [updateContract, result] = useUpdateContractMutation();
+  const hasAddonsForVideo = (compID) => {
+    let IDsArray = props.compsIDs
+      .split(",")
+      .filter((id) => id !== "," && id !== "");
+    return IDsArray.indexOf(compID);
+  };
   const onClickSave = async () => {
     await updateContract({
       token: props.token,
@@ -99,6 +105,11 @@ function ContractDetailsWrapper(props) {
           video={video}
           createdBy={props.createdBy}
           dateCreated={props.dateCreated}
+          zoomLight={props.zoomLight}
+          cameraCrane={props.cameraCrane}
+          hangingCamera={props.hangingCamera}
+          cameraRonin={props.cameraRonin}
+          hasAddonsForVideo={hasAddonsForVideo}
         />
       )}
       {editContract ? (

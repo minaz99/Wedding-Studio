@@ -103,6 +103,42 @@ function ContractDetails(props) {
           <div className="text-gray-500">Video</div>
           <div>{props.video}</div>
         </div>
+        {props.hasAddonsForVideo("21") >= 0 ? (
+          <div className="flex space-x-2 flex-1">
+            <VideoCameraIcon height={22} width={22} color="#db2777" />
+            <div className="text-gray-500">Zoom Light</div>
+            <div>{props.zoomLight}</div>
+          </div>
+        ) : (
+          <div></div>
+        )}
+        {props.hasAddonsForVideo("2") >= 0 ? (
+          <div className="flex space-x-2 flex-1">
+            <VideoCameraIcon height={22} width={22} color="#db2777" />
+            <div className="text-gray-500">Camera Crane</div>
+            <div>{props.camerCrane}</div>
+          </div>
+        ) : (
+          <div></div>
+        )}
+        {props.hasAddonsForVideo("4") >= 0 ? (
+          <div className="flex space-x-2 flex-1">
+            <VideoCameraIcon height={22} width={22} color="#db2777" />
+            <div className="text-gray-500">Hanging Camera</div>
+            <div>{props.hangingCamera}</div>
+          </div>
+        ) : (
+          <div></div>
+        )}
+        {props.hasAddonsForVideo("10") >= 0 ? (
+          <div className="flex space-x-2 flex-1">
+            <VideoCameraIcon height={22} width={22} color="#db2777" />
+            <div className="text-gray-500">Camera Ronin</div>
+            <div>{props.cameraRonin}</div>
+          </div>
+        ) : (
+          <div></div>
+        )}
       </div>
     </div>
   );

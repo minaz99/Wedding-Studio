@@ -90,6 +90,10 @@ function CreatContractWrapper(props) {
         createdBy: createdBy,
         dateCreated: new Date().toLocaleDateString(),
         paidAmount: paidAmount,
+        zoomLight: "",
+        cameraCrane: "",
+        hangingCamera: "",
+        cameraRonin: "",
       },
     });
 
