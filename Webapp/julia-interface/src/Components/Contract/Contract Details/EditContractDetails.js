@@ -254,6 +254,90 @@ function EditContractDetails(props) {
               onChange={(e) => props.setVideo(e.target.value)}
             />
           </div>
+          {props.hasAddonsForVideo("21") >= 0 ? (
+            <div className="flex space-x-2 flex-1">
+              <VideoCameraIcon height={22} width={22} color="#db2777" />
+              <div className="text-gray-500">Zoom Light</div>
+              <input
+                value={props.zoomLight}
+                style={{
+                  background: "#e2e8f0",
+                  borderRadius: "6px",
+                  border: "none",
+                  color: "#475569",
+                  padding: "3px 3px 3px 3px",
+                  outline: "none",
+                }}
+                className="font-medium "
+                onChange={(e) => props.setZoomLight(e.target.value)}
+              />
+            </div>
+          ) : (
+            <div></div>
+          )}
+          {props.hasAddonsForVideo("2") >= 0 ? (
+            <div className="flex space-x-2 flex-1">
+              <VideoCameraIcon height={22} width={22} color="#db2777" />
+              <div className="text-gray-500">Camera Crane</div>
+              <input
+                value={props.cameraCrane}
+                style={{
+                  background: "#e2e8f0",
+                  borderRadius: "6px",
+                  border: "none",
+                  color: "#475569",
+                  padding: "3px 3px 3px 3px",
+                  outline: "none",
+                }}
+                className="font-medium "
+                onChange={(e) => props.setCameraCrane(e.target.value)}
+              />
+            </div>
+          ) : (
+            <div></div>
+          )}
+          {props.hasAddonsForVideo("4") >= 0 ? (
+            <div className="flex space-x-2 flex-1">
+              <VideoCameraIcon height={22} width={22} color="#db2777" />
+              <div className="text-gray-500">Hanging Camera</div>
+              <input
+                value={props.hangingCamera}
+                style={{
+                  background: "#e2e8f0",
+                  borderRadius: "6px",
+                  border: "none",
+                  color: "#475569",
+                  padding: "3px 3px 3px 3px",
+                  outline: "none",
+                }}
+                className="font-medium "
+                onChange={(e) => props.setHangingCamera(e.target.value)}
+              />
+            </div>
+          ) : (
+            <div></div>
+          )}
+          {props.hasAddonsForVideo("10") >= 0 ? (
+            <div className="flex space-x-2 flex-1">
+              <VideoCameraIcon height={22} width={22} color="#db2777" />
+              <div className="text-gray-500">Camera Ronin</div>
+              <input
+                value={props.cameraRonin}
+                style={{
+                  background: "#e2e8f0",
+                  borderRadius: "6px",
+                  border: "none",
+                  color: "#475569",
+                  padding: "3px 3px 3px 3px",
+                  outline: "none",
+                }}
+                className="font-medium "
+                onChange={(e) => props.setCameraRonin(e.target.value)}
+              />
+            </div>
+          ) : (
+            <div></div>
+          )}
           <div className="flex space-x-2 flex-1">
             <UserCircleIcon height={22} width={22} color="#fed7aa" />
             <div className="text-gray-500">Created by</div>

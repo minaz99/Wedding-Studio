@@ -12,6 +12,10 @@ function ContractDetailsWrapper(props) {
   const [phone2, setPhone2] = useState(props.phone2);
   const [photographer, setPhotographer] = useState(props.photographer);
   const [video, setVideo] = useState(props.video);
+  const [zoomLight, setZoomLight] = useState(props.zoomLight);
+  const [cameraCrane, setCameraCrane] = useState(props.cameraCrane);
+  const [hangingCamera, setHangingCamera] = useState(props.hangingCamera);
+  const [cameraRonin, setCameraRonin] = useState(props.cameraRonin);
   const [updateContract, result] = useUpdateContractMutation();
   const hasAddonsForVideo = (compID) => {
     let IDsArray = props.compsIDs
@@ -30,6 +34,10 @@ function ContractDetailsWrapper(props) {
         phone2: phone2,
         photographer: photographer,
         video: video,
+        zoomLight: zoomLight,
+        cameraCrane: cameraCrane,
+        hangingCamera: hangingCamera,
+        cameraRonin: cameraRonin,
       },
     });
     setEditContract(false);
@@ -87,6 +95,15 @@ function ContractDetailsWrapper(props) {
           setPhotographer={setPhotographer}
           setVideo={setVideo}
           createdBy={props.createdBy}
+          zoomLight={zoomLight}
+          cameraCrane={cameraCrane}
+          hangingCamera={hangingCamera}
+          cameraRonin={cameraRonin}
+          setZoomLight={setZoomLight}
+          setCameraCrane={setCameraCrane}
+          setHangingCamera={setHangingCamera}
+          setCameraRonin={setCameraRonin}
+          hasAddonsForVideo={hasAddonsForVideo}
         />
       ) : (
         <ContractDetails
@@ -105,10 +122,10 @@ function ContractDetailsWrapper(props) {
           video={video}
           createdBy={props.createdBy}
           dateCreated={props.dateCreated}
-          zoomLight={props.zoomLight}
-          cameraCrane={props.cameraCrane}
-          hangingCamera={props.hangingCamera}
-          cameraRonin={props.cameraRonin}
+          zoomLight={zoomLight}
+          cameraCrane={cameraCrane}
+          hangingCamera={hangingCamera}
+          cameraRonin={cameraRonin}
           hasAddonsForVideo={hasAddonsForVideo}
         />
       )}
