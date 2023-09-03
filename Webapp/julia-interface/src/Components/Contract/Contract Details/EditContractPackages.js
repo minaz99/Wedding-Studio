@@ -94,7 +94,6 @@ function EditContractPackages(props) {
         <input
           value={props.price}
           style={{
-            background: "#94a3b8",
             borderRadius: "6px",
             border: "none",
             color: "#475569",
