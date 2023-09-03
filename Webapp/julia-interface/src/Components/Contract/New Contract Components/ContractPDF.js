@@ -48,7 +48,6 @@ function ContractPDF(props) {
     page: {
       fontSize: 20,
       backgroundColor: "#fce7f3",
-      fontFamily: "Noto",
     },
     layout: {
       flexDirection: "row",
