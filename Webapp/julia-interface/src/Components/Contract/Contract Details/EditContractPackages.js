@@ -33,6 +33,7 @@ function EditContractPackages(props) {
           width={24}
           color="#475569"
           className="cursor-pointer"
+          onClick={() => setAddComps(true)}
         />
       </div>
     </div>
