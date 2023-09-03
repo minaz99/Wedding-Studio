@@ -90,10 +90,11 @@ function EditContractPackages(props) {
         <div></div>
       )}
       <div className="flex space-x-2 flex-1">
-        <div className="text-gray-500">Total</div>
+        <div className="text-gray-500">Price</div>
         <input
           value={props.price}
           style={{
+            background: "#cbd5e1",
             borderRadius: "6px",
             border: "none",
             color: "#475569",
@@ -104,6 +105,7 @@ function EditContractPackages(props) {
           onChange={(e) => props.setPrice(e.target.value)}
         />
       </div>
+      <div>KD</div>
       <React.Fragment>
         {!addComps ? (
           <div className="flex justify-center mx-auto">
