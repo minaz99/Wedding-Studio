@@ -13,7 +13,10 @@ import {
   Font,
 } from "@react-pdf/renderer";
 function ContractPDF(props) {
-  Font.register({ family: "Times-Roman" });
+  Font.register({
+    family: "Noto",
+    fonts: [{ src: "../../../NotoSansArabic-VariableFont_wdth,wght.ttf" }],
+  });
   let total = props.total - props.discount;
   let compsArray = [
     `Magazine ${props.packageDetails.magazinename}`,
@@ -45,7 +48,7 @@ function ContractPDF(props) {
     page: {
       fontSize: 20,
       backgroundColor: "#fce7f3",
-      fontFamily: "Times-Roman",
+      fontFamily: "Noto",
     },
     layout: {
       flexDirection: "row",
