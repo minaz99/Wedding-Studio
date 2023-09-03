@@ -27,7 +27,7 @@ function AddComponentsWrapper(props) {
     await updateContract({
       token: props.token,
       id: props.contractID,
-      body: { componentIDs: componentsIDsString },
+      body: { componentIDs: componentsIDsString, price: props.price },
     });
   };
   return (

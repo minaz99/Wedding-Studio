@@ -10,6 +10,7 @@ function ContractPackagesWrapper(props) {
   const [editPackage, setEditPackage] = useState(false);
   const [pkgID, setPkgID] = useState(props.packageID);
   const [compsIDs, setCompsIDs] = useState(props.compsIDs);
+  const [price, setPrice] = useState(props.price);
   return (
     <div className="rounded-lg p-4 w-full bg-white h-fit  ">
       <div className="space-y-2">
@@ -38,7 +39,8 @@ function ContractPackagesWrapper(props) {
             token={props.token}
             compsIDs={compsIDs}
             packageID={pkgID}
-            price={props.price}
+            price={price}
+            setPrice={setPrice}
             contractID={props.contractID}
             setPkgID={setPkgID}
             setCompsIDs={setCompsIDs}
@@ -48,7 +50,7 @@ function ContractPackagesWrapper(props) {
             token={props.token}
             compsIDs={compsIDs}
             packageID={pkgID}
-            price={props.price}
+            price={price}
           />
         )}
       </div>
