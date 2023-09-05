@@ -2,7 +2,7 @@ import React from "react";
 import juliaLogo2 from "../../../juliaLogo2.png";
 import contractFooter from "../../../contractFooter.png";
 import PackageSummary from "./PackageSummary";
-//import NotoSansArabic from "../../../styles/NotoSansArabic-VariableFont_wdth,wght.ttf";
+import NotoSansArabic from "../../../styles/NotoSansArabic-VariableFont_wdth,wght.ttf";
 import {
   Document,
   Text,
@@ -18,7 +18,7 @@ function ContractPDF(props) {
     family: "Noto",
     fonts: [
       {
-        src: "https://fonts.gstatic.com/s/notosansdisplay/v20/RLplK4fy6r6tOBEJg0IAKzqdFZVZxokvfn_BDLxR.ttf",
+        src: "../../../styles/NotoSansArabic-VariableFont_wdth,wght.ttf",
       },
     ],
   });
@@ -120,7 +120,13 @@ function ContractPDF(props) {
                 }}
               >
                 <Text>Invoice to:</Text>
-                <Text style={{ color: "#64748b", marginLeft: 6 }}>
+                <Text
+                  style={{
+                    color: "#64748b",
+                    marginLeft: 6,
+                    fontFamily: "Noto",
+                  }}
+                >
                   {props.secondPartyName}
                 </Text>
               </View>
