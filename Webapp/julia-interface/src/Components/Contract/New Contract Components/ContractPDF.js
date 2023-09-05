@@ -124,7 +124,7 @@ function ContractPDF(props) {
                   style={{
                     color: "#64748b",
                     marginLeft: 6,
-                    fontFamily: "Noto",
+                    //fontFamily: "Noto",
                   }}
                 >
                   {props.secondPartyName}
