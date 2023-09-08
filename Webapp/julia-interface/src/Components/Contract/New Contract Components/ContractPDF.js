@@ -2,7 +2,7 @@ import React from "react";
 import juliaLogo2 from "../../../juliaLogo2.png";
 import contractFooter from "../../../contractFooter.png";
 import PackageSummary from "./PackageSummary";
-import NotoSansArabic from "../../../styles/NotoSansArabic-VariableFont_wdth,wght.ttf";
+import NotoSansArabic from "../../../styles/fonts/NotoSansArabic-VariableFont_wdth.ttf";
 import {
   Document,
   Text,
@@ -15,10 +15,10 @@ import {
 } from "@react-pdf/renderer";
 function ContractPDF(props) {
   Font.register({
-    family: "Noto",
+    family: "NotoSansArabic",
     fonts: [
       {
-        src: "../../../styles/NotoSansArabic-VariableFont_wdth,wght.ttf",
+        src: NotoSansArabic,
       },
     ],
   });
@@ -62,6 +62,7 @@ function ContractPDF(props) {
       flexGrow: 1,
     },
   });
+  const styleForNames = { fontFamily: "NotoSansArabic" };
   return (
     <PDFViewer
       style={{
@@ -120,13 +121,7 @@ function ContractPDF(props) {
                 }}
               >
                 <Text>Invoice to:</Text>
-                <Text
-                  style={{
-                    color: "#64748b",
-                    marginLeft: 6,
-                    //fontFamily: "Noto",
-                  }}
-                >
+                <Text style={{ ...styleForNames }}>
                   {props.secondPartyName}
                 </Text>
               </View>
