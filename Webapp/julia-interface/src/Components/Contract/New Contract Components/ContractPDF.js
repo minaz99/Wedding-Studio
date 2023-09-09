@@ -122,9 +122,10 @@ function ContractPDF(props) {
                 style={{
                   display: "flex",
                   flexDirection: "row",
+                  marginBottom: 6,
                 }}
               >
-                <Text>Invoice to:</Text>
+                <Text style={{ ...styleForNames }}>:الطرف الثاني</Text>
                 <Text style={{ ...styleForNames }}>
                   {props.secondPartyName}
                 </Text>
