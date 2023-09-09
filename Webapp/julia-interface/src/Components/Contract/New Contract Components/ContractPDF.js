@@ -105,7 +105,7 @@ function ContractPDF(props) {
                   fontSize: 60,
                 }}
               >
-                INVOICE
+                عقد اتفاق
               </Text>
             </View>
           </View>
@@ -125,7 +125,7 @@ function ContractPDF(props) {
                   marginBottom: 6,
                 }}
               >
-                <Text style={{ ...styleForNames }}>:الطرف الثاني</Text>
+                <Text>:الطرف الثاني</Text>
                 <Text style={{ ...styleForNames }}>
                   {props.secondPartyName}
                 </Text>
@@ -137,7 +137,7 @@ function ContractPDF(props) {
                   marginBottom: 6,
                 }}
               >
-                <Text>Civil id:</Text>{" "}
+                <Text>رقم البطاقه المدنيه:</Text>{" "}
                 <Text style={{ color: "#64748b", marginLeft: 6 }}>
                   {props.civilID}
                 </Text>
@@ -148,7 +148,7 @@ function ContractPDF(props) {
                   flexDirection: "row",
                 }}
               >
-                <Text>Phone:</Text>
+                <Text>:نقال</Text>
                 <Text
                   style={{ color: "#64748b", marginLeft: 6, marginBottom: 6 }}
                 >
@@ -161,7 +161,7 @@ function ContractPDF(props) {
                   flexDirection: "row",
                 }}
               >
-                <Text>Location:</Text>
+                <Text>عنوان الحفله:</Text>
                 <Text style={{ ...styleForNames }}>{props.eventLocation}</Text>
               </View>
             </View>
@@ -173,7 +173,7 @@ function ContractPDF(props) {
                   marginBottom: 6,
                 }}
               >
-                <Text>Invoice no:</Text>
+                <Text>رقم العقد:</Text>
                 <Text style={{ color: "#64748b", marginLeft: 6 }}>
                   {new Date().getFullYear()}00{props.id}
                 </Text>
@@ -185,7 +185,7 @@ function ContractPDF(props) {
                   marginBottom: 6,
                 }}
               >
-                <Text>Date:</Text>
+                <Text>:تاريخ العقد</Text>
                 <Text style={{ color: "#64748b", marginLeft: 6 }}>
                   {props.dateCreated}
                 </Text>
@@ -196,7 +196,7 @@ function ContractPDF(props) {
                   flexDirection: "row",
                 }}
               >
-                <Text>Date of event:</Text>
+                <Text>تاريخ الحفله:</Text>
                 <Text style={{ color: "#64748b", marginLeft: 6 }}>
                   {props.eventDate}
                 </Text>
