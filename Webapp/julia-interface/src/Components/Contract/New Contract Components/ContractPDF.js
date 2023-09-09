@@ -62,7 +62,12 @@ function ContractPDF(props) {
       flexGrow: 1,
     },
   });
-  const styleForNames = { fontFamily: "NotoSansArabic" };
+  const styleForNames = {
+    fontFamily: "NotoSansArabic",
+    alignItems: "center",
+    color: "#64748b",
+    marginLeft: 6,
+  };
   return (
     <PDFViewer
       style={{
@@ -157,9 +162,7 @@ function ContractPDF(props) {
                 }}
               >
                 <Text>Location:</Text>
-                <Text style={{ color: "#64748b", marginLeft: 6 }}>
-                  {props.eventLocation}
-                </Text>
+                <Text style={{ ...styleForNames }}>{props.eventLocation}</Text>
               </View>
             </View>
             <View>
