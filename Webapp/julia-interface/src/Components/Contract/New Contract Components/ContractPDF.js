@@ -122,7 +122,6 @@ function ContractPDF(props) {
                 style={{
                   display: "flex",
                   flexDirection: "row",
-                  marginBottom: 6,
                 }}
               >
                 <Text>Invoice to:</Text>
