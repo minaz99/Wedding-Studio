@@ -16,7 +16,7 @@ function FilterWrapper(props) {
     props.setFilterTypeOption("");
   };
   return (
-    <div className="absolute inset-0   z-10 w-3/12  mx-auto h-fit  m-auto rounded-lg bg-slate-600/80 p-4">
+    <div className="absolute inset-0   z-10 w-3/12  mx-auto h-fit  m-auto rounded-lg bg-slate-400/80 p-4">
       <XCircleIcon
         width={26}
         height={26}
