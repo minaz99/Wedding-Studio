@@ -1,15 +1,6 @@
 import React from "react";
 
 function PackageSummary(props) {
-  /*const magazine = props.packageDetails.magazinename ? "Magazine" + props.magazinename : "";
-  const pictures = props.packageDetails.pictures ? props.packageDetails.pictures + "pictures" : "";
-  const albumCrystal = props.packageDetails.albumcrystal ? "Album Crystal" : "";
-  const magazineMini = props.packageDetails.magazinemini ? "Magazine Mini" : "";
-  const video = props.packageDetails.video ? "Video" : "";
-  const openPhotoAndVideo = props.packageDetails.openphotoandvideo
-  ? "Open Photo and Video"
-  : "";
-  const studio = props.packageDetails.studio ? "Studio" : "";*/
   let pkgArray = [];
   pkgArray.push(
     props.packageDetails.magazinename &&
@@ -19,7 +10,7 @@ function PackageSummary(props) {
   );
   pkgArray.push(
     props.packageDetails.pictures
-      ? props.packageDetails.pictures + "pictures "
+      ? props.packageDetails.pictures + " pictures"
       : ""
   );
   pkgArray.push(props.packageDetails.albumcrystal ? "Album Crystal" : "");
