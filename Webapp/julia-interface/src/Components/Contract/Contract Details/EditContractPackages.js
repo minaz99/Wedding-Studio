@@ -18,9 +18,7 @@ function EditContractPackages(props) {
   const [updateContract, result] = useUpdateContractMutation();
   const [componentsSelected, setComponentsSelected] = useState([]);
   //const [pkgID,setPkgID] = useState(props.packageID)
-  const [components, setComponents] = useState(
-    props.compsIDs.split(",").filter((id) => id !== "," && id !== "")
-  );
+
   const [selectedMagazineComponents, setSelectedMagazineComponents] = useState(
     []
   );
@@ -31,6 +29,10 @@ function EditContractPackages(props) {
   const [selectedFrameComponents, setSelectedFrameComponents] = useState([]);
   const [selectedAlbumComponents, setSelectedAlbumComponents] = useState([]);
   const [pkgID, setPkgID] = useState(props.packageID);
+  const [compsIDs, setCompsIDs] = useState(props.compsIDs);
+  const [components, setComponents] = useState(
+    compsIDs.split(",").filter((id) => id !== "," && id !== "")
+  );
   const onClickSave = async () => {
     let componentsIDsString = "";
     //componentIDsArray = componentIDsArray.filter((id) => id !== compID);
@@ -52,6 +54,7 @@ function EditContractPackages(props) {
   const cancelEditPkgComps = () => {
     setAddComps(false);
     setPkgID(props.packageID);
+    //setComponents();
   };
   return result.isLoading ? (
     <div className="text-center text-blue-400 text-xl p-4">Saving</div>
@@ -68,9 +71,9 @@ function EditContractPackages(props) {
         setPkgID={setPkgID}
       />
       <ComponentDelete
-        setCompsIDs={props.setCompsIDs}
+        setCompsIDs={setCompsIDs}
         token={props.token}
-        compsIDs={props.compsIDs}
+        compsIDs={compsIDs}
         components={components}
         setComponents={setComponents}
         contractID={props.contractID}
