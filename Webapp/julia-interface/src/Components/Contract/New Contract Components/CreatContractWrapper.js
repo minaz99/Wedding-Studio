@@ -49,18 +49,37 @@ function CreatContractWrapper(props) {
   const [selectedVideoComponents, setSelectedVideoComponents] = useState([]);
   const [selectedFrameComponents, setSelectedFrameComponents] = useState([]);
   const [selectedAlbumComponents, setSelectedAlbumComponents] = useState([]);
+  const [errorMsg, setErrMsg] = useState("");
   const dateCreated = new Date();
+
+  const allDetailsFilled = () => {
+    if (secondPartyName === "") return false;
+    if (brideName === "") return false;
+    if (groomName === "") return false;
+    if (civilID === "") return false;
+    if (eventType === "") return false;
+    if (eventLocation === "") return false;
+    if (phone1 === "" && phone2 === "") return false;
+    if (paidAmount < 0) return false;
+    setErrMsg("");
+    return true;
+  };
   const onFinishSection = () => {
     if (activeView === "contract details") {
-      setActiveView("packages");
-      setContractDetailsColor("#86efac");
-      setXi(0);
-      setXf(220);
+      if (allDetailsFilled()) {
+        setActiveView("packages");
+        setContractDetailsColor("#86efac");
+        setXi(0);
+        setXf(220);
+      } else setErrMsg("Please fill all the fields");
     } else if (activeView === "packages") {
-      setActiveView("contract review");
-      setPackagesColor("#86efac");
-      setXi(220);
-      setXf(830);
+      if (pkg > 0 || components.length > 0) {
+        setErrMsg("");
+        setActiveView("contract review");
+        setPackagesColor("#86efac");
+        setXi(220);
+        setXf(830);
+      } else setErrMsg("Please select package or components");
     }
   };
 
@@ -210,6 +229,7 @@ function CreatContractWrapper(props) {
               )}
             </div>
           )}
+          <div className="text-center text-red-400 text-lg">{errorMsg}</div>
           <motion.div
             initial={{ opacity: 0.25, x: -50, y: 0, scale: 1 }} //x:200 ,x:0
             animate={{
