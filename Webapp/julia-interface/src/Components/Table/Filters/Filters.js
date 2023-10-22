@@ -44,7 +44,7 @@ function Filters(props) {
         <XCircleIcon
           height={22}
           width={22}
-          color="#94a3b8"
+          color="white"
           className="cursor-pointer"
           onClick={() => cancelFilter()}
         />
