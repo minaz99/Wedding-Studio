@@ -1,29 +1,39 @@
 import React from "react";
 
 function PackageSummary(props) {
+  /*const magazine = props.packageDetails.magazinename ? "Magazine" + props.magazinename : "";
+  const pictures = props.packageDetails.pictures ? props.packageDetails.pictures + "pictures" : "";
   const albumCrystal = props.packageDetails.albumcrystal ? "Album Crystal" : "";
   const magazineMini = props.packageDetails.magazinemini ? "Magazine Mini" : "";
   const video = props.packageDetails.video ? "Video" : "";
   const openPhotoAndVideo = props.packageDetails.openphotoandvideo
-    ? "Open Photo and Video"
+  ? "Open Photo and Video"
+  : "";
+  const studio = props.packageDetails.studio ? "Studio" : "";*/
+  let pkgArray = [];
+  pkgArray.push(
+    props.packageDetails.magazinename ? "Magazine" + props.magazinename : ""
+  );
+  pkgArray.push(
+    props.packageDetails.pictures
+      ? props.packageDetails.pictures + "pictures"
+      : ""
+  );
+  props.packageDetails.albumcrystal ? pkgArray.push("Album Crystal") : "";
+  props.packageDetails.magazinemini ? pkgArray.push("Magazine Mini") : "";
+  props.packageDetails.video ? pkgArray.push("Video") : "";
+  props.packageDetails.openphotoandvideo
+    ? pkgArray.push("Open Photo and Video")
     : "";
-  const studio = props.packageDetails.studio ? "Studio" : "";
-  const pkgDetails =
-    Object.keys(props.packageDetails).length > 0
-      ? `Magazine ${props.packageDetails.magazinename},
-  ${props.packageDetails.pictures} pictures${albumCrystal}${magazineMini}${video}${openPhotoAndVideo}${studio}`
-      : "";
+  props.packageDetails.studio ? pkgArray.push("Studio") : "";
+
   return (
     <div className="bg-amber-50  font-medium text-gray-500 rounded-md p-2">
       {Object.keys(props.packageDetails).length > 0 ? (
         <div>
-          <li>Magazine {props.packageDetails.magazinename}</li>
-          <li>{props.packageDetails.pictures} pictures</li>
-          <li>{albumCrystal}</li>
-          <li>{magazineMini}</li>
-          <li>{video}</li>
-          <li>{openPhotoAndVideo}</li>
-          <li>{studio}</li>
+          {pkgArray.map((item) => {
+            return <li>{item}</li>;
+          })}
         </div>
       ) : (
         <div></div>
