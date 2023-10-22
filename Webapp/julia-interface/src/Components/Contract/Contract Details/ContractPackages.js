@@ -8,6 +8,7 @@ function ContractPackages(props) {
       refetchOnMountOrArgChange: true,
     }
   );
+
   return (
     <div className="flex space-x-2 items-center">
       <div className="text-gray-800">Package</div>
@@ -28,17 +29,26 @@ function ContractPackages(props) {
               <div>
                 <div className="font-medium">{data.package.name}</div>
                 <div className="text-gray-600 p-1 flex space-x-8">
-                  <li>{data.package.pictures} Pictures</li>
-                  <li>Magazine {data.package.magazinename}</li>
-                  <li>{data.package.albumcrystal ? "Album Crystal" : ""}</li>
-                  <li>{data.package.magazinemini ? "Mini Magazine" : ""}</li>
-                  <li>{data.package.video ? "Video" : ""}</li>
-                  <li>
-                    {data.package.openphotoandvideo
-                      ? "Open Photo and Video"
-                      : ""}
-                  </li>
-                  <li>{data.package.studio ? "Studio" : ""}</li>
+                  {data.package.magazinename &&
+                  data.package.magazinename !== "-" ? (
+                    <li>Magazine {data.package.magazinename}</li>
+                  ) : (
+                    ""
+                  )}
+                  {data.package.pictures ? (
+                    <li>{data.package.pictures} pictures</li>
+                  ) : (
+                    ""
+                  )}
+                  {data.package.albumcrystal ? <li>Album Crystal</li> : ""}
+                  {data.package.magazinemini ? <li>Magazine Mini</li> : ""}
+                  {data.package.video ? <li>Video</li> : ""}
+                  {data.package.openphotoandvideo ? (
+                    <li>Open Photo and Video</li>
+                  ) : (
+                    ""
+                  )}
+                  {data.package.studio ? <li>Studio</li> : ""}
                 </div>
               </div>
             )}
