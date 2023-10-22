@@ -63,7 +63,7 @@ function EditContractPackages(props) {
     <div className="space-y-3">
       <PackageDelete
         token={props.token}
-        id={props.packageID}
+        id={pkgID}
         contractID={props.contractID}
         setPkgID={setPkgID}
       />
