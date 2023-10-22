@@ -12,11 +12,13 @@ function PackageSummary(props) {
   const studio = props.packageDetails.studio ? "Studio" : "";*/
   let pkgArray = [];
   pkgArray.push(
-    props.packageDetails.magazinename ? "Magazine" + props.magazinename : ""
+    props.packageDetails.magazinename
+      ? "Magazine " + props.packageDetails.magazinename
+      : ""
   );
   pkgArray.push(
     props.packageDetails.pictures
-      ? props.packageDetails.pictures + "pictures"
+      ? props.packageDetails.pictures + "pictures "
       : ""
   );
   pkgArray.push(props.packageDetails.albumcrystal ? "Album Crystal" : "");
