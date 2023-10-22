@@ -12,7 +12,8 @@ function PackageSummary(props) {
   const studio = props.packageDetails.studio ? "Studio" : "";*/
   let pkgArray = [];
   pkgArray.push(
-    props.packageDetails.magazinename
+    props.packageDetails.magazinename &&
+      props.packageDetails.magazinename !== "-"
       ? "Magazine " + props.packageDetails.magazinename
       : ""
   );
