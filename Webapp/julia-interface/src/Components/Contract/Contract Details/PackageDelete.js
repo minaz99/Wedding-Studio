@@ -26,7 +26,7 @@ function PackageDelete(props) {
         <div></div>
       ) : (
         <div className="space-x-3 flex items-center">
-          <div className="bg-blue-200 rounded-md  p-1 shadow-md">
+          
             {isLoading ? (
               <div className="text-center text-blue-400 text-xl p-4">
                 Loading...
@@ -40,7 +40,7 @@ function PackageDelete(props) {
                 {data.package === null ? (
                   <div></div>
                 ) : (
-                  <div>
+                  <div className="bg-blue-200 rounded-md  p-1 shadow-md">
                     <div className="font-medium">{data.package.name}</div>
                     <div className="text-gray-600 p-1 flex space-x-8">
                       <li>{data.package.pictures} Pictures</li>
