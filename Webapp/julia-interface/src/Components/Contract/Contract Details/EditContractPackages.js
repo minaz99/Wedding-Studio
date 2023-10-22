@@ -17,6 +17,7 @@ function EditContractPackages(props) {
 
   const [updateContract, result] = useUpdateContractMutation();
   const [componentsSelected, setComponentsSelected] = useState([]);
+  //const [pkgID,setPkgID] = useState(props.packageID)
   const [components, setComponents] = useState(
     props.compsIDs.split(",").filter((id) => id !== "," && id !== "")
   );
@@ -38,7 +39,11 @@ function EditContractPackages(props) {
     await updateContract({
       token: props.token,
       id: props.contractID,
-      body: { componentIDs: componentsIDsString, price: props.price },
+      body: {
+        componentIDs: componentsIDsString,
+        price: props.price,
+        packageID: props.packageID,
+      },
     });
     props.setEditPackage(false);
   };
