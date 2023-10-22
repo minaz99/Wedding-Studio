@@ -66,13 +66,17 @@ function PackageDelete(props) {
               <div></div>
             )}
           </div>
-          <MinusCircleIcon
-            height={26}
-            width={26}
-            color="#475569"
-            className="cursor-pointer"
-            onClick={() => onClickUpdate()}
-          />
+          {data.package !== null ? (
+            <MinusCircleIcon
+              height={26}
+              width={26}
+              color="#475569"
+              className="cursor-pointer"
+              onClick={() => onClickUpdate()}
+            />
+          ) : (
+            <div></div>
+          )}
         </div>
       )}
     </div>
