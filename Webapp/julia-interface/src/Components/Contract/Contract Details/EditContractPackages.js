@@ -30,7 +30,7 @@ function EditContractPackages(props) {
   const [selectedVideoComponents, setSelectedVideoComponents] = useState([]);
   const [selectedFrameComponents, setSelectedFrameComponents] = useState([]);
   const [selectedAlbumComponents, setSelectedAlbumComponents] = useState([]);
-  const pkgID = props.packageID;
+  const [pkgID, setPkgID] = useState(props.packageID);
   const onClickSave = async () => {
     let componentsIDsString = "";
     //componentIDsArray = componentIDsArray.filter((id) => id !== compID);
@@ -43,14 +43,15 @@ function EditContractPackages(props) {
       body: {
         componentIDs: componentsIDsString,
         price: props.price,
-        packageID: props.packageID,
+        packageID: pkgID,
       },
     });
     props.setEditPackage(false);
+    props.setPkgID(pkgID);
   };
   const cancelEditPkgComps = () => {
     setAddComps(false);
-    props.setPkgID(pkgID);
+    setPkgID(props.packageID);
   };
   return result.isLoading ? (
     <div className="text-center text-blue-400 text-xl p-4">Saving</div>
@@ -64,7 +65,7 @@ function EditContractPackages(props) {
         token={props.token}
         id={props.packageID}
         contractID={props.contractID}
-        setPkgID={props.setPkgID}
+        setPkgID={setPkgID}
       />
       <ComponentDelete
         setCompsIDs={props.setCompsIDs}
