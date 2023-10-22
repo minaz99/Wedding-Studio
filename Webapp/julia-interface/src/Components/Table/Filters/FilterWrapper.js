@@ -5,16 +5,10 @@ import ContractStatusFilter from "./ContractStatusFilter";
 import EventDateFilter from "./EventDateFilter";
 import ContractPerMonthFilter from "./ContractPerMonthFilter";
 function FilterWrapper(props) {
-  const [filterOptionChecked, setFilterOptionChecked] = useState(false);
-  const [optionSelected, setOptionSelected] = useState("");
   const closeFilter = () => {
     props.setShowFilter(false);
   };
-  const cancelFilter = () => {
-    props.setShowFilter(false);
-    props.setFilterType("Select Filter");
-    props.setFilterTypeOption("");
-  };
+
   return (
     <div className="absolute inset-0   z-10 w-3/12  mx-auto h-fit  m-auto rounded-lg bg-slate-500/80 p-4">
       <XCircleIcon
@@ -55,12 +49,6 @@ function FilterWrapper(props) {
         ) : (
           <div></div>
         )}
-        {/*<div
-          onClick={() => cancelFilter()}
-          className="text-center rounded-md p-2 bg-blue-400 text-white cursor-pointer shadow-md"
-        >
-          Cancel
-        </div>*/}
       </div>
     </div>
   );
