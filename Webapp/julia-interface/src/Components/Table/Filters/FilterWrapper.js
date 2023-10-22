@@ -55,12 +55,12 @@ function FilterWrapper(props) {
         ) : (
           <div></div>
         )}
-        <div
+        {/*<div
           onClick={() => cancelFilter()}
           className="text-center rounded-md p-2 bg-blue-400 text-white cursor-pointer shadow-md"
         >
           Cancel
-        </div>
+        </div>*/}
       </div>
     </div>
   );
