@@ -88,7 +88,6 @@ function ComponentAdd(props) {
         ) : (
           <div></div>
         )}
-        ;
       </ul>
     </DropdownButton>
   );
