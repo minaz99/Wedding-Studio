@@ -30,6 +30,7 @@ function EditContractPackages(props) {
   const [selectedVideoComponents, setSelectedVideoComponents] = useState([]);
   const [selectedFrameComponents, setSelectedFrameComponents] = useState([]);
   const [selectedAlbumComponents, setSelectedAlbumComponents] = useState([]);
+  const pkgID = props.packageID;
   const onClickSave = async () => {
     let componentsIDsString = "";
     //componentIDsArray = componentIDsArray.filter((id) => id !== compID);
@@ -46,6 +47,10 @@ function EditContractPackages(props) {
       },
     });
     props.setEditPackage(false);
+  };
+  const cancelEditPkgComps = () => {
+    setAddComps(false);
+    props.setPkgID(pkgID);
   };
   return result.isLoading ? (
     <div className="text-center text-blue-400 text-xl p-4">Saving</div>
@@ -131,7 +136,7 @@ function EditContractPackages(props) {
               width={24}
               color="#475569"
               className="cursor-pointer"
-              onClick={() => setAddComps(false)}
+              onClick={() => cancelEditPkgComps()}
             />
           </div>
         )}
