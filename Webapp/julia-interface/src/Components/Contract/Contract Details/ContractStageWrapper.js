@@ -41,7 +41,7 @@ function ContractStageWrapper(props) {
             stage={props.stage}
           />
         ) : (
-          <ContractStage stage={props.stage} />
+          <ContractStage stages={props.stages} />
         )}
       </div>
     </div>
