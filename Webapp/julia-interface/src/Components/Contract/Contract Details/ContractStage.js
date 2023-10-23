@@ -17,15 +17,6 @@ function ContractStage(props) {
     );
   };
 
-  /*const InProgress = () => {
-    return (
-      <div className="font-bold flex rounded-full bg-blue-500 w-fit p-1 items-center justify-center font-mono">
-        <div className="items-center ">
-          <ArrowPathIcon height={16} width={16} color="white" />
-        </div>
-      </div>
-    );
-  };*/
   const NotStarted = () => {
     return (
       <div className="font-bold flex rounded-full bg-gray-400 w-fit p-1 items-center justify-center font-mono">
