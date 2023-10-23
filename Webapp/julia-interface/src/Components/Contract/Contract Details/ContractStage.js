@@ -36,19 +36,19 @@ function ContractStage(props) {
     );
   };
   const EventFinished = () => {
-    return props.stages.eventFinished ? <Check /> : <NotStarted />;
+    return props.stages.eventfinished ? <Check /> : <NotStarted />;
   };
 
   const PicsCollected = () => {
-    return props.stages.picsCollected ? <Check /> : <NotStarted />;
+    return props.stages.picscollected ? <Check /> : <NotStarted />;
   };
 
   const VideoCollected = () => {
-    return props.stages.videoCollected ? <Check /> : <NotStarted />;
+    return props.stages.videocollected ? <Check /> : <NotStarted />;
   };
 
   const PromoCollected = () => {
-    return props.stages.promoCollected ? <Check /> : <NotStarted />;
+    return props.stages.promocollected ? <Check /> : <NotStarted />;
   };
 
   const Finished = () => {
