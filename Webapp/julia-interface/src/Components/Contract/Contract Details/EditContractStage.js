@@ -1,17 +1,14 @@
-import {
-  ArrowPathIcon,
-  CheckIcon,
-  EllipsisHorizontalIcon,
-} from "@heroicons/react/24/outline";
+import { CheckIcon, EllipsisHorizontalIcon } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
-import { useUpdateContractMutation } from "../../../services/api/contractSlice";
+import { useUpdateContractStageMutation } from "../../../services/api/contractSlice";
 
 function EditContractStage(props) {
-  const stages = ["Signed", "Event Finished", "Pics Collected", "Finished"];
   const [hoverEventFinished, setHoverEventFinished] = useState(false);
   const [hoverPicsCollected, setHoverPicsCollected] = useState(false);
+  const [hoverVideoCollected, setHoverVideoCollected] = useState(false);
+  const [hoverPromoCollected, setHoverPromoCollected] = useState(false);
   const [hoverFinished, setHoverFinished] = useState(false);
-  const [updateContract, result] = useUpdateContractMutation();
+  const [updateContractStage, result] = useUpdateContractStageMutation();
   const Check = () => {
     return (
       <div className="font-bold flex  text-gray-700 rounded-full bg-green-500 w-fit p-1 items-center justify-center font-mono">
@@ -22,15 +19,6 @@ function EditContractStage(props) {
     );
   };
 
-  const InProgress = () => {
-    return (
-      <div className="font-bold flex rounded-full bg-blue-500 w-fit p-1 items-center justify-center font-mono">
-        <div className="items-center ">
-          <ArrowPathIcon height={16} width={16} color="white" />
-        </div>
-      </div>
-    );
-  };
   const NotStarted = () => {
     return (
       <div className="font-bold flex rounded-full bg-gray-400 w-fit p-1 items-center justify-center font-mono">
@@ -41,26 +29,23 @@ function EditContractStage(props) {
     );
   };
   const EventFinished = () => {
-    return stages.indexOf(props.stage) > 1 ? (
-      <Check />
-    ) : stages.indexOf(props.stage) >= 0 ? (
-      <InProgress />
-    ) : (
-      <NotStarted />
-    );
+    return props.stages.eventfinished ? <Check /> : <NotStarted />;
   };
 
   const PicsCollected = () => {
-    return stages.indexOf(props.stage) > 2 ? (
-      <Check />
-    ) : stages.indexOf(props.stage) === 2 ? (
-      <InProgress />
-    ) : (
-      <NotStarted />
-    );
+    return props.stages.picscollected ? <Check /> : <NotStarted />;
   };
+
+  const VideoCollected = () => {
+    return props.stages.videocollected ? <Check /> : <NotStarted />;
+  };
+
+  const PromoCollected = () => {
+    return props.stages.promocollected ? <Check /> : <NotStarted />;
+  };
+
   const Finished = () => {
-    return stages.indexOf(props.stage) === 3 ? <Check /> : <NotStarted />;
+    return props.stages.finished ? <Check /> : <NotStarted />;
   };
 
   return (
@@ -82,10 +67,10 @@ function EditContractStage(props) {
               onMouseLeave={() => setHoverEventFinished(false)}
               onMouseEnter={() => setHoverEventFinished(true)}
               onClick={() =>
-                updateContract({
+                updateContractStage({
                   token: props.token,
                   id: props.id,
-                  body: { contractStage: "Event Finished" },
+                  body: { eventFinished: true },
                 })
               }
             >
@@ -98,10 +83,10 @@ function EditContractStage(props) {
               onMouseLeave={() => setHoverPicsCollected(false)}
               onMouseEnter={() => setHoverPicsCollected(true)}
               onClick={() =>
-                updateContract({
+                updateContractStage({
                   token: props.token,
                   id: props.id,
-                  body: { contractStage: "Pics Collected" },
+                  body: { picsCollected: true },
                 })
               }
             >
@@ -111,13 +96,45 @@ function EditContractStage(props) {
           </div>
           <div className="flex items-center space-x-2">
             <div
+              onMouseLeave={() => setHoverVideoCollected(false)}
+              onMouseEnter={() => setHoverVideoCollected(true)}
+              onClick={() =>
+                updateContractStage({
+                  token: props.token,
+                  id: props.id,
+                  body: { videoCollected: true },
+                })
+              }
+            >
+              {hoverVideoCollected ? <Check /> : <VideoCollected />}
+            </div>
+            <div className="text-gray-600  ">Video Collected</div>
+          </div>
+          <div className="flex items-center space-x-2">
+            <div
+              onMouseLeave={() => setHoverPromoCollected(false)}
+              onMouseEnter={() => setHoverPromoCollected(true)}
+              onClick={() =>
+                updateContractStage({
+                  token: props.token,
+                  id: props.id,
+                  body: { promoCollected: true },
+                })
+              }
+            >
+              {hoverPromoCollected ? <Check /> : <PromoCollected />}
+            </div>
+            <div className="text-gray-600  ">Promo Collected</div>
+          </div>
+          <div className="flex items-center space-x-2">
+            <div
               onMouseLeave={() => setHoverFinished(false)}
               onMouseEnter={() => setHoverFinished(true)}
               onClick={() =>
-                updateContract({
+                updateContractStage({
                   token: props.token,
                   id: props.id,
-                  body: { contractStage: "Finished" },
+                  body: { finished: true },
                 })
               }
             >
