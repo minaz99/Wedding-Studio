@@ -73,6 +73,14 @@ function ContractStage(props) {
         <div className="text-gray-600  ">Pics Collected</div>
       </div>
       <div className="flex items-center space-x-2">
+        <PicsCollected />
+        <div className="text-gray-600  ">Video Collected</div>
+      </div>
+      <div className="flex items-center space-x-2">
+        <PicsCollected />
+        <div className="text-gray-600  ">Promo Collected</div>
+      </div>
+      <div className="flex items-center space-x-2">
         <Finished />
         <div className="text-gray-600  ">Finished</div>
       </div>
