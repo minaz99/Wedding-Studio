@@ -38,7 +38,7 @@ function ContractStageWrapper(props) {
           <EditContractStage
             token={props.token}
             id={props.id}
-            stage={props.stage}
+            stages={props.stages}
           />
         ) : (
           <ContractStage stages={props.stages} />
