@@ -129,6 +129,17 @@ export const contractSlice = createApi({
         method: "GET",
       }),
     }),
+    updateContractStage: builder.mutation({
+      query: (data) => ({
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `Bearer ${data.token}`,
+        },
+        url: `/${data.id}/stages`,
+        method: "POST",
+        body: data.body,
+      }),
+    }),
   }),
 });
 
@@ -145,4 +156,5 @@ export const {
   useMakePaymentMutation,
   useGetContractsByDayQuery,
   useGetContractsPerMonthTableQuery,
+  useUpdateContractStageMutation,
 } = contractSlice;
