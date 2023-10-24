@@ -121,7 +121,7 @@ function EditContractDetails(props) {
           <BuildingStorefrontIcon height={22} width={22} color="#2dd4bf" />
           <div className="text-gray-500">Location</div>
           <input
-            value={data.location}
+            value={data.eventlocation}
             style={{
               background: "#e2e8f0",
               borderRadius: "6px",
