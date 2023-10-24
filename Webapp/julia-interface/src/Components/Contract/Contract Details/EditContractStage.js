@@ -18,7 +18,14 @@ function EditContractStage(props) {
       </div>
     );
   };
-
+  const onClickPicsCollected = () => {
+    updateContractStage({
+      token: props.token,
+      id: props.id,
+      body: { picsCollected: true },
+    });
+    props.setRefreshContract(true);
+  };
   const NotStarted = () => {
     return (
       <div className="font-bold flex rounded-full bg-gray-400 w-fit p-1 items-center justify-center font-mono">
@@ -82,13 +89,7 @@ function EditContractStage(props) {
             <div
               onMouseLeave={() => setHoverPicsCollected(false)}
               onMouseEnter={() => setHoverPicsCollected(true)}
-              onClick={() =>
-                updateContractStage({
-                  token: props.token,
-                  id: props.id,
-                  body: { picsCollected: true },
-                })
-              }
+              onClick={() => onClickPicsCollected()}
             >
               {hoverPicsCollected ? <Check /> : <PicsCollected />}
             </div>
