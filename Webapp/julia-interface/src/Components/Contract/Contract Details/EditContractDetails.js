@@ -19,7 +19,18 @@ import {
   useUpdateContractMutation,
 } from "../../../services/api/contractSlice";
 function EditContractDetails(props) {
-  const [location, setLocation] = useState("");
+  const { data, isLoading, isError, isSuccess } = useGetContractByIDQuery(
+    {
+      token: props.token,
+      id: props.id,
+    },
+    {
+      refetchOnMountOrArgChange: true,
+    }
+  );
+  const [location, setLocation] = useState(
+    isSuccess ? data.contract.eventlocation : ""
+  );
   const [date, setDate] = useState("");
   const [phone1, setPhone1] = useState("");
   const [phone2, setPhone2] = useState("");
@@ -30,15 +41,6 @@ function EditContractDetails(props) {
   const [hangingCamera, setHangingCamera] = useState("");
   const [cameraRonin, setCameraRonin] = useState("");
   const [updateContract, result] = useUpdateContractMutation();
-  const { data, isLoading, isError, isSuccess } = useGetContractByIDQuery(
-    {
-      token: props.token,
-      id: props.id,
-    },
-    {
-      refetchOnMountOrArgChange: true,
-    }
-  );
   const onClickSave = async () => {
     await updateContract({
       token: props.token,
@@ -166,7 +168,7 @@ function EditContractDetails(props) {
               <BuildingStorefrontIcon height={22} width={22} color="#2dd4bf" />
               <div className="text-gray-500">Location</div>
               <input
-                value={location || data.contract.eventlocation}
+                value={location}
                 style={{
                   background: "#e2e8f0",
                   borderRadius: "6px",
