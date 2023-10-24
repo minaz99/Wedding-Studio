@@ -26,27 +26,40 @@ function ContractStage(props) {
       </div>
     );
   };
+  const { data, isLoading, isError, isSuccess } = useGetContractByIDQuery(
+    {
+      token: props.token,
+      id: props.contractID,
+    },
+    {
+      refetchOnMountOrArgChange: true,
+    }
+  );
   const EventFinished = () => {
-    return props.stages.eventfinished ? <Check /> : <NotStarted />;
+    return data.stages.eventfinished ? <Check /> : <NotStarted />;
   };
 
   const PicsCollected = () => {
-    return props.stages.picscollected ? <Check /> : <NotStarted />;
+    return data.stages.picscollected ? <Check /> : <NotStarted />;
   };
 
   const VideoCollected = () => {
-    return props.stages.videocollected ? <Check /> : <NotStarted />;
+    return data.stages.videocollected ? <Check /> : <NotStarted />;
   };
 
   const PromoCollected = () => {
-    return props.stages.promocollected ? <Check /> : <NotStarted />;
+    return data.stages.promocollected ? <Check /> : <NotStarted />;
   };
 
   const Finished = () => {
-    return props.stages.finished ? <Check /> : <NotStarted />;
+    return data.stages.finished ? <Check /> : <NotStarted />;
   };
 
-  return (
+  return isLoading ? (
+    <div>Loading details...</div>
+  ) : isError ? (
+    <div>Error getting contract details</div>
+  ) : isSuccess ? (
     <div className="space-x-4 items-center justify-center flex">
       <div className="flex items-center space-x-2">
         <Check />
@@ -73,6 +86,8 @@ function ContractStage(props) {
         <div className="text-gray-600  ">Finished</div>
       </div>
     </div>
+  ) : (
+    <div></div>
   );
 }
 
