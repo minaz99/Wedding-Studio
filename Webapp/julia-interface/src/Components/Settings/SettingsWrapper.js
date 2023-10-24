@@ -14,7 +14,7 @@ function SettingsWrapper(props) {
       transition={{ duration: 0.75 }}
       className="rounded-r-lg  space-y-6  p-3 items-center h-full  shadow-md   bg-slate-600"
     >
-      <UserInfo email={props.email} name={props.name} />
+      <UserInfo name={props.name} />
     </motion.div>
   );
 }
