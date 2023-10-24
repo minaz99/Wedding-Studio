@@ -69,7 +69,7 @@ function ContractDetailsWrapper(props) {
           Error updating contract
         </div>
       ) : editContract ? (
-        <EditContractDetails
+        /*<EditContractDetails
           token={props.token}
           id={props.id}
           hasAddonsForVideo={hasAddonsForVideo}
@@ -83,7 +83,8 @@ function ContractDetailsWrapper(props) {
           setPhone2={setPhone2}
           setPhotographer={setPhotographer}
           setVideo={setVideo}
-        />
+        />*/
+        <div>why</div>
       ) : (
         <ContractDetails
           hasAddonsForVideo={hasAddonsForVideo}
