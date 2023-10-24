@@ -56,10 +56,10 @@ function ContractWrapper(props) {
           <ContractPackagesWrapper
             token={props.token}
             id={props.contractID}
-            /*packageID={data.contract.packageid}
+            packageID={data.contract.packageid}
             price={data.contract.price}
             compsIDs={data.contract.componentids}
-            contractID={data.contract.id}*/
+            contractID={data.contract.id}
           />
           <div className="space-x-2">
             <ContractPayments token={props.token} id={props.contractID} />
@@ -68,7 +68,7 @@ function ContractWrapper(props) {
           <ContractCommentsWrapper
             token={props.token}
             id={props.contractID}
-            //comments={data.contract.comments}
+            comments={data.contract.comments}
           />
           <ContractStageWrapper
             token={props.token}
