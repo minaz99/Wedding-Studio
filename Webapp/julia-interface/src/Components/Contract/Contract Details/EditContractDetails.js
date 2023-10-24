@@ -31,15 +31,25 @@ function EditContractDetails(props) {
   const [location, setLocation] = useState(
     isSuccess ? data.contract.eventlocation : ""
   );
-  const [date, setDate] = useState("");
-  const [phone1, setPhone1] = useState("");
-  const [phone2, setPhone2] = useState("");
-  const [photographer, setPhotographer] = useState("");
-  const [video, setVideo] = useState("");
-  const [zoomLight, setZoomLight] = useState("");
-  const [cameraCrane, setCameraCrane] = useState("");
-  const [hangingCamera, setHangingCamera] = useState("");
-  const [cameraRonin, setCameraRonin] = useState("");
+  const [date, setDate] = useState(isSuccess ? data.contract.eventdate : "");
+  const [phone1, setPhone1] = useState(isSuccess ? data.contract.phone1 : "");
+  const [phone2, setPhone2] = useState(isSuccess ? data.contract.phone2 : "");
+  const [photographer, setPhotographer] = useState(
+    isSuccess ? data.contract.photographer : ""
+  );
+  const [video, setVideo] = useState(isSuccess ? data.contract.video : "");
+  const [zoomLight, setZoomLight] = useState(
+    isSuccess ? data.contract.zoomlight : ""
+  );
+  const [cameraCrane, setCameraCrane] = useState(
+    isSuccess ? data.contract.cameracrane : ""
+  );
+  const [hangingCamera, setHangingCamera] = useState(
+    isSuccess ? data.contract.hangingcamera : ""
+  );
+  const [cameraRonin, setCameraRonin] = useState(
+    isSuccess ? data.contract.cameraronin : ""
+  );
   const [updateContract, result] = useUpdateContractMutation();
   const onClickSave = async () => {
     await updateContract({
@@ -66,11 +76,11 @@ function EditContractDetails(props) {
     <div>Error getting contract details</div>
   ) : isSuccess ? (
     result.isLoading ? (
-      <div>Updating</div>
+      <div className="text-center text-blue-400 text-xl p-4">Updating</div>
     ) : result.isError ? (
-      <div>Error updating contract</div>
-    ) : result.isSuccess ? (
-      <div>Contract updated</div>
+      <div className="text-center text-red-400 text-xl p-4">
+        Error updating contract
+      </div>
     ) : (
       <div>
         <div className="space-y-4">
@@ -186,7 +196,7 @@ function EditContractDetails(props) {
               <div className="text-gray-500">Event Date</div>
               <input
                 type="date"
-                value={data.contract.eventdate.toString().split("T")[0]}
+                value={date.toString().split("T")[0]}
                 style={{
                   background: "#e2e8f0",
                   borderRadius: "6px",
@@ -196,7 +206,7 @@ function EditContractDetails(props) {
                   outline: "none",
                 }}
                 className="font-medium"
-                onChange={(e) => props.setDate(e.target.value)}
+                onChange={(e) => setDate(e.target.value)}
               />
               <div></div>
             </div>
@@ -224,7 +234,7 @@ function EditContractDetails(props) {
 
                 <div className="text-gray-500">Phone 1</div>
                 <input
-                  value={data.contract.phone1}
+                  value={phone1}
                   style={{
                     background: "#e2e8f0",
                     borderRadius: "6px",
@@ -234,7 +244,7 @@ function EditContractDetails(props) {
                     outline: "none",
                   }}
                   className="font-medium "
-                  onChange={(e) => props.setPhone1(e.target.value)}
+                  onChange={(e) => setPhone1(e.target.value)}
                 />
               </div>
               <div className="flex space-x-2 flex-1">
@@ -242,7 +252,7 @@ function EditContractDetails(props) {
 
                 <div className="text-gray-500">Phone 2</div>
                 <input
-                  value={data.contract.phone2}
+                  value={phone2}
                   style={{
                     background: "#e2e8f0",
                     borderRadius: "6px",
@@ -252,7 +262,7 @@ function EditContractDetails(props) {
                     outline: "none",
                   }}
                   className="font-medium "
-                  onChange={(e) => props.setPhone2(e.target.value)}
+                  onChange={(e) => setPhone2(e.target.value)}
                 />
               </div>
               <div className="flex space-x-2">
@@ -280,7 +290,7 @@ function EditContractDetails(props) {
                 <CameraIcon height={22} width={22} color="#db2777" />
                 <div className="text-gray-500">Photographer</div>
                 <input
-                  value={data.contract.photographer}
+                  value={photographer}
                   style={{
                     background: "#e2e8f0",
                     borderRadius: "6px",
@@ -290,14 +300,14 @@ function EditContractDetails(props) {
                     outline: "none",
                   }}
                   className="font-medium "
-                  onChange={(e) => props.setPhotographer(e.target.value)}
+                  onChange={(e) => setPhotographer(e.target.value)}
                 />
               </div>
               <div className="flex space-x-2 flex-1">
                 <VideoCameraIcon height={22} width={22} color="#db2777" />
                 <div className="text-gray-500">Video</div>
                 <input
-                  value={data.contract.video}
+                  value={video}
                   style={{
                     background: "#e2e8f0",
                     borderRadius: "6px",
@@ -307,7 +317,7 @@ function EditContractDetails(props) {
                     outline: "none",
                   }}
                   className="font-medium "
-                  onChange={(e) => props.setVideo(e.target.value)}
+                  onChange={(e) => setVideo(e.target.value)}
                 />
               </div>
               {props.hasAddonsForVideo("21", data.contract.componentids) >=
@@ -316,7 +326,7 @@ function EditContractDetails(props) {
                   <VideoCameraIcon height={22} width={22} color="#db2777" />
                   <div className="text-gray-500">Zoom Light</div>
                   <input
-                    value={data.contract.zoomlight}
+                    value={zoomLight}
                     style={{
                       background: "#e2e8f0",
                       borderRadius: "6px",
@@ -326,7 +336,7 @@ function EditContractDetails(props) {
                       outline: "none",
                     }}
                     className="font-medium "
-                    onChange={(e) => props.setZoomLight(e.target.value)}
+                    onChange={(e) => setZoomLight(e.target.value)}
                   />
                 </div>
               ) : (
@@ -337,7 +347,7 @@ function EditContractDetails(props) {
                   <VideoCameraIcon height={22} width={22} color="#db2777" />
                   <div className="text-gray-500">Camera Crane</div>
                   <input
-                    value={data.contract.cameracrane}
+                    value={cameraCrane}
                     style={{
                       background: "#e2e8f0",
                       borderRadius: "6px",
@@ -347,7 +357,7 @@ function EditContractDetails(props) {
                       outline: "none",
                     }}
                     className="font-medium "
-                    onChange={(e) => props.setCameraCrane(e.target.value)}
+                    onChange={(e) => setCameraCrane(e.target.value)}
                   />
                 </div>
               ) : (
@@ -358,7 +368,7 @@ function EditContractDetails(props) {
                   <VideoCameraIcon height={22} width={22} color="#db2777" />
                   <div className="text-gray-500">Hanging Camera</div>
                   <input
-                    value={data.contract.hangingcamera}
+                    value={hangingCamera}
                     style={{
                       background: "#e2e8f0",
                       borderRadius: "6px",
@@ -368,7 +378,7 @@ function EditContractDetails(props) {
                       outline: "none",
                     }}
                     className="font-medium "
-                    onChange={(e) => props.setHangingCamera(e.target.value)}
+                    onChange={(e) => setHangingCamera(e.target.value)}
                   />
                 </div>
               ) : (
@@ -380,7 +390,7 @@ function EditContractDetails(props) {
                   <VideoCameraIcon height={22} width={22} color="#db2777" />
                   <div className="text-gray-500">Camera Ronin</div>
                   <input
-                    value={data.contract.cameraronin}
+                    value={cameraRonin}
                     style={{
                       background: "#e2e8f0",
                       borderRadius: "6px",
@@ -390,7 +400,7 @@ function EditContractDetails(props) {
                       outline: "none",
                     }}
                     className="font-medium "
-                    onChange={(e) => props.setCameraRonin(e.target.value)}
+                    onChange={(e) => setCameraRonin(e.target.value)}
                   />
                 </div>
               ) : (
@@ -417,7 +427,7 @@ function EditContractDetails(props) {
           </div>
         </div>
         <div
-          className="rounded-md text-center  cursor-pointer text-xl   mx-auto p-2 w-1/6  bg-slate-500 font-medium text-white"
+          className="rounded-md text-center  cursor-pointer text-xl space-y-2  mx-auto p-2 w-1/6  bg-slate-500 font-medium text-white"
           onClick={() => onClickSave()}
         >
           Save
