@@ -36,7 +36,7 @@ function EditContractDetails(props) {
           <UserIcon height={22} width={22} color="#ec4899" />
           <div className="text-gray-500">Bride</div>
           <input
-            value={data.bridename}
+            value={data.contract.bridename}
             style={{
               background: "#94a3b8",
               borderRadius: "6px",
@@ -53,7 +53,7 @@ function EditContractDetails(props) {
           <UserIcon height={22} width={22} color="#3b82f6" />
           <div className="text-gray-500">Groom</div>
           <input
-            value={data.groomname}
+            value={data.contract.groomname}
             style={{
               background: "#94a3b8",
               borderRadius: "6px",
@@ -70,7 +70,7 @@ function EditContractDetails(props) {
           <UserGroupIcon height={22} width={22} color="#78716c" />
           <div className="text-gray-500">Second Party</div>
           <input
-            value={data.secondpartyname}
+            value={data.contract.secondpartyname}
             style={{
               background: "#94a3b8",
               borderRadius: "6px",
@@ -89,7 +89,7 @@ function EditContractDetails(props) {
         <div className="text-gray-500">Date Created</div>
         <input
           type="date"
-          value={data.datecreated.toString().split("T")[0]}
+          value={data.contract.datecreated.toString().split("T")[0]}
           style={{
             background: "#94a3b8",
             borderRadius: "6px",
@@ -108,7 +108,7 @@ function EditContractDetails(props) {
           <MegaphoneIcon height={22} width={22} color="#a78bfa" />
           <div className="text-gray-500">Type</div>
           <input
-            value={data.eventtype}
+            value={data.contract.eventtype}
             style={{
               background: "#94a3b8",
               borderRadius: "6px",
@@ -125,7 +125,7 @@ function EditContractDetails(props) {
           <BuildingStorefrontIcon height={22} width={22} color="#2dd4bf" />
           <div className="text-gray-500">Location</div>
           <input
-            value={data.eventlocation}
+            value={data.contract.eventlocation}
             style={{
               background: "#e2e8f0",
               borderRadius: "6px",
@@ -143,7 +143,7 @@ function EditContractDetails(props) {
           <div className="text-gray-500">Event Date</div>
           <input
             type="date"
-            value={data.eventdate.toString().split("T")[0]}
+            value={data.contract.eventdate.toString().split("T")[0]}
             style={{
               background: "#e2e8f0",
               borderRadius: "6px",
@@ -163,7 +163,7 @@ function EditContractDetails(props) {
             <IdentificationIcon height={22} width={22} color="#475569" />
             <div className="text-gray-500">Civil ID</div>
             <input
-              value={data.civilid}
+              value={data.contract.civilid}
               style={{
                 background: "#94a3b8",
                 borderRadius: "6px",
@@ -181,7 +181,7 @@ function EditContractDetails(props) {
 
             <div className="text-gray-500">Phone 1</div>
             <input
-              value={data.phone1}
+              value={data.contract.phone1}
               style={{
                 background: "#e2e8f0",
                 borderRadius: "6px",
@@ -199,7 +199,7 @@ function EditContractDetails(props) {
 
             <div className="text-gray-500">Phone 2</div>
             <input
-              value={data.phone2}
+              value={data.contract.phone2}
               style={{
                 background: "#e2e8f0",
                 borderRadius: "6px",
@@ -217,7 +217,7 @@ function EditContractDetails(props) {
             <div className="text-gray-500">Contract Status </div>
             <div>
               <input
-                value={data.contractstatus}
+                value={data.contract.contractstatus}
                 style={{
                   background: "#94a3b8",
                   borderRadius: "6px",
@@ -237,7 +237,7 @@ function EditContractDetails(props) {
             <CameraIcon height={22} width={22} color="#db2777" />
             <div className="text-gray-500">Photographer</div>
             <input
-              value={data.photographer}
+              value={data.contract.photographer}
               style={{
                 background: "#e2e8f0",
                 borderRadius: "6px",
@@ -254,7 +254,7 @@ function EditContractDetails(props) {
             <VideoCameraIcon height={22} width={22} color="#db2777" />
             <div className="text-gray-500">Video</div>
             <input
-              value={data.video}
+              value={data.contract.video}
               style={{
                 background: "#e2e8f0",
                 borderRadius: "6px",
@@ -267,12 +267,12 @@ function EditContractDetails(props) {
               onChange={(e) => props.setVideo(e.target.value)}
             />
           </div>
-          {props.hasAddonsForVideo("21", data.componentids) >= 0 ? (
+          {props.hasAddonsForVideo("21", data.contract.componentids) >= 0 ? (
             <div className="flex space-x-2 flex-1">
               <VideoCameraIcon height={22} width={22} color="#db2777" />
               <div className="text-gray-500">Zoom Light</div>
               <input
-                value={data.zoomlight}
+                value={data.contract.zoomlight}
                 style={{
                   background: "#e2e8f0",
                   borderRadius: "6px",
@@ -288,12 +288,12 @@ function EditContractDetails(props) {
           ) : (
             <div></div>
           )}
-          {props.hasAddonsForVideo("2", data.componentids) >= 0 ? (
+          {props.hasAddonsForVideo("2", data.contract.componentids) >= 0 ? (
             <div className="flex space-x-2 flex-1">
               <VideoCameraIcon height={22} width={22} color="#db2777" />
               <div className="text-gray-500">Camera Crane</div>
               <input
-                value={data.cameracrane}
+                value={data.contract.cameracrane}
                 style={{
                   background: "#e2e8f0",
                   borderRadius: "6px",
@@ -309,12 +309,12 @@ function EditContractDetails(props) {
           ) : (
             <div></div>
           )}
-          {props.hasAddonsForVideo("4", data.componentids) >= 0 ? (
+          {props.hasAddonsForVideo("4", data.contract.componentids) >= 0 ? (
             <div className="flex space-x-2 flex-1">
               <VideoCameraIcon height={22} width={22} color="#db2777" />
               <div className="text-gray-500">Hanging Camera</div>
               <input
-                value={data.hangingcamera}
+                value={data.contract.hangingcamera}
                 style={{
                   background: "#e2e8f0",
                   borderRadius: "6px",
@@ -330,12 +330,12 @@ function EditContractDetails(props) {
           ) : (
             <div></div>
           )}
-          {props.hasAddonsForVideo("10", data.componentids) >= 0 ? (
+          {props.hasAddonsForVideo("10", data.contract.componentids) >= 0 ? (
             <div className="flex space-x-2 flex-1">
               <VideoCameraIcon height={22} width={22} color="#db2777" />
               <div className="text-gray-500">Camera Ronin</div>
               <input
-                value={data.cameraronin}
+                value={data.contract.cameraronin}
                 style={{
                   background: "#e2e8f0",
                   borderRadius: "6px",
@@ -355,7 +355,7 @@ function EditContractDetails(props) {
             <UserCircleIcon height={22} width={22} color="#fed7aa" />
             <div className="text-gray-500">Created by</div>
             <input
-              value={data.createdby}
+              value={data.contract.createdby}
               style={{
                 background: "#94a3b8",
                 borderRadius: "6px",
