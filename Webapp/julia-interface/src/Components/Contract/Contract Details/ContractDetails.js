@@ -78,24 +78,24 @@ function ContractDetails(props) {
           <div>{data.contract.datecreated.toString().split("T")[0]}</div>
         </div>
       </div>
-      {/*
+
       <div className="space-y-3">
         <div className="flex space-x-2 flex-1">
           <IdentificationIcon height={22} width={22} color="#475569" />
           <div className="text-gray-500">Civil ID</div>
-          <div>{data.civilid}</div>
+          <div>{data.contract.civilid}</div>
         </div>
         <div className="flex space-x-2 flex-1">
           <PhoneIcon height={22} width={22} color="#4ade80" />
 
           <div className="text-gray-500">Phone1</div>
-          <div>{data.phone1}</div>
+          <div>{data.contract.phone1}</div>
         </div>
         <div className="flex space-x-2 flex-1">
           <PhoneIcon height={22} width={22} color="#4ade80" />
 
           <div className="text-gray-500">Phone2</div>
-          <div>{data.phone2}</div>
+          <div>{data.contract.phone2}</div>
         </div>
       </div>
       <div className="space-y-3">
@@ -103,24 +103,24 @@ function ContractDetails(props) {
           <ClockIcon height={22} width={22} color="#475569" />
           <div className="text-gray-500">Status</div>
           <div>
-            <StatusWrapper status={data.contractstatus} />
+            <StatusWrapper status={data.contract.contractstatus} />
           </div>
         </div>
         <div className="flex space-x-2 flex-1">
           <CameraIcon height={22} width={22} color="#db2777" />
           <div className="text-gray-500">Photographer</div>
-          <div>{data.photographer}</div>
+          <div>{data.contract.photographer}</div>
         </div>
         <div className="flex space-x-2 flex-1">
           <VideoCameraIcon height={22} width={22} color="#db2777" />
           <div className="text-gray-500">Video</div>
-          <div>{data.video}</div>
+          <div>{data.contract.video}</div>
         </div>
         {props.hasAddonsForVideo("21", data.componentids) >= 0 ? (
           <div className="flex space-x-2 flex-1">
             <VideoCameraIcon height={22} width={22} color="#db2777" />
             <div className="text-gray-500">Zoom Light</div>
-            <div>{data.zoomlight}</div>
+            <div>{data.contract.zoomlight}</div>
           </div>
         ) : (
           <div></div>
@@ -129,7 +129,7 @@ function ContractDetails(props) {
           <div className="flex space-x-2 flex-1">
             <VideoCameraIcon height={22} width={22} color="#db2777" />
             <div className="text-gray-500">Camera Crane</div>
-            <div>{data.cameracrane}</div>
+            <div>{data.contract.cameracrane}</div>
           </div>
         ) : (
           <div></div>
@@ -138,7 +138,7 @@ function ContractDetails(props) {
           <div className="flex space-x-2 flex-1">
             <VideoCameraIcon height={22} width={22} color="#db2777" />
             <div className="text-gray-500">Hanging Camera</div>
-            <div>{data.hangingcamera}</div>
+            <div>{data.contract.hangingcamera}</div>
           </div>
         ) : (
           <div></div>
@@ -147,12 +147,12 @@ function ContractDetails(props) {
           <div className="flex space-x-2 flex-1">
             <VideoCameraIcon height={22} width={22} color="#db2777" />
             <div className="text-gray-500">Camera Ronin</div>
-            <div>{data.cameraronin}</div>
+            <div>{data.contract.cameraronin}</div>
           </div>
         ) : (
           <div></div>
         )}
-        </div>*/}
+      </div>
     </div>
   ) : (
     <div></div>
