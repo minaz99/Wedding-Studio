@@ -38,9 +38,12 @@ function Home(props) {
         ) : activeView === "photographers" ? (
           <CalendarWrapper token={token} />
         ) : activeView === "Packages" ? (
-          <PackagesWrapper role={role} token={token} />
-        ) : activeView === "Settings" ? (
-          <SettingsWrapper name={name} />
+          <PackagesWrapper
+            role={role}
+            token={token}
+          /> /*: activeView === "Settings" ? (
+          <SettingsWrapper ename={name} />
+        )*/
         ) : (
           <div></div>
         )}
