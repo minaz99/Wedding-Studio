@@ -4,7 +4,7 @@ import {
   EllipsisHorizontalIcon,
 } from "@heroicons/react/24/outline";
 import React from "react";
-
+import { useGetContractByIDQuery } from "../../../services/api/contractSlice";
 function ContractStage(props) {
   //const stages = ["Signed", "Event Finished", "Pics Collected", "Finished"];
   const Check = () => {
