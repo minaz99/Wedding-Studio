@@ -12,7 +12,7 @@ import ContractDetailsWrapper from "./ContractDetailsWrapper";
 import ContractCommentsWrapper from "./ContractCommentsWrapper";
 
 function ContractWrapper(props) {
-  const { data, isLoading, isError, isSuccess } = useGetContractByIDQuery(
+  /*const { data, isLoading, isError, isSuccess } = useGetContractByIDQuery(
     {
       token: props.token,
       id: props.contractID,
@@ -20,7 +20,7 @@ function ContractWrapper(props) {
     {
       refetchOnMountOrArgChange: true,
     }
-  );
+  );*/
 
   return (
     <motion.div
@@ -52,7 +52,7 @@ function ContractWrapper(props) {
       ) : isSuccess ? (
         <div className=" space-y-4">
           <ContractDetailsWrapper
-            status={data.contract.contractstatus}
+            /*status={data.contract.contractstatus}
             secondPartyName={data.contract.secondpartyname}
             brideName={data.contract.bridename}
             groomName={data.contract.groomname}
@@ -67,22 +67,23 @@ function ContractWrapper(props) {
             phone2={data.contract.phone2}
             contractStatus={data.contract.contractstatus}
             createdBy={data.contract.createdby}
-            token={props.token}
-            id={props.contractID}
             dateCreated={data.contract.datecreated}
             zoomLight={data.contract.zoomlight}
             cameraCrane={data.contract.cameracrane}
             hangingCamera={data.contract.hangingcamera}
             cameraRonin={data.contract.cameraronin}
-            compsIDs={data.contract.componentids}
+            compsIDs={data.contract.componentids}*/
+            token={props.token}
+            id={props.contractID}
           />
 
           <ContractPackagesWrapper
             token={props.token}
-            packageID={data.contract.packageid}
+            id={props.contractID}
+            /*packageID={data.contract.packageid}
             price={data.contract.price}
             compsIDs={data.contract.componentids}
-            contractID={data.contract.id}
+            contractID={data.contract.id}*/
           />
           <div className="space-x-2">
             <ContractPayments token={props.token} id={props.contractID} />
@@ -91,7 +92,7 @@ function ContractWrapper(props) {
           <ContractCommentsWrapper
             token={props.token}
             id={props.contractID}
-            comments={data.contract.comments}
+            //comments={data.contract.comments}
           />
           <ContractStageWrapper
             token={props.token}

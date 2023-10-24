@@ -14,8 +14,17 @@ import {
 import React from "react";
 import StatusWrapper from "../../Table/StatusWrapper";
 import { ClockIcon } from "@mui/x-date-pickers";
-
+import { useGetContractByIDQuery } from "../../../services/api/contractSlice";
 function EditContractDetails(props) {
+  const { data, isLoading, isError, isSuccess } = useGetContractByIDQuery(
+    {
+      token: props.token,
+      id: props.contractID,
+    },
+    {
+      refetchOnMountOrArgChange: true,
+    }
+  );
   return (
     <div className="space-y-4">
       <div className="space-y-3 ">
@@ -23,7 +32,7 @@ function EditContractDetails(props) {
           <UserIcon height={22} width={22} color="#ec4899" />
           <div className="text-gray-500">Bride</div>
           <input
-            value={props.brideName}
+            value={data.brideName}
             style={{
               background: "#94a3b8",
               borderRadius: "6px",
@@ -40,7 +49,7 @@ function EditContractDetails(props) {
           <UserIcon height={22} width={22} color="#3b82f6" />
           <div className="text-gray-500">Groom</div>
           <input
-            value={props.groomName}
+            value={data.groomName}
             style={{
               background: "#94a3b8",
               borderRadius: "6px",
@@ -57,7 +66,7 @@ function EditContractDetails(props) {
           <UserGroupIcon height={22} width={22} color="#78716c" />
           <div className="text-gray-500">Second Party</div>
           <input
-            value={props.secondPartyName}
+            value={data.secondPartyName}
             style={{
               background: "#94a3b8",
               borderRadius: "6px",
@@ -76,7 +85,7 @@ function EditContractDetails(props) {
         <div className="text-gray-500">Date Created</div>
         <input
           type="date"
-          value={props.dateCreated.toString().split("T")[0]}
+          value={data.dateCreated.toString().split("T")[0]}
           style={{
             background: "#94a3b8",
             borderRadius: "6px",
@@ -95,7 +104,7 @@ function EditContractDetails(props) {
           <MegaphoneIcon height={22} width={22} color="#a78bfa" />
           <div className="text-gray-500">Type</div>
           <input
-            value={props.eventType}
+            value={data.eventType}
             style={{
               background: "#94a3b8",
               borderRadius: "6px",
@@ -112,7 +121,7 @@ function EditContractDetails(props) {
           <BuildingStorefrontIcon height={22} width={22} color="#2dd4bf" />
           <div className="text-gray-500">Location</div>
           <input
-            value={props.location}
+            value={data.location}
             style={{
               background: "#e2e8f0",
               borderRadius: "6px",
@@ -130,7 +139,7 @@ function EditContractDetails(props) {
           <div className="text-gray-500">Event Date</div>
           <input
             type="date"
-            value={props.date.toString().split("T")[0]}
+            value={data.date.toString().split("T")[0]}
             style={{
               background: "#e2e8f0",
               borderRadius: "6px",
@@ -150,7 +159,7 @@ function EditContractDetails(props) {
             <IdentificationIcon height={22} width={22} color="#475569" />
             <div className="text-gray-500">Civil ID</div>
             <input
-              value={props.civilID}
+              value={data.civilID}
               style={{
                 background: "#94a3b8",
                 borderRadius: "6px",
@@ -168,7 +177,7 @@ function EditContractDetails(props) {
 
             <div className="text-gray-500">Phone 1</div>
             <input
-              value={props.phone1}
+              value={data.phone1}
               style={{
                 background: "#e2e8f0",
                 borderRadius: "6px",
@@ -186,7 +195,7 @@ function EditContractDetails(props) {
 
             <div className="text-gray-500">Phone 2</div>
             <input
-              value={props.phone2}
+              value={data.phone2}
               style={{
                 background: "#e2e8f0",
                 borderRadius: "6px",
@@ -204,7 +213,7 @@ function EditContractDetails(props) {
             <div className="text-gray-500">Contract Status </div>
             <div>
               <input
-                value={props.contractStatus}
+                value={data.contractStatus}
                 style={{
                   background: "#94a3b8",
                   borderRadius: "6px",
@@ -224,7 +233,7 @@ function EditContractDetails(props) {
             <CameraIcon height={22} width={22} color="#db2777" />
             <div className="text-gray-500">Photographer</div>
             <input
-              value={props.photographer}
+              value={data.photographer}
               style={{
                 background: "#e2e8f0",
                 borderRadius: "6px",
@@ -241,7 +250,7 @@ function EditContractDetails(props) {
             <VideoCameraIcon height={22} width={22} color="#db2777" />
             <div className="text-gray-500">Video</div>
             <input
-              value={props.video}
+              value={data.video}
               style={{
                 background: "#e2e8f0",
                 borderRadius: "6px",
@@ -259,7 +268,7 @@ function EditContractDetails(props) {
               <VideoCameraIcon height={22} width={22} color="#db2777" />
               <div className="text-gray-500">Zoom Light</div>
               <input
-                value={props.zoomLight}
+                value={data.zoomLight}
                 style={{
                   background: "#e2e8f0",
                   borderRadius: "6px",
@@ -280,7 +289,7 @@ function EditContractDetails(props) {
               <VideoCameraIcon height={22} width={22} color="#db2777" />
               <div className="text-gray-500">Camera Crane</div>
               <input
-                value={props.cameraCrane}
+                value={data.cameraCrane}
                 style={{
                   background: "#e2e8f0",
                   borderRadius: "6px",
@@ -301,7 +310,7 @@ function EditContractDetails(props) {
               <VideoCameraIcon height={22} width={22} color="#db2777" />
               <div className="text-gray-500">Hanging Camera</div>
               <input
-                value={props.hangingCamera}
+                value={data.hangingCamera}
                 style={{
                   background: "#e2e8f0",
                   borderRadius: "6px",
@@ -322,7 +331,7 @@ function EditContractDetails(props) {
               <VideoCameraIcon height={22} width={22} color="#db2777" />
               <div className="text-gray-500">Camera Ronin</div>
               <input
-                value={props.cameraRonin}
+                value={data.cameraRonin}
                 style={{
                   background: "#e2e8f0",
                   borderRadius: "6px",
@@ -342,7 +351,7 @@ function EditContractDetails(props) {
             <UserCircleIcon height={22} width={22} color="#fed7aa" />
             <div className="text-gray-500">Created by</div>
             <input
-              value={props.createdBy}
+              value={data.createdBy}
               style={{
                 background: "#94a3b8",
                 borderRadius: "6px",

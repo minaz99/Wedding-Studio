@@ -74,7 +74,7 @@ function ContractDetailsWrapper(props) {
         </div>
       ) : editContract ? (
         <EditContractDetails
-          brideName={props.brideName}
+          /* brideName={props.brideName}
           groomName={props.groomName}
           secondPartyName={props.secondPartyName}
           eventType={props.eventType}
@@ -102,12 +102,14 @@ function ContractDetailsWrapper(props) {
           setZoomLight={setZoomLight}
           setCameraCrane={setCameraCrane}
           setHangingCamera={setHangingCamera}
-          setCameraRonin={setCameraRonin}
+          setCameraRonin={setCameraRonin}*/
+          token={props.token}
+          id={props.id}
           hasAddonsForVideo={hasAddonsForVideo}
         />
       ) : (
         <ContractDetails
-          brideName={props.brideName}
+          /*brideName={props.brideName}
           groomName={props.groomName}
           secondPartyName={props.secondPartyName}
           eventType={props.eventType}
@@ -125,8 +127,10 @@ function ContractDetailsWrapper(props) {
           zoomLight={zoomLight}
           cameraCrane={cameraCrane}
           hangingCamera={hangingCamera}
-          cameraRonin={cameraRonin}
+          cameraRonin={cameraRonin}*/
           hasAddonsForVideo={hasAddonsForVideo}
+          token={props.token}
+          id={props.id}
         />
       )}
       {editContract ? (
