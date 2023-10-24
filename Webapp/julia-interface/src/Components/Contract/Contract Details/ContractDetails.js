@@ -37,22 +37,22 @@ function ContractDetails(props) {
         <div className="flex flex-1 space-x-2">
           <UserIcon height={22} width={22} color="#ec4899" />
           <div className="text-gray-500">Bride</div>
-          <div className="rounded-full">{data.brideName}</div>
+          <div className="rounded-full">{data.bridename}</div>
         </div>
         <div className="flex space-x-2">
           <UserIcon height={22} width={22} color="#3b82f6" />
           <div className="text-gray-500">Groom</div>
-          <div>{data.groomName}</div>
+          <div>{data.groomname}</div>
         </div>
         <div className="flex space-x-2">
           <UserGroupIcon height={22} width={22} color="#78716c" />
           <div className="text-gray-500">Second Party</div>
-          <div>{data.secondPartyName}</div>
+          <div>{data.secondpartyname}</div>
         </div>
         <div className="flex space-x-2 flex-1">
           <UserCircleIcon height={22} width={22} color="#fbbf24" />
           <div className="text-gray-500">Created by</div>
-          <div>{data.createdBy}</div>
+          <div>{data.createdby}</div>
         </div>
       </div>
 
@@ -60,22 +60,22 @@ function ContractDetails(props) {
         <div className="flex space-x-2 flex-1">
           <MegaphoneIcon height={22} width={22} color="#a78bfa" />
           <div className="text-gray-500">Type</div>
-          <div>{data.eventType}</div>
+          <div>{data.eventtype}</div>
         </div>
         <div className="flex space-x-2 flex-1">
           <BuildingStorefrontIcon height={22} width={22} color="#2dd4bf" />
           <div className="text-gray-500">Location</div>
-          <div>{data.eventPlace}</div>
+          <div>{data.eventlocation}</div>
         </div>
         <div className="flex space-x-2 flex-1">
           <CalendarDaysIcon height={22} width={22} color="#818cf8" />
           <div className="text-gray-500">Event Date</div>
-          <div>{data.eventDate.toString().split("T")[0]}</div>
+          <div>{data.eventdate.toString().split("T")[0]}</div>
         </div>
         <div className="flex space-x-2 flex-1">
           <CalendarDaysIcon height={22} width={22} color="#818cf8" />
           <div className="text-gray-500">Date Written</div>
-          <div>{data.dateCreated.toString().split("T")[0]}</div>
+          <div>{data.datecreated.toString().split("T")[0]}</div>
         </div>
       </div>
 
@@ -83,7 +83,7 @@ function ContractDetails(props) {
         <div className="flex space-x-2 flex-1">
           <IdentificationIcon height={22} width={22} color="#475569" />
           <div className="text-gray-500">Civil ID</div>
-          <div>{data.civilID}</div>
+          <div>{data.civilid}</div>
         </div>
         <div className="flex space-x-2 flex-1">
           <PhoneIcon height={22} width={22} color="#4ade80" />
@@ -103,7 +103,7 @@ function ContractDetails(props) {
           <ClockIcon height={22} width={22} color="#475569" />
           <div className="text-gray-500">Status</div>
           <div>
-            <StatusWrapper status={data.contractStatus} />
+            <StatusWrapper status={data.contractstatus} />
           </div>
         </div>
         <div className="flex space-x-2 flex-1">
@@ -120,7 +120,7 @@ function ContractDetails(props) {
           <div className="flex space-x-2 flex-1">
             <VideoCameraIcon height={22} width={22} color="#db2777" />
             <div className="text-gray-500">Zoom Light</div>
-            <div>{data.zoomLight}</div>
+            <div>{data.zoomlight}</div>
           </div>
         ) : (
           <div></div>
@@ -129,7 +129,7 @@ function ContractDetails(props) {
           <div className="flex space-x-2 flex-1">
             <VideoCameraIcon height={22} width={22} color="#db2777" />
             <div className="text-gray-500">Camera Crane</div>
-            <div>{data.camerCrane}</div>
+            <div>{data.camercrane}</div>
           </div>
         ) : (
           <div></div>
@@ -138,7 +138,7 @@ function ContractDetails(props) {
           <div className="flex space-x-2 flex-1">
             <VideoCameraIcon height={22} width={22} color="#db2777" />
             <div className="text-gray-500">Hanging Camera</div>
-            <div>{data.hangingCamera}</div>
+            <div>{data.hangingcamera}</div>
           </div>
         ) : (
           <div></div>
@@ -147,7 +147,7 @@ function ContractDetails(props) {
           <div className="flex space-x-2 flex-1">
             <VideoCameraIcon height={22} width={22} color="#db2777" />
             <div className="text-gray-500">Camera Ronin</div>
-            <div>{data.cameraRonin}</div>
+            <div>{data.cameraronin}</div>
           </div>
         ) : (
           <div></div>
