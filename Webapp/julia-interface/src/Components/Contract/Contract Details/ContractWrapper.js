@@ -95,7 +95,7 @@ function ContractWrapper(props) {
           />
           <ContractStageWrapper
             token={props.token}
-            contractID={props.contractID}
+            id={props.contractID}
             stages={data.stages}
           />
         </div>
