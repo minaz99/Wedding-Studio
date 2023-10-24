@@ -5,7 +5,7 @@ function UserInfo(props) {
     <div className="bg-white m-auto  space-y-2 rounded-md p-4">
       <div className="flex space-x-2">
         <div className="font-medium text-slate-400">Email </div>
-        <div className="font-mono text-slate-500">hanymina43@gmail.com</div>
+        <div className="font-mono text-slate-500">{props.email}</div>
       </div>
       <div className="flex space-x-2">
         <div className="font-medium text-slate-400">Username </div>
