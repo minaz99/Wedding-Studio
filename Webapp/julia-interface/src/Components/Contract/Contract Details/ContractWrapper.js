@@ -51,7 +51,7 @@ function ContractWrapper(props) {
         <div>Error getting contract details</div>
       ) : isSuccess ? (
         <div className=" space-y-4">
-          {/*<ContractDetailsWrapper token={props.token} id={props.contractID} />*/}
+          <ContractDetailsWrapper token={props.token} id={props.contractID} />
 
           <ContractPackagesWrapper
             token={props.token}
