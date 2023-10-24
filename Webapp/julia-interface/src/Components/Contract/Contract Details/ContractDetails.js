@@ -44,7 +44,7 @@ function ContractDetails(props) {
           <div className="text-gray-500">Groom</div>
           <div>{data.groomname}</div>
         </div>
-        <div className="flex space-x-2">
+        {/*<div className="flex space-x-2">
           <UserGroupIcon height={22} width={22} color="#78716c" />
           <div className="text-gray-500">Second Party</div>
           <div>{data.secondpartyname}</div>
@@ -98,7 +98,7 @@ function ContractDetails(props) {
           <div>{data.phone2}</div>
         </div>
       </div>
-      {/*<div className="space-y-3">
+      <div className="space-y-3">
         <div className="flex space-x-2">
           <ClockIcon height={22} width={22} color="#475569" />
           <div className="text-gray-500">Status</div>
@@ -153,6 +153,7 @@ function ContractDetails(props) {
           <div></div>
         )}
         </div>*/}
+      </div>
     </div>
   ) : (
     <div></div>
