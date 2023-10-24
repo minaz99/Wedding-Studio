@@ -6,16 +6,16 @@ import { useUpdateContractMutation } from "../../../services/api/contractSlice";
 
 function ContractDetailsWrapper(props) {
   const [editContract, setEditContract] = useState(false);
-  const [location, setLocation] = useState(props.eventPlace);
-  const [date, setDate] = useState(props.eventDate);
-  const [phone1, setPhone1] = useState(props.phone1);
-  const [phone2, setPhone2] = useState(props.phone2);
-  const [photographer, setPhotographer] = useState(props.photographer);
-  const [video, setVideo] = useState(props.video);
-  const [zoomLight, setZoomLight] = useState(props.zoomLight);
-  const [cameraCrane, setCameraCrane] = useState(props.cameraCrane);
-  const [hangingCamera, setHangingCamera] = useState(props.hangingCamera);
-  const [cameraRonin, setCameraRonin] = useState(props.cameraRonin);
+  const [location, setLocation] = useState("");
+  const [date, setDate] = useState("");
+  const [phone1, setPhone1] = useState("");
+  const [phone2, setPhone2] = useState("");
+  const [photographer, setPhotographer] = useState("");
+  const [video, setVideo] = useState("");
+  const [zoomLight, setZoomLight] = useState("");
+  const [cameraCrane, setCameraCrane] = useState("");
+  const [hangingCamera, setHangingCamera] = useState("");
+  const [cameraRonin, setCameraRonin] = useState("");
   const [updateContract, result] = useUpdateContractMutation();
   const hasAddonsForVideo = (compID) => {
     let IDsArray = props.compsIDs
