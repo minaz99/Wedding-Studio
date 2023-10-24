@@ -1,7 +1,7 @@
 import { CheckIcon, EllipsisHorizontalIcon } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
 import { useUpdateContractStageMutation } from "../../../services/api/contractSlice";
-
+import { useGetContractByIDQuery } from "../../../services/api/contractSlice";
 function EditContractStage(props) {
   const [hoverEventFinished, setHoverEventFinished] = useState(false);
   const [hoverPicsCollected, setHoverPicsCollected] = useState(false);
@@ -19,6 +19,16 @@ function EditContractStage(props) {
     );
   };
 
+  const { data, isLoading, isError, isSuccess } = useGetContractByIDQuery(
+    {
+      token: props.token,
+      id: props.id,
+    },
+    {
+      refetchOnMountOrArgChange: true,
+    }
+  );
+
   const NotStarted = () => {
     return (
       <div className="font-bold flex rounded-full bg-gray-400 w-fit p-1 items-center justify-center font-mono">
@@ -29,23 +39,23 @@ function EditContractStage(props) {
     );
   };
   const EventFinished = () => {
-    return props.stages.eventfinished ? <Check /> : <NotStarted />;
+    return data.stages.eventfinished ? <Check /> : <NotStarted />;
   };
 
   const PicsCollected = () => {
-    return props.stages.picscollected ? <Check /> : <NotStarted />;
+    return data.stages.picscollected ? <Check /> : <NotStarted />;
   };
 
   const VideoCollected = () => {
-    return props.stages.videocollected ? <Check /> : <NotStarted />;
+    return data.stages.videocollected ? <Check /> : <NotStarted />;
   };
 
   const PromoCollected = () => {
-    return props.stages.promocollected ? <Check /> : <NotStarted />;
+    return data.stages.promocollected ? <Check /> : <NotStarted />;
   };
 
   const Finished = () => {
-    return props.stages.finished ? <Check /> : <NotStarted />;
+    return data.stages.finished ? <Check /> : <NotStarted />;
   };
 
   return (
@@ -56,8 +66,12 @@ function EditContractStage(props) {
         <div className="text-center text-red-400 text-xl p-4">
           Error updating stage
         </div>
-      ) : (
-        <div className="flex items-center space-x-2">
+      ) : isLoading ? (
+        <div>Loading details...</div>
+      ) : isError ? (
+        <div>Error getting contract details</div>
+      ) : isSuccess ? (
+        <div className="space-x-4 items-center justify-center flex">
           <div className="flex items-center space-x-2">
             <Check />
             <div className="text-gray-600  ">Signed</div>
@@ -143,6 +157,8 @@ function EditContractStage(props) {
             <div className="text-gray-600  ">Finished</div>
           </div>
         </div>
+      ) : (
+        <div></div>
       )}
     </div>
   );

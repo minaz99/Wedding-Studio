@@ -37,13 +37,13 @@ function ContractStageWrapper(props) {
       </div>
       <div className="space-x-4 items-center justify-center flex">
         {editStage ? (
-          <EditContractStage
+          <EditContractStage token={props.token} id={props.id} />
+        ) : (
+          <ContractStage
             token={props.token}
             id={props.id}
-            stages={stages}
+            setsStages={setStages}
           />
-        ) : (
-          <ContractStage token={props.token} id={props.id} stages={stages} />
         )}
       </div>
     </div>
