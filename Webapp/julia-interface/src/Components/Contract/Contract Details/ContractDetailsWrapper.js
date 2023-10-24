@@ -85,7 +85,6 @@ function ContractDetailsWrapper(props) {
           setPhone2={setPhone2}
           setPhotographer={setPhotographer}
           setVideo={setVideo}
-          set
         />
       ) : (
         <ContractDetails

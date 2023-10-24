@@ -19,7 +19,7 @@ function EditContractDetails(props) {
   const { data, isLoading, isError, isSuccess } = useGetContractByIDQuery(
     {
       token: props.token,
-      id: props.contractID,
+      id: props.id,
     },
     {
       refetchOnMountOrArgChange: true,
