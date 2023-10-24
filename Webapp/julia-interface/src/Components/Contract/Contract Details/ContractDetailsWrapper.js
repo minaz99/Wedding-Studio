@@ -86,11 +86,12 @@ function ContractDetailsWrapper(props) {
         />*/
         <div>why</div>
       ) : (
-        <ContractDetails
+        /* <ContractDetails
           hasAddonsForVideo={hasAddonsForVideo}
           token={props.token}
           id={props.id}
-        />
+        />*/
+        <div>let's see now</div>
       )}
       {editContract ? (
         <div

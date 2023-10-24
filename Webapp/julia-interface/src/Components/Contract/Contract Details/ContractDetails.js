@@ -74,7 +74,7 @@ function ContractDetails(props) {
         </div>
         <div className="flex space-x-2 flex-1">
           <CalendarDaysIcon height={22} width={22} color="#818cf8" />
-          <div className="text-gray-500">Date Written</div>
+          <div className="text-gray-500">Date Created</div>
           <div>{data.datecreated.toString().split("T")[0]}</div>
         </div>
       </div>
