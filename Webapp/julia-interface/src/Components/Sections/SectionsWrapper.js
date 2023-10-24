@@ -97,7 +97,7 @@ function SectionsWrapper(props) {
             </div>
           </div>
           <div className=" space-y-6 absolute bottom-0 mx-auto pb-4 ">
-            <div className="flex space-x-2 items-center">
+            {/*} <div className="flex space-x-2 items-center">
               <Cog6ToothIcon height={18} width={18} color="#475569" />
               <div
                 onClick={() => props.setActiveView("Settings")}
@@ -105,7 +105,7 @@ function SectionsWrapper(props) {
               >
                 Settings
               </div>
-            </div>
+        </div>*/}
             <div
               onClick={() => props.setIsLoggedIn(false)}
               className="flex space-x-2 items-center"
