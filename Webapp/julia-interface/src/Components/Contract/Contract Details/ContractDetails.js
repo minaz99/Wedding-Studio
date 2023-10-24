@@ -116,7 +116,7 @@ function ContractDetails(props) {
           <div className="text-gray-500">Video</div>
           <div>{data.video}</div>
         </div>
-        {props.hasAddonsForVideo("21") >= 0 ? (
+        {props.hasAddonsForVideo("21", data.componentids) >= 0 ? (
           <div className="flex space-x-2 flex-1">
             <VideoCameraIcon height={22} width={22} color="#db2777" />
             <div className="text-gray-500">Zoom Light</div>
@@ -125,7 +125,7 @@ function ContractDetails(props) {
         ) : (
           <div></div>
         )}
-        {props.hasAddonsForVideo("2") >= 0 ? (
+        {props.hasAddonsForVideo("2", data.componentids) >= 0 ? (
           <div className="flex space-x-2 flex-1">
             <VideoCameraIcon height={22} width={22} color="#db2777" />
             <div className="text-gray-500">Camera Crane</div>
@@ -134,7 +134,7 @@ function ContractDetails(props) {
         ) : (
           <div></div>
         )}
-        {props.hasAddonsForVideo("4") >= 0 ? (
+        {props.hasAddonsForVideo("4", data.componentids) >= 0 ? (
           <div className="flex space-x-2 flex-1">
             <VideoCameraIcon height={22} width={22} color="#db2777" />
             <div className="text-gray-500">Hanging Camera</div>
@@ -143,7 +143,7 @@ function ContractDetails(props) {
         ) : (
           <div></div>
         )}
-        {props.hasAddonsForVideo("10") >= 0 ? (
+        {props.hasAddonsForVideo("10", data.componentids) >= 0 ? (
           <div className="flex space-x-2 flex-1">
             <VideoCameraIcon height={22} width={22} color="#db2777" />
             <div className="text-gray-500">Camera Ronin</div>
