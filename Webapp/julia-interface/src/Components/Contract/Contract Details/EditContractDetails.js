@@ -25,7 +25,11 @@ function EditContractDetails(props) {
       refetchOnMountOrArgChange: true,
     }
   );
-  return (
+  return isLoading ? (
+    <div>Loading details...</div>
+  ) : isError ? (
+    <div>Error getting contract details</div>
+  ) : isSuccess ? (
     <div className="space-y-4">
       <div className="space-y-3 ">
         <div className="flex flex-1 space-x-2">
@@ -263,7 +267,7 @@ function EditContractDetails(props) {
               onChange={(e) => props.setVideo(e.target.value)}
             />
           </div>
-          {props.hasAddonsForVideo("21") >= 0 ? (
+          {props.hasAddonsForVideo("21", data.componentids) >= 0 ? (
             <div className="flex space-x-2 flex-1">
               <VideoCameraIcon height={22} width={22} color="#db2777" />
               <div className="text-gray-500">Zoom Light</div>
@@ -284,7 +288,7 @@ function EditContractDetails(props) {
           ) : (
             <div></div>
           )}
-          {props.hasAddonsForVideo("2") >= 0 ? (
+          {props.hasAddonsForVideo("2", data.componentids) >= 0 ? (
             <div className="flex space-x-2 flex-1">
               <VideoCameraIcon height={22} width={22} color="#db2777" />
               <div className="text-gray-500">Camera Crane</div>
@@ -305,7 +309,7 @@ function EditContractDetails(props) {
           ) : (
             <div></div>
           )}
-          {props.hasAddonsForVideo("4") >= 0 ? (
+          {props.hasAddonsForVideo("4", data.componentids) >= 0 ? (
             <div className="flex space-x-2 flex-1">
               <VideoCameraIcon height={22} width={22} color="#db2777" />
               <div className="text-gray-500">Hanging Camera</div>
@@ -326,7 +330,7 @@ function EditContractDetails(props) {
           ) : (
             <div></div>
           )}
-          {props.hasAddonsForVideo("10") >= 0 ? (
+          {props.hasAddonsForVideo("10", data.componentids) >= 0 ? (
             <div className="flex space-x-2 flex-1">
               <VideoCameraIcon height={22} width={22} color="#db2777" />
               <div className="text-gray-500">Camera Ronin</div>
@@ -367,6 +371,8 @@ function EditContractDetails(props) {
         </div>
       </div>
     </div>
+  ) : (
+    <div></div>
   );
 }
 

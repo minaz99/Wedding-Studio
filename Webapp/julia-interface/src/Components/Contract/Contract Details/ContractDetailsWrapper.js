@@ -17,10 +17,8 @@ function ContractDetailsWrapper(props) {
   const [hangingCamera, setHangingCamera] = useState("");
   const [cameraRonin, setCameraRonin] = useState("");
   const [updateContract, result] = useUpdateContractMutation();
-  const hasAddonsForVideo = (compID) => {
-    let IDsArray = props.compsIDs
-      .split(",")
-      .filter((id) => id !== "," && id !== "");
+  const hasAddonsForVideo = (compID, compsIDs) => {
+    let IDsArray = compsIDs.split(",").filter((id) => id !== "," && id !== "");
     return IDsArray.indexOf(compID);
   };
   const onClickSave = async () => {
