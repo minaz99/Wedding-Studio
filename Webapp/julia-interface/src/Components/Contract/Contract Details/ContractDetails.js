@@ -129,7 +129,7 @@ function ContractDetails(props) {
           <div className="flex space-x-2 flex-1">
             <VideoCameraIcon height={22} width={22} color="#db2777" />
             <div className="text-gray-500">Camera Crane</div>
-            <div>{data.camercrane}</div>
+            <div>{data.cameracrane}</div>
           </div>
         ) : (
           <div></div>
