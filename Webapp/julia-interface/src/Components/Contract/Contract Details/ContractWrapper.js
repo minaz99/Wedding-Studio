@@ -12,7 +12,7 @@ import ContractDetailsWrapper from "./ContractDetailsWrapper";
 import ContractCommentsWrapper from "./ContractCommentsWrapper";
 
 function ContractWrapper(props) {
-  /*const { data, isLoading, isError, isSuccess } = useGetContractByIDQuery(
+  const { data, isLoading, isError, isSuccess } = useGetContractByIDQuery(
     {
       token: props.token,
       id: props.contractID,
@@ -20,7 +20,7 @@ function ContractWrapper(props) {
     {
       refetchOnMountOrArgChange: true,
     }
-  );*/
+  );
 
   return (
     <motion.div
