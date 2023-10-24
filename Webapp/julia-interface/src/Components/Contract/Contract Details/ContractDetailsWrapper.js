@@ -33,17 +33,12 @@ function ContractDetailsWrapper(props) {
           />
         )}
       </div>
-      {result.isLoading ? (
-        <div className="text-center text-blue-400 text-xl p-4">Saving</div>
-      ) : result.isError ? (
-        <div className="text-center text-red-400 text-xl p-4">
-          Error updating contract
-        </div>
-      ) : editContract ? (
+      {editContract ? (
         <EditContractDetails
           token={props.token}
           id={props.id}
           hasAddonsForVideo={hasAddonsForVideo}
+          setEditContract={setEditContract}
         />
       ) : (
         <ContractDetails
