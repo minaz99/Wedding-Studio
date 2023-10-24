@@ -97,6 +97,7 @@ function ContractWrapper(props) {
             token={props.token}
             id={props.contractID}
             stages={data.stages}
+            setRefreshContract={props.setRefreshContract}
           />
         </div>
       ) : (

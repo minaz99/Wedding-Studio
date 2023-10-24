@@ -55,6 +55,7 @@ function TableWrapper(props) {
   const [date, setDate] = useState(new Date());
   const [monthSelected, setMonthSelected] = useState(new Date().getMonth() + 1);
   const [yearSelected, setYearSelected] = useState(new Date().getFullYear());
+  const [refreshContract, setRefreshContract] = useState(false);
   /* const [getContractsByMultipleCriterias, result] =
     useGetContractsByMultipleCriteriasQuery();
 */
@@ -88,11 +89,12 @@ function TableWrapper(props) {
       transition={{ duration: 0.75 }}
       className="rounded-r-lg z-0 relative  p-4 w-11/12  shadow-md   bg-slate-600 "
     >
-      {showContractDetails ? (
+      {showContractDetails || refreshContract ? (
         <ContractWrapper
           token={props.token}
           contractID={contractID}
           resetValues={resetValues}
+          setRefreshContract={setRefreshContract}
         />
       ) : (
         <div></div>

@@ -11,6 +11,10 @@ import ContractStage from "./ContractStage";
 import EditContractStage from "./EditContractStage";
 function ContractStageWrapper(props) {
   const [editStage, setEditStage] = useState(false);
+  const xCircleOnClick = () => {
+    props.setRefreshContract(false);
+    setEditStage(false);
+  };
   return (
     <div className="space-y-3 rounded-lg p-4   bg-white h-fit  ">
       <div className="flex items-center">
@@ -21,7 +25,7 @@ function ContractStageWrapper(props) {
             width={22}
             color="#475569"
             className="cursor-pointer"
-            onClick={() => setEditStage(false)}
+            onClick={() => xCircleOnClick()}
           />
         ) : (
           <PencilSquareIcon
@@ -39,6 +43,7 @@ function ContractStageWrapper(props) {
             token={props.token}
             id={props.id}
             stages={props.stages}
+            setRefreshContract={props.setRefreshContract}
           />
         ) : (
           <ContractStage stages={props.stages} />
