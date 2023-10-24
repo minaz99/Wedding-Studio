@@ -51,31 +51,7 @@ function ContractWrapper(props) {
         <div>Error getting contract details</div>
       ) : isSuccess ? (
         <div className=" space-y-4">
-          <ContractDetailsWrapper
-            /*status={data.contract.contractstatus}
-            secondPartyName={data.contract.secondpartyname}
-            brideName={data.contract.bridename}
-            groomName={data.contract.groomname}
-            eventType={data.contract.eventtype}
-            eventPlace={data.contract.eventlocation}
-            photographer={data.contract.photographer}
-            video={data.contract.video}
-            eventDate={data.contract.eventdate}
-            price={data.contract.price}
-            civilID={data.contract.civilid}
-            phone1={data.contract.phone1}
-            phone2={data.contract.phone2}
-            contractStatus={data.contract.contractstatus}
-            createdBy={data.contract.createdby}
-            dateCreated={data.contract.datecreated}
-            zoomLight={data.contract.zoomlight}
-            cameraCrane={data.contract.cameracrane}
-            hangingCamera={data.contract.hangingcamera}
-            cameraRonin={data.contract.cameraronin}
-            compsIDs={data.contract.componentids}*/
-            token={props.token}
-            id={props.contractID}
-          />
+          <ContractDetailsWrapper token={props.token} id={props.contractID} />
 
           <ContractPackagesWrapper
             token={props.token}

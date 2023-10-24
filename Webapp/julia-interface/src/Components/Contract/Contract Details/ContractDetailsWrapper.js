@@ -45,9 +45,7 @@ function ContractDetailsWrapper(props) {
   return (
     <div className="space-y-3 rounded-lg shadow-md p-4  w-full bg-white h-fit  ">
       <div className="flex items-center">
-        <div className="font-medium text-xl flex-1">
-          {props.secondPartyName}
-        </div>
+        <div className="font-medium text-xl flex-1">Details</div>
         {editContract ? (
           <XCircleIcon
             height={22}
@@ -74,60 +72,23 @@ function ContractDetailsWrapper(props) {
         </div>
       ) : editContract ? (
         <EditContractDetails
-          /* brideName={props.brideName}
-          groomName={props.groomName}
-          secondPartyName={props.secondPartyName}
-          eventType={props.eventType}
-          location={location}
-          date={date}
-          dateCreated={props.dateCreated}
-          civilID={props.civilID}
-          phone1={phone1}
-          phone2={phone2}
-          contractStatus={props.contractStatus}
-          price={props.price}
-          photographer={photographer}
-          video={video}
-          setLocation={setLocation}
+          token={props.token}
+          id={props.id}
+          hasAddonsForVideo={hasAddonsForVideo}
+          setCameraCrane={setCameraCrane}
+          setCameraRonin={setCameraRonin}
+          setHangingCamera={setHangingCamera}
+          setZoomLight={setZoomLight}
           setDate={setDate}
+          setLocation={setLocation}
           setPhone1={setPhone1}
           setPhone2={setPhone2}
           setPhotographer={setPhotographer}
           setVideo={setVideo}
-          createdBy={props.createdBy}
-          zoomLight={zoomLight}
-          cameraCrane={cameraCrane}
-          hangingCamera={hangingCamera}
-          cameraRonin={cameraRonin}
-          setZoomLight={setZoomLight}
-          setCameraCrane={setCameraCrane}
-          setHangingCamera={setHangingCamera}
-          setCameraRonin={setCameraRonin}*/
-          token={props.token}
-          id={props.id}
-          hasAddonsForVideo={hasAddonsForVideo}
+          set
         />
       ) : (
         <ContractDetails
-          /*brideName={props.brideName}
-          groomName={props.groomName}
-          secondPartyName={props.secondPartyName}
-          eventType={props.eventType}
-          eventPlace={location}
-          eventDate={date}
-          civilID={props.civilID}
-          phone1={phone1}
-          phone2={phone2}
-          contractStatus={props.contractStatus}
-          price={props.price}
-          photographer={photographer}
-          video={video}
-          createdBy={props.createdBy}
-          dateCreated={props.dateCreated}
-          zoomLight={zoomLight}
-          cameraCrane={cameraCrane}
-          hangingCamera={hangingCamera}
-          cameraRonin={cameraRonin}*/
           hasAddonsForVideo={hasAddonsForVideo}
           token={props.token}
           id={props.id}
