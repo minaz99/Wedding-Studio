@@ -18,7 +18,7 @@ function DayContractDetails(props) {
       </div>
       <div className="flex items-center space-x-2 ">
         <BuildingStorefrontIcon height={16} width={16} color="#db2777" />
-        <div className="text-sm  text-slte-600">{props.location}</div>
+        <div className="text-sm  text-slate-600">{props.location}</div>
       </div>
     </div>
   );
