@@ -19,7 +19,7 @@ import {
   useUpdateContractMutation,
 } from "../../../services/api/contractSlice";
 function EditContractDetails(props) {
-  const [location, setLocation] = useState(data.location.eventlocation);
+  const [location, setLocation] = useState("");
   const [date, setDate] = useState("");
   const [phone1, setPhone1] = useState("");
   const [phone2, setPhone2] = useState("");
@@ -166,7 +166,7 @@ function EditContractDetails(props) {
               <BuildingStorefrontIcon height={22} width={22} color="#2dd4bf" />
               <div className="text-gray-500">Location</div>
               <input
-                value={location}
+                value={data.contract.eventlocation}
                 style={{
                   background: "#e2e8f0",
                   borderRadius: "6px",
