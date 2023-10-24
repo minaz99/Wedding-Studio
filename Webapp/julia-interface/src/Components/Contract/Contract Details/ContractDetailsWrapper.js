@@ -91,21 +91,7 @@ function ContractDetailsWrapper(props) {
           token={props.token}
           id={props.id}
         />*/
-        <EditContractDetails
-          token={props.token}
-          id={props.id}
-          hasAddonsForVideo={hasAddonsForVideo}
-          setCameraCrane={setCameraCrane}
-          setCameraRonin={setCameraRonin}
-          setHangingCamera={setHangingCamera}
-          setZoomLight={setZoomLight}
-          setDate={setDate}
-          setLocation={setLocation}
-          setPhone1={setPhone1}
-          setPhone2={setPhone2}
-          setPhotographer={setPhotographer}
-          setVideo={setVideo}
-        />
+        <div>let's see now</div>
       )}
       {editContract ? (
         <div
