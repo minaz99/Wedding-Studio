@@ -12,7 +12,6 @@ import EditContractStage from "./EditContractStage";
 function ContractStageWrapper(props) {
   const [editStage, setEditStage] = useState(false);
   const [stages, setStages] = useState(props.stages);
-  const [refresh, setRefresh] = useState(false);
 
   return (
     <div className="space-y-3 rounded-lg p-4   bg-white h-fit  ">
@@ -42,10 +41,13 @@ function ContractStageWrapper(props) {
             token={props.token}
             id={props.id}
             stages={stages}
-            setRefreshContract={props.setRefreshContract}
           />
         ) : (
-          <ContractStage refresh={refresh} stages={stages} />
+          <ContractStage
+            token={props.token}
+            contractID={props.contractID}
+            stages={stages}
+          />
         )}
       </div>
     </div>
