@@ -56,9 +56,9 @@ function Login(props) {
                   >
                     Login
                   </div>
-                  <div className="underline text-center cursor-pointer text-blue-500 hover:text-blue-700">
+                  {/* <div className="underline text-center cursor-pointer text-blue-500 hover:text-blue-700">
                     Forgot Password
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
