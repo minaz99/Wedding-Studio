@@ -46,13 +46,11 @@ function ContractCommentsWrapper(props) {
         </div>
       ) : editComments ? (
         <div>
-          <ContractCommentsEdit setComments={setComments} comments={comments} />
-          <div
-            onClick={() => onSave()}
-            className="rounded-md text-center  cursor-pointer text-xl   mx-auto p-2 w-1/6  bg-slate-500 font-medium text-white"
-          >
-            Save
-          </div>
+          <ContractCommentsEdit
+            setEditComments={setEditComments}
+            setComments={setComments}
+            comments={comments}
+          />
         </div>
       ) : (
         <ContractComments token={props.token} id={props.id} />

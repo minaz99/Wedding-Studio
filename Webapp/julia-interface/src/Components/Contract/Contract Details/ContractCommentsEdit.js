@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useUpdateContractMutation } from "../../../services/api/contractSlice";
-import { useGetAllContractsQuery } from "../../../services/api/contractSlice";
+import { useGetContractByIDQuery } from "../../../services/api/contractSlice";
 function ContractCommentsEdit(props) {
   const [updateContract, result] = useUpdateContractMutation();
   const [comments, setComments] = useState(
