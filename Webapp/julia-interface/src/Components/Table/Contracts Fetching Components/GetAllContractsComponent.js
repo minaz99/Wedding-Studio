@@ -14,7 +14,7 @@ function GetAllContractsComponent(props) {
   }
 
   return isLoading ? (
-    <div className="text-center text-blue-400 text-xl p-4">Loading...</div>
+    <div className="text-center text-blue-400 text-xl p-4">Loading</div>
   ) : isSuccess ? (
     (contractsDetails(),
     data.contracts.map((contract) => {
@@ -34,7 +34,7 @@ function GetAllContractsComponent(props) {
     }))
   ) : isError ? (
     <div className="text-center text-red-400 text-xl p-4">
-      Error getting contracts...
+      Error loading contracts
     </div>
   ) : (
     <div></div>

@@ -1,10 +1,4 @@
-import { CreditCardIcon, PencilSquareIcon } from "@heroicons/react/24/outline";
-import { ProgressBar } from "react-bootstrap";
-import PaymentWrapper from "./PaymentWrapper";
-import {
-  useGetContractPaymentsQuery,
-  useMakePaymentMutation,
-} from "../../../services/api/contractSlice";
+import { useMakePaymentMutation } from "../../../services/api/contractSlice";
 import { useState } from "react";
 import GetContractPayment from "../../Table/Contracts Fetching Components/GetContractPayment";
 function ContractPayments(props) {
@@ -28,9 +22,7 @@ function ContractPayments(props) {
 
       <div className="">
         {result.isLoading ? (
-          <div className="text-center text-blue-400 text-xl p-4">
-            Loading...
-          </div>
+          <div className="text-center text-blue-400 text-xl p-4">Loading</div>
         ) : result.isError ? (
           <div className="text-center text-red-400 text-xl p-4">
             Error making payment

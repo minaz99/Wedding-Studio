@@ -1,21 +1,18 @@
 import React from "react";
 import StatusWrapper from "../../Table/StatusWrapper";
 import {
-  BanknotesIcon,
   BuildingStorefrontIcon,
   CalendarDaysIcon,
   CameraIcon,
   ClockIcon,
   IdentificationIcon,
   MegaphoneIcon,
-  PencilSquareIcon,
   PhoneIcon,
   UserCircleIcon,
   UserGroupIcon,
   UserIcon,
   VideoCameraIcon,
 } from "@heroicons/react/24/outline";
-import PhotographersAssigned from "./PhotographersAssigned";
 import { useGetContractByIDQuery } from "../../../services/api/contractSlice";
 function ContractDetails(props) {
   const { data, isLoading, isError, isSuccess } = useGetContractByIDQuery(
@@ -28,9 +25,9 @@ function ContractDetails(props) {
     }
   );
   return isLoading ? (
-    <div>Loading details...</div>
+    <div>Loading details</div>
   ) : isError ? (
-    <div>Error getting contract details</div>
+    <div>Error loading contract details</div>
   ) : isSuccess ? (
     <div className="flex space-x-10">
       <div className="space-y-3 ">

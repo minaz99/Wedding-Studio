@@ -1,18 +1,9 @@
-import {
-  ArrowPathIcon,
-  CheckIcon,
-  ChevronRightIcon,
-  EllipsisHorizontalIcon,
-  PencilSquareIcon,
-  XCircleIcon,
-} from "@heroicons/react/24/outline";
+import { PencilSquareIcon, XCircleIcon } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
 import ContractStage from "./ContractStage";
 import EditContractStage from "./EditContractStage";
 function ContractStageWrapper(props) {
   const [editStage, setEditStage] = useState(false);
-  const [stages, setStages] = useState(props.stages);
-
   return (
     <div className="space-y-3 rounded-lg p-4   bg-white h-fit  ">
       <div className="flex items-center">
@@ -39,11 +30,7 @@ function ContractStageWrapper(props) {
         {editStage ? (
           <EditContractStage token={props.token} id={props.id} />
         ) : (
-          <ContractStage
-            token={props.token}
-            id={props.id}
-            setsStages={setStages}
-          />
+          <ContractStage token={props.token} id={props.id} />
         )}
       </div>
     </div>

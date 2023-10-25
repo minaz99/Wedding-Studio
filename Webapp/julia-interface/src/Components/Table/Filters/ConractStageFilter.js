@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import FilterOptionComponent from "./FilterOptionComponent";
 import { useGetContractsTableHeaderFiltersQuery } from "../../../services/api/contractSlice";
 import OptionForSingleFilter from "./OptionForSingleFilter";
 
 function ConractStageFilter(props) {
   const [filterOptionChecked, setFilterOptionChecked] = useState(false);
-  //alert(filterOptionChecked);
   const { data, isLoading, isError, isSuccess } =
     useGetContractsTableHeaderFiltersQuery(props.token, {
       refetchOnMountOrArgChange: true,
@@ -13,9 +11,9 @@ function ConractStageFilter(props) {
   return (
     <ul class="list-group">
       {isLoading ? (
-        <div className="text-center">Loading...</div>
+        <div className="text-center">Loading</div>
       ) : isError ? (
-        <div className="text-center">Error geting event types...</div>
+        <div className="text-center">Error loading event types</div>
       ) : isSuccess ? (
         data.stages.map((type) => {
           return (
@@ -26,7 +24,6 @@ function ConractStageFilter(props) {
               optionSelected={props.filterTypeOption}
               setOptionSelected={props.setFilterTypeOption}
               setDataFrom={props.setDataFrom}
-              //setShowFilter={props.setShowFilter}
             />
           );
         })

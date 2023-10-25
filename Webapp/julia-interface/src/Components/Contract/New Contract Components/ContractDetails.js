@@ -10,9 +10,7 @@ import {
   UserIcon,
 } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { DateCalendar } from "@mui/x-date-pickers";
 
 function ContractDetails(props) {
   return (

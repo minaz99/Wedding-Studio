@@ -1,20 +1,11 @@
 import React, { useEffect, useState } from "react";
-import juliaLogo from "../juliaLogo.jpg";
 import juliaLogo2 from "../juliaLogo2.png";
 import { useLoginUserMutation } from "../services/api/loginSlice";
-import { useGetTrailResQuery } from "../services/api/contractSlice";
 import { Spinner } from "react-bootstrap";
 function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loginUser, result] = useLoginUserMutation();
-  const [id, setID] = useState("");
-  const clickBtn = async (em, pass) => {
-    //console.log({ email: em, password: pass });
-    await loginUser({ email: em, password: pass });
-    //props.setUserData(result.data);
-    //props.setIsLoggedIn(result.isSuccess);
-  };
 
   useEffect(() => {
     props.setUserData(result.data);
@@ -56,9 +47,6 @@ function Login(props) {
                   >
                     Login
                   </div>
-                  {/* <div className="underline text-center cursor-pointer text-blue-500 hover:text-blue-700">
-                    Forgot Password
-                  </div> */}
                 </div>
               </div>
 

@@ -6,8 +6,6 @@ function OptionForSingleFilter(props) {
       props.setFilterOptionChecked(true);
       props.setOptionSelected(props.value);
       props.setDataFrom("filter");
-
-      //props.setShowFilter(false);
     }
     if (!e.target.checked) {
       props.setFilterOptionChecked(false);

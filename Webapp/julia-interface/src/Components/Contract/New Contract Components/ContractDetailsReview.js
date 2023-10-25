@@ -4,7 +4,6 @@ import {
   BanknotesIcon,
   BuildingStorefrontIcon,
   CalendarDaysIcon,
-  ClockIcon,
   IdentificationIcon,
   MegaphoneIcon,
   PhoneIcon,

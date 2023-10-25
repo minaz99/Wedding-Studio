@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import CalenderRows from "./CalenderRows";
 import CalenderDaysHeader from "./CalenderDaysHeader";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
@@ -9,7 +8,6 @@ import { useGetContractsInMonthQuery } from "../../services/api/contractSlice";
 function CalendarWrapper(props) {
   const [leftArrowColor, setLeftArrowColor] = useState("#cbd5e1");
   const [rightArrowColor, setRightArrowColor] = useState("#cbd5e1");
-  //const [data, setData] = useState([]);
   const [showMonthAndYear, setShowMonthAndYear] = useState(false);
 
   const [year, setYear] = useState(new Date().getFullYear());
@@ -31,7 +29,6 @@ function CalendarWrapper(props) {
     ];
     return months[month - 1];
   };
-  const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const { data, isLoading, isError, isSuccess } = useGetContractsInMonthQuery(
     {
       token: props.token,
@@ -96,9 +93,7 @@ function CalendarWrapper(props) {
       <div>
         <CalenderDaysHeader />
         {isLoading ? (
-          <div className="text-center text-blue-400 text-xl p-4">
-            Loading...
-          </div>
+          <div className="text-center text-blue-400 text-xl p-4">Loading</div>
         ) : isSuccess ? (
           <div className="space-y-2">
             <DayOfWeekColumn rowCount={0} data={data} />
@@ -110,7 +105,7 @@ function CalendarWrapper(props) {
           </div>
         ) : isError ? (
           <div className="text-center text-red-400 text-xl p-4">
-            Error getting contracts...
+            Error loading calendar
           </div>
         ) : (
           <div></div>

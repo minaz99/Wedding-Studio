@@ -1,16 +1,13 @@
 import { PlusCircleIcon } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
 import CompHeader from "./CompHeader";
-import CompRowWrapper from "./CompRowWrapper";
 import CompEditableRow from "./CompEditableRow";
 import {
   useCreateComponentMutation,
   useDeleteComponentMutation,
   useEditComponentMutation,
-  useGetComponentByTypeQuery,
 } from "../../../services/api/componentSlice";
 import GetComponentsByType from "../../Table/Contracts Fetching Components/GetComponentsByType";
-import { propTypes } from "react-bootstrap/esm/Image";
 
 function Compnts(props) {
   const [newRow, setNewRow] = useState(false);

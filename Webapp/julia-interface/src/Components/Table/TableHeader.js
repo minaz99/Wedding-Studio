@@ -1,29 +1,18 @@
 import {
   BuildingStorefrontIcon,
   CalendarDaysIcon,
-  ChevronDownIcon,
-  ClockIcon,
-  MagnifyingGlassCircleIcon,
   MagnifyingGlassIcon,
   MegaphoneIcon,
   UserIcon,
   XCircleIcon,
 } from "@heroicons/react/24/outline";
-import { CheckCircleIcon } from "@heroicons/react/24/solid";
 import React, { useState } from "react";
-import { Dropdown, DropdownButton } from "react-bootstrap";
 import THEventTypeFilter from "./Filters/THEventTypeFilter";
 import THEventLocationFilter from "./Filters/THEventLocationFilter";
-import THContractStatus from "./Filters/THContractStatus";
 import THBrideNameFilter from "./Filters/THBrideNameFilter";
-import {
-  useGetAllContractsQuery,
-  useGetContractsTableHeaderFiltersQuery,
-} from "../../services/api/contractSlice";
-import CalenderDaysHeader from "../Calendar/CalenderDaysHeader";
+import { useGetContractsTableHeaderFiltersQuery } from "../../services/api/contractSlice";
 
 function TableHeader(props) {
-  const [chevronColor, setChevronColor] = useState("gray");
   const [searchColor, setSearchColor] = useState("#9ca3af");
   const [searchBride, setSearchBride] = useState(false);
   const removeMultipleFilters = () => {
@@ -40,7 +29,7 @@ function TableHeader(props) {
     props.setBrideNameSearch("");
     props.setMultipleFilters(false);
   };
-  const { data, isLoading, isError, isSuccess, refetch } =
+  const { data, isLoading, isError, isSuccess } =
     useGetContractsTableHeaderFiltersQuery(props.token, {
       refetchOnMountOrArgChange: true,
     });
@@ -122,17 +111,6 @@ function TableHeader(props) {
         />
         Date
         <div className="flex-1 w-2 mx-10"></div>
-        {/*<THContractStatus
-          data={data}
-          isLoading={isLoading}
-          isSuccess={isSuccess}
-          isError={isError}
-          token={props.token}
-          setMultipleFilters={props.setMultipleFilters}
-          setContractStatusFilter={props.setContractStatusFilter}
-          setDataFrom={props.setDataFrom}
-          setIsContractStatusFilter={props.setIsContractStatusFilter}
-        />*/}
       </div>
       {props.dataFrom === "multiple" ? (
         <div className="items-center flex">

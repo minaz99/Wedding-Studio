@@ -1,13 +1,6 @@
-import { ChevronDownIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 import React, { useState } from "react";
-import StatusWrapper from "./StatusWrapper";
 import UserIconWrapper from "./UserIconWrapper";
-import {
-  ArrowDownIcon,
-  ArrowRightIcon,
-  EllipsisHorizontalCircleIcon,
-  EllipsisHorizontalIcon,
-} from "@heroicons/react/24/outline";
+import { EllipsisHorizontalCircleIcon } from "@heroicons/react/24/outline";
 
 function TableRow(props) {
   const userColor =
@@ -26,16 +19,13 @@ function TableRow(props) {
       style={{ backgroundColor: rowColor }}
     >
       <div className="flex mx-10 flex-1 items-center">
-        <UserIconWrapper letter={props.letter} color={userColor} />{" "}
+        <UserIconWrapper letter={props.letter} color={userColor} />
         {props.brideName}
       </div>
       <div className="flex-1 ">{props.eventType}</div>
       <div className="flex-1">{props.eventPlace}</div>
 
-      <div className="flex-1  ">
-        {/*<StatusWrapper status={props.status} />*/}
-        {props.eventDate.toString().split("T")[0]}
-      </div>
+      <div className="flex-1  ">{props.eventDate.toString().split("T")[0]}</div>
 
       <EllipsisHorizontalCircleIcon
         onClick={() => props.pressedRow(props.id)}

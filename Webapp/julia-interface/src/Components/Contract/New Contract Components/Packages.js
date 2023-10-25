@@ -10,13 +10,10 @@ import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import { useState } from "react";
 import PackageSummary from "./PackageSummary";
-import SeperateComponents from "./SeperateComponents";
 import TotalPrice from "./TotalPrice";
 import { useGetPackagesQuery } from "../../../services/api/packageSlice";
 import AddComponentsWrapper from "./AddComponentsWrapper";
 function Packages(props) {
-  const [showSummary, setShowSummary] = useState(false);
-
   const { data, isLoading, isError, isSuccess } = useGetPackagesQuery(
     { token: props.token },
     {
@@ -69,12 +66,10 @@ function Packages(props) {
       <div className="flex space-x-4 items-center ">
         <DropdownButton id="dropdown-basic-button" title={title}>
           {isLoading ? (
-            <div className="text-center text-blue-400 text-xl p-4">
-              Loading...
-            </div>
+            <div className="text-center text-blue-400 text-xl p-4">Loading</div>
           ) : isError ? (
             <div className="text-center text-red-400 text-xl p-4">
-              Error geting Components...
+              Error loading packages
             </div>
           ) : isSuccess ? (
             data.packages.map((pkg) => {

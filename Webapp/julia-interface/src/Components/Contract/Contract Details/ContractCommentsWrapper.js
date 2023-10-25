@@ -8,14 +8,6 @@ function ContractCommentsWrapper(props) {
   const [editComments, setEditComments] = useState(false);
   const [comments, setComments] = useState(props.comments);
   const [updateContract, result] = useUpdateContractMutation();
-  const onSave = async () => {
-    await updateContract({
-      token: props.token,
-      id: props.id,
-      body: { comments: comments },
-    });
-    setEditComments(false);
-  };
   return (
     <div className="space-y-3 rounded-lg p-4 bg-white  h-fit ">
       <div className="flex">
@@ -39,10 +31,10 @@ function ContractCommentsWrapper(props) {
         )}
       </div>
       {result.isLoading ? (
-        <div className="text-center text-blue-400 text-xl p-4">Updating</div>
+        <div className="text-center text-blue-400 text-xl p-4">Saving</div>
       ) : result.isError ? (
         <div className="text-center text-red-400 text-xl p-4">
-          Error updating comment
+          Error saving comments
         </div>
       ) : editComments ? (
         <div>

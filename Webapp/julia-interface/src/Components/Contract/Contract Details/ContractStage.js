@@ -1,12 +1,7 @@
-import {
-  ArrowPathIcon,
-  CheckIcon,
-  EllipsisHorizontalIcon,
-} from "@heroicons/react/24/outline";
+import { CheckIcon, EllipsisHorizontalIcon } from "@heroicons/react/24/outline";
 import React from "react";
 import { useGetContractByIDQuery } from "../../../services/api/contractSlice";
 function ContractStage(props) {
-  //const stages = ["Signed", "Event Finished", "Pics Collected", "Finished"];
   const Check = () => {
     return (
       <div className="font-bold flex  text-gray-700 rounded-full bg-green-500 w-fit p-1 items-center justify-center font-mono">
@@ -56,9 +51,9 @@ function ContractStage(props) {
   };
 
   return isLoading ? (
-    <div>Loading details...</div>
+    <div>Loading</div>
   ) : isError ? (
-    <div>Error getting contract details</div>
+    <div>Error loading contract stages</div>
   ) : isSuccess ? (
     <div className="space-x-4 items-center justify-center flex">
       <div className="flex items-center space-x-2">

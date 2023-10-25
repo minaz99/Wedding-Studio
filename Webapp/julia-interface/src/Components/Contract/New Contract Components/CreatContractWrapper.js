@@ -1,11 +1,9 @@
-import { XCircleIcon } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
 import NewContractSteps from "./NewContractSteps";
 import ContractDetails from "./ContractDetails";
 import { motion } from "framer-motion";
 import Packages from "./Packages";
 import ContractReview from "./ContractReview";
-import Calendar from "react-calendar";
 import {
   useCreateContractMutation,
   useMakePaymentMutation,
@@ -37,7 +35,6 @@ function CreatContractWrapper(props) {
   const [createdBy, setCreatedBy] = useState(props.name);
   const [showPDFContract, setShowPDFContract] = useState(false);
   const [createContract, result] = useCreateContractMutation();
-  const [makePayment, result2] = useMakePaymentMutation();
   const [paidAmount, setPaidAmount] = useState(0);
   const [packageName, setPackageName] = useState("None");
   const [selectedMagazineComponents, setSelectedMagazineComponents] = useState(
@@ -117,8 +114,6 @@ function CreatContractWrapper(props) {
     });
 
     setShowPDFContract(true);
-    //setActiveView("contract details");
-    //props.setActiveView("Table");
   };
 
   return (

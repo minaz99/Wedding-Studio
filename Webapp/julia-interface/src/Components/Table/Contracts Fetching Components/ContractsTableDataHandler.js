@@ -48,9 +48,6 @@ function ContractsTableDataHandler(props) {
       pressedRow={props.pressedRow}
       setTotalContracts={props.setTotalContracts}
       date={props.date}
-      /*day={props.date.getDate()}
-      month={props.date.getMonth() + 1}
-      year={props.date.getFullYear()}*/
     />
   ) : props.dataFrom === "month" ? (
     <GetContractsByMonthTable
@@ -61,9 +58,6 @@ function ContractsTableDataHandler(props) {
       year={props.yearSelected}
       page={props.page}
       setPageCount={props.setPageCount}
-      /*day={props.date.getDate()}
-  month={props.date.getMonth() + 1}
-  year={props.date.getFullYear()}*/
     />
   ) : (
     <GetAllContractsComponent

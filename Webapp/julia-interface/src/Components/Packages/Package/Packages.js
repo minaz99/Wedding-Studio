@@ -1,8 +1,6 @@
-import { PencilSquareIcon, PlusCircleIcon } from "@heroicons/react/24/outline";
+import { PlusCircleIcon } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
 import PackagesTableHeader from "./PackagesTableHeader";
-
-import PackageRowWrapper from "./PackageRowWrapper";
 import PackageEditableRow from "./PackageEditableRow";
 import GetPackages from "../../Table/Contracts Fetching Components/GetPackages";
 import {

@@ -9,7 +9,6 @@ function Filters(props) {
   };
   const selectMonthFilter = () => {
     props.filterTypeSelected("month");
-    //props.setDataFrom("month");
   };
   return (
     <div className="tracking-wider space-x-2 text-lg text-white  font-semibold flex items-center">
@@ -30,12 +29,6 @@ function Filters(props) {
           <Dropdown.Item onClick={() => selectMonthFilter()}>
             Month
           </Dropdown.Item>
-          {/*<Dropdown.Item onClick={() => filterTypeSelected("Photographer")}>
-                Photographer
-              </Dropdown.Item>
-              <Dropdown.Item onClick={() => filterTypeSelected("Video")}>
-                Video
-      </Dropdown.Item>*/}
         </DropdownButton>
       </div>
       {props.dataFrom === "date" ||

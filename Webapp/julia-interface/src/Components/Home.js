@@ -2,12 +2,8 @@ import React, { useState } from "react";
 import SectionsWrapper from "./Sections/SectionsWrapper";
 import TableWrapper from "./Table/TableWrapper";
 import CreatContractWrapper from "./Contract/New Contract Components/CreatContractWrapper";
-import PhotographersCalender from "./Calendar/PhotographersCalender";
 import CalendarWrapper from "./Calendar/CalendarWrapper";
-import { act } from "react-dom/test-utils";
 import PackagesWrapper from "./Packages/PackagesWrapper";
-import SettingsWrapper from "./Settings/SettingsWrapper";
-import FilterWrapper from "./Table/Filters/FilterWrapper";
 
 function Home(props) {
   const [activeView, setActiveView] = useState("Table");
@@ -38,12 +34,7 @@ function Home(props) {
         ) : activeView === "photographers" ? (
           <CalendarWrapper token={token} />
         ) : activeView === "Packages" ? (
-          <PackagesWrapper
-            role={role}
-            token={token}
-          /> /*: activeView === "Settings" ? (
-          <SettingsWrapper ename={name} />
-        )*/
+          <PackagesWrapper role={role} token={token} />
         ) : (
           <div></div>
         )}

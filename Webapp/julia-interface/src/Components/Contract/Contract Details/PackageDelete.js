@@ -12,11 +12,6 @@ function PackageDelete(props) {
   );
 
   const onClickUpdate = async () => {
-    /*await updateContract({
-      token: props.token,
-      id: props.contractID,
-      body: { packageID: "0" },
-    });*/
     props.setPkgID("0");
   };
   const [updateContract, result] = useUpdateContractMutation();

@@ -1,4 +1,4 @@
-import { PhoneIcon, PlusCircleIcon } from "@heroicons/react/24/outline";
+import { PhoneIcon } from "@heroicons/react/24/outline";
 import React from "react";
 
 function PhoneNumbersComp(props) {

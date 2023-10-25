@@ -1,5 +1,4 @@
 import React from "react";
-import ContractStatusFilter from "./ContractStatusFilter";
 
 function FilterOptionComponent(props) {
   const handleChange = (e) => {

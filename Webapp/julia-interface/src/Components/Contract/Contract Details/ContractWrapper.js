@@ -1,10 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { XCircleIcon } from "@heroicons/react/24/outline";
-import ContractDetails from "./ContractDetails";
-import ContractPackages from "./ContractPackagesWrapper";
 import ContractPayments from "./ContractPayments";
-import ContractComments from "./ContractComments";
 import { useGetContractByIDQuery } from "../../../services/api/contractSlice";
 import ContractPackagesWrapper from "./ContractPackagesWrapper";
 import ContractStageWrapper from "./ContractStageWrapper";
@@ -46,9 +43,9 @@ function ContractWrapper(props) {
       </div>
 
       {isLoading ? (
-        <div>Loading details...</div>
+        <div>Loading</div>
       ) : isError ? (
-        <div>Error getting contract details</div>
+        <div>Error loading contract details</div>
       ) : isSuccess ? (
         <div className=" space-y-4">
           <ContractDetailsWrapper token={props.token} id={props.contractID} />

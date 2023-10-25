@@ -27,14 +27,14 @@ function ContractCommentsEdit(props) {
     <div className="text-center text-blue-400 text-xl p-4">Loading</div>
   ) : isError ? (
     <div className="text-center text-red-400 text-xl p-4">
-      Error displaying comments
+      Error loading comments
     </div>
   ) : isSuccess ? (
     result.isLoading ? (
-      <div className="text-center text-blue-400 text-xl p-4">Updating</div>
+      <div className="text-center text-blue-400 text-xl p-4">Saving</div>
     ) : result.isError ? (
       <div className="text-center text-red-400 text-xl p-4">
-        Error updating comments
+        Error saving comments
       </div>
     ) : (
       <div>

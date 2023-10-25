@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import ComponentAdd from "./ComponentAdd";
-import { useUpdateContractMutation } from "../../../services/api/contractSlice";
 
 function AddComponentsWrapper(props) {
   return (

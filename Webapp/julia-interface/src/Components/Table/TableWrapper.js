@@ -1,35 +1,14 @@
-import React, { useEffect, useState } from "react";
-import {
-  ChevronDownIcon,
-  FunnelIcon,
-  MagnifyingGlassIcon,
-  PlusCircleIcon,
-} from "@heroicons/react/24/outline";
+import React, { useState } from "react";
 import TableHeader from "./TableHeader";
-import TableRow from "./TableRow";
 import TableFooter from "./TableFooter";
 import { motion } from "framer-motion";
-import AddContractWrapper from "../Contract/Contract Details/AddContractWrapper";
-import CreatContractWrapper from "../Contract/New Contract Components/CreatContractWrapper";
 import ContractWrapper from "../Contract/Contract Details/ContractWrapper";
-import { Dropdown, DropdownButton } from "react-bootstrap";
 import FilterWrapper from "./Filters/FilterWrapper";
-import {
-  useGetAllContractsQuery,
-  useGetContractsByMultipleCriteriasQuery,
-  useGetContractsTableHeaderFiltersQuery,
-} from "../../services/api/contractSlice";
 import Filters from "./Filters/Filters";
-import GetAllContractsComponent from "./Contracts Fetching Components/GetAllContractsComponent";
-import GetContractsBySingleFilter from "./Contracts Fetching Components/GetContractsBySingleFilter";
 import SearchWrapper from "./Search/SearchWrapper";
-import GetContractsBySearchCriteria from "./Contracts Fetching Components/GetContractsBySearchCriteria";
 import ContractsTableDataHandler from "./Contracts Fetching Components/ContractsTableDataHandler";
 function TableWrapper(props) {
-  const [chevHover, setChevHover] = useState(false);
-  const cheveronDownColor = chevHover ? "black" : "#9ca3af";
   const [showContractDetails, setShowContractDetails] = useState(false);
-  const [showContract, setShowContract] = useState(false);
   const [filterType, setFilterType] = useState("Select filter");
   const [filterTypeOption, setFilterTypeOption] = useState("");
   const [initialX, setIntialX] = useState(0);
@@ -55,9 +34,7 @@ function TableWrapper(props) {
   const [date, setDate] = useState(new Date());
   const [monthSelected, setMonthSelected] = useState(new Date().getMonth() + 1);
   const [yearSelected, setYearSelected] = useState(new Date().getFullYear());
-  /* const [getContractsByMultipleCriterias, result] =
-    useGetContractsByMultipleCriteriasQuery();
-*/
+
   const pressedRow = (id) => {
     setIntialX(0);
     setFinalX(0); //finalX: -250, InitialX: 0 //we need to animate the whole component (Table + Contract so that they move together in the same transition )

@@ -1,7 +1,6 @@
 import React from "react";
 import Addon from "./Addon";
-import { MinusCircleIcon, PlusCircleIcon } from "@heroicons/react/24/outline";
-import { useUpdateContractMutation } from "../../../services/api/contractSlice";
+import { MinusCircleIcon } from "@heroicons/react/24/outline";
 
 function ComponentDelete(props) {
   let componentIDsArray = props.compsIDs.split(",");
@@ -10,7 +9,6 @@ function ComponentDelete(props) {
       (c) => c !== "," && c !== "" && c !== compID
     );
     let componentsIDsString = "";
-    //componentIDsArray = componentIDsArray.filter((id) => id !== compID);
     newCompsArray.forEach((id) => (componentsIDsString += `${id},`));
     props.setCompsIDs(componentsIDsString);
     props.setComponents(props.components.filter((id) => id !== compID));

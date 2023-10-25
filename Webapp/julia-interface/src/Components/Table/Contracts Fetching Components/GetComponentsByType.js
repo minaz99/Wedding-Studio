@@ -10,10 +10,10 @@ function GetComponentsByType(props) {
     }
   );
   return isLoading ? (
-    <div className="text-center text-blue-400 text-xl p-4">Loading...</div>
+    <div className="text-center text-blue-400 text-xl p-4">Loading</div>
   ) : isError ? (
     <div className="text-center text-red-400 text-xl p-4">
-      Error geting Components...
+      Error loading components
     </div>
   ) : isSuccess ? (
     data.components.map((comp) => {

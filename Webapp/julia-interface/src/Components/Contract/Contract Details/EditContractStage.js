@@ -61,15 +61,15 @@ function EditContractStage(props) {
   return (
     <div className="space-x-4 items-center justify-center flex">
       {result.isLoading ? (
-        <div className="text-center text-blue-400 text-xl p-4">Updating</div>
+        <div className="text-center text-blue-400 text-xl p-4">Saving</div>
       ) : result.isError ? (
         <div className="text-center text-red-400 text-xl p-4">
-          Error updating stage
+          Error saving stage
         </div>
       ) : isLoading ? (
-        <div>Loading details...</div>
+        <div>Loading</div>
       ) : isError ? (
-        <div>Error getting contract details</div>
+        <div>Error loading contract stages</div>
       ) : isSuccess ? (
         <div className="space-x-4 items-center justify-center flex">
           <div className="flex items-center space-x-2">

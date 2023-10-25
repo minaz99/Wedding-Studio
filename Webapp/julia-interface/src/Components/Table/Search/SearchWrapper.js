@@ -1,5 +1,5 @@
 import { MagnifyingGlassIcon, XCircleIcon } from "@heroicons/react/24/outline";
-import React, { useState } from "react";
+import React from "react";
 import { Dropdown, DropdownButton } from "react-bootstrap";
 
 function SearchWrapper(props) {

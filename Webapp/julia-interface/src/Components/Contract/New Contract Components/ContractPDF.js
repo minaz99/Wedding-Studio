@@ -1,7 +1,5 @@
 import React from "react";
 import juliaLogo2 from "../../../juliaLogo2.png";
-import contractFooter from "../../../contractFooter.png";
-import PackageSummary from "./PackageSummary";
 import NotoSansArabic from "../../../styles/fonts/NotoSansArabic-VariableFont_wdth.ttf";
 import {
   Document,
@@ -27,27 +25,10 @@ function ContractPDF(props) {
     `Magazine ${props.packageDetails.magazinename}`,
     `${props.packageDetails.pictures} Pictures`,
   ];
-  const albumCrystal = props.packageDetails.albumcrystal
-    ? compsArray.push("Album Crystal")
-    : "";
-  const magazineMini = props.packageDetails.magazinemini
-    ? compsArray.push("Magazine Mini")
-    : "";
-  const video = props.packageDetails.video ? compsArray.push("Video") : "";
-  const openPhotoAndVideo = props.packageDetails.openphotoandvideo
-    ? compsArray.push("Open Photo & Video")
-    : "";
-  const studio = props.packageDetails.studio ? compsArray.push("Studio") : "";
 
   if (props.componentsSelected.length) {
     props.componentsSelected.forEach((c) => compsArray.push(c.compName));
   }
-
-  let packageDetails =
-    Object.keys(props.packageDetails).length > 0
-      ? `Magazine ${props.packageDetails.magazinename},
-  ${props.packageDetails.pictures} pictures${albumCrystal}${magazineMini}${video}${openPhotoAndVideo}${studio}`
-      : "";
 
   const styles = StyleSheet.create({
     page: {

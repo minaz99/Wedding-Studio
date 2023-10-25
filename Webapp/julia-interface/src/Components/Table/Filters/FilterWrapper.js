@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ConractStageFilter from "./ConractStageFilter";
 import { XCircleIcon } from "@heroicons/react/24/outline";
-import ContractStatusFilter from "./ContractStatusFilter";
+
 import EventDateFilter from "./EventDateFilter";
 import ContractPerMonthFilter from "./ContractPerMonthFilter";
 function FilterWrapper(props) {

@@ -18,7 +18,7 @@ function PackagesTableHeader(props) {
       </div>
       <div className="flex-1 font-medium text-slate-600 text-center">Video</div>
       <div className="flex-1 font-medium text-slate-600 text-center">
-        Open Photo & Video{" "}
+        Open Photo & Video
       </div>
       <div className="flex-1 font-medium text-slate-600 text-center">
         Studio

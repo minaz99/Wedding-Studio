@@ -14,12 +14,10 @@ function THEventLocationFilter(props) {
     >
       <ul class="list-group" className="overflow-y-scroll h-48">
         {props.isLoading ? (
-          <div className="text-center text-blue-400 text-xl p-4">
-            Loading...
-          </div>
+          <div className="text-center text-blue-400 text-xl p-4">Loading</div>
         ) : props.isError ? (
           <div className="text-center text-red-400 text-xl p-4">
-            Error geting event types...
+            Error loading event types
           </div>
         ) : props.isSuccess ? (
           props.data.locations.map((type) => {

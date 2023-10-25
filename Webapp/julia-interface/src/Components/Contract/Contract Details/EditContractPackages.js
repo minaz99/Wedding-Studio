@@ -1,12 +1,5 @@
-import {
-  MinusCircleIcon,
-  PencilSquareIcon,
-  PlusCircleIcon,
-  XCircleIcon,
-} from "@heroicons/react/24/outline";
+import { MinusCircleIcon, PlusCircleIcon } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
-import ContractPackages from "./ContractPackages";
-import ContractComponents from "./ContractComponents";
 import PackageDelete from "./PackageDelete";
 import ComponentDelete from "./ComponentDelete";
 import AddComponentsWrapper from "./AddComponentsWrapper";
@@ -17,7 +10,6 @@ function EditContractPackages(props) {
 
   const [updateContract, result] = useUpdateContractMutation();
   const [componentsSelected, setComponentsSelected] = useState([]);
-  //const [pkgID,setPkgID] = useState(props.packageID)
 
   const [selectedMagazineComponents, setSelectedMagazineComponents] = useState(
     []
@@ -35,7 +27,6 @@ function EditContractPackages(props) {
   );
   const onClickSave = async () => {
     let componentsIDsString = "";
-    //componentIDsArray = componentIDsArray.filter((id) => id !== compID);
 
     components.forEach((id) => (componentsIDsString += `${id},`));
     props.setCompsIDs(componentsIDsString);
@@ -54,7 +45,6 @@ function EditContractPackages(props) {
   const cancelEditPkgComps = () => {
     setAddComps(false);
     setPkgID(props.packageID);
-    //setComponents();
   };
   return result.isLoading ? (
     <div className="text-center text-blue-400 text-xl p-4">Saving</div>

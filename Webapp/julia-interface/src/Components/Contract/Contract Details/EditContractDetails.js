@@ -1,5 +1,4 @@
 import {
-  BanknotesIcon,
   BuildingStorefrontIcon,
   CalendarDaysIcon,
   CameraIcon,
@@ -12,7 +11,6 @@ import {
   VideoCameraIcon,
 } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
-import StatusWrapper from "../../Table/StatusWrapper";
 import { ClockIcon } from "@mui/x-date-pickers";
 import {
   useGetContractByIDQuery,
@@ -76,10 +74,10 @@ function EditContractDetails(props) {
     <div>Error getting contract details</div>
   ) : isSuccess ? (
     result.isLoading ? (
-      <div className="text-center text-blue-400 text-xl p-4">Updating</div>
+      <div className="text-center text-blue-400 text-xl p-4">Saving</div>
     ) : result.isError ? (
       <div className="text-center text-red-400 text-xl p-4">
-        Error updating contract
+        Error saving contract
       </div>
     ) : (
       <div>
