@@ -10,7 +10,11 @@ function PackagesAndComponents(props) {
 
         <div className="flex space-x-6 items-center">
           <div className="text-gray-800">Add ons</div>
-          <ContractComponents token={props.token} compsIDs={props.compsIDs} />
+          <ContractComponents
+            token={props.token}
+            id={props.contractID}
+            compsIDs={props.compsIDs}
+          />
         </div>
       </div>
       <div className="space-y-3">

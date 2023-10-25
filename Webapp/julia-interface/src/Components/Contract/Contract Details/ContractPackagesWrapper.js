@@ -1,7 +1,4 @@
-import { CameraIcon } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
-import ContractPackages from "./ContractPackages";
-import ContractComponents from "./ContractComponents";
 import { PencilSquareIcon, XCircleIcon } from "@heroicons/react/24/outline";
 import EditContractPackages from "./EditContractPackages";
 import PackagesAndComponents from "./PackagesAndComponents";
@@ -49,6 +46,7 @@ function ContractPackagesWrapper(props) {
         ) : (
           <PackagesAndComponents
             token={props.token}
+            contractID={props.contractID}
             compsIDs={compsIDs}
             packageID={pkgID}
             price={price}

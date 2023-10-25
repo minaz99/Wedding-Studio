@@ -1,17 +1,33 @@
 import React from "react";
 import { useGetComponentByIDQuery } from "../../../services/api/componentSlice";
 import Addon from "./Addon";
-
+import { useGetAllContractsQuery } from "../../../services/api/contractSlice";
 function ContractComponents(props) {
-  let componentIDsArray = props.compsIDs.split(",");
-  return (
+  const { data, isLoading, isError, isSuccess } = useGetPackageByIDQuery(
+    { token: props.token, id: props.id },
+    {
+      refetchOnMountOrArgChange: true,
+    }
+  );
+
+  //let componentIDsArray = props.compsIDs.split(",");
+  return isLoading ? (
+    <div className="text-center text-blue-400 text-xl p-4">Loading</div>
+  ) : isError ? (
+    <div className="text-center text-red-400 text-xl p-4">
+      Error loading components
+    </div>
+  ) : isSuccess ? (
     <div className=" flex space-x-2">
-      {componentIDsArray
+      {data.contract.componentids
+        .split(",")
         .filter((c) => c !== "," && c !== "")
         .map((id) => {
           return <Addon token={props.token} id={id} />;
         })}
     </div>
+  ) : (
+    <div></div>
   );
 }
 
