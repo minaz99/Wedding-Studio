@@ -43,9 +43,11 @@ function ContractWrapper(props) {
       </div>
 
       {isLoading ? (
-        <div>Loading</div>
+        <div className="text-center text-blue-400 text-xl p-4">Loading...</div>
       ) : isError ? (
-        <div>Error loading contract details</div>
+        <div className="text-center text-red-400 text-xl p-4">
+          Error loading contract details
+        </div>
       ) : isSuccess ? (
         <div className=" space-y-4">
           <ContractDetailsWrapper token={props.token} id={props.contractID} />
