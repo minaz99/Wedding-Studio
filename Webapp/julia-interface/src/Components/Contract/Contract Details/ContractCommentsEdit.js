@@ -21,7 +21,7 @@ function ContractCommentsEdit(props) {
       id: props.id,
       body: { comments: comments },
     });
-    //props.setEditComments(false);
+    props.setEditComments(false);
   };
   return isLoading ? (
     <div className="text-center text-blue-400 text-xl p-4">Loading</div>
