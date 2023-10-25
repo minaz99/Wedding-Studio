@@ -1,23 +1,19 @@
 import {
-  ArrowLeftCircleIcon,
   ArrowLeftOnRectangleIcon,
   ArrowRightCircleIcon,
   CalendarDaysIcon,
   CameraIcon,
-  ChevronDownIcon,
-  Cog6ToothIcon,
   EllipsisHorizontalCircleIcon,
   PlusCircleIcon,
   TableCellsIcon,
   UserCircleIcon,
 } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
-import { motion, steps } from "framer-motion";
+import { motion } from "framer-motion";
 function SectionsWrapper(props) {
   const [opened, setOpened] = useState(false);
   const [xi, setXi] = useState(0);
   const [xf, setXf] = useState(0);
-  const [calenderCollapsed, setCollanderCollapsed] = useState(true);
   const collapsedOrExpanded = () => {
     if (opened === false) {
       setOpened(true);

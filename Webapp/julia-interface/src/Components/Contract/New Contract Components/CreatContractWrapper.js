@@ -4,10 +4,7 @@ import ContractDetails from "./ContractDetails";
 import { motion } from "framer-motion";
 import Packages from "./Packages";
 import ContractReview from "./ContractReview";
-import {
-  useCreateContractMutation,
-  useMakePaymentMutation,
-} from "../../../services/api/contractSlice";
+import { useCreateContractMutation } from "../../../services/api/contractSlice";
 import ContractPDF from "./ContractPDF";
 function CreatContractWrapper(props) {
   const [contractDetailsColor, setContractDetailsColor] = useState("white");

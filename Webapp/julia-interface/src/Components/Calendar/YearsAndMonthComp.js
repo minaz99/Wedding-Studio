@@ -1,5 +1,5 @@
-import { ChevronDownIcon, XCircleIcon } from "@heroicons/react/24/outline";
-import React, { useState } from "react";
+import { XCircleIcon } from "@heroicons/react/24/outline";
+import React from "react";
 import Years from "./Years";
 import Months from "./Months";
 
