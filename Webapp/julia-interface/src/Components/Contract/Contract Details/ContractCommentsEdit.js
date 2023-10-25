@@ -38,7 +38,6 @@ function ContractCommentsEdit(props) {
       </div>
     ) : (
       <div>
-        <div className="text-gray-500">{comments}</div>
         <div className=" shadow-md p-2 bg-gray-100 space-y-2 rounded-md my-3">
           <textarea
             value={comments}
