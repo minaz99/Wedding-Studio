@@ -1,7 +1,6 @@
 import React from "react";
-import { useGetComponentByIDQuery } from "../../../services/api/componentSlice";
 import Addon from "./Addon";
-import { useGetAllContractsQuery } from "../../../services/api/contractSlice";
+import { useGetContractByIDQuery } from "../../../services/api/contractSlice";
 function ContractComponents(props) {
   const { data, isLoading, isError, isSuccess } = useGetPackageByIDQuery(
     { token: props.token, id: props.id },
