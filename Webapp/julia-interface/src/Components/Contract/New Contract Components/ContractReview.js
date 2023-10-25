@@ -72,9 +72,7 @@ ${props.packageDetails.pictures} pictures${albumCrystal}${magazineMini}${video}$
         <div className="space-y-4">
           <div className="bg-white overflow-y-scroll h-72 p-6 shadow-md  space-y-3 rounded-md">
             <div>
-              <div className="font-medium text-black">
-                {props.packageName} - {props.packagePrice}
-              </div>
+              <div className="font-medium text-black">{props.packageName}</div>
               <div className="p-2 text-gray-400">{packageDetails}</div>
             </div>
             {props.componentsSelected.map((c) => {
