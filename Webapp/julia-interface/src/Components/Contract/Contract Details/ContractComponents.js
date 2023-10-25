@@ -2,14 +2,12 @@ import React from "react";
 import Addon from "./Addon";
 import { useGetContractByIDQuery } from "../../../services/api/contractSlice";
 function ContractComponents(props) {
-  const { data, isLoading, isError, isSuccess } = useGetPackageByIDQuery(
+  const { data, isLoading, isError, isSuccess } = useGetContractByIDQuery(
     { token: props.token, id: props.id },
     {
       refetchOnMountOrArgChange: true,
     }
   );
-
-  //let componentIDsArray = props.compsIDs.split(",");
   return isLoading ? (
     <div className="text-center text-blue-400 text-xl p-4">Loading</div>
   ) : isError ? (
