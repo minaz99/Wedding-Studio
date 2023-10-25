@@ -3,9 +3,6 @@ import { useUpdateContractMutation } from "../../../services/api/contractSlice";
 import { useGetContractByIDQuery } from "../../../services/api/contractSlice";
 function ContractCommentsEdit(props) {
   const [updateContract, result] = useUpdateContractMutation();
-  const [comments, setComments] = useState(
-    isSuccess ? data.contract.comments : ""
-  );
   const { data, isLoading, isError, isSuccess } = useGetContractByIDQuery(
     {
       token: props.token,
@@ -14,6 +11,9 @@ function ContractCommentsEdit(props) {
     {
       refetchOnMountOrArgChange: true,
     }
+  );
+  const [comments, setComments] = useState(
+    isSuccess ? data.contract.comments : ""
   );
   const onSave = async () => {
     await updateContract({
