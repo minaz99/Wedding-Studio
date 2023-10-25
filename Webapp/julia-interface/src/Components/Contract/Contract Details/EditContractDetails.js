@@ -69,9 +69,9 @@ function EditContractDetails(props) {
     props.setEditContract(false);
   };
   return isLoading ? (
-    <div>Loading details...</div>
+    <div>Loading</div>
   ) : isError ? (
-    <div>Error getting contract details</div>
+    <div>Error loading contract details</div>
   ) : isSuccess ? (
     result.isLoading ? (
       <div className="text-center text-blue-400 text-xl p-4">Saving</div>
