@@ -90,7 +90,6 @@ function Component(props) {
         ) : (
           <div></div>
         )}
-        ;
       </ul>
     </DropdownButton>
   );
