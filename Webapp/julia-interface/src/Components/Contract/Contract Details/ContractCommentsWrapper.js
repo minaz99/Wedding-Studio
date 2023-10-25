@@ -50,6 +50,8 @@ function ContractCommentsWrapper(props) {
             setEditComments={setEditComments}
             setComments={setComments}
             comments={comments}
+            token={props.token}
+            id={props.id}
           />
         </div>
       ) : (
