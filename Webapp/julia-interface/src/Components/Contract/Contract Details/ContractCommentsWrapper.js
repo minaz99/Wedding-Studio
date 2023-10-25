@@ -55,7 +55,7 @@ function ContractCommentsWrapper(props) {
           </div>
         </div>
       ) : (
-        <ContractComments comments={comments} />
+        <ContractComments token={props.token} id={props.id} />
       )}
     </div>
   );
