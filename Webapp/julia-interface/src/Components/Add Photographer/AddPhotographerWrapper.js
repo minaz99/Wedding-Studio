@@ -8,6 +8,7 @@ import {
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import { useAddPhotographerMutation } from "../../services/api/photographersSlice";
+import { Spinner } from "react-bootstrap";
 function AddPhotographerWrapper(props) {
   const [name, setName] = useState("");
   const [type, setType] = useState("");
@@ -33,19 +34,19 @@ function AddPhotographerWrapper(props) {
       transition={{ duration: 0.75 }}
       className="rounded-r-lg  space-y-6  p-3 items-center h-full w-fit shadow-md overflow-y-scroll  bg-slate-600"
     >
-      {result.isLoading ? (
-        <div className="text-center text-blue-400 text-xl p-4">Saving</div>
-      ) : result.isError ? (
-        <div className="text-center text-red-400 text-xl p-4">
-          Error saving photographer
-        </div>
-      ) : (
-        <div className="bg-white space-y-3 rounded-lg p-4">
-          <div className="flex space-x-2 items-center">
-            <div className="font-extrabold text-xl items-center text-slate-600">
-              Add Photographer
-            </div>
+      <div className="bg-white space-y-3 rounded-lg p-4">
+        <div className="flex space-x-2 items-center">
+          <div className="font-extrabold text-xl items-center text-slate-600">
+            Add Photographer
           </div>
+        </div>
+        {result.isLoading ? (
+          <div className="text-center text-blue-400 text-xl p-4">Saving</div>
+        ) : result.isError ? (
+          <div className="text-center text-red-400 text-xl p-4">
+            Error saving photographer
+          </div>
+        ) : (
           <div className="flex space-x-2">
             <div className="flex space-x-2 items-center">
               <div className="text-black font-medium ">Name</div>
@@ -108,8 +109,9 @@ function AddPhotographerWrapper(props) {
               </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
+
       <div className="flex w-full">
         <button
           onClick={async () =>
@@ -120,7 +122,11 @@ function AddPhotographerWrapper(props) {
           }
           className="  text-center mx-auto text-lg  font-bold rounded-md p-2 w-3/12   bg-white text-slate-600"
         >
-          Save
+          {result.isLoading ? (
+            <Spinner animation="border" role="status"></Spinner>
+          ) : (
+            Save
+          )}
         </button>
       </div>
     </motion.div>
