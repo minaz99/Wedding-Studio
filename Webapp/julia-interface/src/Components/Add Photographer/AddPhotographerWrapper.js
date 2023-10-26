@@ -67,7 +67,7 @@ function AddPhotographerWrapper() {
             <div className="text-black font-medium">Type</div>
 
             <div className="rounded-md bg-slate-200 w-fit space-x-2 flex items-center p-1">
-              <CameraIcon height={22} width={22} color="#818cf8" />
+              <CameraIcon height={22} width={22} color="#db2777" />
               <DropdownButton id="dropdown-basic-button" title={type}>
                 {types.map((type) => {
                   return (
