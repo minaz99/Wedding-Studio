@@ -39,11 +39,10 @@ function AddPhotographerWrapper() {
           </div>
           <UserPlusIcon height={22} width={22} color="#475569" />
         </div>
-        <div className="flex space-x-2">
+        <div className="flex space-x-4">
           <div className="flex space-x-2 items-center">
             <div className="text-black font-medium ">Name</div>
             <div className="rounded-md bg-slate-200 w-fit space-x-2 flex items-center p-1">
-              <UserIcon height={22} width={22} color="#ec4899" />
               <input
                 value={name}
                 style={{
@@ -68,7 +67,7 @@ function AddPhotographerWrapper() {
             <div className="text-black font-medium">Type</div>
 
             <div className="rounded-md bg-slate-200 w-fit space-x-2 flex items-center p-1">
-              <CameraIcon height={22} width={22} color="#db2777" />
+              <CameraIcon height={22} width={22} color="#701a75" />
               <DropdownButton id="dropdown-basic-button" title={type}>
                 {types.map((type) => {
                   return (
