@@ -193,7 +193,7 @@ function EditContractDetails(props) {
                 onChange={(e) => setLocation(e.target.value)}
               />
             </div>
-            <div className="flex space-x-2 flex-1">
+            <div className="flex space-x-2 items-center flex-1">
               <CalendarDaysIcon height={22} width={22} color="#818cf8" />
               <div className="text-gray-500">Event Date</div>
               <input
@@ -293,22 +293,21 @@ function EditContractDetails(props) {
               <div className="flex space-x-2">
                 <ClockIcon height={22} width={22} color="#475569" />
                 <div className="text-gray-500">Status </div>
-                <div>
-                  <input
-                    value={data.contract.contractstatus}
-                    style={{
-                      background: "#e2e8f0",
-                      borderRadius: "6px",
-                      border: "none",
-                      color: "#475569",
-                      padding: "3px 3px 3px 3px",
-                      outline: "none",
-                    }}
-                    className="font-medium "
-                    disabled
-                  />
-                  <LockClosedIcon height={22} width={22} color="#94a3b8" />
-                </div>
+
+                <input
+                  value={data.contract.contractstatus}
+                  style={{
+                    background: "#e2e8f0",
+                    borderRadius: "6px",
+                    border: "none",
+                    color: "#475569",
+                    padding: "3px 3px 3px 3px",
+                    outline: "none",
+                  }}
+                  className="font-medium "
+                  disabled
+                />
+                <LockClosedIcon height={22} width={22} color="#94a3b8" />
               </div>
 
               <div className="flex space-x-2 flex-1">
