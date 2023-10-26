@@ -80,7 +80,7 @@ function EditContractDetails(props) {
         Error saving contract
       </div>
     ) : (
-      <div>
+      <div className="w-full">
         <div className="flex space-x-10">
           <div className="space-y-3 ">
             <div className="flex flex-1 space-x-2">
