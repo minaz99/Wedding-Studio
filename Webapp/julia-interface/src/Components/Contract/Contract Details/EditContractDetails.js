@@ -91,7 +91,7 @@ function EditContractDetails(props) {
               <input
                 value={data.contract.bridename}
                 style={{
-                  background: "#94a3b8",
+                  background: "#e2e8f0",
                   borderRadius: "6px",
                   border: "none",
                   color: "#475569",
@@ -109,7 +109,7 @@ function EditContractDetails(props) {
               <input
                 value={data.contract.groomname}
                 style={{
-                  background: "#94a3b8",
+                  background: "#e2e8f0",
                   borderRadius: "6px",
                   border: "none",
                   color: "#475569",
@@ -127,7 +127,7 @@ function EditContractDetails(props) {
               <input
                 value={data.contract.secondpartyname}
                 style={{
-                  background: "#94a3b8",
+                  background: "#e2e8f0",
                   borderRadius: "6px",
                   border: "none",
                   color: "#475569",
@@ -145,7 +145,7 @@ function EditContractDetails(props) {
               <input
                 value={data.contract.createdby}
                 style={{
-                  background: "#94a3b8",
+                  background: "#e2e8f0",
                   borderRadius: "6px",
                   border: "none",
                   color: "#475569",
@@ -164,7 +164,7 @@ function EditContractDetails(props) {
               <input
                 value={data.contract.eventtype}
                 style={{
-                  background: "#94a3b8",
+                  background: "#e2e8f0",
                   borderRadius: "6px",
                   border: "none",
                   color: "#475569",
@@ -220,7 +220,7 @@ function EditContractDetails(props) {
                 type="date"
                 value={data.contract.datecreated.toString().split("T")[0]}
                 style={{
-                  background: "#94a3b8",
+                  background: "#e2e8f0",
                   borderRadius: "6px",
                   color: "#475569",
                   padding: "4px 4px 4px 4px",
@@ -240,7 +240,7 @@ function EditContractDetails(props) {
                 <input
                   value={data.contract.civilid}
                   style={{
-                    background: "#94a3b8",
+                    background: "#e2e8f0",
                     borderRadius: "6px",
                     border: "none",
                     color: "#475569",
@@ -297,7 +297,7 @@ function EditContractDetails(props) {
                   <input
                     value={data.contract.contractstatus}
                     style={{
-                      background: "#94a3b8",
+                      background: "#e2e8f0",
                       borderRadius: "6px",
                       border: "none",
                       color: "#475569",
