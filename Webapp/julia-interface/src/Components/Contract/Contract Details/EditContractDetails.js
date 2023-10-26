@@ -302,29 +302,47 @@ function EditContractDetails(props) {
               </div>
             </div>
           </div>
-          <div className="space-y-3">
-            <div className="flex space-x-2 flex-1">
-              <CameraIcon height={22} width={22} color="#db2777" />
-              <div className="text-gray-500">Photographer</div>
-              <input
-                value={photographer}
-                style={{
-                  background: "#e2e8f0",
-                  borderRadius: "6px",
-                  border: "none",
-                  color: "#475569",
-                  padding: "3px 3px 3px 3px",
-                  outline: "none",
-                }}
-                className="font-medium "
-                onChange={(e) => setPhotographer(e.target.value)}
-              />
-            </div>
+
+          <div className="flex space-x-2 flex-1">
+            <CameraIcon height={22} width={22} color="#db2777" />
+            <div className="text-gray-500">Photographer</div>
+            <input
+              value={photographer}
+              style={{
+                background: "#e2e8f0",
+                borderRadius: "6px",
+                border: "none",
+                color: "#475569",
+                padding: "3px 3px 3px 3px",
+                outline: "none",
+              }}
+              className="font-medium "
+              onChange={(e) => setPhotographer(e.target.value)}
+            />
+          </div>
+          <div className="flex space-x-2 flex-1">
+            <VideoCameraIcon height={22} width={22} color="#db2777" />
+            <div className="text-gray-500">Video</div>
+            <input
+              value={video}
+              style={{
+                background: "#e2e8f0",
+                borderRadius: "6px",
+                border: "none",
+                color: "#475569",
+                padding: "3px 3px 3px 3px",
+                outline: "none",
+              }}
+              className="font-medium "
+              onChange={(e) => setVideo(e.target.value)}
+            />
+          </div>
+          {props.hasAddonsForVideo("21", data.contract.componentids) >= 0 ? (
             <div className="flex space-x-2 flex-1">
               <VideoCameraIcon height={22} width={22} color="#db2777" />
-              <div className="text-gray-500">Video</div>
+              <div className="text-gray-500">Zoom Light</div>
               <input
-                value={video}
+                value={zoomLight}
                 style={{
                   background: "#e2e8f0",
                   borderRadius: "6px",
@@ -334,95 +352,77 @@ function EditContractDetails(props) {
                   outline: "none",
                 }}
                 className="font-medium "
-                onChange={(e) => setVideo(e.target.value)}
+                onChange={(e) => setZoomLight(e.target.value)}
               />
             </div>
-            {props.hasAddonsForVideo("21", data.contract.componentids) >= 0 ? (
-              <div className="flex space-x-2 flex-1">
-                <VideoCameraIcon height={22} width={22} color="#db2777" />
-                <div className="text-gray-500">Zoom Light</div>
-                <input
-                  value={zoomLight}
-                  style={{
-                    background: "#e2e8f0",
-                    borderRadius: "6px",
-                    border: "none",
-                    color: "#475569",
-                    padding: "3px 3px 3px 3px",
-                    outline: "none",
-                  }}
-                  className="font-medium "
-                  onChange={(e) => setZoomLight(e.target.value)}
-                />
-              </div>
-            ) : (
-              <div></div>
-            )}
-            {props.hasAddonsForVideo("2", data.contract.componentids) >= 0 ? (
-              <div className="flex space-x-2 flex-1">
-                <VideoCameraIcon height={22} width={22} color="#db2777" />
-                <div className="text-gray-500">Camera Crane</div>
-                <input
-                  value={cameraCrane}
-                  style={{
-                    background: "#e2e8f0",
-                    borderRadius: "6px",
-                    border: "none",
-                    color: "#475569",
-                    padding: "3px 3px 3px 3px",
-                    outline: "none",
-                  }}
-                  className="font-medium "
-                  onChange={(e) => setCameraCrane(e.target.value)}
-                />
-              </div>
-            ) : (
-              <div></div>
-            )}
-            {props.hasAddonsForVideo("4", data.contract.componentids) >= 0 ? (
-              <div className="flex space-x-2 flex-1">
-                <VideoCameraIcon height={22} width={22} color="#db2777" />
-                <div className="text-gray-500">Hanging Camera</div>
-                <input
-                  value={hangingCamera}
-                  style={{
-                    background: "#e2e8f0",
-                    borderRadius: "6px",
-                    border: "none",
-                    color: "#475569",
-                    padding: "3px 3px 3px 3px",
-                    outline: "none",
-                  }}
-                  className="font-medium "
-                  onChange={(e) => setHangingCamera(e.target.value)}
-                />
-              </div>
-            ) : (
-              <div></div>
-            )}
-            {props.hasAddonsForVideo("10", data.contract.componentids) >= 0 ? (
-              <div className="flex space-x-2 flex-1">
-                <VideoCameraIcon height={22} width={22} color="#db2777" />
-                <div className="text-gray-500">Camera Ronin</div>
-                <input
-                  value={cameraRonin}
-                  style={{
-                    background: "#e2e8f0",
-                    borderRadius: "6px",
-                    border: "none",
-                    color: "#475569",
-                    padding: "3px 3px 3px 3px",
-                    outline: "none",
-                  }}
-                  className="font-medium "
-                  onChange={(e) => setCameraRonin(e.target.value)}
-                />
-              </div>
-            ) : (
-              <div></div>
-            )}
-          </div>
+          ) : (
+            <div></div>
+          )}
+          {props.hasAddonsForVideo("2", data.contract.componentids) >= 0 ? (
+            <div className="flex space-x-2 flex-1">
+              <VideoCameraIcon height={22} width={22} color="#db2777" />
+              <div className="text-gray-500">Camera Crane</div>
+              <input
+                value={cameraCrane}
+                style={{
+                  background: "#e2e8f0",
+                  borderRadius: "6px",
+                  border: "none",
+                  color: "#475569",
+                  padding: "3px 3px 3px 3px",
+                  outline: "none",
+                }}
+                className="font-medium "
+                onChange={(e) => setCameraCrane(e.target.value)}
+              />
+            </div>
+          ) : (
+            <div></div>
+          )}
+          {props.hasAddonsForVideo("4", data.contract.componentids) >= 0 ? (
+            <div className="flex space-x-2 flex-1">
+              <VideoCameraIcon height={22} width={22} color="#db2777" />
+              <div className="text-gray-500">Hanging Camera</div>
+              <input
+                value={hangingCamera}
+                style={{
+                  background: "#e2e8f0",
+                  borderRadius: "6px",
+                  border: "none",
+                  color: "#475569",
+                  padding: "3px 3px 3px 3px",
+                  outline: "none",
+                }}
+                className="font-medium "
+                onChange={(e) => setHangingCamera(e.target.value)}
+              />
+            </div>
+          ) : (
+            <div></div>
+          )}
+          {props.hasAddonsForVideo("10", data.contract.componentids) >= 0 ? (
+            <div className="flex space-x-2 flex-1">
+              <VideoCameraIcon height={22} width={22} color="#db2777" />
+              <div className="text-gray-500">Camera Ronin</div>
+              <input
+                value={cameraRonin}
+                style={{
+                  background: "#e2e8f0",
+                  borderRadius: "6px",
+                  border: "none",
+                  color: "#475569",
+                  padding: "3px 3px 3px 3px",
+                  outline: "none",
+                }}
+                className="font-medium "
+                onChange={(e) => setCameraRonin(e.target.value)}
+              />
+            </div>
+          ) : (
+            <div></div>
+          )}
         </div>
+
         <div
           className="rounded-md text-center  cursor-pointer text-xl space-y-2  mx-auto p-2 w-1/6  bg-slate-500 font-medium text-white"
           onClick={() => onClickSave()}
