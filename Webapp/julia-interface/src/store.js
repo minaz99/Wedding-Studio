@@ -4,6 +4,7 @@ import { setupListeners } from "@reduxjs/toolkit/dist/query";
 import { contractSlice } from "./services/api/contractSlice";
 import { componentSlice } from "./services/api/componentSlice";
 import { packageSlice } from "./services/api/packageSlice";
+import { photographersSlice } from "./services/api/photographersSlice";
 export const store = configureStore({
   reducer: {
     [loginSlice.reducerPath]: loginSlice.reducer,
@@ -16,7 +17,8 @@ export const store = configureStore({
       loginSlice.middleware,
       contractSlice.middleware,
       componentSlice.middleware,
-      packageSlice.middleware
+      packageSlice.middleware,
+      photographersSlice.middleware
     ),
 });
 

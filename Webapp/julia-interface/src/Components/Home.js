@@ -37,7 +37,7 @@ function Home(props) {
         ) : activeView === "Packages" ? (
           <PackagesWrapper role={role} token={token} />
         ) : activeView === "AddPhotographer" ? (
-          <AddPhotographerWrapper />
+          <AddPhotographerWrapper token={token} />
         ) : (
           <div></div>
         )}
