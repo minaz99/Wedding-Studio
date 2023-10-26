@@ -119,9 +119,9 @@ function EditContractDetails(props) {
             </div>
             <div className="flex space-x-2 items-center break-normal">
               <UserGroupIcon height={22} width={22} color="#78716c" />
-              <div className="space-x-2">
+              <div className="space-x-2 flex">
                 <div className="text-gray-500">Second</div>
-                <div>Party</div>
+                <div className="text-gray-500">Party</div>
               </div>
               <input
                 value={data.contract.secondpartyname}
