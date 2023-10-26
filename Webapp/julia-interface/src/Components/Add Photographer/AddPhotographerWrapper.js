@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { UserPlusIcon } from "@heroicons/react/24/outline";
+import {
+  UserPlusIcon,
+  UserIcon,
+  CameraIcon,
+  CalendarDaysIcon,
+} from "@heroicons/react/24/outline";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
 function AddPhotographerWrapper() {
   const [name, setName] = useState("");
   const [type, setType] = useState("");
