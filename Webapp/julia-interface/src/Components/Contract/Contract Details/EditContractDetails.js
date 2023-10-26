@@ -81,8 +81,8 @@ function EditContractDetails(props) {
       </div>
     ) : (
       <div>
-        <div className="flex space-x-10 mx-auto">
-          <div className="space-y-3 ">
+        <div className="flex ">
+          <div className="space-y-3 flex-1 ">
             <div className="flex flex-1 space-x-2">
               <UserIcon height={22} width={22} color="#ec4899" />
               <div className="text-gray-500">Bride</div>
