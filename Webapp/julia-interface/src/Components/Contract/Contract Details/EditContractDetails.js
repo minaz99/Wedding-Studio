@@ -117,7 +117,7 @@ function EditContractDetails(props) {
                 disabled
               />
             </div>
-            <div className="flex space-x-10">
+            <div className="flex space-x-2 break-normal">
               <UserGroupIcon height={22} width={22} color="#78716c" />
               <div className="text-gray-500">Second Party</div>
               <input
