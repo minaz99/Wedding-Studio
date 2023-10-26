@@ -11,7 +11,7 @@ function AddPhotographerWrapper() {
         scale: 1,
       }}
       transition={{ duration: 0.75 }}
-      className="rounded-r-lg  space-y-6  p-3 items-center h-full w-11/12 shadow-md overflow-y-scroll  bg-slate-600"
+      className="rounded-r-lg  space-y-6  p-3 items-center h-full w-fit shadow-md overflow-y-scroll  bg-slate-600"
     ></motion.div>
   );
 }
