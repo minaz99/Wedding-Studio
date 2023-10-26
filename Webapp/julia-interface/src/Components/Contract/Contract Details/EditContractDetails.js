@@ -119,6 +119,7 @@ function EditContractDetails(props) {
                 className="font-medium "
                 disabled
               />
+              <LockClosedIcon height={22} width={22} color="#94a3b8" />
             </div>
             <div className="flex space-x-2 items-center break-normal">
               <UserGroupIcon height={22} width={22} color="#78716c" />
@@ -136,6 +137,7 @@ function EditContractDetails(props) {
                 className="font-medium "
                 disabled
               />
+              <LockClosedIcon height={22} width={22} color="#94a3b8" />
             </div>
             <div className="flex space-x-2 flex-1">
               <UserCircleIcon height={22} width={22} color="#fed7aa" />
@@ -153,6 +155,7 @@ function EditContractDetails(props) {
                 className="font-medium "
                 disabled
               />
+              <LockClosedIcon height={22} width={22} color="#94a3b8" />
             </div>
 
             <div className="flex space-x-2 flex-1">
@@ -171,6 +174,7 @@ function EditContractDetails(props) {
                 className="font-medium "
                 disabled
               />
+              <LockClosedIcon height={22} width={22} color="#94a3b8" />
             </div>
             <div className="flex space-x-2 flex-1">
               <BuildingStorefrontIcon height={22} width={22} color="#2dd4bf" />
@@ -188,7 +192,6 @@ function EditContractDetails(props) {
                 className="font-medium "
                 onChange={(e) => setLocation(e.target.value)}
               />
-              <LockOpenIcon height={22} width={22} color="#e2e8f0" />
             </div>
             <div className="flex space-x-2 flex-1">
               <CalendarDaysIcon height={22} width={22} color="#818cf8" />
@@ -207,7 +210,6 @@ function EditContractDetails(props) {
                 className="font-medium"
                 onChange={(e) => setDate(e.target.value)}
               />
-              <div></div>
             </div>
           </div>
           <div className="space-y-3 ">
@@ -228,6 +230,7 @@ function EditContractDetails(props) {
                 className="font-medium"
                 disabled
               />
+              <LockClosedIcon height={22} width={22} color="#94a3b8" />
             </div>
 
             <div className="space-y-3">
@@ -247,6 +250,7 @@ function EditContractDetails(props) {
                   className="font-medium "
                   disabled
                 />
+                <LockClosedIcon height={22} width={22} color="#94a3b8" />
               </div>
               <div className="flex space-x-2 flex-1">
                 <PhoneIcon height={22} width={22} color="#4ade80" />
@@ -303,6 +307,7 @@ function EditContractDetails(props) {
                     className="font-medium "
                     disabled
                   />
+                  <LockClosedIcon height={22} width={22} color="#94a3b8" />
                 </div>
               </div>
 
