@@ -95,7 +95,7 @@ function SectionsWrapper(props) {
             <div className="flex space-x-2 items-center">
               <UserPlusIcon height={18} width={18} color="#475569" />
               <div
-                onClick={() => props.setActiveView("Photographer")}
+                onClick={() => props.setActiveView("AddPhotographer")}
                 className="font-medium text-slate-600  cursor-pointer hover:text-blue-500"
               >
                 Photographer
