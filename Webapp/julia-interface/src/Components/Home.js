@@ -4,6 +4,7 @@ import TableWrapper from "./Table/TableWrapper";
 import CreatContractWrapper from "./Contract/New Contract Components/CreatContractWrapper";
 import CalendarWrapper from "./Calendar/CalendarWrapper";
 import PackagesWrapper from "./Packages/PackagesWrapper";
+import AddPhotographerWrapper from "./Add Photographer/AddPhotographerWrapper";
 
 function Home(props) {
   const [activeView, setActiveView] = useState("Table");
@@ -35,6 +36,8 @@ function Home(props) {
           <CalendarWrapper token={token} />
         ) : activeView === "Packages" ? (
           <PackagesWrapper role={role} token={token} />
+        ) : activeView === "AddPhotographer" ? (
+          <AddPhotographerWrapper />
         ) : (
           <div></div>
         )}
