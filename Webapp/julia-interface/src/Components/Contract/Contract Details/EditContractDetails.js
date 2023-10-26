@@ -424,12 +424,12 @@ function EditContractDetails(props) {
               )}
             </div>
           </div>
-          <div
-            className="rounded-md text-center  cursor-pointer text-xl space-y-2  mx-auto p-2 w-1/6  bg-slate-500 font-medium text-white"
-            onClick={() => onClickSave()}
-          >
-            Save
-          </div>
+        </div>
+        <div
+          className="rounded-md text-center  cursor-pointer text-xl space-y-2  mx-auto p-2 w-1/6  bg-slate-500 font-medium text-white"
+          onClick={() => onClickSave()}
+        >
+          Save
         </div>
       </div>
     )
