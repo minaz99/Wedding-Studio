@@ -125,7 +125,7 @@ function AddPhotographerWrapper(props) {
           {result.isLoading ? (
             <Spinner animation="border" role="status"></Spinner>
           ) : (
-            Save
+            <div>Save</div>
           )}
         </button>
       </div>
