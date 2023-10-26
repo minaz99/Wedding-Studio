@@ -9,6 +9,7 @@ import {
   UserGroupIcon,
   UserIcon,
   VideoCameraIcon,
+  LockClosedIcon,
 } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
 import { ClockIcon } from "@mui/x-date-pickers";
@@ -99,6 +100,7 @@ function EditContractDetails(props) {
                 className="font-medium "
                 disabled
               />
+              <LockClosedIcon height={22} width={22} color="#94a3b8" />
             </div>
             <div className="flex space-x-2">
               <UserIcon height={22} width={22} color="#3b82f6" />
@@ -185,6 +187,7 @@ function EditContractDetails(props) {
                 className="font-medium "
                 onChange={(e) => setLocation(e.target.value)}
               />
+              <LockOpenIcon height={22} width={22} color="#e2e8f0" />
             </div>
             <div className="flex space-x-2 flex-1">
               <CalendarDaysIcon height={22} width={22} color="#818cf8" />
