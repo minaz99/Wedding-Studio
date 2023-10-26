@@ -13,6 +13,11 @@ function CalenderRows(props) {
                 photographer={contract.photographer}
                 video={contract.video}
                 location={contract.eventlocation}
+                zoomLight={contract.zoomlight}
+                cameraCrane={contract.cameracrane}
+                hangingCamera={contract.hangingcamera}
+                cameraRonin={contract.cameraronin}
+                componentids={contract.componentids}
               />
             );
           })}
