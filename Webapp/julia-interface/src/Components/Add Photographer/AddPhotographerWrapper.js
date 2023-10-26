@@ -32,13 +32,14 @@ function AddPhotographerWrapper() {
       transition={{ duration: 0.75 }}
       className="rounded-r-lg  space-y-6  p-3 items-center h-full w-fit shadow-md overflow-y-scroll  bg-slate-600"
     >
-      <div className="bg-white rounded-lg">
+      <div className="bg-white rounded-lg p-4">
         <div className="flex space-x-2">
-          <div className="font-extrabold text-xl items-center text-slate-600">
-            Add Photographer
+          <div className="space-x-2 items-center">
+            <div className="font-extrabold text-xl items-center text-slate-600">
+              Add Photographer
+            </div>
+            <UserPlusIcon height={20} width={20} color="#475569" />
           </div>
-          <UserPlusIcon height={20} width={20} color="#475569" />
-
           <div className="flex space-x-2 items-center">
             <div className="text-black font-medium ">Name</div>
             <div className="rounded-md bg-slate-200 w-fit space-x-2 flex items-center p-1">
