@@ -21,7 +21,7 @@ function DayContractDetails(props) {
         <div className="text-sm  text-slate-700">{props.video}</div>
       </div>
       {hasAddonsForVideo("21", props.componentids) >= 0 ? (
-        <div className="flex items-center space-x-2 ">
+        <div className="flex items-center space-x-2">
           <div className="text-xs text-slate-700">Zoom</div>
           <div className="text-sm  text-slate-700">{props.zoomLight}</div>
         </div>
@@ -30,7 +30,7 @@ function DayContractDetails(props) {
       )}
       {hasAddonsForVideo("2", props.componentids) >= 0 ? (
         <div className="flex items-center space-x-2 ">
-          <div>Crane</div>
+          <div className="text-xs text-slate-700">Crane</div>
           <div className="text-sm  text-slate-700">{props.cameraCrane}</div>
         </div>
       ) : (
@@ -38,7 +38,7 @@ function DayContractDetails(props) {
       )}
       {hasAddonsForVideo("4", props.componentids) >= 0 ? (
         <div className="flex items-center space-x-2 ">
-          <div>Hanging</div>
+          <div className="text-xs text-slate-700">Hanging</div>
           <div className="text-sm  text-slate-700">{props.hangingCamera}</div>
         </div>
       ) : (
@@ -46,7 +46,7 @@ function DayContractDetails(props) {
       )}
       {hasAddonsForVideo("10", props.componentids) >= 0 ? (
         <div className="flex items-center space-x-2 ">
-          <div>Ronin</div>
+          <div className="text-xs text-slate-700">Ronin</div>
           <div className="text-sm  text-slate-700">{props.cameraRonin}</div>
         </div>
       ) : (
