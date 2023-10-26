@@ -22,7 +22,7 @@ function DayContractDetails(props) {
       </div>
       {hasAddonsForVideo("21", props.componentids) >= 0 ? (
         <div className="flex items-center space-x-2 ">
-          <div>Zoom</div>
+          <div className="text-sm text-slate-700">Zoom</div>
           <div className="text-sm  text-slate-700">{props.zoomLight}</div>
         </div>
       ) : (
