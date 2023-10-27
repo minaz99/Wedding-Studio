@@ -333,7 +333,7 @@ function EditContractDetails(props) {
                   title={""}
                 >
                   <Dropdown.Item>Trial</Dropdown.Item>
-                  {photographers.isLoading ? (
+                  {/*photographers.isLoading ? (
                     <div className="text-center text-blue-400 text-xl p-4">
                       Loading
                     </div>
@@ -346,20 +346,20 @@ function EditContractDetails(props) {
                       {photographers.data.Photographers.map((photographer) => {
                         return (
                           <Dropdown.Item
-                          /*onClick={() =>
+                          onClick={() =>
                               setPhotographerToContract({
                                 token: props.token,
                                 id: props.id,
                                 photographerID: photographer.id,
                               })
-                            }*/
+                            }
                           >
                             {photographer.name}
                           </Dropdown.Item>
                         );
                       })}
                     </div>
-                  )}
+                    )*/}
                 </DropdownButton>
               </div>
               <div className="flex space-x-2 items-center flex-1">
