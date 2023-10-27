@@ -36,7 +36,7 @@ function EditContractDetails(props) {
   const [location, setLocation] = useState(
     isSuccess ? data.contract.eventlocation : ""
   );
-  const [type, setType] = useState("Photographer");
+  //const [type, setType] = useState("Photographer");
   const [date, setDate] = useState(isSuccess ? data.contract.eventdate : "");
   const [phone1, setPhone1] = useState(isSuccess ? data.contract.phone1 : "");
   const [phone2, setPhone2] = useState(isSuccess ? data.contract.phone2 : "");
@@ -57,14 +57,18 @@ function EditContractDetails(props) {
     isSuccess ? data.contract.cameraronin : ""
   );
   const [updateContract, result] = useUpdateContractMutation();
-  const photographers = ({ data, isLoading, isError, isSuccess } =
-    useGetPhotographersByTypeAndDateQuery(
-      {
-        token: props.token,
-        body: { date: date.toString().split("T")[0], type: type },
-      },
-      { refetchOnMountOrArgChange: true }
-    ));
+  /*const {
+    data
+    isLoading
+    isError,
+    isSuccess,
+  } = useGetPhotographersByTypeAndDateQuery(
+    {
+      token: props.token,
+      body: { date: date.toString().split("T")[0], type: type },
+    },
+    { refetchOnMountOrArgChange: true }
+  );*/
   const onClickSave = async () => {
     await updateContract({
       token: props.token,
