@@ -333,7 +333,7 @@ function EditContractDetails(props) {
                 <div className="text-gray-500">Photographer</div>
                 <DropdownButton
                   id="dropdown-basic-button"
-                  onClick={() => setType("Photographer")}
+                  //onClick={() => setType("Photographer")}
                   title={Select}
                 >
                   <Dropdown.Item>Trial</Dropdown.Item>
