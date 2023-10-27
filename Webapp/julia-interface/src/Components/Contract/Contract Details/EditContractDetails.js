@@ -57,14 +57,17 @@ function EditContractDetails(props) {
     isSuccess ? data.contract.cameraronin : ""
   );
   const [updateContract, result] = useUpdateContractMutation();
-  /*const photographers = ({ data, isLoading, isError, isSuccess } =
+  const photographers = ({ data, isLoading, isError, isSuccess } =
     useGetPhotographersByTypeAndDateQuery(
       {
         token: props.token,
-        body: { date: date.toString().split("T")[0], type: type },
+        body: {
+          date: /*date.toString().split("T")[0]*/ "2023/10/27",
+          type: type,
+        },
       },
       { refetchOnMountOrArgChange: true }
-    ));*/
+    ));
   const onClickSave = async () => {
     await updateContract({
       token: props.token,
