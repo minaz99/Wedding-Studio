@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const photographersSlice = createApi({
-  reducerPath: "contractSlice",
+  reducerPath: "photographersSlice",
   baseQuery: fetchBaseQuery({
     baseUrl: "https://juliabackend.vercel.app/photographers",
   }),

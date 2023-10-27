@@ -8,9 +8,9 @@ function GetAvailablePhotographersForContract(props) {
       {
         token: props.token,
         body: {
-          date: new Date(
+          date: "2023-10-27" /*new Date(
             props.date.toString().split("T")[0]
-          ).toLocaleDateString(),
+          ).toLocaleDateString()*/,
           type: props.type,
         },
       },
