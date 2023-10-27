@@ -7,7 +7,10 @@ function GetAvailablePhotographersForContract(props) {
     useGetPhotographersByTypeAndDateQuery(
       {
         token: props.token,
-        body: { date: props.date.toString().split("T")[0], type: props.type },
+        body: {
+          date: new Date(props.date.toString().split("T")[0]),
+          type: props.type,
+        },
       },
       { refetchOnMountOrArgChange: true }
     );
