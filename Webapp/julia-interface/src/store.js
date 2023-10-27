@@ -11,6 +11,7 @@ export const store = configureStore({
     [contractSlice.reducerPath]: contractSlice.reducer,
     [componentSlice.reducerPath]: componentSlice.reducer,
     [packageSlice.reducerPath]: packageSlice.reducer,
+    [photographersSlice.reducerPath]: photographersSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
