@@ -8,9 +8,7 @@ function GetAvailablePhotographersForContract(props) {
       {
         token: props.token,
         body: {
-          date: props.date /*new Date(
-            props.date.toString().split("T")[0]
-          ).toLocaleDateString()*/,
+          date: props.date,
           type: props.type,
         },
       },
@@ -29,18 +27,20 @@ function GetAvailablePhotographersForContract(props) {
   //alert(`Date: ${props.date.toString().split("T")[0]} and type: ${props.type}`);
   return isLoading ? (
     <div className="text-center text-blue-400 text-xl p-4">Loading</div>
-  ) : isError ? (
+  ) : (
+    <div>Something else is happening</div>
+  ); /* isError ? (
     <div className="text-center text-red-400 text-xl p-4">
       Error loading photographers
     </div>
   ) : isSuccess ? (
-    /*result.isLoading ? (
+    result.isLoading ? (
     <div className="text-center text-blue-400 text-xl p-4">Saving</div>
   ) : result.isError ? (
     <div className="text-center text-red-400 text-xl p-4">
       Error setting photographer
     </div>
-  ) :*/ data.Photographers.map((photographer) => {
+  ) : data.Photographers.map((photographer) => {
       return (
         <Dropdown.Item
           onClick={async () =>
@@ -52,8 +52,7 @@ function GetAvailablePhotographersForContract(props) {
       );
     })
   ) : (
-    <div></div>
-  );
+    <div></div>*/
 }
 
 export default GetAvailablePhotographersForContract;
