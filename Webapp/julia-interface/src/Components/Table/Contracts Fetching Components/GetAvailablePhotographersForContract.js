@@ -33,7 +33,7 @@ function GetAvailablePhotographersForContract(props) {
     <div className="text-center text-red-400 text-xl p-4">
       Error loading photographers
     </div>
-  ) : (
+  ) : isSuccess ? (
     /*result.isLoading ? (
     <div className="text-center text-blue-400 text-xl p-4">Saving</div>
   ) : result.isError ? (
@@ -51,6 +51,8 @@ function GetAvailablePhotographersForContract(props) {
         </Dropdown.Item>
       );
     })
+  ) : (
+    <div></div>
   );
 }
 
