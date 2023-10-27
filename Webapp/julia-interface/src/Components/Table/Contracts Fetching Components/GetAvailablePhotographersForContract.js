@@ -1,5 +1,7 @@
 import React from "react";
 import { useGetPhotographersByTypeAndDateQuery } from "../../../services/api/photographersSlice";
+import { useSetPhotographerToContractMutation } from "../../../services/api/contractSlice";
+import Dropdown from "react-bootstrap/Dropdown";
 function GetAvailablePhotographersForContract(props) {
   const { data, isLoading, isError, isSuccess } =
     useGetPhotographersByTypeAndDateQuery(

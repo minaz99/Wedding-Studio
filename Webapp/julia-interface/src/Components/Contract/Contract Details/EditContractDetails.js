@@ -18,8 +18,6 @@ import {
   useSetPhotographerToContractMutation,
   useUpdateContractMutation,
 } from "../../../services/api/contractSlice";
-import { useGetPhotographersByTypeAndDateQuery } from "../../../services/api/photographersSlice";
-import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import GetAvailablePhotographersForContract from "../../Table/Contracts Fetching Components/GetAvailablePhotographersForContract";
 function EditContractDetails(props) {
