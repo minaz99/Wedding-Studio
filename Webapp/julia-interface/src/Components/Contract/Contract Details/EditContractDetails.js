@@ -16,8 +16,10 @@ import React, { useState } from "react";
 import { ClockIcon } from "@mui/x-date-pickers";
 import {
   useGetContractByIDQuery,
+  useSetPhotographerToContractMutation,
   useUpdateContractMutation,
 } from "../../../services/api/contractSlice";
+import { useGetPhotographersByTypeAndDateQuery } from "../../../services/api/photographersSlice";
 function EditContractDetails(props) {
   const { data, isLoading, isError, isSuccess } = useGetContractByIDQuery(
     {
@@ -28,9 +30,12 @@ function EditContractDetails(props) {
       refetchOnMountOrArgChange: true,
     }
   );
+
+  const [setPhotographerToContract, r] = useSetPhotographerToContractMutation();
   const [location, setLocation] = useState(
     isSuccess ? data.contract.eventlocation : ""
   );
+  const [type, setType] = useState("");
   const [date, setDate] = useState(isSuccess ? data.contract.eventdate : "");
   const [phone1, setPhone1] = useState(isSuccess ? data.contract.phone1 : "");
   const [phone2, setPhone2] = useState(isSuccess ? data.contract.phone2 : "");
@@ -51,6 +56,14 @@ function EditContractDetails(props) {
     isSuccess ? data.contract.cameraronin : ""
   );
   const [updateContract, result] = useUpdateContractMutation();
+  const photographers = ({ data, isLoading, isError, isSuccess } =
+    useGetPhotographersByTypeAndDateQuery(
+      {
+        token: props.token,
+        body: { date: date.toString().split("T")[0], type: type },
+      },
+      { refetchOnMountOrArgChange: true }
+    ));
   const onClickSave = async () => {
     await updateContract({
       token: props.token,
@@ -313,19 +326,39 @@ function EditContractDetails(props) {
               <div className="flex space-x-2 items-center flex-1">
                 <CameraIcon height={22} width={22} color="#db2777" />
                 <div className="text-gray-500">Photographer</div>
-                <input
-                  value={photographer}
-                  style={{
-                    background: "#e2e8f0",
-                    borderRadius: "6px",
-                    border: "none",
-                    color: "#475569",
-                    padding: "3px 3px 3px 3px",
-                    outline: "none",
-                  }}
-                  className="font-medium "
-                  onChange={(e) => setPhotographer(e.target.value)}
-                />
+                <DropdownButton
+                  id="dropdown-basic-button"
+                  onClick={() => setType("Photographer")}
+                  title={photographer}
+                >
+                  {photographers.isLoading ? (
+                    <div className="text-center text-blue-400 text-xl p-4">
+                      Loading
+                    </div>
+                  ) : photographers.isError ? (
+                    <div className="text-center text-red-400 text-xl p-4">
+                      Error loading photographers
+                    </div>
+                  ) : (
+                    <div>
+                      {photographers.data.Photographers.map((photographer) => {
+                        return (
+                          <Dropdown.Item
+                            onClick={() =>
+                              setPhotographerToContract({
+                                token: props.token,
+                                id: props.id,
+                                photographerID: photographer.ID,
+                              })
+                            }
+                          >
+                            {photographer}
+                          </Dropdown.Item>
+                        );
+                      })}{" "}
+                    </div>
+                  )}
+                </DropdownButton>
               </div>
               <div className="flex space-x-2 items-center flex-1">
                 <VideoCameraIcon height={22} width={22} color="#db2777" />

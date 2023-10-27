@@ -17,7 +17,20 @@ export const photographersSlice = createApi({
         body: data.body,
       }),
     }),
+    getPhotographersByTypeAndDate: builder.query({
+      query: (data) => ({
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `Bearer ${data.token}`,
+        },
+        url: `/`,
+        method: "GET",
+      }),
+    }),
   }),
 });
 
-export const { useAddPhotographerMutation } = photographersSlice;
+export const {
+  useAddPhotographerMutation,
+  useGetPhotographersByTypeAndDateQuery,
+} = photographersSlice;

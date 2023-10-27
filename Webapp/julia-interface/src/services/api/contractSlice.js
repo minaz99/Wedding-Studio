@@ -140,6 +140,16 @@ export const contractSlice = createApi({
         body: data.body,
       }),
     }),
+    setPhotographerToContract: builder.mutation({
+      query: (data) => ({
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `Bearer ${data.token}`,
+        },
+        url: `/${data.id}/photographers/${data.photographerID}`,
+        method: "POST",
+      }),
+    }),
   }),
 });
 
@@ -157,4 +167,5 @@ export const {
   useGetContractsByDayQuery,
   useGetContractsPerMonthTableQuery,
   useUpdateContractStageMutation,
+  useSetPhotographerToContractMutation,
 } = contractSlice;
