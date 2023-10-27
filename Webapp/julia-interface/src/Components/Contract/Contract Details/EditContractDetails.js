@@ -334,9 +334,10 @@ function EditContractDetails(props) {
                 <DropdownButton
                   id="dropdown-basic-button"
                   onClick={() => setType("Photographer")}
-                  title={photographer}
+                  title={Select}
                 >
-                  {photographers.isLoading ? (
+                  <Dropdown.Item>Trial</Dropdown.Item>
+                  {/*photographers.isLoading ? (
                     <div className="text-center text-blue-400 text-xl p-4">
                       Loading
                     </div>
@@ -346,7 +347,7 @@ function EditContractDetails(props) {
                     </div>
                   ) : (
                     <div>
-                      {/*photographers.data.Photographers.map((photographer) => {
+                      {photographers.data.Photographers.map((photographer) => {
                         return (
                           <Dropdown.Item
                             onClick={() =>
@@ -360,10 +361,10 @@ function EditContractDetails(props) {
                             {photographer}
                           </Dropdown.Item>
                         );
-                      })*/}
+                      })}
                       Hello there
                     </div>
-                  )}
+                    )*/}
                 </DropdownButton>
               </div>
               <div className="flex space-x-2 items-center flex-1">
