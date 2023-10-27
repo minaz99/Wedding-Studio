@@ -57,14 +57,14 @@ function EditContractDetails(props) {
     isSuccess ? data.contract.cameraronin : ""
   );
   const [updateContract, result] = useUpdateContractMutation();
-  /*const photographers = ({ data, isLoading, isError, isSuccess } =
-    useGetPhotographersByTypeAndDateQuery(
-      {
-        token: props.token,
-        body: { date: date.toString().split("T")[0], type: type },
-      },
-      { refetchOnMountOrArgChange: true }
-    ));*/
+  const photographers = useGetPhotographersByTypeAndDateQuery(
+    {
+      token: props.token,
+      body: { date: date.toString().split("T")[0], type: type },
+    },
+    { refetchOnMountOrArgChange: true }
+  );
+  /*({ data, isLoading, isError, isSuccess } = */
   const onClickSave = async () => {
     await updateContract({
       token: props.token,
