@@ -36,7 +36,7 @@ function EditContractDetails(props) {
   const [location, setLocation] = useState(
     isSuccess ? data.contract.eventlocation : ""
   );
-  const [type, setType] = useState("");
+  const [type, setType] = useState("Photographer");
   const [date, setDate] = useState(isSuccess ? data.contract.eventdate : "");
   const [phone1, setPhone1] = useState(isSuccess ? data.contract.phone1 : "");
   const [phone2, setPhone2] = useState(isSuccess ? data.contract.phone2 : "");
@@ -342,7 +342,7 @@ function EditContractDetails(props) {
                     </div>
                   ) : (
                     <div>
-                      {photographers.data.Photographers.map((photographer) => {
+                      {/*photographers.data.Photographers.map((photographer) => {
                         return (
                           <Dropdown.Item
                             onClick={() =>
@@ -356,7 +356,8 @@ function EditContractDetails(props) {
                             {photographer}
                           </Dropdown.Item>
                         );
-                      })}{" "}
+                      })*/}
+                      Hello there
                     </div>
                   )}
                 </DropdownButton>
