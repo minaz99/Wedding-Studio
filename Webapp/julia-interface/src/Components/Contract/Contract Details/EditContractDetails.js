@@ -10,7 +10,6 @@ import {
   UserIcon,
   VideoCameraIcon,
   LockClosedIcon,
-  LockOpenIcon,
 } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
 import { ClockIcon } from "@mui/x-date-pickers";
@@ -20,6 +19,8 @@ import {
   useUpdateContractMutation,
 } from "../../../services/api/contractSlice";
 import { useGetPhotographersByTypeAndDateQuery } from "../../../services/api/photographersSlice";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
 function EditContractDetails(props) {
   const { data, isLoading, isError, isSuccess } = useGetContractByIDQuery(
     {
