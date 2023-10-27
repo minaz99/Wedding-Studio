@@ -346,13 +346,13 @@ function EditContractDetails(props) {
                       {photographers.data.Photographers.map((photographer) => {
                         return (
                           <Dropdown.Item
-                            onClick={() =>
+                          /*onClick={() =>
                               setPhotographerToContract({
                                 token: props.token,
                                 id: props.id,
                                 photographerID: photographer.id,
                               })
-                            }
+                            }*/
                           >
                             {photographer.name}
                           </Dropdown.Item>
