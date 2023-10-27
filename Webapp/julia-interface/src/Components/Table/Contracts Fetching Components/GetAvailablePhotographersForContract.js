@@ -18,8 +18,8 @@ function GetAvailablePhotographersForContract(props) {
     );
   const [setPhotographerToContract, result] =
     useSetPhotographerToContractMutation();
-  const savePhotographer = (photographerID, photographerName) => {
-    setPhotographerToContract({
+  const savePhotographer = async (photographerID, photographerName) => {
+    await setPhotographerToContract({
       token: props.token,
       id: props.id,
       photographerID: photographerID,
@@ -33,14 +33,14 @@ function GetAvailablePhotographersForContract(props) {
     <div className="text-center text-red-400 text-xl p-4">
       Error loading photographers
     </div>
-  ) : result.isLoading ? (
+  ) : (
+    /*result.isLoading ? (
     <div className="text-center text-blue-400 text-xl p-4">Saving</div>
   ) : result.isError ? (
     <div className="text-center text-red-400 text-xl p-4">
       Error setting photographer
     </div>
-  ) : (
-    data.Photographers.map((photographer) => {
+  ) :*/ data.Photographers.map((photographer) => {
       return (
         <Dropdown.Item
           onClick={async () =>
