@@ -334,7 +334,7 @@ function EditContractDetails(props) {
                 <DropdownButton
                   id="dropdown-basic-button"
                   //onClick={() => setType("Photographer")}
-                  title={Select}
+                  title={"Select"}
                 >
                   <Dropdown.Item>Trial</Dropdown.Item>
                   {/*photographers.isLoading ? (
