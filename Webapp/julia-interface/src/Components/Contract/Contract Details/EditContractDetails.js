@@ -64,6 +64,7 @@ function EditContractDetails(props) {
     },
     { refetchOnMountOrArgChange: true }
   );
+  photographers();
   /*({ data, isLoading, isError, isSuccess } = */
   const onClickSave = async () => {
     await updateContract({
