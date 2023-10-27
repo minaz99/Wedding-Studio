@@ -25,6 +25,7 @@ export const photographersSlice = createApi({
         },
         url: `/`,
         method: "GET",
+        body: data.body,
       }),
     }),
   }),

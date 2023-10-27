@@ -31,11 +31,9 @@ function EditContractDetails(props) {
     }
   );
 
-  const [setPhotographerToContract, r] = useSetPhotographerToContractMutation();
   const [location, setLocation] = useState(
     isSuccess ? data.contract.eventlocation : ""
   );
-  const [type, setType] = useState("Photographer");
   const [date, setDate] = useState(isSuccess ? data.contract.eventdate : "");
   const [phone1, setPhone1] = useState(isSuccess ? data.contract.phone1 : "");
   const [phone2, setPhone2] = useState(isSuccess ? data.contract.phone2 : "");
@@ -319,11 +317,7 @@ function EditContractDetails(props) {
               <div className="flex space-x-2 items-center flex-1">
                 <CameraIcon height={22} width={22} color="#db2777" />
                 <div className="text-gray-500">Photographer</div>
-                <DropdownButton
-                  id="dropdown-basic-button"
-                  //onClick={() => setType("Photographer")}
-                  title={photographer}
-                >
+                <DropdownButton id="dropdown-basic-button" title={photographer}>
                   <GetAvailablePhotographersForContract
                     token={props.token}
                     id={props.id}
