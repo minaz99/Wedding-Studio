@@ -21,6 +21,7 @@ import {
 import { useGetPhotographersByTypeAndDateQuery } from "../../../services/api/photographersSlice";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
+import GetAvailablePhotographersForContract from "../../Table/Contracts Fetching Components/GetAvailablePhotographersForContract";
 function EditContractDetails(props) {
   const { data, isLoading, isError, isSuccess } = useGetContractByIDQuery(
     {
@@ -57,14 +58,7 @@ function EditContractDetails(props) {
     isSuccess ? data.contract.cameraronin : ""
   );
   const [updateContract, result] = useUpdateContractMutation();
-  const { data2, isLoading2, isError2, isSuccess2 } =
-    useGetPhotographersByTypeAndDateQuery(
-      {
-        token: props.token,
-        body: { date: date.toString().split("T")[0], type: type },
-      },
-      { refetchOnMountOrArgChange: true }
-    );
+
   const onClickSave = async () => {
     await updateContract({
       token: props.token,
@@ -330,36 +324,15 @@ function EditContractDetails(props) {
                 <DropdownButton
                   id="dropdown-basic-button"
                   //onClick={() => setType("Photographer")}
-                  title={""}
+                  title={photographer}
                 >
-                  <Dropdown.Item>Trial</Dropdown.Item>
-                  {isLoading2 ? (
-                    <div className="text-center text-blue-400 text-xl p-4">
-                      Loading
-                    </div>
-                  ) : isError2 ? (
-                    <div className="text-center text-red-400 text-xl p-4">
-                      Error loading photographers
-                    </div>
-                  ) : (
-                    <div>
-                      {data2.Photographers.map((photographer) => {
-                        return (
-                          <Dropdown.Item
-                            onClick={() =>
-                              setPhotographerToContract({
-                                token: props.token,
-                                id: props.id,
-                                photographerID: photographer.id,
-                              })
-                            }
-                          >
-                            {photographer.name}
-                          </Dropdown.Item>
-                        );
-                      })}
-                    </div>
-                  )}
+                  <GetAvailablePhotographersForContract
+                    token={props.token}
+                    id={props.id}
+                    setPhotographer={setPhotographer}
+                    type="Photographer"
+                    date={date}
+                  />
                 </DropdownButton>
               </div>
               <div className="flex space-x-2 items-center flex-1">
