@@ -7,10 +7,8 @@ function GetAvailablePhotographersForContract(props) {
     useGetPhotographersByTypeAndDateQuery(
       {
         token: props.token,
-        body: {
-          date: props.date,
-          type: props.type,
-        },
+        date: props.date,
+        type: props.type,
       },
       { refetchOnMountOrArgChange: true }
     );
@@ -20,27 +18,25 @@ function GetAvailablePhotographersForContract(props) {
     await setPhotographerToContract({
       token: props.token,
       id: props.id,
-      photographerID: photographerID,
+      body: { photographerID: photographerID },
     });
     props.setPhotographer(photographerName);
   };
   //alert(`Date: ${props.date.toString().split("T")[0]} and type: ${props.type}`);
-  return isSuccess ? (
+  return isLoading ? (
     <div className="text-center text-blue-400 text-xl p-4">Loading</div>
-  ) : (
-    <div>Something else is happening</div>
-  ); /* isError ? (
+  ) : isError ? (
     <div className="text-center text-red-400 text-xl p-4">
       Error loading photographers
     </div>
-  ) : isSuccess ? (
-    result.isLoading ? (
+  ) : result.isLoading ? (
     <div className="text-center text-blue-400 text-xl p-4">Saving</div>
   ) : result.isError ? (
     <div className="text-center text-red-400 text-xl p-4">
       Error setting photographer
     </div>
-  ) : data.Photographers.map((photographer) => {
+  ) : (
+    data.Photographers.map((photographer) => {
       return (
         <Dropdown.Item
           onClick={async () =>
@@ -51,8 +47,7 @@ function GetAvailablePhotographersForContract(props) {
         </Dropdown.Item>
       );
     })
-  ) : (
-    <div></div>*/
+  );
 }
 
 export default GetAvailablePhotographersForContract;
