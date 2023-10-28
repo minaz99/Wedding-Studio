@@ -105,7 +105,7 @@ function ContractDetails(props) {
           </div>
         </div>
         <Photographers id={props.id} token={props.token} type="Photographers" />
-        <Photographers id={props.id} token={props.token} type="Video" />
+        {/*<Photographers id={props.id} token={props.token} type="Video" />*/}
 
         {props.hasAddonsForVideo("21", data.contract.componentids) >= 0 ? (
           <div className="flex space-x-2 flex-1">
