@@ -14,6 +14,7 @@ import {
   VideoCameraIcon,
 } from "@heroicons/react/24/outline";
 import { useGetContractByIDQuery } from "../../../services/api/contractSlice";
+import Photographers from "./Photographers";
 function ContractDetails(props) {
   const { data, isLoading, isError, isSuccess } = useGetContractByIDQuery(
     {
@@ -103,16 +104,8 @@ function ContractDetails(props) {
             <StatusWrapper status={data.contract.contractstatus} />
           </div>
         </div>
-        <div className="flex space-x-2 flex-1">
-          <CameraIcon height={22} width={22} color="#db2777" />
-          <div className="text-gray-500">Photographer</div>
-          <div>{data.contract.photographer}</div>
-        </div>
-        <div className="flex space-x-2 flex-1">
-          <VideoCameraIcon height={22} width={22} color="#db2777" />
-          <div className="text-gray-500">Video</div>
-          <div>{data.contract.video}</div>
-        </div>
+        <Photographers id={props.id} token={props.token} type="Photographers" />
+        <Photographers id={props.id} token={props.token} type="Video" />
 
         {props.hasAddonsForVideo("21", data.contract.componentids) >= 0 ? (
           <div className="flex space-x-2 flex-1">
