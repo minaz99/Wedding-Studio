@@ -25,7 +25,7 @@ function GetAvailablePhotographersForContract(props) {
     props.setPhotographer(photographerName);
   };
   //alert(`Date: ${props.date.toString().split("T")[0]} and type: ${props.type}`);
-  return isLoading ? (
+  return isSuccess ? (
     <div className="text-center text-blue-400 text-xl p-4">Loading</div>
   ) : (
     <div>Something else is happening</div>
