@@ -1,5 +1,6 @@
 import React from "react";
 import { useGetPhotographersPerContractAndTypeQuery } from "../../../services/api/contractSlice";
+import { VideoCameraIcon, CameraIcon } from "@heroicons/react/24/outline";
 function Photographers(props) {
   const { data, isLoading, isError, isSuccess } =
     useGetPhotographersPerContractAndTypeQuery(
