@@ -27,7 +27,7 @@ function GetAvailablePhotographersForContract(props) {
 
   //alert(`Date: ${props.date.toString().split("T")[0]} and type: ${props.type}`);
   return (
-    <div className="flex space-x-2">
+    <div className="flex space-x-2 items-center">
       <DropdownButton id="dropdown-basic-button" title={props.photographer}>
         {isLoading ? (
           <div className="text-center text-blue-400 text-xl p-4">Loading</div>
