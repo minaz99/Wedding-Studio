@@ -37,9 +37,7 @@ function EditContractDetails(props) {
   const [date, setDate] = useState(isSuccess ? data.contract.eventdate : "");
   const [phone1, setPhone1] = useState(isSuccess ? data.contract.phone1 : "");
   const [phone2, setPhone2] = useState(isSuccess ? data.contract.phone2 : "");
-  const [photographer, setPhotographer] = useState(
-    isSuccess ? data.contract.photographer : ""
-  );
+  const [photographer, setPhotographer] = useState("");
   const [video, setVideo] = useState(isSuccess ? data.contract.video : "");
   const [zoomLight, setZoomLight] = useState(
     isSuccess ? data.contract.zoomlight : ""
