@@ -1,0 +1,41 @@
+import React from "react";
+import Photographers from "./Photographers";
+import EditPhotographersWrapper from "./EditPhotographersWrapper";
+import { PencilSquareIcon, XCircleIcon } from "@heroicons/react/24/outline";
+function PhotographersWrapper(props) {
+  return (
+    <div className="space-y-3 rounded-lg shadow-md p-4  w-full bg-white h-fit  ">
+      <div className="flex items-center">
+        <div className="font-medium text-xl flex-1">Photographers</div>
+        {editContract ? (
+          <XCircleIcon
+            height={22}
+            width={22}
+            color="#475569"
+            className="cursor-pointer"
+            onClick={() => setEditContract(false)}
+          />
+        ) : (
+          <PencilSquareIcon
+            height={22}
+            width={22}
+            color="#475569"
+            className="cursor-pointer"
+            onClick={() => setEditContract(true)}
+          />
+        )}
+      </div>
+      {editContract ? (
+        <Photographers id={props.id} token={props.token} />
+      ) : (
+        <EditPhotographersWrapper
+          token={props.token}
+          id={props.id}
+          date={date}
+        />
+      )}
+    </div>
+  );
+}
+
+export default PhotographersWrapper;

@@ -7,6 +7,7 @@ import ContractPackagesWrapper from "./ContractPackagesWrapper";
 import ContractStageWrapper from "./ContractStageWrapper";
 import ContractDetailsWrapper from "./ContractDetailsWrapper";
 import ContractCommentsWrapper from "./ContractCommentsWrapper";
+import PhotographersWrapper from "./PhotographersWrapper";
 
 function ContractWrapper(props) {
   const { data, isLoading, isError, isSuccess } = useGetContractByIDQuery(
@@ -51,7 +52,11 @@ function ContractWrapper(props) {
       ) : isSuccess ? (
         <div className=" space-y-4">
           <ContractDetailsWrapper token={props.token} id={props.contractID} />
-
+          <PhotographersWrapper
+            token={props.token}
+            id={props.contractID}
+            date={data.contract.eventdate}
+          />
           <ContractPackagesWrapper
             token={props.token}
             id={props.contractID}
