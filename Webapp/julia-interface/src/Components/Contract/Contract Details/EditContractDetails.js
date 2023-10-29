@@ -20,6 +20,7 @@ import {
 } from "../../../services/api/contractSlice";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import GetAvailablePhotographersForContract from "../../Table/Contracts Fetching Components/GetAvailablePhotographersForContract";
+import EditPhotographersWrapper from "./EditPhotographersWrapper";
 function EditContractDetails(props) {
   const { data, isLoading, isError, isSuccess } = useGetContractByIDQuery(
     {
@@ -315,15 +316,12 @@ function EditContractDetails(props) {
               <div className="flex space-x-2 items-center flex-1">
                 <CameraIcon height={22} width={22} color="#db2777" />
                 <div className="text-gray-500">Photographer</div>
-                <DropdownButton id="dropdown-basic-button" title={photographer}>
-                  <GetAvailablePhotographersForContract
-                    token={props.token}
-                    id={props.id}
-                    setPhotographer={setPhotographer}
-                    type="Photographer"
-                    date={date}
-                  />
-                </DropdownButton>
+                <EditPhotographersWrapper
+                  token={props.token}
+                  id={props.id}
+                  type="Photographer"
+                  date={date}
+                />
               </div>
               <div className="flex space-x-2 items-center flex-1">
                 <VideoCameraIcon height={22} width={22} color="#db2777" />
