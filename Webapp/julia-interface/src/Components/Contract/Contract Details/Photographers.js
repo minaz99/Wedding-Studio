@@ -14,11 +14,11 @@ function Photographers(props) {
       Error loading photographers
     </div>
   ) : (
-    <div className="flex space-x-2">
+    <div className="flex justify-between">
       <div className="space-y-2">
         {data.photographers.map((photographer) => {
           return photographer ? (
-            <div className="space-y-2 flex items-center space-x-2 flex-1">
+            <div className="flex items-center space-x-2">
               <CameraIcon height={22} width={22} color="#db2777" />
               <div className="text-gray-500">{photographer.type}</div>
               <div>{photographer.name}</div>
@@ -31,7 +31,7 @@ function Photographers(props) {
       <div className="space-y-2">
         {data.video.map((video) => {
           return video ? (
-            <div className="flex space-x-2 items-center space-y-2 flex-1">
+            <div className="flex space-x-2 items-center">
               <VideoCameraIcon height={22} width={22} color="#db2777" />
               <div className="text-gray-500">{video.type}</div>
               <div>{video.name}</div>
