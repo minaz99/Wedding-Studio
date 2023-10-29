@@ -1,10 +1,13 @@
 import React from "react";
-import { useGetPhotographersPerContractAndTypeQuery } from "../../../services/api/contractSlice";
+import {
+  useGetPhotographersForContractQuery,
+  useGetPhotographersPerContractAndTypeQuery,
+} from "../../../services/api/contractSlice";
 import { VideoCameraIcon, CameraIcon } from "@heroicons/react/24/outline";
 function Photographers(props) {
   const { data, isLoading, isError, isSuccess } =
-    useGetPhotographersPerContractAndTypeQuery(
-      { token: props.token, id: props.id, type: props.type },
+    useGetPhotographersForContractQuery(
+      { token: props.token, id: props.id },
       { refetchOnMountOrArgChange: true }
     );
   return isLoading ? (

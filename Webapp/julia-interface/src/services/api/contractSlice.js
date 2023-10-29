@@ -161,6 +161,16 @@ export const contractSlice = createApi({
         method: "GET",
       }),
     }),
+    getPhotographersForContract: builder.query({
+      query: (data) => ({
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `Bearer ${data.token}`,
+        },
+        url: `/${data.id}/photographers`,
+        method: "GET",
+      }),
+    }),
   }),
 });
 
@@ -180,4 +190,5 @@ export const {
   useUpdateContractStageMutation,
   useSetPhotographerToContractMutation,
   useGetPhotographersPerContractAndTypeQuery,
+  useGetPhotographersForContractQuery,
 } = contractSlice;
