@@ -56,6 +56,7 @@ function ContractWrapper(props) {
             token={props.token}
             id={props.contractID}
             date={data.contract.eventdate}
+            compsIDs={data.contract.componentids}
           />
           <ContractPackagesWrapper
             token={props.token}

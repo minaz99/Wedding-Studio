@@ -33,7 +33,11 @@ function PhotographersWrapper(props) {
           date={props.date}
         />
       ) : (
-        <Photographers id={props.id} token={props.token} />
+        <Photographers
+          compsIDs={props.compsIDs}
+          id={props.id}
+          token={props.token}
+        />
       )}
     </div>
   );
