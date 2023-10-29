@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Photographers from "./Photographers";
 import EditPhotographersWrapper from "./EditPhotographersWrapper";
 import { PencilSquareIcon, XCircleIcon } from "@heroicons/react/24/outline";
@@ -26,13 +26,13 @@ function PhotographersWrapper(props) {
           />
         )}
       </div>
-      {editContract ? (
+      {editPhotographers ? (
         <Photographers id={props.id} token={props.token} />
       ) : (
         <EditPhotographersWrapper
           token={props.token}
           id={props.id}
-          date={date}
+          date={props.date}
         />
       )}
     </div>
