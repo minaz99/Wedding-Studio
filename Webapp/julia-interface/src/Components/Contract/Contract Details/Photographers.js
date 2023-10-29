@@ -15,21 +15,21 @@ function Photographers(props) {
     </div>
   ) : (
     data.Photographers.map((photographer) => {
-      /*props.type === "Video" ? (*/
-      return (
+      return props.type === "Video" && photographer ? (
         <div className="flex space-x-2 flex-1">
           <VideoCameraIcon height={22} width={22} color="#db2777" />
           <div className="text-gray-500">Video</div>
           <div>{photographer.name}</div>
         </div>
-      );
-      /*) : (
+      ) : props.type === "Photographer" && photographer ? (
         <div className="flex space-x-2 flex-1">
           <CameraIcon height={22} width={22} color="#db2777" />
           <div className="text-gray-500">Photographer</div>
-          <div>{photographer}</div>
+          <div>{photographer.name}</div>
         </div>
-      );*/
+      ) : (
+        <div></div>
+      );
     })
   );
 }
