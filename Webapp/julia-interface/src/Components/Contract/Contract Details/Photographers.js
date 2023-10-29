@@ -15,7 +15,7 @@ function Photographers(props) {
     </div>
   ) : (
     <div className="flex space-x-2">
-      <div className="space-y-2">
+      <div className="space-y-2 items-center">
         {data.photographers.map((photographer) => {
           return photographer ? (
             <div className="space-y-2 flex items-center space-x-2 flex-1">
@@ -28,7 +28,7 @@ function Photographers(props) {
           );
         })}
       </div>
-      <div>
+      <div className="space-y-2 items-center">
         {data.video.map((video) => {
           return video ? (
             <div className="flex space-x-2 space-y-2 flex-1">
