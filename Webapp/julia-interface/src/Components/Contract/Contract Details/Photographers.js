@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  useGetPhotographersForContractQuery,
-  useGetPhotographersPerContractAndTypeQuery,
-} from "../../../services/api/contractSlice";
+import { useGetPhotographersForContractQuery } from "../../../services/api/contractSlice";
 import { VideoCameraIcon, CameraIcon } from "@heroicons/react/24/outline";
 function Photographers(props) {
   const { data, isLoading, isError, isSuccess } =
