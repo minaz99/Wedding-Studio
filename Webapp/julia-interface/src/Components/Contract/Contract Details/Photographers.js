@@ -14,7 +14,7 @@ function Photographers(props) {
       Error loading photographers
     </div>
   ) : (
-    <div className="flex justify-between">
+    <div className="flex justify-evenly">
       <div className="space-y-2">
         {data.photographers.map((photographer) => {
           return photographer ? (
