@@ -19,7 +19,7 @@ function Photographers(props) {
         return photographer ? (
           <div className="space-y-2 flex space-x-2 flex-1">
             <CameraIcon height={22} width={22} color="#db2777" />
-            <div className="text-gray-500">{video.type}</div>
+            <div className="text-gray-500">{photographer.type}</div>
             <div>{photographer.name}</div>
           </div>
         ) : (
