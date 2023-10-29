@@ -104,8 +104,6 @@ function ContractDetails(props) {
             <StatusWrapper status={data.contract.contractstatus} />
           </div>
         </div>
-        <Photographers id={props.id} token={props.token} type="Photographer" />
-        <Photographers id={props.id} token={props.token} type="Video" />
 
         {props.hasAddonsForVideo("21", data.contract.componentids) >= 0 ? (
           <Photographers id={props.id} token={props.token} type="Zoom Light" />
