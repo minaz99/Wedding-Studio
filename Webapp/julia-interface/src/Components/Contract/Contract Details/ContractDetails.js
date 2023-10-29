@@ -105,41 +105,37 @@ function ContractDetails(props) {
           </div>
         </div>
         <Photographers id={props.id} token={props.token} type="Photographer" />
-        {/*<Photographers id={props.id} token={props.token} type="Video" />*/}
+        <Photographers id={props.id} token={props.token} type="Video" />
 
         {props.hasAddonsForVideo("21", data.contract.componentids) >= 0 ? (
-          <div className="flex space-x-2 flex-1">
-            <VideoCameraIcon height={22} width={22} color="#db2777" />
-            <div className="text-gray-500">Zoom Light</div>
-            <div>{data.contract.zoomlight}</div>
-          </div>
+          <Photographers id={props.id} token={props.token} type="Zoom Light" />
         ) : (
           <div></div>
         )}
         {props.hasAddonsForVideo("2", data.contract.componentids) >= 0 ? (
-          <div className="flex space-x-2 flex-1">
-            <VideoCameraIcon height={22} width={22} color="#db2777" />
-            <div className="text-gray-500">Camera Crane</div>
-            <div>{data.contract.cameracrane}</div>
-          </div>
+          <Photographers
+            id={props.id}
+            token={props.token}
+            type="Camera Crane"
+          />
         ) : (
           <div></div>
         )}
         {props.hasAddonsForVideo("4", data.contract.componentids) >= 0 ? (
-          <div className="flex space-x-2 flex-1">
-            <VideoCameraIcon height={22} width={22} color="#db2777" />
-            <div className="text-gray-500">Hanging Camera</div>
-            <div>{data.contract.hangingcamera}</div>
-          </div>
+          <Photographers
+            id={props.id}
+            token={props.token}
+            type="Hanging Camera"
+          />
         ) : (
           <div></div>
         )}
         {props.hasAddonsForVideo("10", data.contract.componentids) >= 0 ? (
-          <div className="flex space-x-2 flex-1">
-            <VideoCameraIcon height={22} width={22} color="#db2777" />
-            <div className="text-gray-500">Camera Ronin</div>
-            <div>{data.contract.cameraronin}</div>
-          </div>
+          <Photographers
+            id={props.id}
+            token={props.token}
+            type="Camera Ronin"
+          />
         ) : (
           <div></div>
         )}
