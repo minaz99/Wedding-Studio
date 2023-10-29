@@ -27,13 +27,13 @@ function PhotographersWrapper(props) {
         )}
       </div>
       {editPhotographers ? (
-        <Photographers id={props.id} token={props.token} />
-      ) : (
         <EditPhotographersWrapper
           token={props.token}
           id={props.id}
           date={props.date}
         />
+      ) : (
+        <Photographers id={props.id} token={props.token} />
       )}
     </div>
   );
