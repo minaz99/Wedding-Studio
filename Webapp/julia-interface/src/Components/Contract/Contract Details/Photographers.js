@@ -103,20 +103,22 @@ function Photographers(props) {
       </div>
       <div className="space-y-2">
         {props.hasAddonsForVideo("10", props.componentids) >= 0 ? (
-          data.cameraRonin.map((cr) => {
-            return cr ? (
-              <div className="flex space-x-2 items-center">
-                <VideoCameraIcon height={22} width={22} color="#db2777" />
-                <div className="text-gray-500">{cr.type}</div>
-                <div>{cr.name}</div>
-              </div>
-            ) : (
-              <div className="flex space-x-2 items-center">
-                <VideoCameraIcon height={22} width={22} color="#db2777" />
-                <div className="text-gray-500">Camera Ronin</div>
-              </div>
-            );
-          })
+          data.cameraRonin.length > 0 ? (
+            data.cameraRonin.map((cr) => {
+              return (
+                <div className="flex space-x-2 items-center">
+                  <VideoCameraIcon height={22} width={22} color="#db2777" />
+                  <div className="text-gray-500">{cr.type}</div>
+                  <div>{cr.name}</div>
+                </div>
+              );
+            })
+          ) : (
+            <div className="flex space-x-2 items-center">
+              <VideoCameraIcon height={22} width={22} color="#db2777" />
+              <div className="text-gray-500">Camera Ronin</div>
+            </div>
+          )
         ) : (
           <div></div>
         )}
