@@ -42,7 +42,7 @@ function Photographers(props) {
         })}
       </div>
       <div className="space-y-2">
-        {/*props.hasAddonsForVideo("21", props.componentids) >= 0 ? (
+        {props.hasAddonsForVideo("21", props.componentids) >= 0 ? (
           data.zoomLight.map((zl) => {
             return zl ? (
               <div className="flex space-x-2 items-center">
@@ -58,7 +58,7 @@ function Photographers(props) {
           })
         ) : (
           <div></div>
-        )*/}
+        )}
       </div>
       <div className="space-y-2">
         {/*props.hasAddonsForVideo("2", props.componentids) >= 0 ? (
