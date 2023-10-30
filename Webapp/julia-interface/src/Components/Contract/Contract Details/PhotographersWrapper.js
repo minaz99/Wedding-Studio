@@ -8,6 +8,7 @@ function PhotographersWrapper(props) {
     let IDsArray = compsIDs.split(",").filter((id) => id !== "," && id !== "");
     return IDsArray.indexOf(compID);
   };
+  alert(props.compsIDs);
   return (
     <div className="space-y-3 rounded-lg shadow-md p-4  w-full bg-white h-fit  ">
       <div className="flex items-center">

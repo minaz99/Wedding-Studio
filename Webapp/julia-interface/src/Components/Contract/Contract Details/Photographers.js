@@ -7,7 +7,6 @@ function Photographers(props) {
       { token: props.token, id: props.id },
       { refetchOnMountOrArgChange: true }
     );
-  alert(props.componentids);
   return isLoading ? (
     <div className="text-center text-blue-400 text-xl p-4">Loading</div>
   ) : isError ? (
