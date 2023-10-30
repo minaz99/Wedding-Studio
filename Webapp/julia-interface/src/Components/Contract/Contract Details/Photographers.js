@@ -53,6 +53,7 @@ function Photographers(props) {
             ) : (
               <div className="flex space-x-2 items-center">
                 <VideoCameraIcon height={22} width={22} color="#db2777" />
+                <div className="text-gray-500">{zl.type}</div>
               </div>
             );
           })
@@ -72,6 +73,7 @@ function Photographers(props) {
             ) : (
               <div className="flex space-x-2 items-center">
                 <VideoCameraIcon height={22} width={22} color="#db2777" />
+                <div className="text-gray-500">{cr.type}</div>
               </div>
             );
           })
@@ -91,6 +93,7 @@ function Photographers(props) {
             ) : (
               <div className="flex space-x-2 items-center">
                 <VideoCameraIcon height={22} width={22} color="#db2777" />
+                <div className="text-gray-500">{hc.type}</div>
               </div>
             );
           })
@@ -110,6 +113,7 @@ function Photographers(props) {
             ) : (
               <div className="flex space-x-2 items-center">
                 <VideoCameraIcon height={22} width={22} color="#db2777" />
+                <div className="text-gray-500">{cr.type}</div>
               </div>
             );
           })
