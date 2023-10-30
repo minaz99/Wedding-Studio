@@ -43,60 +43,66 @@ function Photographers(props) {
       </div>
       <div className="space-y-2">
         {props.hasAddonsForVideo("21", props.componentids) >= 0 ? (
-          data.zoomLight.map((zl) => {
-            return zl ? (
-              <div className="flex space-x-2 items-center">
-                <VideoCameraIcon height={22} width={22} color="#db2777" />
-                <div className="text-gray-500">{zl.type}</div>
-                <div>{zl.name}</div>
-              </div>
-            ) : (
-              <div className="flex space-x-2 items-center">
-                <VideoCameraIcon height={22} width={22} color="#db2777" />
-                <div className="text-gray-500">Video</div>
-              </div>
-            );
-          })
+          data.zoomLight.length > 0 ? (
+            data.zoomLight.map((zl) => {
+              return (
+                <div className="flex space-x-2 items-center">
+                  <VideoCameraIcon height={22} width={22} color="#db2777" />
+                  <div className="text-gray-500">{zl.type}</div>
+                  <div>{zl.name}</div>
+                </div>
+              );
+            })
+          ) : (
+            <div className="flex space-x-2 items-center">
+              <VideoCameraIcon height={22} width={22} color="#db2777" />
+              <div className="text-gray-500">Video</div>
+            </div>
+          )
         ) : (
           <div></div>
         )}
       </div>
       <div className="space-y-2">
         {props.hasAddonsForVideo("2", props.componentids) >= 0 ? (
-          data.cameraCrane.map((cr) => {
-            return cr ? (
-              <div className="flex space-x-2 items-center">
-                <VideoCameraIcon height={22} width={22} color="#db2777" />
-                <div className="text-gray-500">{cr.type}</div>
-                <div>{cr.name}</div>
-              </div>
-            ) : (
-              <div className="flex space-x-2 items-center">
-                <VideoCameraIcon height={22} width={22} color="#db2777" />
-                <div className="text-gray-500">Camera Crane</div>
-              </div>
-            );
-          })
+          data.cameraCrane.length > 0 ? (
+            data.cameraCrane.map((cr) => {
+              return (
+                <div className="flex space-x-2 items-center">
+                  <VideoCameraIcon height={22} width={22} color="#db2777" />
+                  <div className="text-gray-500">{cr.type}</div>
+                  <div>{cr.name}</div>
+                </div>
+              );
+            })
+          ) : (
+            <div className="flex space-x-2 items-center">
+              <VideoCameraIcon height={22} width={22} color="#db2777" />
+              <div className="text-gray-500">Camera Crane</div>
+            </div>
+          )
         ) : (
           <div></div>
         )}
       </div>
       <div className="space-y-2">
         {props.hasAddonsForVideo("4", props.componentids) >= 0 ? (
-          data.hangingCamera.map((hc) => {
-            return hc ? (
-              <div className="flex space-x-2 items-center">
-                <VideoCameraIcon height={22} width={22} color="#db2777" />
-                <div className="text-gray-500">{hc.type}</div>
-                <div>{hc.name}</div>
-              </div>
-            ) : (
-              <div className="flex space-x-2 items-center">
-                <VideoCameraIcon height={22} width={22} color="#db2777" />
-                <div className="text-gray-500">Hanging Camera</div>
-              </div>
-            );
-          })
+          data.hangingCamera.length > 0 ? (
+            data.hangingCamera.map((hc) => {
+              return (
+                <div className="flex space-x-2 items-center">
+                  <VideoCameraIcon height={22} width={22} color="#db2777" />
+                  <div className="text-gray-500">{hc.type}</div>
+                  <div>{hc.name}</div>
+                </div>
+              );
+            })
+          ) : (
+            <div className="flex space-x-2 items-center">
+              <VideoCameraIcon height={22} width={22} color="#db2777" />
+              <div className="text-gray-500">Hanging Camera</div>
+            </div>
+          )
         ) : (
           <div></div>
         )}
