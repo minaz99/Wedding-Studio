@@ -42,10 +42,10 @@ function PhotographersWrapper(props) {
         />
       ) : (
         <Photographers
-          componentids={props.compsIDs}
+          componentids={componentids}
           id={props.id}
           token={props.token}
-          hasAddonsForVideo={componentids}
+          hasAddonsForVideo={hasAddonsForVideo}
         />
       )}
     </div>
