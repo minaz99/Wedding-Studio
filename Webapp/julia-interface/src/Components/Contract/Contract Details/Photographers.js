@@ -43,7 +43,6 @@ function Photographers(props) {
       </div>
       <div className="space-y-2">
         {props.hasAddonsForVideo("21", props.componentids) >= 0 ? (
-          /*(
           data.zoomLight.map((zl) => {
             return zl ? (
               <div className="flex space-x-2 items-center">
@@ -57,13 +56,12 @@ function Photographers(props) {
               </div>
             );
           })
-        )*/ <div>This works somehow</div>
         ) : (
           <div></div>
         )}
       </div>
       <div className="space-y-2">
-        {/*props.hasAddonsForVideo("2", props.componentids) >= 0 ? (
+        {props.hasAddonsForVideo("2", props.componentids) >= 0 ? (
           data.cameraCrane.map((cr) => {
             return cr ? (
               <div className="flex space-x-2 items-center">
@@ -79,10 +77,10 @@ function Photographers(props) {
           })
         ) : (
           <div></div>
-        )*/}
+        )}
       </div>
       <div className="space-y-2">
-        {/*props.hasAddonsForVideo("4", props.componentids) >= 0 ? (
+        {props.hasAddonsForVideo("4", props.componentids) >= 0 ? (
           data.hangingCamera.map((hc) => {
             return hc ? (
               <div className="flex space-x-2 items-center">
@@ -98,10 +96,10 @@ function Photographers(props) {
           })
         ) : (
           <div></div>
-        )*/}
+        )}
       </div>
       <div className="space-y-2">
-        {/*props.hasAddonsForVideo("10", props.componentids) >= 0 ? (
+        {props.hasAddonsForVideo("10", props.componentids) >= 0 ? (
           data.cameraRonin.map((cr) => {
             return cr ? (
               <div className="flex space-x-2 items-center">
@@ -117,7 +115,7 @@ function Photographers(props) {
           })
         ) : (
           <div></div>
-        )*/}
+        )}
       </div>
     </div>
   );
