@@ -36,11 +36,11 @@ function PhotographersWrapper(props) {
           id={props.id}
           date={props.date}
           hasAddonsForVideo={hasAddonsForVideo}
-          componentIDs={props.compsIDs}
+          componentids={props.compsIDs}
         />
       ) : (
         <Photographers
-          componentIDs={props.compsIDs}
+          componentids={props.compsIDs}
           id={props.id}
           token={props.token}
           hasAddonsForVideo={hasAddonsForVideo}
