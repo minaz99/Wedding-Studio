@@ -50,7 +50,12 @@ function EditPhotographersWrapper(props) {
           );
         })}
         <AddPhotographers />
-        <div onClick={() => setAddPhotographer(addPhotographer + 1)}>
+        <div
+          onClick={
+            /*() => setAddPhotographer(addPhotographer + 1)*/ () =>
+              alert("hi there")
+          }
+        >
           <PlusCircleIcon
             height="22"
             className="mx-auto cursor-pointer"
