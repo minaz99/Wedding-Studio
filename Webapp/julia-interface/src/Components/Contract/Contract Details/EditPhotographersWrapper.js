@@ -21,6 +21,7 @@ function EditPhotographersWrapper(props) {
           date={props.date}
           type="Photographer"
           photographer=""
+          id={props.id}
         />
       );
   };
@@ -43,6 +44,7 @@ function EditPhotographersWrapper(props) {
                 date={props.date}
                 type="Photographer"
                 photographer={photographer.name}
+                id={props.id}
               />
             </div>
           ) : (
