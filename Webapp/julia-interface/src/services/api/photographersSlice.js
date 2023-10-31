@@ -33,7 +33,7 @@ export const photographersSlice = createApi({
           "Content-type": "application/json",
           Authorization: `Bearer ${data.token}`,
         },
-        url: `/photographers/remove`,
+        url: `/unset`,
         method: "POST",
         body: data.body,
       }),
@@ -44,4 +44,5 @@ export const photographersSlice = createApi({
 export const {
   useAddPhotographerMutation,
   useGetPhotographersByTypeAndDateQuery,
+  unsetPhotographerToContractMutation,
 } = photographersSlice;
