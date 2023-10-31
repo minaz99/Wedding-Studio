@@ -57,7 +57,12 @@ function GetAvailablePhotographersForContract(props) {
   ) : (
     <div className="flex items-center space-x-2">
       <div>{props.photographer}</div>
-      <XCircleIcon height="20" width="20" color="#64748b" />
+      <XCircleIcon
+        className="cursor-pointer"
+        height="20"
+        width="20"
+        color="#64748b"
+      />
     </div>
   );
 }
