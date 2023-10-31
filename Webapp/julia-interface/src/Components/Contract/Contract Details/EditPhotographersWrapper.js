@@ -20,8 +20,8 @@ function EditPhotographersWrapper(props) {
     </div>
   ) : (
     <div className="flex space-x-8">
-      <div className="flex space-y-2">
-        <div>
+      <div className="w-full space-y-2">
+        <div className="space-y-2">
           {data.photographers.map((photographer) => {
             return photographer ? (
               <div className="flex items-center space-x-2">
