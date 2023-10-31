@@ -26,35 +26,37 @@ function GetAvailablePhotographersForContract(props) {
   };
 
   //alert(`Date: ${props.date.toString().split("T")[0]} and type: ${props.type}`);
-  return (
-    <div className="flex space-x-2 items-center">
-      <DropdownButton id="dropdown-basic-button" title={props.photographer}>
-        {isLoading ? (
-          <div className="text-center text-blue-400 text-xl p-4">Loading</div>
-        ) : isError ? (
-          <div className="text-center text-red-400 text-xl p-4">
-            Error loading photographers
-          </div>
-        ) : result.isLoading ? (
-          <div className="text-center text-blue-400 text-xl p-4">Saving</div>
-        ) : result.isError ? (
-          <div className="text-center text-red-400 text-xl p-4">
-            Error setting photographer
-          </div>
-        ) : (
-          data.Photographers.map((photographer) => {
-            return (
-              <Dropdown.Item
-                onClick={async () =>
-                  savePhotographer(photographer.id, photographer.name)
-                }
-              >
-                {photographer.name}
-              </Dropdown.Item>
-            );
-          })
-        )}{" "}
-      </DropdownButton>
+  return props.photographer === "" ? (
+    <DropdownButton id="dropdown-basic-button" title={props.photographer}>
+      {isLoading ? (
+        <div className="text-center text-blue-400 text-xl p-4">Loading</div>
+      ) : isError ? (
+        <div className="text-center text-red-400 text-xl p-4">
+          Error loading photographers
+        </div>
+      ) : result.isLoading ? (
+        <div className="text-center text-blue-400 text-xl p-4">Saving</div>
+      ) : result.isError ? (
+        <div className="text-center text-red-400 text-xl p-4">
+          Error setting photographer
+        </div>
+      ) : (
+        data.Photographers.map((photographer) => {
+          return (
+            <Dropdown.Item
+              onClick={async () =>
+                savePhotographer(photographer.id, photographer.name)
+              }
+            >
+              {photographer.name}
+            </Dropdown.Item>
+          );
+        })
+      )}{" "}
+    </DropdownButton>
+  ) : (
+    <div className="flex items-center space-x-2">
+      <div>{props.photographer}</div>
       <XCircleIcon height="20" width="20" color="#64748b" />
     </div>
   );
