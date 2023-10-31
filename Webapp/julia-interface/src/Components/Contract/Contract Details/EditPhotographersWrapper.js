@@ -20,28 +20,30 @@ function EditPhotographersWrapper(props) {
     </div>
   ) : (
     <div className="flex space-x-8">
-      <div className="w-full space-y-2">
-        <div className="space-y-2">
-          {data.photographers.map((photographer) => {
-            return photographer ? (
-              <div className="flex items-center space-x-2">
-                <CameraIcon height={22} width={22} color="#db2777" />
-                <div className="text-gray-500">{photographer.type}</div>
-                <GetAvailablePhotographersForContract
-                  token={props.token}
-                  date={props.date}
-                  type="Photographer"
-                  photographer={photographer.name}
-                />
-              </div>
-            ) : (
-              <div></div>
-            );
-          })}
-        </div>
-        <div className="cursor-pointer  mx-auto">
-          <PlusCircleIcon height="22" width="22" color="#64748b" />
-        </div>
+      <div className="space-y-2">
+        {data.photographers.map((photographer) => {
+          return photographer ? (
+            <div className="flex items-center space-x-2">
+              <CameraIcon height={22} width={22} color="#db2777" />
+              <div className="text-gray-500">{photographer.type}</div>
+              <GetAvailablePhotographersForContract
+                token={props.token}
+                date={props.date}
+                type="Photographer"
+                photographer={photographer.name}
+              />
+            </div>
+          ) : (
+            <div></div>
+          );
+        })}
+
+        <PlusCircleIcon
+          height="22"
+          className="mx-auto cursor-pointer"
+          width="22"
+          color="#64748b"
+        />
       </div>
       <div className="space-y-2">
         {data.video.map((video) => {
