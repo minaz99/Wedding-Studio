@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useGetPhotographersForContractQuery } from "../../../services/api/contractSlice";
 import {
   VideoCameraIcon,
@@ -7,11 +7,23 @@ import {
 } from "@heroicons/react/24/outline";
 import GetAvailablePhotographersForContract from "../../Table/Contracts Fetching Components/GetAvailablePhotographersForContract";
 function EditPhotographersWrapper(props) {
+  const [addPhotographer, setAddPhotographer] = useState();
   const { data, isLoading, isError, isSuccess } =
     useGetPhotographersForContractQuery(
       { token: props.token, id: props.id },
       { refetchOnMountOrArgChange: true }
     );
+  const AddPhotographers = () => {
+    for (let i = 0; i < addPhotographer; i++)
+      return (
+        <GetAvailablePhotographersForContract
+          token={props.token}
+          date={props.date}
+          type="Photographer"
+          photographer=""
+        />
+      );
+  };
   return isLoading ? (
     <div className="text-center text-blue-400 text-xl p-4">Loading</div>
   ) : isError ? (
@@ -37,12 +49,13 @@ function EditPhotographersWrapper(props) {
             <div></div>
           );
         })}
-
+        <AddPhotographers />
         <PlusCircleIcon
           height="22"
           className="mx-auto cursor-pointer"
           width="22"
           color="#64748b"
+          onClick={() => setAddPhotographer(addPhotographer + 1)}
         />
       </div>
       <div className="space-y-2">
