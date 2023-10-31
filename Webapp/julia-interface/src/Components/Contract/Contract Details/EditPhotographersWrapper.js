@@ -55,7 +55,9 @@ function EditPhotographersWrapper(props) {
           className="mx-auto cursor-pointer"
           width="22"
           color="#64748b"
-          onClick={() => setAddPhotographer(addPhotographer + 1)}
+          onClick={
+            /*() => setAddPhotographer(addPhotographer + 1)*/ alert("hi there")
+          }
         />
       </div>
       <div className="space-y-2">
