@@ -50,15 +50,14 @@ function EditPhotographersWrapper(props) {
           );
         })}
         <AddPhotographers />
-        <PlusCircleIcon
-          height="22"
-          className="mx-auto cursor-pointer"
-          width="22"
-          color="#64748b"
-          onClick={
-            /*() => setAddPhotographer(addPhotographer + 1)*/ alert("hi there")
-          }
-        />
+        <div onClick={() => setAddPhotographer(addPhotographer + 1)}>
+          <PlusCircleIcon
+            height="22"
+            className="mx-auto cursor-pointer"
+            width="22"
+            color="#64748b"
+          />
+        </div>
       </div>
       <div className="space-y-2">
         {data.video.map((video) => {
