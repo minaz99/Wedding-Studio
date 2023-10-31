@@ -27,6 +27,17 @@ export const photographersSlice = createApi({
         method: "GET",
       }),
     }),
+    unsetPhotographerToContract: builder.mutation({
+      query: (data) => ({
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `Bearer ${data.token}`,
+        },
+        url: `/photographers/remove`,
+        method: "POST",
+        body: data.body,
+      }),
+    }),
   }),
 });
 

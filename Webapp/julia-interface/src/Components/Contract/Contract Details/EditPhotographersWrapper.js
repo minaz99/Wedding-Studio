@@ -1,6 +1,10 @@
 import React from "react";
 import { useGetPhotographersForContractQuery } from "../../../services/api/contractSlice";
-import { VideoCameraIcon, CameraIcon } from "@heroicons/react/24/outline";
+import {
+  VideoCameraIcon,
+  CameraIcon,
+  PlusCircleIcon,
+} from "@heroicons/react/24/outline";
 import GetAvailablePhotographersForContract from "../../Table/Contracts Fetching Components/GetAvailablePhotographersForContract";
 function EditPhotographersWrapper(props) {
   const { data, isLoading, isError, isSuccess } =
@@ -33,6 +37,9 @@ function EditPhotographersWrapper(props) {
             <div></div>
           );
         })}
+        <div className="flex mx-auto">
+          <PlusCircleIcon height="22" width="22" color="#64748b" />
+        </div>
       </div>
       <div className="space-y-2">
         {data.video.map((video) => {
