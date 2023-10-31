@@ -7,7 +7,7 @@ import {
 } from "@heroicons/react/24/outline";
 import GetAvailablePhotographersForContract from "../../Table/Contracts Fetching Components/GetAvailablePhotographersForContract";
 function EditPhotographersWrapper(props) {
-  const [addPhotographer, setAddPhotographer] = useState();
+  const [addPhotographer, setAddPhotographer] = useState(0);
   const { data, isLoading, isError, isSuccess } =
     useGetPhotographersForContractQuery(
       { token: props.token, id: props.id },
@@ -50,12 +50,7 @@ function EditPhotographersWrapper(props) {
           );
         })}
         <AddPhotographers />
-        <div
-          onClick={
-            /*() => setAddPhotographer(addPhotographer + 1)*/ () =>
-              alert("hi there")
-          }
-        >
+        <div onClick={() => setAddPhotographer(addPhotographer + 1)}>
           <PlusCircleIcon
             height="22"
             className="mx-auto cursor-pointer"
