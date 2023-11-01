@@ -9,6 +9,7 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import { XCircleIcon, CameraIcon } from "@heroicons/react/24/outline";
 import { Spinner } from "react-bootstrap";
 function GetAvailablePhotographersForContract(props) {
+  const [deletePhotographer, setDeletePhotographer] = useState(false);
   const [photographer, setPhotographer] = useState(props.photographer);
   const { data, isLoading, isError, isSuccess } =
     useGetPhotographersByTypeAndDateQuery(
@@ -36,6 +37,7 @@ function GetAvailablePhotographersForContract(props) {
       token: props.token,
       body: { photographerID: props.photographerID },
     });
+    setDeletePhotographer(true);
   };
 
   //alert(`Date: ${props.date.toString().split("T")[0]} and type: ${props.type}`);
@@ -77,6 +79,8 @@ function GetAvailablePhotographersForContract(props) {
         )}
       </DropdownButton>
     </div>
+  ) : deletePhotographer ? (
+    <div></div>
   ) : (
     <div className="flex items-center space-x-2">
       <CameraIcon height={22} width={22} color="#db2777" />
