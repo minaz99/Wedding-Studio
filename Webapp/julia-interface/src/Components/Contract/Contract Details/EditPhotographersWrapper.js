@@ -47,6 +47,7 @@ function EditPhotographersWrapper(props) {
                 photographer={photographer.name}
                 id={props.id}
                 photographerID={photographer.id}
+                setDeletePhotographer={setDeletePhotographer}
               />
             </div>
           ) : (

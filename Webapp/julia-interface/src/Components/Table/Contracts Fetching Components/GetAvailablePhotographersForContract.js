@@ -36,6 +36,7 @@ function GetAvailablePhotographersForContract(props) {
       token: props.token,
       body: { photographerID: props.photographerID },
     });
+    props.deletePhotographer(true);
     setPhotographer("");
   };
 
