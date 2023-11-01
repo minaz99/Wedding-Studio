@@ -45,6 +45,7 @@ function EditPhotographersWrapper(props) {
                 type="Photographer"
                 photographer={photographer.name}
                 id={props.id}
+                photographerID={photographer.id}
               />
             </div>
           ) : (

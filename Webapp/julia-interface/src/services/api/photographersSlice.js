@@ -44,5 +44,5 @@ export const photographersSlice = createApi({
 export const {
   useAddPhotographerMutation,
   useGetPhotographersByTypeAndDateQuery,
-  unsetPhotographerToContractMutation,
+  useUnsetPhotographerToContractMutation,
 } = photographersSlice;
