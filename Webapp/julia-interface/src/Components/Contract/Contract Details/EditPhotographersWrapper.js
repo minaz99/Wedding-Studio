@@ -45,7 +45,13 @@ function EditPhotographersWrapper(props) {
               photographerID={photographer.id}
             />
           ) : (
-            <div></div>
+            <GetAvailablePhotographersForContract
+              token={props.token}
+              date={props.date}
+              type="Photographer"
+              photographer={""}
+              id={props.id}
+            />
           );
         })}
         <AddPhotographers />
