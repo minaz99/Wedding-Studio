@@ -36,7 +36,6 @@ function GetAvailablePhotographersForContract(props) {
       token: props.token,
       body: { photographerID: props.photographerID },
     });
-    setPhotographer("");
   };
 
   //alert(`Date: ${props.date.toString().split("T")[0]} and type: ${props.type}`);
@@ -75,7 +74,7 @@ function GetAvailablePhotographersForContract(props) {
               </Dropdown.Item>
             );
           })
-        )}{" "}
+        )}
       </DropdownButton>
     </div>
   ) : (
