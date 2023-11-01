@@ -36,7 +36,6 @@ function GetAvailablePhotographersForContract(props) {
       token: props.token,
       body: { photographerID: props.photographerID },
     });
-    props.deletePhotographer(true);
     setPhotographer("");
   };
 
@@ -48,33 +47,37 @@ function GetAvailablePhotographersForContract(props) {
       Error unsetting photographer
     </div>
   ) : photographer === "" ? (
-    <DropdownButton id="dropdown-basic-button" title={photographer}>
-      {isLoading ? (
-        <div className="text-center text-blue-400 text-xl p-4">Loading</div>
-      ) : isError ? (
-        <div className="text-center text-red-400 text-xl p-4">
-          Error loading photographers
-        </div>
-      ) : result.isLoading ? (
-        <div className="text-center text-blue-400 text-xl p-4">Saving</div>
-      ) : result.isError ? (
-        <div className="text-center text-red-400 text-xl p-4">
-          Error setting photographer
-        </div>
-      ) : (
-        data.Photographers.map((photographer) => {
-          return (
-            <Dropdown.Item
-              onClick={async () =>
-                savePhotographer(photographer.id, photographer.name)
-              }
-            >
-              {photographer.name}
-            </Dropdown.Item>
-          );
-        })
-      )}{" "}
-    </DropdownButton>
+    <div className="flex items-center space-x-2">
+      <CameraIcon height={22} width={22} color="#db2777" />
+      <div className="text-gray-500">{photographer.type}</div>
+      <DropdownButton id="dropdown-basic-button" title={photographer}>
+        {isLoading ? (
+          <div className="text-center text-blue-400 text-xl p-4">Loading</div>
+        ) : isError ? (
+          <div className="text-center text-red-400 text-xl p-4">
+            Error loading photographers
+          </div>
+        ) : result.isLoading ? (
+          <div className="text-center text-blue-400 text-xl p-4">Saving</div>
+        ) : result.isError ? (
+          <div className="text-center text-red-400 text-xl p-4">
+            Error setting photographer
+          </div>
+        ) : (
+          data.Photographers.map((photographer) => {
+            return (
+              <Dropdown.Item
+                onClick={async () =>
+                  savePhotographer(photographer.id, photographer.name)
+                }
+              >
+                {photographer.name}
+              </Dropdown.Item>
+            );
+          })
+        )}{" "}
+      </DropdownButton>
+    </div>
   ) : (
     <div className="flex items-center space-x-2">
       <div>{photographer}</div>
