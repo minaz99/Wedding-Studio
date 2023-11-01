@@ -80,6 +80,8 @@ function GetAvailablePhotographersForContract(props) {
     </div>
   ) : (
     <div className="flex items-center space-x-2">
+      <CameraIcon height={22} width={22} color="#db2777" />
+      <div className="text-gray-500">{photographer.type}</div>
       <div>{photographer}</div>
       <div onClick={() => unsetPhotographer()}>
         <XCircleIcon
