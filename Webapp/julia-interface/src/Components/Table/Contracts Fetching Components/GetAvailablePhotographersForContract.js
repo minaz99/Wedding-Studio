@@ -6,7 +6,7 @@ import {
 import { useSetPhotographerToContractMutation } from "../../../services/api/contractSlice";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
-import { XCircleIcon } from "@heroicons/react/24/outline";
+import { XCircleIcon, CameraIcon } from "@heroicons/react/24/outline";
 import { Spinner } from "react-bootstrap";
 function GetAvailablePhotographersForContract(props) {
   const [photographer, setPhotographer] = useState(props.photographer);
