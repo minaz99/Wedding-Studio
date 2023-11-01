@@ -34,26 +34,30 @@ function EditPhotographersWrapper(props) {
   ) : (
     <div className="flex space-x-8">
       <div className="space-y-2">
-        {data.photographers.map((photographer) => {
-          return photographer ? (
-            <GetAvailablePhotographersForContract
-              token={props.token}
-              date={props.date}
-              type="Photographer"
-              photographer={photographer.name}
-              id={props.id}
-              photographerID={photographer.id}
-            />
-          ) : (
-            <GetAvailablePhotographersForContract
-              token={props.token}
-              date={props.date}
-              type="Photographer"
-              photographer={""}
-              id={props.id}
-            />
-          );
-        })}
+        {data.photographers.length > 0 ? (
+          data.photographers.map((photographer) => {
+            return photographer ? (
+              <GetAvailablePhotographersForContract
+                token={props.token}
+                date={props.date}
+                type="Photographer"
+                photographer={photographer.name}
+                id={props.id}
+                photographerID={photographer.id}
+              />
+            ) : (
+              <div></div>
+            );
+          })
+        ) : (
+          <GetAvailablePhotographersForContract
+            token={props.token}
+            date={props.date}
+            type="Photographer"
+            photographer={""}
+            id={props.id}
+          />
+        )}
         <AddPhotographers />
         <div onClick={() => setAddPhotographer(addPhotographer + 1)}>
           <PlusCircleIcon
