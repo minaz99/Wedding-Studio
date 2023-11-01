@@ -29,7 +29,7 @@ function GetAvailablePhotographersForContract(props) {
       id: props.id,
       body: { photographerID: photographerID },
     });
-    props.setPhotographer(photographerName);
+    setPhotographer(photographerName);
   };
   const unsetPhotographer = async () => {
     await unsetPhotographerToContract({
