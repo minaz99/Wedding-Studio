@@ -49,7 +49,7 @@ function GetAvailablePhotographersForContract(props) {
   ) : photographer === "" ? (
     <div className="flex items-center space-x-2">
       <CameraIcon height={22} width={22} color="#db2777" />
-      <div className="text-gray-500">{photographer.type}</div>
+      <div className="text-gray-500">{props.type}</div>
       <DropdownButton id="dropdown-basic-button" title={photographer}>
         {isLoading ? (
           <div className="text-center text-blue-400 text-xl p-4">Loading</div>
@@ -81,7 +81,7 @@ function GetAvailablePhotographersForContract(props) {
   ) : (
     <div className="flex items-center space-x-2">
       <CameraIcon height={22} width={22} color="#db2777" />
-      <div className="text-gray-500">{photographer.type}</div>
+      <div className="text-gray-500">{props.type}</div>
       <div>{photographer}</div>
       <div onClick={() => unsetPhotographer()}>
         <XCircleIcon
