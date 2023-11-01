@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   useGetPhotographersByTypeAndDateQuery,
   useUnsetPhotographerToContractMutation,
@@ -9,6 +9,7 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import { XCircleIcon } from "@heroicons/react/24/outline";
 import { Spinner } from "react-bootstrap";
 function GetAvailablePhotographersForContract(props) {
+  const [photographer, setPhotographer] = useState(props.photographer);
   const { data, isLoading, isError, isSuccess } =
     useGetPhotographersByTypeAndDateQuery(
       {
@@ -30,6 +31,13 @@ function GetAvailablePhotographersForContract(props) {
     });
     props.setPhotographer(photographerName);
   };
+  const unsetPhotographer = async () => {
+    await unsetPhotographerToContract({
+      token: props.token,
+      body: { photographerID: props.photographerID },
+    });
+    setPhotographer("");
+  };
 
   //alert(`Date: ${props.date.toString().split("T")[0]} and type: ${props.type}`);
   return result2.isLoading ? (
@@ -38,8 +46,8 @@ function GetAvailablePhotographersForContract(props) {
     <div className="text-center text-red-400 text-xl p-4">
       Error unsetting photographer
     </div>
-  ) : props.photographer === "" ? (
-    <DropdownButton id="dropdown-basic-button" title={props.photographer}>
+  ) : photographer === "" ? (
+    <DropdownButton id="dropdown-basic-button" title={photographer}>
       {isLoading ? (
         <div className="text-center text-blue-400 text-xl p-4">Loading</div>
       ) : isError ? (
@@ -68,15 +76,8 @@ function GetAvailablePhotographersForContract(props) {
     </DropdownButton>
   ) : (
     <div className="flex items-center space-x-2">
-      <div>{props.photographer}</div>
-      <div
-        onClick={async () =>
-          await unsetPhotographerToContract({
-            token: props.token,
-            body: { photographerID: props.photographerID },
-          })
-        }
-      >
+      <div>{photographer}</div>
+      <div onClick={() => unsetPhotographer()}>
         <XCircleIcon
           className="cursor-pointer"
           height="20"
