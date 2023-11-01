@@ -8,6 +8,7 @@ import {
 import GetAvailablePhotographersForContract from "../../Table/Contracts Fetching Components/GetAvailablePhotographersForContract";
 function EditPhotographersWrapper(props) {
   const [addPhotographer, setAddPhotographer] = useState(0);
+  const [deletePhotographer, setDeletePhotographer] = useState(false);
   const { data, isLoading, isError, isSuccess } =
     useGetPhotographersForContractQuery(
       { token: props.token, id: props.id },
@@ -35,7 +36,7 @@ function EditPhotographersWrapper(props) {
     <div className="flex space-x-8">
       <div className="space-y-2">
         {data.photographers.map((photographer) => {
-          return photographer ? (
+          return photographer || deletePhotographer ? (
             <div className="flex items-center space-x-2">
               <CameraIcon height={22} width={22} color="#db2777" />
               <div className="text-gray-500">{photographer.type}</div>
