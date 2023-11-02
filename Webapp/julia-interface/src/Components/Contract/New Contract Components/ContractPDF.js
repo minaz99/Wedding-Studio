@@ -20,7 +20,7 @@ function ContractPDF(props) {
     ],
   });
   let total = props.total - props.discount;
-  let compsArray = Object.values(props.packageDetails);
+  let compsArray = ["mina", "hany"]; //Object.values(props.packageDetails);
 
   if (props.componentsSelected.length) {
     props.componentsSelected.forEach((c) => compsArray.push(c.compName));
