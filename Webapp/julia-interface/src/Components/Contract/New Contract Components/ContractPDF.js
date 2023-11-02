@@ -240,9 +240,7 @@ function ContractPDF(props) {
                   display: "flex",
                 }}
               >
-                <Text style={{ flex: "1 1 0%" }}>
-                  {props.packageDetails.name}
-                </Text>
+                <Text style={{ flex: 1 }}>{props.packageDetails.name}</Text>
                 <Text style={{}}>{total} PLN</Text>
                 <Text style={{ marginRight: 6 }}>Total:</Text>
               </View>
