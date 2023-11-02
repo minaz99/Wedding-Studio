@@ -47,11 +47,6 @@ function ContractDetails(props) {
           <div className="text-gray-500">Second Party</div>
           <div>{data.contract.secondpartyname}</div>
         </div>
-        <div className="flex space-x-2 flex-1">
-          <UserCircleIcon height={22} width={22} color="#fbbf24" />
-          <div className="text-gray-500">Created by</div>
-          <div>{data.contract.createdby}</div>
-        </div>
       </div>
 
       <div className="space-y-3">
@@ -69,11 +64,6 @@ function ContractDetails(props) {
           <CalendarDaysIcon height={22} width={22} color="#818cf8" />
           <div className="text-gray-500">Event Date</div>
           <div>{data.contract.eventdate.toString().split("T")[0]}</div>
-        </div>
-        <div className="flex space-x-2 flex-1">
-          <CalendarDaysIcon height={22} width={22} color="#818cf8" />
-          <div className="text-gray-500">Date Created</div>
-          <div>{data.contract.datecreated.toString().split("T")[0]}</div>
         </div>
       </div>
 
@@ -95,12 +85,24 @@ function ContractDetails(props) {
           <div className="text-gray-500">Phone2</div>
           <div>{data.contract.phone2}</div>
         </div>
+      </div>
+      <div className="space-y-3">
         <div className="flex space-x-2">
           <ClockIcon height={22} width={22} color="#475569" />
           <div className="text-gray-500">Status</div>
           <div>
             <StatusWrapper status={data.contract.contractstatus} />
           </div>
+        </div>
+        <div className="flex space-x-2 flex-1">
+          <CalendarDaysIcon height={22} width={22} color="#818cf8" />
+          <div className="text-gray-500">Date Created</div>
+          <div>{data.contract.datecreated.toString().split("T")[0]}</div>
+        </div>
+        <div className="flex space-x-2 flex-1">
+          <UserCircleIcon height={22} width={22} color="#fbbf24" />
+          <div className="text-gray-500">Created by</div>
+          <div>{data.contract.createdby}</div>
         </div>
       </div>
     </div>
