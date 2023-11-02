@@ -8,6 +8,7 @@ import {
   TableCellsIcon,
   UserCircleIcon,
   UserPlusIcon,
+  UsersIcon,
 } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
@@ -103,6 +104,15 @@ function SectionsWrapper(props) {
             </div>
           </div>
           <div className=" space-y-6 absolute bottom-0 mx-auto pb-4 ">
+            <div className="flex space-x-2 items-center">
+              <UsersIcon height={18} width={18} color="#bef264" />
+              <div
+                onClick={() => props.setActiveView("Credits")}
+                className="font-medium text-slate-600  cursor-pointer hover:text-blue-500"
+              >
+                Credits
+              </div>
+            </div>
             <div
               onClick={() => props.setIsLoggedIn(false)}
               className="flex space-x-2 items-center"
