@@ -13,7 +13,7 @@ function Login(props) {
   }, [result.isSuccess]);
 
   return (
-    <div className="w-screen bg-amber-50 h-screen p-6 flex  ">
+    <div className="w-screen bg-amber-50 h-screen p-6   ">
       <div className="bg-blue-200 rounded-xl m-auto h-fit w-fit  p-10 ">
         {result.isLoading ? (
           <Spinner animation="border" role="status"></Spinner>
@@ -62,6 +62,7 @@ function Login(props) {
         )}
       </div>
       <a
+        className=" align-bottom"
         href="https://www.flaticon.com/free-icons/wedding"
         title="wedding icons"
       >
