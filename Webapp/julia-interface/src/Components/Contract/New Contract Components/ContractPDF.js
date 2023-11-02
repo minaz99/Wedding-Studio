@@ -43,12 +43,12 @@ function ContractPDF(props) {
       flexGrow: 1,
     },
   });
-  const styleForNames = {
+  /*const styleForNames = {
     fontFamily: "NotoSansArabic",
     alignItems: "center",
     color: "#64748b",
     marginLeft: 6,
-  };
+  };*/
   return (
     <PDFViewer
       style={{
@@ -86,7 +86,7 @@ function ContractPDF(props) {
                   fontSize: 60,
                 }}
               >
-                عقد اتفاق
+                INVOICE
               </Text>
             </View>
           </View>
@@ -106,10 +106,11 @@ function ContractPDF(props) {
                   marginBottom: 6,
                 }}
               >
-                <Text>:الطرف الثاني</Text>
-                <Text style={{ ...styleForNames }}>
+                <Text>Second Party:</Text>
+                {/*<Text style={{ ...styleForNames }}>
                   {props.secondPartyName}
-                </Text>
+                </Text>*/}
+                <Text>{props.secondPartyName}</Text>
               </View>
               <View
                 style={{
@@ -118,7 +119,7 @@ function ContractPDF(props) {
                   marginBottom: 6,
                 }}
               >
-                <Text>رقم البطاقه المدنيه:</Text>{" "}
+                <Text>Civil ID:</Text>{" "}
                 <Text style={{ color: "#64748b", marginLeft: 6 }}>
                   {props.civilID}
                 </Text>
@@ -129,7 +130,7 @@ function ContractPDF(props) {
                   flexDirection: "row",
                 }}
               >
-                <Text>:نقال</Text>
+                <Text>Contact:</Text>
                 <Text
                   style={{ color: "#64748b", marginLeft: 6, marginBottom: 6 }}
                 >
@@ -142,8 +143,9 @@ function ContractPDF(props) {
                   flexDirection: "row",
                 }}
               >
-                <Text>عنوان الحفله:</Text>
-                <Text style={{ ...styleForNames }}>{props.eventLocation}</Text>
+                <Text>Location:</Text>
+                {/*<Text style={{ ...styleForNames }}>{props.eventLocation}</Text>*/}
+                <Text>{props.eventLocation}</Text>
               </View>
             </View>
             <View>
@@ -154,7 +156,7 @@ function ContractPDF(props) {
                   marginBottom: 6,
                 }}
               >
-                <Text>رقم العقد:</Text>
+                <Text>Contract No:</Text>
                 <Text style={{ color: "#64748b", marginLeft: 6 }}>
                   {new Date().getFullYear()}00{props.id}
                 </Text>
@@ -166,7 +168,7 @@ function ContractPDF(props) {
                   marginBottom: 6,
                 }}
               >
-                <Text>:تاريخ العقد</Text>
+                <Text>Date:</Text>
                 <Text style={{ color: "#64748b", marginLeft: 6 }}>
                   {props.dateCreated}
                 </Text>
@@ -177,7 +179,7 @@ function ContractPDF(props) {
                   flexDirection: "row",
                 }}
               >
-                <Text>تاريخ الحفله:</Text>
+                <Text>Date of Event:</Text>
                 <Text style={{ color: "#64748b", marginLeft: 6 }}>
                   {props.eventDate}
                 </Text>
@@ -228,7 +230,7 @@ function ContractPDF(props) {
                   flexDirection: "row-reverse",
                 }}
               >
-                <Text style={{}}>{total} KD</Text>
+                <Text style={{}}>{total} PLN</Text>
                 <Text style={{ marginRight: 6 }}>Total:</Text>
               </View>
             </View>
@@ -247,11 +249,7 @@ function ContractPDF(props) {
             }}
           >
             <Text style={{ marginBottom: 6, textAlign: "center" }}>
-              Salimya-Salem Al Mubarak St. - 8Mall Com - Mezanian - Shop No.33
-            </Text>
-            <Text style={{ textAlign: "center" }}>
-              +965 65540004 | +965 97364487 | Instagram: julia_studio9 |
-              Snapchat: juliastudione19
+              Vinland-Alley grbario St. - porati - fotelli - Shop No.99
             </Text>
           </View>
         </Page>
