@@ -82,7 +82,7 @@ function ContractPDF(props) {
                 alignItems: "center",
                 width: "70%",
                 backgroundColor: "#f472b6",
-                height: "65%",
+                height: "80%",
               }}
             >
               <Text
@@ -238,9 +238,9 @@ function ContractPDF(props) {
                   padding: 6,
                   color: "#f472b6",
                   display: "flex",
+                  flexDirection: "row-reverse",
                 }}
               >
-                <Text style={{ flex: 1 }}>{props.packageDetails.name}</Text>
                 <Text style={{}}>{total} PLN</Text>
                 <Text style={{ marginRight: 6 }}>Total:</Text>
               </View>
