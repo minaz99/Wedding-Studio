@@ -7,7 +7,7 @@ function Login(props) {
   const [password, setPassword] = useState("");
   const [loginUser, result] = useLoginUserMutation();
   const [errorMsg, setErrMsg] = useState(
-    "Please make sure you entered the email/password correctly"
+    "Please make sure you entered your email/password correctly"
   );
   useEffect(() => {
     props.setUserData(result.data);
