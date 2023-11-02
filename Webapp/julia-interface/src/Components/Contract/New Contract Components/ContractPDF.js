@@ -20,11 +20,22 @@ function ContractPDF(props) {
     ],
   });
   let total = props.total - props.discount;
-  let compsArray = Object.values(props.packageDetails);
-
-  if (props.componentsSelected.length) {
-    props.componentsSelected.forEach((c) => compsArray.push(c.compName));
-  }
+  let compsArray = [];
+  const componentCheck = () => {
+    if (props.packageDetails.magazinename !== "-")
+      compsArray.push(`Magazine ${props.packageDetails.magazinename}`);
+    compsArray.push(`${props.packageDetails.pictures} Pictures`);
+    if (props.packageDetails.albumcrystal) compsArray.push("Album Crystal");
+    if (props.packageDetails.magazinemini) compsArray.push("Magazine Mini");
+    if (props.packageDetails.video) compsArray.push("Video");
+    if (props.packageDetails.openphotoandvideo)
+      compsArray.push("Open Photo and Video");
+    if (props.packageDetails.studio) compsArray.push("Studio");
+    if (props.componentsSelected.length) {
+      props.componentsSelected.forEach((c) => compsArray.push(c.compName));
+    }
+  };
+  componentCheck();
 
   const styles = StyleSheet.create({
     page: {
@@ -227,9 +238,11 @@ function ContractPDF(props) {
                   padding: 6,
                   color: "#f472b6",
                   display: "flex",
-                  flexDirection: "row-reverse",
                 }}
               >
+                <Text style={{ flex: "1 1 0%" }}>
+                  {props.packageDetails.name}
+                </Text>
                 <Text style={{}}>{total} PLN</Text>
                 <Text style={{ marginRight: 6 }}>Total:</Text>
               </View>
