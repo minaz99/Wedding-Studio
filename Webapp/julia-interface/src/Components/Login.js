@@ -58,16 +58,16 @@ function Login(props) {
                 className="rounded-3xl hover:animate-pulse  "
               ></img>
             </div>
+            {result.isError ? (
+              <div className="text-center text-red-400 text-lg">
+                Please make sure you entered your email/password correctly
+              </div>
+            ) : (
+              <div></div>
+            )}
           </div>
         )}
       </div>
-      {result.isError ? (
-        <div className="text-center text-red-400 text-lg">
-          Please make sure you entered your email/password correctly
-        </div>
-      ) : (
-        <div></div>
-      )}
     </div>
   );
 }
