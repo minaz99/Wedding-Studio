@@ -50,13 +50,13 @@ function Login(props) {
                 </div>
               </div>
 
-              {/*<img
+              <img
                 src={newlyweds}
                 alt="logo"
                 width={350}
                 height={100}
                 className="rounded-3xl hover:animate-pulse  "
-                  ></img>*/}
+              ></img>
             </div>
           </div>
         )}
