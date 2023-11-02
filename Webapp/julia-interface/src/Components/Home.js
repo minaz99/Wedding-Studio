@@ -5,6 +5,7 @@ import CreatContractWrapper from "./Contract/New Contract Components/CreatContra
 import CalendarWrapper from "./Calendar/CalendarWrapper";
 import PackagesWrapper from "./Packages/PackagesWrapper";
 import AddPhotographerWrapper from "./Add Photographer/AddPhotographerWrapper";
+import Credits from "./Credits";
 
 function Home(props) {
   const [activeView, setActiveView] = useState("Table");
@@ -38,6 +39,8 @@ function Home(props) {
           <PackagesWrapper role={role} token={token} />
         ) : activeView === "AddPhotographer" ? (
           <AddPhotographerWrapper token={token} />
+        ) : activeView === "Credits" ? (
+          <Credits />
         ) : (
           <div></div>
         )}
