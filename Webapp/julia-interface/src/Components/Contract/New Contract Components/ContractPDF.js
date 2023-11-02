@@ -214,13 +214,7 @@ function ContractPDF(props) {
                     }}
                   >
                     <Text style={{ marginLeft: 95 }}>{ind + 1}</Text>
-                    <Text style={{ marginLeft: 190 }}>
-                      {ind === 0
-                        ? `Magazine ${comp}`
-                        : ind === 1
-                        ? `${comp} Pictures`
-                        : { comp }}
-                    </Text>
+                    <Text style={{ marginLeft: 190 }}>{comp}</Text>
                   </View>
                 );
               })}
