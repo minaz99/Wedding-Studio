@@ -120,9 +120,9 @@ function EditPhotographersWrapper(props) {
           />
         </div>
       </div>
-      <div className="space-y-2">
+      <div>
         {props.hasAddonsForVideo("21", props.componentids) >= 0 ? (
-          <div>
+          <div className="space-y-2">
             {data.zoomLight.length > 0 ? (
               data.zoomLight.map((zl) => {
                 return (
@@ -165,9 +165,9 @@ function EditPhotographersWrapper(props) {
           <div></div>
         )}
       </div>
-      <div className="space-y-2">
+      <div>
         {props.hasAddonsForVideo("2", props.componentids) >= 0 ? (
-          <div>
+          <div className="space-y-2">
             {data.cameraCrane.length > 0 ? (
               data.cameraCrane.map((cr) => {
                 return (
@@ -210,9 +210,9 @@ function EditPhotographersWrapper(props) {
           <div></div>
         )}
       </div>
-      <div className="space-y-2">
+      <div>
         {props.hasAddonsForVideo("4", props.componentids) >= 0 ? (
-          <div>
+          <div className="space-y-2">
             {data.hangingCamera.length > 0 ? (
               data.hangingCamera.map((hc) => {
                 return (
@@ -255,9 +255,9 @@ function EditPhotographersWrapper(props) {
           <div></div>
         )}
       </div>
-      <div className="space-y-2">
+      <div>
         {props.hasAddonsForVideo("10", props.componentids) >= 0 ? (
-          <div>
+          <div className="space-y-2">
             {data.cameraRonin.length > 0 ? (
               data.cameraRonin.map((cr) => {
                 return (
