@@ -6,13 +6,10 @@ function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loginUser, result] = useLoginUserMutation();
-  const [errorMsg, setErrMsg] = useState(
-    "Please make sure you entered your email/password correctly"
-  );
+
   useEffect(() => {
     props.setUserData(result.data);
     props.setIsLoggedIn(result.isSuccess);
-    setErrMsg("");
   }, [result.isSuccess]);
 
   return (
@@ -65,7 +62,9 @@ function Login(props) {
         )}
       </div>
       {result.isError ? (
-        <div className="text-center text-red-400 text-lg">{errorMsg}</div>
+        <div className="text-center text-red-400 text-lg">
+          Please make sure you entered your email/password correctly
+        </div>
       ) : (
         <div></div>
       )}
