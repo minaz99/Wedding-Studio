@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import juliaLogo2 from "../juliaLogo2.png";
+import newlyweds from "../newlyweds.png";
 import { useLoginUserMutation } from "../services/api/loginSlice";
 import { Spinner } from "react-bootstrap";
 function Login(props) {
@@ -20,7 +20,7 @@ function Login(props) {
         ) : (
           <div>
             <div className="text-amber-50 tracking-widest underline underline-offset-8 decoration-pink-200 font-extralight text-5xl text-center hover:animate-bounce">
-              Julia Studio
+              Wedding Studio
             </div>
             <div className="flex space-x-12 mt-12">
               <div className="justify-center grid mt-20 space-y-8 ">
