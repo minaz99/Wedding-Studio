@@ -1,5 +1,4 @@
 import React from "react";
-import juliaLogo2 from "../../../juliaLogo2.png";
 import NotoSansArabic from "../../../styles/fonts/NotoSansArabic-VariableFont_wdth.ttf";
 import {
   Document,
@@ -21,10 +20,7 @@ function ContractPDF(props) {
     ],
   });
   let total = props.total - props.discount;
-  let compsArray = [
-    `Magazine ${props.packageDetails.magazinename}`,
-    `${props.packageDetails.pictures} Pictures`,
-  ];
+  let compsArray = [Object.values(props.packageDetails)];
 
   if (props.componentsSelected.length) {
     props.componentsSelected.forEach((c) => compsArray.push(c.compName));
@@ -63,7 +59,7 @@ function ContractPDF(props) {
         <Page size="A4" style={styles.page}>
           <View style={{ display: "flex", flexDirection: "row" }}>
             <Image
-              src={juliaLogo2}
+              src={""}
               alt="logo"
               width={450}
               height={200}
@@ -110,7 +106,9 @@ function ContractPDF(props) {
                 {/*<Text style={{ ...styleForNames }}>
                   {props.secondPartyName}
                 </Text>*/}
-                <Text>{props.secondPartyName}</Text>
+                <Text style={{ color: "#64748b", marginLeft: 6 }}>
+                  {props.secondPartyName}
+                </Text>
               </View>
               <View
                 style={{
@@ -145,7 +143,9 @@ function ContractPDF(props) {
               >
                 <Text>Location:</Text>
                 {/*<Text style={{ ...styleForNames }}>{props.eventLocation}</Text>*/}
-                <Text>{props.eventLocation}</Text>
+                <Text style={{ color: "#64748b", marginLeft: 6 }}>
+                  {props.eventLocation}
+                </Text>
               </View>
             </View>
             <View>
@@ -214,10 +214,16 @@ function ContractPDF(props) {
                     }}
                   >
                     <Text style={{ marginLeft: 95 }}>{ind + 1}</Text>
-                    <Text style={{ marginLeft: 190 }}>{comp}</Text>
+                    <Text style={{ marginLeft: 190 }}>
+                      {ind === 0
+                        ? `Magazine ${comp}`
+                        : ind === 1
+                        ? `${comp} Pictures`
+                        : { comp }}
+                    </Text>
                   </View>
                 );
-              })}{" "}
+              })}
               <View
                 style={{
                   backgroundColor:
