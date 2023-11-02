@@ -20,7 +20,7 @@ function ContractPDF(props) {
     ],
   });
   let total = props.total - props.discount;
-  let compsArray = ["mina", "hany"]; //Object.values(props.packageDetails);
+  let compsArray = Object.values(props.packageDetails);
 
   if (props.componentsSelected.length) {
     props.componentsSelected.forEach((c) => compsArray.push(c.compName));
@@ -202,7 +202,7 @@ function ContractPDF(props) {
               <Text>No.</Text>
               <Text>Component Name</Text>
             </View>
-            {/*<View>
+            <View>
               {compsArray.map((comp, ind) => {
                 return (
                   <View
@@ -214,7 +214,13 @@ function ContractPDF(props) {
                     }}
                   >
                     <Text style={{ marginLeft: 95 }}>{ind + 1}</Text>
-                    <Text style={{ marginLeft: 190 }}>{comp}</Text>
+                    <Text style={{ marginLeft: 190 }}>
+                      {ind === 0
+                        ? `Magazine ${comp}`
+                        : ind === 1
+                        ? `${comp} Pictures`
+                        : { comp }}
+                    </Text>
                   </View>
                 );
               })}
@@ -233,7 +239,7 @@ function ContractPDF(props) {
                 <Text style={{}}>{total} PLN</Text>
                 <Text style={{ marginRight: 6 }}>Total:</Text>
               </View>
-            </View>*/}
+            </View>
           </View>
 
           <View
