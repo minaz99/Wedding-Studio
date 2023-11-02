@@ -202,7 +202,7 @@ function ContractPDF(props) {
               <Text>No.</Text>
               <Text>Component Name</Text>
             </View>
-            <View>
+            {/*<View>
               {compsArray.map((comp, ind) => {
                 return (
                   <View
@@ -233,7 +233,7 @@ function ContractPDF(props) {
                 <Text style={{}}>{total} PLN</Text>
                 <Text style={{ marginRight: 6 }}>Total:</Text>
               </View>
-            </View>
+            </View>*/}
           </View>
 
           <View
