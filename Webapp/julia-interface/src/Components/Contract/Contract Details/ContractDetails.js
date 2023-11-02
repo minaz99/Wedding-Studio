@@ -95,8 +95,6 @@ function ContractDetails(props) {
           <div className="text-gray-500">Phone2</div>
           <div>{data.contract.phone2}</div>
         </div>
-      </div>
-      <div className="space-y-3">
         <div className="flex space-x-2">
           <ClockIcon height={22} width={22} color="#475569" />
           <div className="text-gray-500">Status</div>
@@ -104,39 +102,6 @@ function ContractDetails(props) {
             <StatusWrapper status={data.contract.contractstatus} />
           </div>
         </div>
-        {/*
-        {props.hasAddonsForVideo("21", data.contract.componentids) >= 0 ? (
-          <Photographers id={props.id} token={props.token} type="Zoom Light" />
-        ) : (
-          <div></div>
-        )}
-        {props.hasAddonsForVideo("2", data.contract.componentids) >= 0 ? (
-          <Photographers
-            id={props.id}
-            token={props.token}
-            type="Camera Crane"
-          />
-        ) : (
-          <div></div>
-        )}
-        {props.hasAddonsForVideo("4", data.contract.componentids) >= 0 ? (
-          <Photographers
-            id={props.id}
-            token={props.token}
-            type="Hanging Camera"
-          />
-        ) : (
-          <div></div>
-        )}
-        {props.hasAddonsForVideo("10", data.contract.componentids) >= 0 ? (
-          <Photographers
-            id={props.id}
-            token={props.token}
-            type="Camera Ronin"
-          />
-        ) : (
-          <div></div>
-        )}*/}
       </div>
     </div>
   ) : (
