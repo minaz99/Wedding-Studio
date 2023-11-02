@@ -63,7 +63,13 @@ function EditPhotographersWrapper(props) {
             id={props.id}
           />
         )}
-        <AddPhotographers typeNo={addPhotographer} type={"Photographer"} />
+        <AddPhotographers
+          token={props.token}
+          date={props.date}
+          id={props.id}
+          typeNo={addPhotographer}
+          type={"Photographer"}
+        />
         <div onClick={() => setAddPhotographer(addPhotographer + 1)}>
           <PlusCircleIcon
             height="22"
@@ -98,7 +104,13 @@ function EditPhotographersWrapper(props) {
             id={props.id}
           />
         )}
-        <AddPhotographers typeNo={addVideo} type={"Video"} />
+        <AddPhotographers
+          token={props.token}
+          date={props.date}
+          id={props.id}
+          typeNo={addVideo}
+          type={"Video"}
+        />
         <div onClick={() => setAddVideo(addVideo + 1)}>
           <PlusCircleIcon
             height="22"
@@ -133,7 +145,13 @@ function EditPhotographersWrapper(props) {
                 id={props.id}
               />
             )}
-            <AddPhotographers typeNo={addZoomLight} type={"Zoom Light"} />
+            <AddPhotographers
+              token={props.token}
+              date={props.date}
+              id={props.id}
+              typeNo={addZoomLight}
+              type={"Zoom Light"}
+            />
             <div onClick={() => setAddZoomLight(addZoomLight + 1)}>
               <PlusCircleIcon
                 height="22"
@@ -172,7 +190,13 @@ function EditPhotographersWrapper(props) {
                 id={props.id}
               />
             )}
-            <AddPhotographers typeNo={addCameraCrane} type={"Camera Crane"} />
+            <AddPhotographers
+              token={props.token}
+              date={props.date}
+              id={props.id}
+              typeNo={addCameraCrane}
+              type={"Camera Crane"}
+            />
             <div onClick={() => setAddCameraCrane(addCameraCrane + 1)}>
               <PlusCircleIcon
                 height="22"
@@ -212,6 +236,9 @@ function EditPhotographersWrapper(props) {
               />
             )}
             <AddPhotographers
+              token={props.token}
+              date={props.date}
+              id={props.id}
               typeNo={addHangingCamera}
               type={"Hanging Camera"}
             />
@@ -253,7 +280,13 @@ function EditPhotographersWrapper(props) {
                 id={props.id}
               />
             )}
-            <AddPhotographers typeNo={addHangingCamera} type={"Camera Ronin"} />
+            <AddPhotographers
+              token={props.token}
+              date={props.date}
+              id={props.id}
+              typeNo={addHangingCamera}
+              type={"Camera Ronin"}
+            />
             <div onClick={() => setAddCameraRonin(addCameraRonin + 1)}>
               <PlusCircleIcon
                 height="22"
