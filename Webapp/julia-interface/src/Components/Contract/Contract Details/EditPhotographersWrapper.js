@@ -8,18 +8,23 @@ import {
 import GetAvailablePhotographersForContract from "../../Table/Contracts Fetching Components/GetAvailablePhotographersForContract";
 function EditPhotographersWrapper(props) {
   const [addPhotographer, setAddPhotographer] = useState(0);
+  const [addVideo, setAddVideo] = useState(0);
+  const [addZoomLight, setAddZoomLight] = useState(0);
+  const [addCameraCrane, setAddCameraCrane] = useState(0);
+  const [addCameraRonin, setAddCameraRonin] = useState(0);
+  const [addHangingCamera, setAddHangingCamera] = useState(0);
   const { data, isLoading, isError, isSuccess } =
     useGetPhotographersForContractQuery(
       { token: props.token, id: props.id },
       { refetchOnMountOrArgChange: true }
     );
-  const AddPhotographers = () => {
-    for (let i = 0; i < addPhotographer; i++)
+  const AddPhotographers = (typeNo, type) => {
+    for (let i = 0; i < typeNo; i++)
       return (
         <GetAvailablePhotographersForContract
           token={props.token}
           date={props.date}
-          type="Photographer"
+          type={type}
           photographer=""
           id={props.id}
         />
@@ -58,7 +63,7 @@ function EditPhotographersWrapper(props) {
             id={props.id}
           />
         )}
-        <AddPhotographers />
+        <AddPhotographers typeNo={addPhotographer} type={"Photographer"} />
         <div onClick={() => setAddPhotographer(addPhotographer + 1)}>
           <PlusCircleIcon
             height="22"
@@ -69,102 +74,195 @@ function EditPhotographersWrapper(props) {
         </div>
       </div>
       <div className="space-y-2">
-        {data.video.map((video) => {
-          return video ? (
-            <div className="flex space-x-2 items-center">
-              <VideoCameraIcon height={22} width={22} color="#db2777" />
-              <div className="text-gray-500">{video.type}</div>
-              <div>{video.name}</div>
-            </div>
-          ) : (
-            <div></div>
-          );
-        })}
+        {data.video.length > 0 ? (
+          data.video.map((video) => {
+            return video ? (
+              <GetAvailablePhotographersForContract
+                token={props.token}
+                date={props.date}
+                type="Video"
+                photographer={video.name}
+                id={props.id}
+                photographerID={video.id}
+              />
+            ) : (
+              <div></div>
+            );
+          })
+        ) : (
+          <GetAvailablePhotographersForContract
+            token={props.token}
+            date={props.date}
+            type="Video"
+            photographer={""}
+            id={props.id}
+          />
+        )}
+        <AddPhotographers typeNo={addVideo} type={"Video"} />
+        <div onClick={() => setAddVideo(addVideo + 1)}>
+          <PlusCircleIcon
+            height="22"
+            className="mx-auto cursor-pointer"
+            width="22"
+            color="#64748b"
+          />
+        </div>
       </div>
       <div className="space-y-2">
         {props.hasAddonsForVideo("21", props.componentids) >= 0 ? (
-          data.zoomLight.length > 0 ? (
-            data.zoomLight.map((zl) => {
-              return (
-                <div className="flex space-x-2 items-center">
-                  <VideoCameraIcon height={22} width={22} color="#db2777" />
-                  <div className="text-gray-500">{zl.type}</div>
-                  <div>{zl.name}</div>
-                </div>
-              );
-            })
-          ) : (
-            <div className="flex space-x-2 items-center">
-              <VideoCameraIcon height={22} width={22} color="#db2777" />
-              <div className="text-gray-500">Zoom Light</div>
+          <div>
+            {data.zoomLight.length > 0 ? (
+              data.zoomLight.map((zl) => {
+                return (
+                  <GetAvailablePhotographersForContract
+                    token={props.token}
+                    date={props.date}
+                    type="Zoom Light"
+                    photographer={zl.name}
+                    id={props.id}
+                    photographerID={zl.id}
+                  />
+                );
+              })
+            ) : (
+              <GetAvailablePhotographersForContract
+                token={props.token}
+                date={props.date}
+                type="Zoom Light"
+                photographer={""}
+                id={props.id}
+              />
+            )}
+            <AddPhotographers typeNo={addZoomLight} type={"Zoom Light"} />
+            <div onClick={() => setAddZoomLight(addZoomLight + 1)}>
+              <PlusCircleIcon
+                height="22"
+                className="mx-auto cursor-pointer"
+                width="22"
+                color="#64748b"
+              />
             </div>
-          )
+          </div>
         ) : (
           <div></div>
         )}
       </div>
       <div className="space-y-2">
         {props.hasAddonsForVideo("2", props.componentids) >= 0 ? (
-          data.cameraCrane.length > 0 ? (
-            data.cameraCrane.map((cr) => {
-              return (
-                <div className="flex space-x-2 items-center">
-                  <VideoCameraIcon height={22} width={22} color="#db2777" />
-                  <div className="text-gray-500">{cr.type}</div>
-                  <div>{cr.name}</div>
-                </div>
-              );
-            })
-          ) : (
-            <div className="flex space-x-2 items-center">
-              <VideoCameraIcon height={22} width={22} color="#db2777" />
-              <div className="text-gray-500">Camera Crane</div>
+          <div>
+            {data.cameraCrane.length > 0 ? (
+              data.cameraCrane.map((cr) => {
+                return (
+                  <GetAvailablePhotographersForContract
+                    token={props.token}
+                    date={props.date}
+                    type="Camera Crane"
+                    photographer={cr.name}
+                    id={props.id}
+                    photographerID={cr.id}
+                  />
+                );
+              })
+            ) : (
+              <GetAvailablePhotographersForContract
+                token={props.token}
+                date={props.date}
+                type="Camera Crane"
+                photographer={""}
+                id={props.id}
+              />
+            )}
+            <AddPhotographers typeNo={addCameraCrane} type={"Camera Crane"} />
+            <div onClick={() => setAddCameraCrane(addCameraCrane + 1)}>
+              <PlusCircleIcon
+                height="22"
+                className="mx-auto cursor-pointer"
+                width="22"
+                color="#64748b"
+              />
             </div>
-          )
+          </div>
         ) : (
           <div></div>
         )}
       </div>
       <div className="space-y-2">
         {props.hasAddonsForVideo("4", props.componentids) >= 0 ? (
-          data.hangingCamera.length > 0 ? (
-            data.hangingCamera.map((hc) => {
-              return (
-                <div className="flex space-x-2 items-center">
-                  <VideoCameraIcon height={22} width={22} color="#db2777" />
-                  <div className="text-gray-500">{hc.type}</div>
-                  <div>{hc.name}</div>
-                </div>
-              );
-            })
-          ) : (
-            <div className="flex space-x-2 items-center">
-              <VideoCameraIcon height={22} width={22} color="#db2777" />
-              <div className="text-gray-500">Hanging Camera</div>
+          <div>
+            {data.hangingCamera.length > 0 ? (
+              data.hangingCamera.map((hc) => {
+                return (
+                  <GetAvailablePhotographersForContract
+                    token={props.token}
+                    date={props.date}
+                    type="Hanging Camera"
+                    photographer={hc.name}
+                    id={props.id}
+                    photographerID={hc.id}
+                  />
+                );
+              })
+            ) : (
+              <GetAvailablePhotographersForContract
+                token={props.token}
+                date={props.date}
+                type="Hanging Camera"
+                photographer={""}
+                id={props.id}
+              />
+            )}
+            <AddPhotographers
+              typeNo={addHangingCamera}
+              type={"Hanging Camera"}
+            />
+            <div onClick={() => setAddHangingCamera(addHangingCamera + 1)}>
+              <PlusCircleIcon
+                height="22"
+                className="mx-auto cursor-pointer"
+                width="22"
+                color="#64748b"
+              />
             </div>
-          )
+          </div>
         ) : (
           <div></div>
         )}
       </div>
       <div className="space-y-2">
         {props.hasAddonsForVideo("10", props.componentids) >= 0 ? (
-          data.cameraRonin.length > 0 ? (
-            data.cameraRonin.map((cr) => {
-              return (
-                <div className="flex space-x-2 items-center">
-                  <VideoCameraIcon height={22} width={22} color="#db2777" />
-                  <div className="text-gray-500">{cr.type}</div>
-                  <div>{cr.name}</div>
-                </div>
-              );
-            })
-          ) : (
-            <div className="flex space-x-2 items-center">
-              <VideoCameraIcon height={22} width={22} color="#db2777" />
-              <div className="text-gray-500">Camera Ronin</div>
+          <div>
+            {data.cameraRonin.length > 0 ? (
+              data.cameraRonin.map((cr) => {
+                return (
+                  <GetAvailablePhotographersForContract
+                    token={props.token}
+                    date={props.date}
+                    type="Camera Ronin"
+                    photographer={cr.name}
+                    id={props.id}
+                    photographerID={cr.id}
+                  />
+                );
+              })
+            ) : (
+              <GetAvailablePhotographersForContract
+                token={props.token}
+                date={props.date}
+                type="Camera Ronin"
+                photographer={""}
+                id={props.id}
+              />
+            )}
+            <AddPhotographers typeNo={addHangingCamera} type={"Camera Ronin"} />
+            <div onClick={() => setAddCameraRonin(addCameraRonin + 1)}>
+              <PlusCircleIcon
+                height="22"
+                className="mx-auto cursor-pointer"
+                width="22"
+                color="#64748b"
+              />
             </div>
-          )
+          </div>
         ) : (
           <div></div>
         )}
