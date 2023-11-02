@@ -18,13 +18,13 @@ function EditPhotographersWrapper(props) {
       { token: props.token, id: props.id },
       { refetchOnMountOrArgChange: true }
     );
-  const AddPhotographers = (typeNo, type) => {
-    for (let i = 0; i < typeNo; i++)
+  const AddPhotographers = (props) => {
+    for (let i = 0; i < props.typeNo; i++)
       return (
         <GetAvailablePhotographersForContract
           token={props.token}
           date={props.date}
-          type={type}
+          type={props.type}
           photographer=""
           id={props.id}
         />
