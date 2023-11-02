@@ -51,7 +51,7 @@ function Login(props) {
               </div>
 
               <img
-                src={juliaLogo2}
+                src={newlyweds}
                 alt="logo"
                 width={350}
                 height={100}
