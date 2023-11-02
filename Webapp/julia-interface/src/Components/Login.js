@@ -6,10 +6,13 @@ function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loginUser, result] = useLoginUserMutation();
-
+  const [errorMsg, setErrMsg] = useState(
+    "Please make sure you entered the email/password correctly"
+  );
   useEffect(() => {
     props.setUserData(result.data);
     props.setIsLoggedIn(result.isSuccess);
+    setErrMsg("");
   }, [result.isSuccess]);
 
   return (
@@ -58,6 +61,7 @@ function Login(props) {
                 className="rounded-3xl hover:animate-pulse  "
               ></img>
             </div>
+            <div className="text-center text-red-400 text-lg">{errorMsg}</div>
           </div>
         )}
       </div>
