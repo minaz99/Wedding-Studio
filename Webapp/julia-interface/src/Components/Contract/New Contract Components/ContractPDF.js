@@ -82,7 +82,7 @@ function ContractPDF(props) {
                 alignItems: "center",
                 width: "70%",
                 backgroundColor: "#f472b6",
-                height: "80%",
+                height: "95%",
               }}
             >
               <Text
