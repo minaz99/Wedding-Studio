@@ -61,6 +61,12 @@ function Login(props) {
           </div>
         )}
       </div>
+      <a
+        href="https://www.flaticon.com/free-icons/wedding"
+        title="wedding icons"
+      >
+        Wedding icons created by Vectors Market - Flaticon
+      </a>
     </div>
   );
 }
