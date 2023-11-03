@@ -142,25 +142,8 @@ function EditContractDetails(props) {
               />
               <LockClosedIcon height={22} width={22} color="#94a3b8" />
             </div>
-            <div className="flex space-x-2 items-center flex-1">
-              <UserCircleIcon height={22} width={22} color="#fed7aa" />
-              <div className="text-gray-500">Created by</div>
-              <input
-                value={data.contract.createdby}
-                style={{
-                  background: "#e2e8f0",
-                  borderRadius: "6px",
-                  border: "none",
-                  color: "#475569",
-                  padding: "3px 3px 3px 3px",
-                  outline: "none",
-                }}
-                className="font-medium "
-                disabled
-              />
-              <LockClosedIcon height={22} width={22} color="#94a3b8" />
-            </div>
-
+          </div>
+          <div className="space-y-3 flex-1 ">
             <div className="flex space-x-2 items-center flex-1">
               <MegaphoneIcon height={22} width={22} color="#a78bfa" />
               <div className="text-gray-500">Type</div>
@@ -216,26 +199,6 @@ function EditContractDetails(props) {
             </div>
           </div>
           <div className="space-y-3 ">
-            <div className="flex space-x-2 items-center flex-1">
-              <CalendarDaysIcon height={22} width={22} color="#818cf8" />
-              <div className="text-gray-500">Date Created</div>
-              <input
-                type="date"
-                value={data.contract.datecreated.toString().split("T")[0]}
-                style={{
-                  background: "#e2e8f0",
-                  borderRadius: "6px",
-                  color: "#475569",
-                  padding: "4px 4px 4px 4px",
-                  border: "none",
-                  outline: "none",
-                }}
-                className="font-medium"
-                disabled
-              />
-              <LockClosedIcon height={22} width={22} color="#94a3b8" />
-            </div>
-
             <div className="space-y-3">
               <div className="flex space-x-2 items-center flex-1">
                 <IdentificationIcon height={22} width={22} color="#475569" />
@@ -312,22 +275,30 @@ function EditContractDetails(props) {
                 />
                 <LockClosedIcon height={22} width={22} color="#94a3b8" />
               </div>
-
               <div className="flex space-x-2 items-center flex-1">
-                <CameraIcon height={22} width={22} color="#db2777" />
-                <div className="text-gray-500">Photographer</div>
-                <EditPhotographersWrapper
-                  token={props.token}
-                  id={props.id}
-                  type="Photographer"
-                  date={date}
+                <CalendarDaysIcon height={22} width={22} color="#818cf8" />
+                <div className="text-gray-500">Date Created</div>
+                <input
+                  type="date"
+                  value={data.contract.datecreated.toString().split("T")[0]}
+                  style={{
+                    background: "#e2e8f0",
+                    borderRadius: "6px",
+                    color: "#475569",
+                    padding: "4px 4px 4px 4px",
+                    border: "none",
+                    outline: "none",
+                  }}
+                  className="font-medium"
+                  disabled
                 />
+                <LockClosedIcon height={22} width={22} color="#94a3b8" />
               </div>
               <div className="flex space-x-2 items-center flex-1">
-                <VideoCameraIcon height={22} width={22} color="#db2777" />
-                <div className="text-gray-500">Video</div>
+                <UserCircleIcon height={22} width={22} color="#fed7aa" />
+                <div className="text-gray-500">Created by</div>
                 <input
-                  value={video}
+                  value={data.contract.createdby}
                   style={{
                     background: "#e2e8f0",
                     borderRadius: "6px",
@@ -337,95 +308,10 @@ function EditContractDetails(props) {
                     outline: "none",
                   }}
                   className="font-medium "
-                  onChange={(e) => setVideo(e.target.value)}
+                  disabled
                 />
+                <LockClosedIcon height={22} width={22} color="#94a3b8" />
               </div>
-              {props.hasAddonsForVideo("21", data.contract.componentids) >=
-              0 ? (
-                <div className="flex space-x-2 items-center flex-1">
-                  <VideoCameraIcon height={22} width={22} color="#db2777" />
-                  <div className="text-gray-500">Zoom Light</div>
-                  <input
-                    value={zoomLight}
-                    style={{
-                      background: "#e2e8f0",
-                      borderRadius: "6px",
-                      border: "none",
-                      color: "#475569",
-                      padding: "3px 3px 3px 3px",
-                      outline: "none",
-                    }}
-                    className="font-medium "
-                    onChange={(e) => setZoomLight(e.target.value)}
-                  />
-                </div>
-              ) : (
-                <div></div>
-              )}
-              {props.hasAddonsForVideo("2", data.contract.componentids) >= 0 ? (
-                <div className="flex space-x-2 items-center flex-1">
-                  <VideoCameraIcon height={22} width={22} color="#db2777" />
-                  <div className="text-gray-500">Camera Crane</div>
-                  <input
-                    value={cameraCrane}
-                    style={{
-                      background: "#e2e8f0",
-                      borderRadius: "6px",
-                      border: "none",
-                      color: "#475569",
-                      padding: "3px 3px 3px 3px",
-                      outline: "none",
-                    }}
-                    className="font-medium "
-                    onChange={(e) => setCameraCrane(e.target.value)}
-                  />
-                </div>
-              ) : (
-                <div></div>
-              )}
-              {props.hasAddonsForVideo("4", data.contract.componentids) >= 0 ? (
-                <div className="flex space-x-2 items-center flex-1">
-                  <VideoCameraIcon height={22} width={22} color="#db2777" />
-                  <div className="text-gray-500">Hanging Camera</div>
-                  <input
-                    value={hangingCamera}
-                    style={{
-                      background: "#e2e8f0",
-                      borderRadius: "6px",
-                      border: "none",
-                      color: "#475569",
-                      padding: "3px 3px 3px 3px",
-                      outline: "none",
-                    }}
-                    className="font-medium "
-                    onChange={(e) => setHangingCamera(e.target.value)}
-                  />
-                </div>
-              ) : (
-                <div></div>
-              )}
-              {props.hasAddonsForVideo("10", data.contract.componentids) >=
-              0 ? (
-                <div className="flex space-x-2 items-center flex-1">
-                  <VideoCameraIcon height={22} width={22} color="#db2777" />
-                  <div className="text-gray-500">Camera Ronin</div>
-                  <input
-                    value={cameraRonin}
-                    style={{
-                      background: "#e2e8f0",
-                      borderRadius: "6px",
-                      border: "none",
-                      color: "#475569",
-                      padding: "3px 3px 3px 3px",
-                      outline: "none",
-                    }}
-                    className="font-medium "
-                    onChange={(e) => setCameraRonin(e.target.value)}
-                  />
-                </div>
-              ) : (
-                <div></div>
-              )}
             </div>
           </div>
         </div>
