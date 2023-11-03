@@ -199,119 +199,117 @@ function EditContractDetails(props) {
             </div>
           </div>
           <div className="space-y-3 ">
-            <div className="space-y-3">
-              <div className="flex space-x-2 items-center flex-1">
-                <IdentificationIcon height={22} width={22} color="#475569" />
-                <div className="text-gray-500">Civil ID</div>
-                <input
-                  value={data.contract.civilid}
-                  style={{
-                    background: "#e2e8f0",
-                    borderRadius: "6px",
-                    border: "none",
-                    color: "#475569",
-                    padding: "3px 3px 3px 3px",
-                    outline: "none",
-                  }}
-                  className="font-medium "
-                  disabled
-                />
-                <LockClosedIcon height={22} width={22} color="#94a3b8" />
-              </div>
-              <div className="flex space-x-2 items-center flex-1">
-                <PhoneIcon height={22} width={22} color="#4ade80" />
-
-                <div className="text-gray-500">Phone 1</div>
-                <input
-                  value={phone1}
-                  style={{
-                    background: "#e2e8f0",
-                    borderRadius: "6px",
-                    border: "none",
-                    color: "#475569",
-                    padding: "3px 3px 3px 3px",
-                    outline: "none",
-                  }}
-                  className="font-medium "
-                  onChange={(e) => setPhone1(e.target.value)}
-                />
-              </div>
-              <div className="flex space-x-2 items-center flex-1">
-                <PhoneIcon height={22} width={22} color="#4ade80" />
-
-                <div className="text-gray-500">Phone 2</div>
-                <input
-                  value={phone2}
-                  style={{
-                    background: "#e2e8f0",
-                    borderRadius: "6px",
-                    border: "none",
-                    color: "#475569",
-                    padding: "3px 3px 3px 3px",
-                    outline: "none",
-                  }}
-                  className="font-medium "
-                  onChange={(e) => setPhone2(e.target.value)}
-                />
-              </div>
+            <div className="flex space-x-2 items-center flex-1">
+              <IdentificationIcon height={22} width={22} color="#475569" />
+              <div className="text-gray-500">Civil ID</div>
+              <input
+                value={data.contract.civilid}
+                style={{
+                  background: "#e2e8f0",
+                  borderRadius: "6px",
+                  border: "none",
+                  color: "#475569",
+                  padding: "3px 3px 3px 3px",
+                  outline: "none",
+                }}
+                className="font-medium "
+                disabled
+              />
+              <LockClosedIcon height={22} width={22} color="#94a3b8" />
             </div>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-2">
-                <ClockIcon height={22} width={22} color="#475569" />
-                <div className="text-gray-500">Status </div>
+            <div className="flex space-x-2 items-center flex-1">
+              <PhoneIcon height={22} width={22} color="#4ade80" />
 
-                <input
-                  value={data.contract.contractstatus}
-                  style={{
-                    background: "#e2e8f0",
-                    borderRadius: "6px",
-                    border: "none",
-                    color: "#475569",
-                    padding: "3px 3px 3px 3px",
-                    outline: "none",
-                  }}
-                  className="font-medium "
-                  disabled
-                />
-                <LockClosedIcon height={22} width={22} color="#94a3b8" />
-              </div>
-              <div className="flex space-x-2 items-center flex-1">
-                <CalendarDaysIcon height={22} width={22} color="#818cf8" />
-                <div className="text-gray-500">Date Created</div>
-                <input
-                  type="date"
-                  value={data.contract.datecreated.toString().split("T")[0]}
-                  style={{
-                    background: "#e2e8f0",
-                    borderRadius: "6px",
-                    color: "#475569",
-                    padding: "4px 4px 4px 4px",
-                    border: "none",
-                    outline: "none",
-                  }}
-                  className="font-medium"
-                  disabled
-                />
-                <LockClosedIcon height={22} width={22} color="#94a3b8" />
-              </div>
-              <div className="flex space-x-2 items-center flex-1">
-                <UserCircleIcon height={22} width={22} color="#fed7aa" />
-                <div className="text-gray-500">Created by</div>
-                <input
-                  value={data.contract.createdby}
-                  style={{
-                    background: "#e2e8f0",
-                    borderRadius: "6px",
-                    border: "none",
-                    color: "#475569",
-                    padding: "3px 3px 3px 3px",
-                    outline: "none",
-                  }}
-                  className="font-medium "
-                  disabled
-                />
-                <LockClosedIcon height={22} width={22} color="#94a3b8" />
-              </div>
+              <div className="text-gray-500">Phone 1</div>
+              <input
+                value={phone1}
+                style={{
+                  background: "#e2e8f0",
+                  borderRadius: "6px",
+                  border: "none",
+                  color: "#475569",
+                  padding: "3px 3px 3px 3px",
+                  outline: "none",
+                }}
+                className="font-medium "
+                onChange={(e) => setPhone1(e.target.value)}
+              />
+            </div>
+            <div className="flex space-x-2 items-center flex-1">
+              <PhoneIcon height={22} width={22} color="#4ade80" />
+
+              <div className="text-gray-500">Phone 2</div>
+              <input
+                value={phone2}
+                style={{
+                  background: "#e2e8f0",
+                  borderRadius: "6px",
+                  border: "none",
+                  color: "#475569",
+                  padding: "3px 3px 3px 3px",
+                  outline: "none",
+                }}
+                className="font-medium "
+                onChange={(e) => setPhone2(e.target.value)}
+              />
+            </div>
+          </div>
+          <div className="space-y-3">
+            <div className="flex items-center space-x-2">
+              <ClockIcon height={22} width={22} color="#475569" />
+              <div className="text-gray-500">Status </div>
+
+              <input
+                value={data.contract.contractstatus}
+                style={{
+                  background: "#e2e8f0",
+                  borderRadius: "6px",
+                  border: "none",
+                  color: "#475569",
+                  padding: "3px 3px 3px 3px",
+                  outline: "none",
+                }}
+                className="font-medium "
+                disabled
+              />
+              <LockClosedIcon height={22} width={22} color="#94a3b8" />
+            </div>
+            <div className="flex space-x-2 items-center flex-1">
+              <CalendarDaysIcon height={22} width={22} color="#818cf8" />
+              <div className="text-gray-500">Date Created</div>
+              <input
+                type="date"
+                value={data.contract.datecreated.toString().split("T")[0]}
+                style={{
+                  background: "#e2e8f0",
+                  borderRadius: "6px",
+                  color: "#475569",
+                  padding: "4px 4px 4px 4px",
+                  border: "none",
+                  outline: "none",
+                }}
+                className="font-medium"
+                disabled
+              />
+              <LockClosedIcon height={22} width={22} color="#94a3b8" />
+            </div>
+            <div className="flex space-x-2 items-center flex-1">
+              <UserCircleIcon height={22} width={22} color="#fed7aa" />
+              <div className="text-gray-500">Created by</div>
+              <input
+                value={data.contract.createdby}
+                style={{
+                  background: "#e2e8f0",
+                  borderRadius: "6px",
+                  border: "none",
+                  color: "#475569",
+                  padding: "3px 3px 3px 3px",
+                  outline: "none",
+                }}
+                className="font-medium "
+                disabled
+              />
+              <LockClosedIcon height={22} width={22} color="#94a3b8" />
             </div>
           </div>
         </div>
