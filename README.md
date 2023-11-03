@@ -6,9 +6,9 @@
 + Ability view all weddings in the Calendar view where all the wedding events are being displayed along with details about the wedding such as Location and Photographers and Videographers assigned.
 
 # Technology Stack
-### Frontend: React JS (Redux tool kit + RTK queries)
-### Backend: Java Spring & Node JS with JWT auth (java deployed on Heroku, Node JS deployed on vercel). Node JS Backend is currently the one used in production.
-### DB: Postgres
++ Frontend: React JS (Redux tool kit + RTK queries)
++ Backend: Java Spring & Node JS with JWT auth (java deployed on Heroku, Node JS deployed on vercel). Node JS Backend is currently the one used in production.
++ DB: Postgres
 
 # Web application can be found here 
 ### https://studio-wedding.vercel.app/
